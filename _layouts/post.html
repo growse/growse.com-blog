@@ -1,0 +1,42 @@
+{% include header.html %}
+<div id="content">
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <time class="fancy" itemprop="datePublished"
+                  datetime="{{page.publishDate}}">
+                <p>{{page.date|date: "%b"}} <span
+                        class="day">{{page.date|date: "%d"}}</span><span
+                        class="year">{{page.date|date: "%Y"}}</span></p></time>
+            <h1 itemprop="name headline">{{ page.title }}</h1>
+            <time class="plain" itemprop="datePublished"
+                  datetime="{{page.publishDate}}">
+                {{page.date|date_to_long_string}}
+            </time>
+            <meta itemprop="author" content="Andrew Rowson"/>
+            <link href="https://plus.google.com/+AndrewRowson" rel="author" content="Andrew Rowson">
+        </header>
+        <section itemprop="articleBody">
+            {{content}}
+        </section>
+    </article>
+    <div id="disqus_thread"></div>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'growse';
+      var disqus_identifier = '{{page.id}}';
+      var disqus_url = '{{site.url}}{{page.url}}';
+      (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+{% include footer.html %}
