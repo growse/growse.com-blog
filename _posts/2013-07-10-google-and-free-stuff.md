@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Google and Free Stuff"
+---
+I've always had a bit of a soft spot for Google. My impression of how they've built themselves over the last few years has fit with the concept of a company that's engineer-driven, making cool stuff and giving it away. The idea presumably is to see what works and carry on doing that. This contrasts with a lot of other tech companies that are so transparently driven by boring businessy stuff, like *making money* and *selling things*. 
+
+Now, things are changing, and Google appear to be turning a bunch of things off. This is both entirely expected, and yet a bit sad. The latest thing appears to be [Latitude](http://www.google.co.uk/latitude) which was quite useful in some cases. This is being removed from their maps app and rolled into [Google+](http://plus.google.com). This is hot on the heals of [Reader](http://www.google.com/reader), which ceremoniously shut down last month. This is the flip side of seeing what works - you have to turn off the things that don't work. Reader obviously wasn't helping Google's bottom line.
+
+So, Google are turning cool free things off. What right have the rest of us to complain? None at all. However, it shows that Google are no longer a company run by engineers who want to do cool things. It's a company run as a business for the purpose of making money from selling adverts, and in an industry where margins are being tightened, they can't afford to be spending money on anything that doesn't further that goal. This isn't an inherently bad thing, Google's shareholders are probably much happier with this more focused approach to actually being a business. Personally, I'm a little bit sad that one of the best pools of engineering talent isn't allowed to go off and do whatever they like any more. And I'm not sure who else could take their place.
+
+Perhaps this is the end of cool free things. Perhaps instead this is the end of cool free things where it's not immediately apparent that the user is the thing who is being sold to advertisers. A number of good results have happened as a result of this though:
+
+* This has kicked me into giving Google money for things I use of theirs that I like. I used to run my own mailserver / spam system - great fun, very educational but a little time consuming. Now, I've got a Google apps account for my mail. It costs more, but there's less overhead on my life. I also (naively?) believe that Google are much less likely to randomly shut down a revenue generating product in the near future than a random cool freebie. If anything, the Reader experience has shown that when they do shut things down, they do it in the nicest possible way (lots of warning, lets you export data).
+* As a result of Reader going away, there are now several billion RSS reader applications available. This is a *good thing*. Some of these are rubbish, some of these are great, some of these have solid ideas, but need a bit of work. I'm going to be playing with [Django-yarr](https://github.com/radiac/django-yarr) ([hello Richard](http://radiac.net)) in the interim, because it fits my needs quite well.
+
+So, what's next to be turned off? Difficult to say. All you can really do is to look at a service and figure out that if you're not being advertised to, or paying for it, that service might not be around forever.
