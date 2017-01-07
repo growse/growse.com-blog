@@ -2,7 +2,6 @@
 layout: post
 title: Fun with netflow / IPFIX and Elasticsearch
 ---
-
 I've been running my own build router at home for a while now. Having previously run [OpenWRT](https://openwrt.org), [pfSense](https://pfsense.org/) and a few others, I decided a while back that running a linux box would provide some pretty effective capabilities (ppp, VLANs etc) while also having a proper grown up OS and package ecosystem to play with. This is how I ended up with a small x86 box running Debian 8 as my home router.
 
 Some time after that, I came across [ntopng](http://www.ntop.org/products/traffic-analysis/ntop/) which seemed to effectively answer the question of "What flows are going where?".
@@ -148,6 +147,5 @@ Specifically, it's useful to make sure that the IP address fields are set to typ
 
 Putting it all together with Kibana, you can start to pull together some pretty pictures:
 
-![PIE CHARTS](/static/fun-with-netflow-ipfix-and-elasticsearch/pies.png)
-![MAPS](/static/fun-with-netflow-ipfix-and-elasticsearch/map.png)
-
+![PIE CHARTS]({% asset_path 2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/pies.png%} )
+![MAPS]({% asset_path 2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/map.png %})

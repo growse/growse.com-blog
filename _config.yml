@@ -19,6 +19,8 @@ assets:
    - _assets/fonts
    - _assets/img
 
+monthly_archive:
+  path: "/archive"
 
 markdown: kramdown
 gems:

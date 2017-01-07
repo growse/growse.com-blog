@@ -1,0 +1,31 @@
+{% for post in site.posts limit: 1 %}
+
+{% assign page = post %}
+
+{% include header.html %}
+<div id="content">
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <time class="fancy" itemprop="datePublished"
+                  datetime="{{page.publishDate}}">
+                <p>{{page.date|date: "%b"}} <span
+                        class="day">{{page.date|date: "%d"}}</span><span
+                        class="year">{{page.date|date: "%Y"}}</span></p></time>
+            <h1 itemprop="name headline">{{ page.title }}</h1>
+            <time class="plain" itemprop="datePublished"
+                  datetime="{{page.publishDate}}">
+                {{page.date|date_to_long_string}}
+            </time>
+            <meta itemprop="author" content="Andrew Rowson"/>
+            <link href="https://plus.google.com/+AndrewRowson" rel="author" content="Andrew Rowson">
+        </header>
+        <section itemprop="articleBody">
+            {{post.content | markdownify}}
+        </section>
+    </article>
+
+    {% include disqus.html %}
+</div>
+{% include footer.html %}
+
+{% endfor %}
