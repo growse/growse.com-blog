@@ -43,27 +43,11 @@
             </form>
         </div>
         <p>I'm on <a href="https://keybase.io/growse" title="Keybase">Keybase</a>.</p>
-        <ul>
-        {% assign counter = 0 %}
-        {% for post in site.posts %}
-        {% assign thisyear = post.date | date: "%B %Y" %}
-        {% assign prevyear = post.previous.date | date: "%B %Y" %}
-        {% assign counter = counter | plus: 1 %}
-        {% if thisyear != prevyear %}
-        <li><a href="/archive/#{{ post.date | date:"%B %Y" }}">{{ thisyear }} ({{ counter }})</a></li>
-        {% assign counter = 0 %}
-        {% endif %}
-        {% endfor %}
-        </ul>
+
     </header>
 
     <nav class="nano">
         <ul id="articlenav" class="nano-content">
-            {% for post in site.posts %}
-            <li data-datestamp="{{ post.publishDate }}" data-id="{{ post.title }}">
-                <a href="{{post.url}}" title="{{ post.title }}" {% if post.title== page.title %}class="here"
-                   {%endif%}><span>{{ post.title }}</span></a>
-            </li>
-            {% endfor %}
+
         </ul>
     </nav>

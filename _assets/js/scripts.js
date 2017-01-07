@@ -12,18 +12,7 @@ $(function () {
     $(this).parent().next().slideToggle(100);
     return false;
   });
-  //Scroll the left nav to the right point.
-  if ($('.here').length > 0) {
-    var percentagedown = ($('.here').position().top / $(window).height()) * 100;
-    if (percentagedown > 50) {
-      var value = $('.here').position().top - ($(window).height() / 2) + ($('nav ul li:first').height() / 2);
-      $(".nano").nanoScroller({
-        scrollTop: value
-      });
-    } else {
-      $(".nano").nanoScroller();
-    }
-  }
+
   $('time.timeago').timeago();
   $('button.svgsave').on('click', function () {
     var html = d3.select("svg")
@@ -31,7 +20,6 @@ $(function () {
       .attr("xmlns", "http://www.w3.org/2000/svg")
       .node().parentNode.innerHTML;
 
-    //console.log(html);
     var imgsrc = 'data:image/svg+xml;base64,' + btoa(html);
     var img = '<img src="' + imgsrc + '">';
     d3.select("#svgdataurl").html(img);
@@ -61,7 +49,9 @@ $(function () {
       growse.clearForm();
     }
   });
-  $('#show-comments').on('click', function () {
+  $('#show-comments').on('click', function (event) {
+    event.preventDefault();
+
     var disqus_shortname = 'YOUR-DISQUS-USERNAME'; // Replace this value with *your* username.
 
     // ajax request to load the disqus javascript
@@ -74,11 +64,27 @@ $(function () {
     // hide the button once comments load
     $(this).fadeOut();
   });
+  $.get('/posts.json', function (data) {
+    data.posts.forEach(function (d) {
+      $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url == d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
+    });
+    //Scroll the left nav to the right point.
+    var hereClass = '.here';
+    if ($(hereClass).length > 0) {
+      var percentagedown = ($(hereClass).position().top / $(window).height()) * 100;
+      if (percentagedown > 50) {
+        var value = $('.here').position().top - ($(window).height() / 2) + ($('nav ul li:first').height() / 2);
+        $(".nano").nanoScroller({
+          scrollTop: value
+        });
+      } else {
+        $(".nano").nanoScroller();
+      }
+    }
+  });
 });
 
 var disqus_shortname = 'growse';
-var disqus_identifier = '{{page.id}}';
-var disqus_url = '{{site.url}}{{page.url}}';
 
 var growse = {
   map: {
@@ -155,15 +161,6 @@ var growse = {
         .style("fill", "#000")
         .style("stroke", "#f90")
         .style("stroke-width", "1px");
-
-      /*
-       var targetPath = d3.selectAll('.route')[0][0];
-       var pathNode = d3.select(targetPath).selectAll('path').node();
-       var pathLength = pathNode.getTotalLength();
-       d3.select('.route')
-       .style('stroke-dasharray', pathLength)
-       .style('stroke-dashoffset', 0)
-       .style('-webkit-animation', "flarble 60s linear forwards");*/
     });
   },
   drawLineChart: function (elemId, data, width, height, xAxisTitle, yAxisTitle) {
@@ -172,7 +169,6 @@ var growse = {
     if (!data) {
       return;
     }
-    //var x = d3.scale.linear().range([0, width]);
     var x = d3.time.scale().range([xpadding, width - (xpadding * 2)]);
     var y = d3.scale.linear().range([height - (ypadding * 2), ypadding]);
     var line = d3.svg.line()

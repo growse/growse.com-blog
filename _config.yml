@@ -8,6 +8,7 @@ url: "https://www.growse.com"
 assets:
   prefix: "/static"
   assets:
+   - "*.min.js.map"
    - "*.css"
    - "*.scss"
    - "*.woff"

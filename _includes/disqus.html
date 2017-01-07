@@ -1,9 +1,11 @@
-<button id="show-comments">Load Disqus comments</button>
+<a href="" id="show-comments">Load Disqus comments</a>
 
 <div id="disqus_thread"></div>
 
 <script type="text/javascript">
-
+  var disqus_identifier = '{{page.id}}';
+  var disqus_url = 'https://www.growse.com/{{page.url}}';
+  var post_url = '{{page.url}}';
 </script>
 
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
