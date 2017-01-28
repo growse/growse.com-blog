@@ -210,6 +210,10 @@ html {
             }
           }
         }
+        nav.nano {
+          max-width:100%;
+          overflow-x: hidden;
+        }
         #location {
           p {
             font-family: $sansfont;
