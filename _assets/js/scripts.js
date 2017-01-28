@@ -49,21 +49,6 @@ $(function () {
             growse.clearForm();
         }
     });
-    $('#show-comments').on('click', function (event) {
-        event.preventDefault();
-
-        var disqus_shortname = 'YOUR-DISQUS-USERNAME'; // Replace this value with *your* username.
-
-        // ajax request to load the disqus javascript
-        $.ajax({
-            type: "GET",
-            url: "http://" + disqus_shortname + ".disqus.com/embed.js",
-            dataType: "script",
-            cache: true
-        });
-        // hide the button once comments load
-        $(this).fadeOut();
-    });
     $.get('/posts.json', function (data) {
         data.posts.forEach(function (d) {
             $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url == d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
@@ -83,8 +68,6 @@ $(function () {
         }
     });
 });
-
-var disqus_shortname = 'growse';
 
 var growse = {
     map: {
