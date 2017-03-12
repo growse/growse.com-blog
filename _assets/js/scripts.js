@@ -2,6 +2,7 @@
 //= require jquery-3.1.1.min
 //= require jquery.nanoscroller
 //= require jquery.timeago
+//= require jquery.dateFormat.min
 
 
 hljs.initHighlightingOnLoad();
@@ -49,42 +50,69 @@ $(function () {
             growse.clearForm();
         }
     });
-    // if (post_url) {
-    //     $.get('/posts.json', function (data) {
-    //         data.posts.forEach(function (d) {
-    //             $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url == d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
-    //         });
-    //         //Scroll the left nav to the right point.
-    //         var hereClass = '.here';
-    //         if ($(hereClass).length > 0) {
-    //             var percentagedown = ($(hereClass).position().top / $(window).height()) * 100;
-    //             if (percentagedown > 50) {
-    //                 var value = $('.here').position().top - ($(window).height() / 2) + ($('nav ul li:first').height() / 2);
-    //                 $(".nano").nanoScroller({
-    //                     scrollTop: value
-    //                 });
-    //             } else {
-    //                 $(".nano").nanoScroller();
-    //             }
-    //         }
-    //     });
-    // }
+    if ('undefined' !== typeof post_url) {
+        $.get('/posts.json', function (data) {
+            data.posts.forEach(function (d) {
+                $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url == d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
+            });
+            //Scroll the left nav to the right point.
+            var hereClass = '.here';
+            if ($(hereClass).length > 0) {
+                var percentagedown = ($(hereClass).position().top / $(window).height()) * 100;
+                if (percentagedown > 50) {
+                    var value = $('.here').position().top - ($(window).height() / 2) + ($('nav ul li:first').height() / 2);
+                    $(".nano").nanoScroller({
+                        scrollTop: value
+                    });
+                } else {
+                    $(".nano").nanoScroller();
+                }
+            }
+        });
+    }
 });
 
 var growse = {
-    search: function () {
-        console.trace("search");
-        var urlVars = getUrlVars();
-        console.log(urlVars);
-    },
-    getUrlVars: function () {
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
+        searchEndpoint: "https://www.growse.com/blevesearch",
+        search: function () {
+            $('.nano').hide();
+            var urlVars = this.getUrlVars();
+            $.post(this.searchEndpoint, urlVars, function (response) {
+                growse.clearSearchResults();
+                console.log(response);
+                $('#searchterm').text(decodeURIComponent(urlVars['a']));
+                $('#totalhits').text(response.totalHits);
+                response.hits.forEach(function (hit) {
+                    var date = hit.id.split('-', 4).slice(0, 3).join('-');
+                    var url = "/"
+                        + hit.id.split('-').slice(0, 3).join('/')
+                        + "/"
+                        + hit.id.split('-').slice(3).join('-');
+                    url = url.substr(0, url.indexOf('.md'));
+                    var thistemplate = $($('#searchResultTemplate').html());
+                    thistemplate.find('a.title').text(hit.fields.Title);
+                    thistemplate.find('a.title').prop("href", url);
+                    thistemplate.find('time').text($.format.date(new Date(date), "dd/MM/yyyy"));
+                    thistemplate.find('time').attr("datetime", date);
+                    thistemplate.find('p.fragment').html(hit.fragments.Body);
+                    $("#searchresults>ol").append(thistemplate);
+                });
+            });
         }
-        return vars;
+        ,
+        clearSearchResults: function () {
+            //TODO clear the search results pane
+        }
+        ,
+        getUrlVars: function () {
+            var vars = {}, hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
     }
-};
+    ;

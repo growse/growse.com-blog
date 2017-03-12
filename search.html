@@ -2,9 +2,32 @@
 layout: search
 title: Search Results
 ---
-<h1>SEARCH</h1>
 <script type="application/javascript">
     $(function () {
-        console.log("HI");
+        console.log(growse);
+        growse.search();
     });
 </script>
+<script type="application/template" id="searchResultTemplate">
+    <li>
+        <article itemtype="https://schema.org/BlogPosting" itemscope class="searchresult">
+            <header>
+                <time itemprop="datePublished" class="publishdate"></time>
+                <h2>
+                    <a class="title"></a>
+                </h2>
+
+            </header>
+            <p class="fragment"></p>
+        </article>
+    </li>
+</script>
+<section id="searchresults" itemtype="https://schema.org/SearchResultsPage" itemscope>
+    <header>
+        <h1>Search Results</h1>
+
+        <p>You looked for <strong id="searchterm"></strong>. I found <span id="totalhits"></span>
+            things that might have something to do with this.</p>
+    </header>
+    <ol itemscope itemtype="https://schema.org/ItemList"></ol>
+</section>

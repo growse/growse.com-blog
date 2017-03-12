@@ -1,9 +1,12 @@
 <script type="text/javascript">
-  var post_url = '{{page.url}}';
+    var post_url = '{{page.url}}';
 </script>
 
 <script data-isso="https://www.growse.com/comments/"
-        src="https://www.growse.com/comments/js/embed.min.js"></script>
+        data-isso-avatar="false"
+        data-isso-vote="false"
+        src="https://www.growse.com/comments/js/embed.min.js">
+</script>
 
-<section id="isso-thread"></section>
+<section id="isso-thread" data-isso-id="{{page.url}}"></section>
 
