@@ -79,7 +79,6 @@ var growse = {
             var urlVars = this.getUrlVars();
             $.post(this.searchEndpoint, urlVars, function (response) {
                 growse.clearSearchResults();
-                console.log(response);
                 $('#searchterm').text(decodeURIComponent(urlVars['a']));
                 $('#totalhits').text(response.totalHits);
                 response.hits.forEach(function (hit) {
@@ -101,7 +100,7 @@ var growse = {
         }
         ,
         clearSearchResults: function () {
-            //TODO clear the search results pane
+            $("#searchresults>ol").empty();
         }
         ,
         getUrlVars: function () {

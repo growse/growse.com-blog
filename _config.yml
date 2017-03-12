@@ -32,4 +32,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.iml"
-  - [vendor]
+  - vendor

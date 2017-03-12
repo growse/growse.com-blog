@@ -1,3 +1,11 @@
+compile:
+  override:
+    - bundle exec jekyll b -d $CIRCLE_ARTIFACTS
 test:
-  post:
-    - bundle exec jekyll build
+  override:
+    - echo "Oh yeah!" # No way to test Jekyll. Just do something to satisfy CircleCI.
+deployment:
+  production:
+    branch: jekyll
+    commands:
+      - rsync -avzr --delete $CIRCLE_ARTIFACTS www-data@dribblebot.growse.com:/var/www/growse-jekyll/
