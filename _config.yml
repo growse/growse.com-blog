@@ -4,7 +4,6 @@ description: > # this means to ignore newlines until "baseurl:"
   DESCRIPTIONG
 baseurl: ""
 url: "https://www.growse.com"
-exclude: [vendor]
 
 assets:
   prefix: "/static"
@@ -33,3 +32,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - "*.iml"
+  - [vendor]
