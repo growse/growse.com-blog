@@ -1,3 +1,7 @@
+machine:
+  environment:
+    JEKYLL_ENV: production
+
 compile:
   override:
     - bundle exec jekyll b -d $CIRCLE_ARTIFACTS
