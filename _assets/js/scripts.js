@@ -45,11 +45,6 @@ $(function () {
             a.click();
         };
     });
-    $(document).keyup(function (e) {
-        if (e.keyCode == 27) { // escape key maps to keycode `27`
-            growse.clearForm();
-        }
-    });
     if ('undefined' !== typeof post_url) {
         $.get('/posts.json', function (data) {
             data.posts.forEach(function (d) {
