@@ -1,6 +1,7 @@
 @import 'nanoscroller';
 @import 'solarizeddark';
-
+@import 'mixins';
+@import 'fonts';
 $default-prefixes: webkit moz ms o;
 
 $background-hl-color: #333;
@@ -25,50 +26,6 @@ $pagetitlefont: $sansfont;
 $datefont: $sansfont;
 
 $lefthandwidth: 200px;
-
-@mixin build-prefix-values($property, $value, $prefixes: $default-prefixes) {
-  @each $prefix in $prefixes {
-    -#{$prefix}-#{$property}: #{$value};
-  }
-  #{$property}: #{$value};
-}
-
-@mixin prefixtime($property, $value) {
-  @include build-prefix-values($property, $value);
-}
-
-@mixin striped-bg($bg-color: $background-hl-color, $darken-amount: 5%, $stripe-color: darken($bg-color, $darken-amount)) {
-  background: $bg-color linear-gradient(-45deg, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), url(/static/opensans-300.woff) format('woff')
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans Regular'), url(/static/opensans-400.woff) format('woff')
-}
-
-@font-face {
-  font-family: 'Inconsolata';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Inconsolata'), url(/static/inconsolata-500.woff) format('woff')
-}
-
-@font-face {
-  font-family: 'Andada';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Andada'), url(/static/andada-400.woff) format('woff')
-}
 
 html {
   font-size: 100%;

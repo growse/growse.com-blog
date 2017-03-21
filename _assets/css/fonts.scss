@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), asset_url("opensans-300.woff") format('woff')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), asset_url("opensans-400.woff") format('woff')
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Inconsolata'), asset_url("inconsolata-500.woff") format('woff')
+}
+
+@font-face {
+  font-family: 'Andada';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Andada'), asset_url("andada-400.woff") format('woff')
+}
