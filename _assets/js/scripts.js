@@ -95,7 +95,7 @@ const growse = {
                     + hit.id.split('-').slice(0, 3).join('/')
                     + "/"
                     + hit.id.split('-').slice(3).join('-');
-                url = url.substr(0, url.indexOf('.md'));
+                url = url.substr(0, url.indexOf('.md')) + ".html";
                 let thistemplate = $($('#searchResultTemplate').html());
                 thistemplate.find('a.title').text(hit.fields.Title);
                 thistemplate.find('a.title').prop("href", url);
