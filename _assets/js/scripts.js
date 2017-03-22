@@ -70,7 +70,7 @@ $(function () {
 
 const growse = {
     searchEndpoint: "https://www.growse.com/blevesearch",
-    locationEndpoint: "https://www.growse.com/location",
+    locationEndpoint: "https://www.growse.com/location/",
     getLocation: function () {
         $.getJSON(this.locationEndpoint, function (data) {
             $('#location').append(`<p>Last seen floating around near <a href="http://maps.google.com/?q=${data.latitude},${data.longitude}">
