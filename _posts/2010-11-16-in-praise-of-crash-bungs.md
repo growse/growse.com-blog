@@ -29,22 +29,16 @@ Here's some pictures showing some of the damage the bungs picked up. They'll
 still work in future, but they'll just look a bit rubbish until I get them
 replaced.
 
-[![][4]][5]
+![Ow][4]
 
-[![][6]][7]
+![More ow][5]
 
-   [1]:
-http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection
-(Crash bungs)
+   [1]: http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection (Crash bungs)
 
    [2]: http://www.rg-racing.com/ (R&G Racing)
 
    [3]: http://www.motorworks.co.uk (Motorworks)
 
-   [4]: /stuff/in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg
+   [4]: {% asset_path 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg %}
 
-   [5]: /stuff/in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg
-
-   [6]: /stuff/in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg
-
-   [7]: /stuff/in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg
+   [5]: {% asset_path 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg %}
