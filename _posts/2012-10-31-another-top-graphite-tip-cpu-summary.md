@@ -27,4 +27,4 @@ Graphite helps out. First, we `scale()` the metric by -1. This flips the idle gr
 
     aliasByNode(offset(scale(servers.*.cpu.cpu[0-9].idle,-1),100),1)
 
-![Awesome graphite cpu graph](/stuff/another-top-graphite-tip-cpu-summary/another-top-graphite-tip-cpu-summary.png)
+![Awesome graphite cpu graph]({% asset_path 2012-10-31-another-top-graphite-tip-cpu-summary/another-top-graphite-tip-cpu-summary.png %})
