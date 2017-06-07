@@ -126,15 +126,41 @@ stopping you using one provider for incoming and another for outgoing.
 This is where the fun begins. Thankfully, of the large number of configs that
 exist, you only have to alter a few.
 
-_sip.conf_
+`sip.conf`:
 
-[general] qualify=no context=default bindport=5060 bindaddr=0.0.0.0
-srvlookup=yes register => 1234567:BIGPWWD@sipgate.co.uk/1234567 externip =
-38.29.29.212 localnet=192.168.0.0/255.255.0.0 nat=yes [sipgate.co.uk]
-type=peer secret=BIGPWWD username=1234567 host=sipgate.co.uk fromuser=1234567
-outgoingproxy=sipgate.co.uk canreinvite=no dtmfmode=inband nat=yes
-insecure=very context=default [my-phone] type=friend username=andrew
-secret=password host=dynamic context=default
+~~~
+[general]
+qualify=no
+context=default
+bindport=5060
+bindaddr=0.0.0.0
+srvlookup=yes
+register => 1234567:BIGPWWD@sipgate.co.uk/1234567
+externip = 38.29.29.212
+localnet=192.168.0.0/255.255.0.0
+nat=yes
+
+[sipgate.co.uk]
+type=peer
+secret=BIGPWWD
+username=1234567
+host=sipgate.co.uk
+fromuser=1234567
+outgoingproxy=sipgate.co.uk
+canreinvite=no
+dtmfmode=inband
+nat=yes
+insecure=very
+context=default
+
+[my-phone]
+type=friend
+username=andrew
+secret=password
+host=dynamic
+context=default
+~~~
+
 
 This is the main file that specifies all of the SIP devices that connect to
 Asterisk. It defines your SIP phone accounts as well as your sip provider. As
@@ -168,35 +194,49 @@ and you'll be fine. There's no reason why you can't experiement with various
 things - different accounts for different phones, different contexts etc. The
 file is fairly well commented so it should be straightforward.
 
-Moving onto _extensions.conf_
+Moving onto `extensions.conf`:
 
-[general] static=yes writeprotect=no autofallthrough=yes clearglobalvars=no
-priorityjumping=no [globals] SpeakingClock=2 [default] exten =>
-1234567,1,Dial(SIP/my-phone) exten => 1234567,2,VoiceMail(1234@default) exten
-=> 1234567,3,HangUp() exten => _9.,1,Dial(SIP/${EXTEN:1}@sipgate.co.uk,30,r)
-exten => 1,1,VoicemailMain,s1234 exten => ${SpeakingClock},1,Wait(1) exten =>
-${SpeakingClock},2,setvar(FutureTime=$[${EPOCH} + 10]) exten =>
-${SpeakingClock},3,playback(at-tone-time-exactly) exten =>
-${SpeakingClock},4,SayUnixTime(${FutureTime},,R) exten =>
-${SpeakingClock},5,playback(vm-and) exten =>
-${SpeakingClock},6,SayUnixTime(${FutureTime},,S) exten =>
-${SpeakingClock},7,playback(seconds) exten =>
-${SpeakingClock},8,playback(beep) exten => ${SpeakingClock},9,wait(2) exten =>
-${SpeakingClock},10,goto(1)
+~~~
+[general]
+static=yes
+writeprotect=no
+autofallthrough=yes
+clearglobalvars=no
+priorityjumping=no
 
-This is where the magic starts to happen. In my _extensions.conf_, there's a
+[globals]
+SpeakingClock=2
+
+[default] 
+exten => 1234567,1,Dial(SIP/my-phone)
+exten => 1234567,2,VoiceMail(1234@default) 
+exten => 1234567,3,HangUp()
+exten => _9.,1,Dial(SIP/${EXTEN:1}@sipgate.co.uk,30,r)
+exten => 1,1,VoicemailMain,s1234 exten => ${SpeakingClock},1,Wait(1)
+exten => ${SpeakingClock},2,setvar(FutureTime=$[${EPOCH} + 10])
+exten => ${SpeakingClock},3,playback(at-tone-time-exactly)
+exten => ${SpeakingClock},4,SayUnixTime(${FutureTime},,R)
+exten => ${SpeakingClock},5,playback(vm-and)
+exten => ${SpeakingClock},6,SayUnixTime(${FutureTime},,S)
+exten => ${SpeakingClock},7,playback(seconds)
+exten => ${SpeakingClock},8,playback(beep)
+exten => ${SpeakingClock},9,wait(2)
+exten => ${SpeakingClock},10,goto(1)
+~~~
+
+This is where the magic starts to happen. In my `extensions.conf`, there's a
 whole bunch of comments and other contexts that I've not shown. They're there
 for example and prove useful if you actually want to do something complicated.
-In this case, it seems that the more examples, the better. The [general]
+In this case, it seems that the more examples, the better. The `[general]`
 section basically sets up a few variables - I'd recommend just setting them to
 what I've got here and leave it be. The file comments tell you more about what
-they do. [globals] is a place you can set up variables and the like. Here I've
-set the var "SpeakingClock" to "2".
+they do. `[globals]` is a place you can set up variables and the like. Here I've
+set the var `SpeakingClock` to `2`.
 
 Now, I've only got one call context, default, but you can have as many as you
 like. I use one to keep it simple. Each command basically is of the format:
 
-exten => extension,priority,what_to_do
+    exten => extension,priority,what_to_do
 
 This basically tells asterisk what to do with a call. It looks up the
 extension of the call, goes to the lowest numbered priority command, and
@@ -205,7 +245,7 @@ handle incoming calls from Sipgate. Asterisk sees these as incoming calls to
 the SIP ID extension (7-digit ID, remember?). The first thing it tries to do
 is call the SIP phone that's logged in as 'andrew'. If I've got my softphone
 logged in, or a hardphone that's turned on and signed in with that username
-(see _sip.conf_ above), then it'll ring. In this case, indefinately. You can
+(see `sip.conf` above), then it'll ring. In this case, indefinately. You can
 add a bunch of arguments to tell it to only ring for 10 seconds, or something
 similar. That's all in the asterisk documentation. In this case, if there
 isn't any phone turned on and logged in, it fails that step and moves onto the
@@ -218,17 +258,20 @@ See? Simple.
 
 The next command is for outgoing calls. Any number that starts in a 9 will be
 stripped of it's 9 and then sent through to the sipgate.co.uk sip user, which
-I've defined in _sip.conf_ to be my sipgate account (it's the section name,
+I've defined in `sip.conf` to be my sipgate account (it's the section name,
 not the host, dumbass).
 
 I should point out the pattern matching for extensions. If you prefix an
 extension with a "_", it tells asterisk that it's a pattern to match against.
 Here's how to make a pattern:
 
-X matches any digit from 0-9 Z matches any digit form 1-9 N matches any digit
-from 2-9 [1237-9] matches any digit or letter in the brackets - (in this
-example, 1,2,3,7,8,9) . wildcard, matches one or more characters ! wildcard,
-matches zero or more characters immediately (only Asterisk 1.2 and later)
+
+* X matches any digit from 0-9
+* Z matches any digit form 1-9
+* N matches any digit from 2-9
+* [1237-9] matches any digit or letter in the brackets - (in this example, 1,2,3,7,8,9)
+* . wildcard, matches one or more characters
+* ! wildcard, matches zero or more characters immediately (only Asterisk 1.2 and later)
 
 Therefore, that explains why the extension "_9." matches any number longer
 than 1 digit beginning with a 9.
@@ -236,7 +279,7 @@ than 1 digit beginning with a 9.
 I should make it abundantly clear at this point that I have configured my
 outbound calls to use the same SIP provider as my incoming calls. There's
 absolutely no reason why this needs to be the case. You could find a
-completely different sip provider, register it and list it in _sip.conf_ and
+completely different sip provider, register it and list it in `sip.conf` and
 direct outbound calls to there. I've not done this yet, but I'll update this
 if I ever decide to.
 
@@ -253,33 +296,46 @@ loop that reads the time out to them. This is the time of the local asterisk
 server, so make sure you use ntp to keep it in sync.
 
 Voicemail! It's a wonderful thing. It's also mostly defined in
-_voicemail.conf_
+`voicemail.conf`:
 
-[general] format=gsm|wav|wav49 serveremail=asterisk attach=yes skipms=3000
-maxsilence=10 silencethreshold=128 maxlogins=3 emailbody=Dear
-${VM_NAME}:\n\n\tjust wanted to let you know you were just left a ${VM_DUR}
-long message (number ${VM_MSGNUM})\nin mailbox ${VM_MAILBOX} from
-${VM_CALLERID}, on ${VM_DATE}, so you might\nwant to check it when you get a
-chance. Thanks!\n\n\t\t\t\t--Asterisk\n emaildateformat=%A, %B %d, %Y at %r
-mailcmd=/usr/sbin/sendmail -t sendvoicemail=yes [zonemessages]
+~~~
+[general] format=gsm|wav|wav49
+serveremail=asterisk
+attach=yes
+skipms=3000
+maxsilence=10
+silencethreshold=128
+maxlogins=3
+emailbody=Dear ${VM_NAME}:\n\n\tjust wanted to let you know you were just left a ${VM_DUR} long message (number ${VM_MSGNUM})\nin mailbox ${VM_MAILBOX} from ${VM_CALLERID}, on ${VM_DATE}, so you might\nwant to check it when you get a chance. Thanks!\n\n\t\t\t\t--Asterisk\n emaildateformat=%A, %B %d, %Y at %r
+mailcmd=/usr/sbin/sendmail -t
+sendvoicemail=yes
+
+[zonemessages]
 eastern=America/New_York|'vm-received' Q 'digits/at' IMp
 central=America/Chicago|'vm-received' Q 'digits/at' IMp
 central24=America/Chicago|'vm-received' q 'digits/at' H N 'hours'
-military=Zulu|'vm-received' q 'digits/at' H N 'hours' 'phonetic/z_p' [default]
+military=Zulu|'vm-received' q 'digits/at' H N 'hours' 'phonetic/z_p'
+
+[default]
 1234 => 1000,andrew,email@address.com
+~~~
 
 Right, so as usual, there's a bunch of well-commented settings up near the
 top, a few bits and pieces to change about email sending, and the all
 important lines at the bottom that define the voicemail context and mailbox.
 I've only got one context, default, and one mailbox, which has the id of 1234,
 my name and my email address next to it. This all relates back to the
-_extensions.conf_ file which told the voicemail to go off to 1234@default,
+`extensions.conf` file which told the voicemail to go off to 1234@default,
 which means mailbox number 1234 in the context of default. Hope that makes
 some sort of sense.
 
-The only other file I changed was _rtp.conf_
+The only other file I changed was `rtp.conf`
 
-[general] rtpstart=15000 rtpend=15015
+~~~
+[general]
+rtpstart=15000
+rtpend=15015
+~~~
 
 Remember how we forwarded a bunch of udp ports to our asterisk server before?
 This is the file that tells asterisk what port range to advertise as being
@@ -295,7 +351,7 @@ just want to pick up voicemail and have it emailed to you.
 
 Anyway, for softphones, I recommend [X-lite][4] - it seems fairly easy to set
 up and use. You just need to put in the ip address of your asterisk server,
-and your username / password that you set up for your account in _sip.conf_ -
+and your username / password that you set up for your account in `sip.conf` -
 in my case that'd be "andrew" and "password".
 
 For hardphones, I'm looking at getting something by [Cisco][5], probably a
