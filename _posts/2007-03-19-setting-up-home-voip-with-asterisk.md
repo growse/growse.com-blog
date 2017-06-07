@@ -299,7 +299,8 @@ Voicemail! It's a wonderful thing. It's also mostly defined in
 `voicemail.conf`:
 
 ~~~
-[general] format=gsm|wav|wav49
+[general]
+format=gsm|wav|wav49
 serveremail=asterisk
 attach=yes
 skipms=3000
