@@ -3,8 +3,11 @@ machine:
     JEKYLL_ENV: production
 
 compile:
+  pre:
+    - gem install fpm
   override:
     - bundle exec jekyll b -d $CIRCLE_ARTIFACTS
+    - fpm -s dir -t deb -n growse-com-jekyll --prefix /var/www/growse-jekyll/ -p $CIRCLE_ARTIFACTS  -v 1.0.0-$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS
 test:
   override:
     - echo "Oh yeah!" # No way to test Jekyll. Just do something to satisfy CircleCI.
