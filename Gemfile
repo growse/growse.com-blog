@@ -21,3 +21,9 @@ gem "jekyll-sitemap"
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
 end
+
+# Added at 2017-08-21 20:56:01 +0100 by growse:
+gem "fpm", "~> 1.9"
+
+# Added at 2017-08-21 21:06:32 +0100 by growse:
+gem "deb-s3", "~> 0.9.1"

@@ -3,11 +3,9 @@ machine:
     JEKYLL_ENV: production
 
 compile:
-  pre:
-    - gem install fpm
   override:
     - bundle exec jekyll b -d $CIRCLE_ARTIFACTS
-    - fpm -s dir -t deb -n growse-com-jekyll --prefix /var/www/growse-jekyll/ -p $CIRCLE_ARTIFACTS  -v 1.0.0-$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS
+    - fpm -s dir -t deb -n growse-com-jekyll --prefix /var/www/ -p $CIRCLE_ARTIFACTS -a noarch  -v 1.0.0-$CIRCLE_BUILD_NUM $CIRCLE_ARTIFACTS/=growse-jekyll
 test:
   override:
     - echo "Oh yeah!" # No way to test Jekyll. Just do something to satisfy CircleCI.
@@ -15,4 +13,4 @@ deployment:
   production:
     branch: jekyll
     commands:
-      - rsync -avzr --delete $CIRCLE_ARTIFACTS/ www-data@dribblebot.growse.com:/var/www/growse-jekyll/
+      - deb-s3 upload --s3-region=eu-west-1 --bucket apt-growse-com $CIRCLE_ARTIFACTS/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
