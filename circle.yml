@@ -4,8 +4,14 @@ machine:
 
 compile:
   override:
+    - sudo apt-get install -y debsigs
+    - echo $DEBSIGN | base64 -d | gpg --import
+    - gem install bundler
+    - bundle install
     - bundle exec jekyll b
     - bundle exec fpm -s dir -t deb -n growse-com-jekyll --prefix /var/www/ -p _site -a noarch  -v 1.0.0-$CIRCLE_BUILD_NUM _site/=growse-jekyll
+    - debsigs --sign=origin --default=key=6A2561804E290210909454E69640EFFBAA3B94A5 $CIRCLE_ARTIFACTS/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
+
 test:
   override:
     - echo "Oh yeah!" # No way to test Jekyll. Just do something to satisfy CircleCI.
@@ -13,4 +19,4 @@ deployment:
   production:
     branch: jekyll
     commands:
-      - bundle exec deb-s3 upload --s3-region=eu-west-1 --bucket apt-growse-com _site/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
+      - bundle exec deb-s3 upload --s3-region=eu-west-1 --sign=6A2561804E290210909454E69640EFFBAA3B94A5 --bucket apt-growse-com _site/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
