@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    filters:
+      branches:
+        only:
+          - jekyll
+    docker:
+      - image: circleci/ruby:2-stretch
+    environment:
+     - JEKYLL_ENV: production
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+      - run: sudo apt-get install -y debsigs
+      - run: echo $DEBSIGN | base64 -d | gpg --import
+      - run: gem install bundler
+      - run: bundle install
+      - save_cache:
+          key: deps-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ~/.bundle
+      - run: bundle exec jekyll b
+      - run: bundle exec fpm -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.0-$CIRCLE_BUILD_NUM _site/=growse-jekyll
+      - run: debsigs --sign=origin --default-key=63F29D43F8F9E605 _site/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
+      - deploy:
+          name: Push to apt.growse.com
+          command: bundle exec deb-s3 upload --s3-region=eu-west-1 --sign=63F29D43F8F9E605 --bucket apt-growse-com _site/growse-com-jekyll_1.0.0-"$CIRCLE_BUILD_NUM"_all.deb
