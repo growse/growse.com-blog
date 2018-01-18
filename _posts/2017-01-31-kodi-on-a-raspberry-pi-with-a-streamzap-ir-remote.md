@@ -8,7 +8,7 @@ As time wore on, a few things happened. Firstly, I didn't make too much of an ef
 
 # Lovely Pi
 
-I really like the rPI platform - I've currently got 2 in use, one as a [VOIP PBX running Asterisk](https://www.growse.com/2007/03/19/setting-up-home-voip-with-asterisk/) and another that uploads ADSB data to [FlightRadar24](https://www.flightradar24.com). I've yet to be one of these slightly more hardcore electrical engineer types who actually solder stuff together and driver it with python, but I'm sure that day will come. 
+I really like the rPI platform - I've currently got 2 in use, one as a [VOIP PBX running Asterisk](/2007/03/19/setting-up-home-voip-with-asterisk/) and another that uploads ADSB data to [FlightRadar24](https://www.flightradar24.com). I've yet to be one of these slightly more hardcore electrical engineer types who actually solder stuff together and driver it with python, but I'm sure that day will come. 
 
 I had a spare rPI 2, so I downloaded the latest [Raspbian](https://www.raspbian.org/), imaged it to a microSD card, plugged it into the TV and booted it up. Actually, I forgot that since last year, Raspbian disable the SSH server on their image unless you place an empty file called `ssh` on the `/boot` partition. So I subsequently turned it off, copied the file to the disk and then turned it back on again. 
 

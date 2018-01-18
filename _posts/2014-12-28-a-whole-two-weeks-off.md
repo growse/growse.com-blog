@@ -2,7 +2,7 @@
 layout: post
 title: "A whole two weeks off"
 ---
-Following my previous exciting [day off](https://www.growse.com/2014/11/28/a-day-off/), I'm currently in the middle of a lovely two week pause from "work". I imagine that I'm not alone in this though, given the season etc. On the plus side, skiing happens at the end of this week, and that will be awesome.
+Following my previous exciting [day off](/2014/11/28/a-day-off/), I'm currently in the middle of a lovely two week pause from "work". I imagine that I'm not alone in this though, given the season etc. On the plus side, skiing happens at the end of this week, and that will be awesome.
 
 From my list last time, I've completed most of the things on it. I've bought 3 replacement bowls, fitted a hilariously loud horn to the bike, had lunch, bought a new Z-wave switch and fiddled with some web bits. However, I did run down a bit of a garden path with this whole golang thing though, which I thought was worth digging into.
 

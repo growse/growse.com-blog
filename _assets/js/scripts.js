@@ -5,8 +5,8 @@
 //= require jquery.dateFormat.min
 
 const growse = {
-    searchEndpoint: "https://www.growse.com/blevesearch",
-    locationEndpoint: "https://www.growse.com/location/",
+    searchEndpoint: "/blevesearch",
+    locationEndpoint: "/location/",
     getLocation: function () {
         $.getJSON(this.locationEndpoint, function (data) {
             $(document).ready(function () {

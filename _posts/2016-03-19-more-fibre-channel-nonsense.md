@@ -2,7 +2,7 @@
 layout: post
 title: "More Fibre Channel Nonsense"
 ---
-Fibre Channel lives on! Following from a brief [dabble](https://www.growse.com/2011/02/10/disks-solaris-zfs-fibre-channel-comstar-crumpets-and-butter/) in the past with using Fibre Channel, I decided that it was once again the time to see if I could make it work.
+Fibre Channel lives on! Following from a brief [dabble](/2011/02/10/disks-solaris-zfs-fibre-channel-comstar-crumpets-and-butter/) in the past with using Fibre Channel, I decided that it was once again the time to see if I could make it work.
 
 This was was all prompted by the replacement of my old [HP Microserver N40L](http://n40l.wikia.com/wiki/HP_MicroServer_N40L_Wiki) with the much newer G8 model. This broadly does the same thing, but lets you have more memory and better CPUs. Useful for running [ZFS on Linux](http://zfsonlinux.org/). 
 
