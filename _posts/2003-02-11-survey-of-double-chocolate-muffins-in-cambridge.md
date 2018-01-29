@@ -62,60 +62,16 @@ venture further out into the great unkown for me that is the Cambridge Muffin
 culture, but I thought I would round things off here, make it pretty, and add
 more cake when I ate it. One day, I hope to have pictures :)
 
-Place of buyagePriceGood thingsBad thingsMark
-
-Nadia's
-
-80p
-
-Scrummy
-
-They have ways of making you buy more
-
-9/10
-
-Pembroke
-
-£1
-
-Near to where I live
-
-Eugh
-
-2/10
-
-Millie's
-
-£1.30
-
-Chunky
-
-Pricy
-
-8/10
-
-Don Pasquale
-
-Lots more than anywhere else
-
-Creamy
-
-Wrong shape
-
-7/10
-
-Sainsbury's
-
-75p
-
-You can get steak and wine at the same time (woo, that rhymed)
-
-Just a bit average
-
-6/10
+|Place of buyage | Price | Good things | Bad things | Mark | 
+|-
+|Nadia's|80p|Scrummy|They have ways of making you buy more|9/10|
+|Pembroke|£1|Near to where I live|Eugh|2/10|
+|Millie's|£1.30|Chunky|Pricy|8/10|
+|Don Pasquale|Lots more than anywhere else|Creamy|Wrong shape|7/10|
+|Sainsbury's|75p|You can get steak and wine at the same time (woo, that rhymed)|Just a bit average|6/10|
 
 Well, that just about wraps it up here. I hope everyone had a lovely time, but
 there won't be souvenirs. I'm sorry.
 
-   [1]: http://i.imgur.com/BrobPv9.jpg
+   [1]: {% asset_path 2003-02-11-survey-of-double-chocolate-muffins-in-cambridge/cake.gif %}
 
