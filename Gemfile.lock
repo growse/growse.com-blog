@@ -92,6 +92,7 @@ GEM
     jmespath (1.3.1)
     json (1.8.6)
     kramdown (1.16.2)
+    libv8 (3.16.14.19)
     liquid (4.0.0)
     liquid-tag-parser (1.8.0)
       extras (~> 0.3)
@@ -120,6 +121,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     rouge (3.1.1)
     ruby-xz (0.2.3)
       ffi (~> 1.9)
@@ -135,6 +137,9 @@ GEM
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     stud (0.0.23)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (0.19.4)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -147,11 +152,13 @@ PLATFORMS
 
 DEPENDENCIES
   deb-s3
+  execjs (~> 2.7)
   fpm
   jekyll
   jekyll-assets
   jekyll-feed
   jekyll-sitemap
+  therubyracer (~> 0.12.3)
   uglifier (~> 4.1)
 
 RUBY VERSION

@@ -30,3 +30,9 @@ gem "deb-s3"
 
 # Added at 2018-03-01 22:47:39 +0000 by growse:
 gem "uglifier", "~> 4.1"
+
+# Added at 2018-03-02 22:32:10 +0000 by growse:
+gem "execjs", "~> 2.7"
+
+# Added at 2018-03-02 22:32:20 +0000 by growse:
+gem "therubyracer", "~> 0.12.3"
