@@ -9,9 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.3.1"
-gem "jekyll-assets"
-gem "jekyll-sitemap"
+gem "jekyll"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -19,11 +17,16 @@ gem "jekyll-sitemap"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-feed"
+  gem "jekyll-assets"
+  gem "jekyll-sitemap"
 end
 
 # Added at 2017-08-21 20:56:01 +0100 by growse:
-gem "fpm", "~> 1.9"
+gem "fpm"
 
 # Added at 2017-08-21 21:06:32 +0100 by growse:
-gem "deb-s3", "~> 0.9.1"
+gem "deb-s3"
+
+# Added at 2018-03-01 22:47:39 +0000 by growse:
+gem "uglifier", "~> 4.1"

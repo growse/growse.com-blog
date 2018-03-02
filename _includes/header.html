@@ -5,12 +5,10 @@
     <meta name="google-site-verification" content="Sr-L2EMmHr-hc4npzb8p1f7zi9ew1Iev84ly519r1p4"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} :: growse.com</title>
-    <link rel="dns-prefetch" href="//ajax.googleapis.com">
-    <link rel="dns-prefetch" href="//themes.googleusercontent.com">
     <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>
-    <link rel="shortcut icon" type="image/png" href="{% asset_path favicon.png %}"/>
-    <link rel="icon" type="image/png" href="{% asset_path favicon.png %}"/>
-    <style rel="stylesheet">{% asset critical.css %}</style>
+    <link rel="shortcut icon" type="image/png" href="{% asset favicon @path %}"/>
+    <link rel="icon" type="image/png" href="{{ assets['favicon.png'].digest_path }}"/>
+    <style rel="stylesheet">{% asset critical.scss @inline %}</style>
 </head>
 <body>
 <div id="container" itemtype="http://schema.org/Blog" itemscope>

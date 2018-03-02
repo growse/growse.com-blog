@@ -12,8 +12,8 @@ insanely pretty, and it'll probably rain lots, and you get a fun filled time
 In other news, a bank was recently spotted giving me money. It is with this
 that I have bought my latest "toy": The DI box.
 
-![/stuff/off-to-the-lakes/off-to-the-lakes.jpg][1]
+![Boxy box][1]
 
 Hurrah!!
 
-   [1]: /stuff/off-to-the-lakes/off-to-the-lakes.jpg
+   [1]: {% asset 2004-07-11-off-to-the-lakes/off-to-the-lakes.jpg @path %}

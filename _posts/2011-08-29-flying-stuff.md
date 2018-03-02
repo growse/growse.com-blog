@@ -55,5 +55,5 @@ you can really start to enjoy yourself.
 I can see myself doing this sort of thing some day. Maybe after I've mastered
 sailing. Sailing, I shall talk about soon.
 
-   [1]: {% asset_path 2011-08-29-flying-stuff/T61-G-BUFR.jpg %}
+   [1]: {% asset 2011-08-29-flying-stuff/T61-G-BUFR.jpg @path %}
 

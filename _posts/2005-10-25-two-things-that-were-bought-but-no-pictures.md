@@ -50,7 +50,7 @@ it's a bargain.
 
 Second thing I bought was slightly cheaper:
 
-![http://i.imgur.com/KvSWBkl.png][2]
+![Buying things][2]
 
 Yes, it's an Apple keyboard. Only delivered today (grand cost of £19) so I've
 only had an hour to type on it.
@@ -69,6 +69,6 @@ Ahhhhhhhhhh.........
 
    [1]: http://web.archive.org/web/20080401080101/http://www.humaxdigital.com/global/products/pvr-9200t.asp
 
-   [2]: /stuff/two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png
+   [2]: {% asset 2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png @path %}
 
    [3]: http://www.randyrants.com/sharpkeys/

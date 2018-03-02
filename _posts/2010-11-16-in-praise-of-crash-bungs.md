@@ -39,6 +39,6 @@ replaced.
 
    [3]: http://www.motorworks.co.uk (Motorworks)
 
-   [4]: {% asset_path 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg %}
+   [4]: {% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg @path %}
 
-   [5]: {% asset_path 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg %}
+   [5]: {% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg @path %}

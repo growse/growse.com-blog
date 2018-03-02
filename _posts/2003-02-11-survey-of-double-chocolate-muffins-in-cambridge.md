@@ -73,5 +73,5 @@ more cake when I ate it. One day, I hope to have pictures :)
 Well, that just about wraps it up here. I hope everyone had a lovely time, but
 there won't be souvenirs. I'm sorry.
 
-   [1]: {% asset_path 2003-02-11-survey-of-double-chocolate-muffins-in-cambridge/cake.gif %}
+   [1]: {% asset 2003-02-11-survey-of-double-chocolate-muffins-in-cambridge/cake.gif @path %}
 

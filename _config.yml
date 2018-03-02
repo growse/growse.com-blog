@@ -5,26 +5,11 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: "https://www.growse.com"
 
-assets:
-  prefix: "/static"
-  assets:
-   - "*.min.js.map"
-   - "*.css"
-   - "*.scss"
-   - "*.woff"
-   - "*.js"
-   - "*.png"
-  sources:
-   - _assets/css
-   - _assets/js
-   - _assets/fonts
-   - _assets/img
-
 monthly_archive:
   path: "/archive"
 
 markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
   - jekyll-assets
   - jekyll-sitemap

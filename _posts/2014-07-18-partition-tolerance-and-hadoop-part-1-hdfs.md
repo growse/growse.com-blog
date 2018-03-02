@@ -16,7 +16,7 @@ So, what are we trying to test? If you haven't read the series on Jepsen, the ba
 
 In the case of HDFS, we have a filesystem. For all intents and purposes, this is a database, so lets see what happens if we try and write some data to HDFS when there's a network partition. Hadoop's HDFS architecture consists of a NameNode server, which keeps a state of the filesystem tree and the IDs of blocks that make up each file, and a number of DataNodes which actually store the blocks on their local storage. Blocks are typically replicated a number of times on different datanodes so that a block of data is resilient to a single datanode failure. The datanodes heartbeat to the namenode, so that that namenode is aware of all the datanodes that are currently alive in the cluster, and the replication status of each block.
 
-![HDFS Architecture](/stuff/partition-tolerance-and-hadoop-part-1-hdfs/partition-tolerance-and-hadoop-part-1-hdfs.gif)
+![HDFS Architecture]({% asset 2014-07-18-partition-tolerance-and-hadoop-part-1-hdfs/partition-tolerance-and-hadoop-part-1-hdfs.gif @path %})
 
 Taken from the [HDFS architecture documentation on Apache](http://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)
 

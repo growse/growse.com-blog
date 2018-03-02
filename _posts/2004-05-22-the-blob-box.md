@@ -112,12 +112,12 @@ The 1/4" jack sockets on the side. I might label them at some point...
 
    [1]: http://www.maplin.co.uk
 
-   [2]: /stuff/the-blob-box/blobbox-diagram1.gif
+   [2]: {% asset 2004-05-22-the-blob-box/blobbox-diagram1.gif @path %}
 
-   [3]: /stuff/the-blob-box/blobbox-diagram2.gif
+   [3]: {% asset 2004-05-22-the-blob-box/blobbox-diagram2.gif @path %}
 
-   [4]: /stuff/the-blob-box/blobbox1.jpg
+   [4]: {% asset 2004-05-22-the-blob-box/blobbox1.jpg @path %}
 
-   [5]: /stuff/the-blob-box/blobbox2.jpg
+   [5]: {% asset 2004-05-22-the-blob-box/blobbox2.jpg @path %}
 
-   [6]: /stuff/the-blob-box/blobbox3.jpg
+   [6]: {% asset 2004-05-22-the-blob-box/blobbox3.jpg @path %}
