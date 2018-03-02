@@ -5,7 +5,7 @@
 //= require jquery.dateFormat.min
 
 const growse = {
-    searchEndpoint: "/blevesearch",
+    searchEndpoint: "/search",
     locationEndpoint: "/location/",
     getLocation: function () {
         $.getJSON(this.locationEndpoint, function (data) {
