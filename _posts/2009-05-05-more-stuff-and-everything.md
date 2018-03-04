@@ -15,9 +15,9 @@ reported of an increase in spam globally, so maybe I'm just being targetted
 more. Or someone's trying to send me a message by spamming me and then drawing
 letters in the graph. Who knows?
 
-   [1]: /misc/odd-ways-of-making-a-mandelbrot/
+   [1]: /2009/05/01/odd-ways-of-making-a-mandelbrot.html
 
    [2]: http://www.jquery.com
 
-   [3]: /projects/spamwatch/
+   [3]: /2009/01/19/spamwatch.html
 

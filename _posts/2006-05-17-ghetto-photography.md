@@ -11,5 +11,5 @@ Anyway. Wow!
 
 In other news, my Sri Lanka diary is up, get it [here][1].
 
-   [1]: http://www.growse.com/misc/charity-challenge-visit-to-sri-lanka-2006/
+   [1]: /2006/05/02/charity-challenge-visit-to-sri-lanka-2006.html
 

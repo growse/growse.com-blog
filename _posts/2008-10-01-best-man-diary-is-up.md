@@ -9,5 +9,5 @@ thing.
 
 [Take me there now! I want to see it!][1]
 
-   [1]: /misc/best-man-2008/
+   [1]: /2008/09/22/best-man-2008.html
 
