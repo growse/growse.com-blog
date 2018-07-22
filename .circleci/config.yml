@@ -11,13 +11,13 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: deps-{{ checksum "Gemfile.lock" }}
       - run: sudo apt-get install -y debsigs
       - run: echo $DEBSIGN | base64 -d | gpg --import
       - run: gem install bundler
       - run: bundle install
       - save_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: deps-{{ checksum "Gemfile.lock" }}
           paths:
             - ~/.bundle
       - run: bundle exec jekyll b
