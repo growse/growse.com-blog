@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} :: growse.com</title>
     <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>
-    <link rel="shortcut icon" type="image/png" href="{% asset favicon @path %}"/>
-    <link rel="icon" type="image/png" href="{{ assets['favicon.png'].digest_path }}"/>
     <style rel="stylesheet">{% asset critical.scss @inline %}</style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% asset apple-touch-icon.png @path %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% asset favicon-32x32.png @path %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% asset favicon-16x16.png @path %}">
+    <link rel="mask-icon" href="{% asset safari-pinned-tab.svg @path %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
 <div id="container" itemtype="http://schema.org/Blog" itemscope>
     <header>
         <h1 id="titletext"><a href="/" title="Home">growse.com</a></h1>
-
         <h2 id="about">I write things here.</h2>
-
         <div id="search">
             <form action="/search.html" method="get">
                 <fieldset>
@@ -28,7 +32,6 @@
         <div id="location">
         </div>
     </header>
-
     <nav class="nano">
         <ul id="articlenav" class="nano-content">
         </ul>
