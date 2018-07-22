@@ -18,3 +18,5 @@ exclude:
   - Gemfile.lock
   - "*.iml"
   - vendor
+
+permalink: /:year/:month/:day/:title:output_ext
