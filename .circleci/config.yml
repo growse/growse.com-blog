@@ -5,13 +5,14 @@ jobs:
       only:
         - jekyll
     docker:
-      - image: circleci/ruby:2-stretch
+      - image: circleci/ruby:2.4.1-stretch
     environment:
      - JEKYLL_ENV: production
     steps:
       - checkout
       - restore_cache:
-          key: deps-{{ checksum "Gemfile.lock" }}
+          keys: 
+            - deps-{{ checksum "Gemfile.lock" }}
       - run: sudo apt-get install -y debsigs
       - run: echo $DEBSIGN | base64 -d | gpg --import
       - run: gem install bundler
