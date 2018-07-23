@@ -10,11 +10,12 @@ I then ran [atto benchmark](https://www.atto.com/disk-benchmark/):
 
 ### iSCSI
 
-![iSCSI]({% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png @path %})
+![iSCSI]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png @path %}" height="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png"].dimensions.height }}px" width="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png"].dimensions.width }}px"}
 
 ### 4GB FC
 
-![FC]({% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png @path %})
+![FC]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png @path %}" width="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png"].dimensions.width }}" height="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png"].dimensions.height }}"}
+
 
 So, fairly obviously, the iSCSI drive is bumping into the 1GbE network limitation, which has a theoretical max throughput of 125MB/s. The FC link has a limit of 500MB/s and it looks like that's getting closer to that. 
 
@@ -26,7 +27,8 @@ Of course, this is all deeply unscientific - I'm comparing a software target / i
 
 While I was there, I thought I'd compare the new 500GB target with my existing 1,329GB target. The disks in my NAS are all 4k sector disks, but the older target had been configured with 512-byte sectors. This means a) more operations needed for a given long write and b) the NAS was having to work to 'translate' 512-byte sector writes into 4k sector disks. The new target I created for this test was configured with 4k, so *in theory* should perform a little better. I ran the same test on my 512-byte sector FC target:
 
-![FC 512-byte]({% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png @path %})
+![FC 512-byte]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png @path %}" width="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png"].dimensions.width }}" height="{{ assets["2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png"].dimensions.height }}"}
+
 
 The biggest difference appears to be on write performance. Reads look about the same, but the 4k sector target shows roughly a doubling in throughput on larger writes, and even more dramatic improvement on smaller writes.
 

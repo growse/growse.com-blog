@@ -5,6 +5,9 @@ description: >
 baseurl: ""
 url: "https://www.growse.com"
 
+assets:
+  autosize: true
+
 monthly_archive:
   path: "/archive"
 

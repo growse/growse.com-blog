@@ -3,6 +3,7 @@
 //= require jquery.nanoscroller
 //= require jquery.timeago
 //= require jquery.dateFormat.min
+//= require lazysizes.min.js
 
 const growse = {
     searchEndpoint: "/search/",
