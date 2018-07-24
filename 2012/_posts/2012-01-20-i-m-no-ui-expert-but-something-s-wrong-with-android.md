@@ -6,11 +6,7 @@ I'm a big fan of Android. If you don't know what Android is, stop reading now.
 
 However, with this whole new ICS / Android v4.0 new UI paradigm thingie, I've noticed a problem. Take, for example, the new Google Music app running on my Samsung Galaxy SII.
 
-![Google music on Galaxy SII](http://img812.imageshack.us/img812/8052/googlemusic1web.png)
-
 Notice my giant, fat, stubby finger, waiting to pounce on any of the random UI elements that might be presented to me. Smart people will realise that right-handed people who hold their phone with one hand will vastly prefer to press buttons that are nearer the bottom right-hand corner of the screen than to the top left hand corner. This is why the most commonly-used soft button "back" is down there. Google have handily put the playback controls on the bottom as well. However, guess how I get back to the previous 'view', say if i wanted to go back to the current album list? That's right, I hit this button:
-
-![Google music on Galaxy SII WITH A BIG RED CIRCLE ON IT](http://img845.imageshack.us/img845/1796/googlemusic2web.png)
 
 See the problem? I can't reach it. That's not the only problem - there's now two buttons on my UI that mean 'back' but do different things. If I hit the conventional 'back' softkey in the bottom right, that just takes me back to the homescreen (if I get to music from the music widget). Basically, to view what else is in the application, I need either two hands or a remarkable amount of dexterity and hope that I don't drop the phone.
 

@@ -18,7 +18,7 @@ Much of the time, it's far more flexible to write a script, bung it in cron and 
 
 For example: the unbound script queries the unbound stats, parses them and adds into Graphite. Then you can draw cool graphs like this:
 
-![Unbound Statistics]({% asset 2012-08-19-graphite-omgz/graphite-omgz.png @path %})
+![Unbound Statistics]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2012-08-19-graphite-omgz/graphite-omgz.png @path %}" width="{{ assets["2012-08-19-graphite-omgz/graphite-omgz.png"].dimensions.width }}" height="{{ assets["2012-08-19-graphite-omgz/graphite-omgz.png"].dimensions.height }}"}
 
 This is two series, the left is:
 

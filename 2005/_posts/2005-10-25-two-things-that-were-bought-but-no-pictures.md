@@ -50,7 +50,7 @@ it's a bargain.
 
 Second thing I bought was slightly cheaper:
 
-![Buying things][2]
+![Buying things]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png @path %}" width="{{ assets["2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png"].dimensions.width }}" height="{{ assets["2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png"].dimensions.height }}"}
 
 Yes, it's an Apple keyboard. Only delivered today (grand cost of £19) so I've
 only had an hour to type on it.
@@ -68,7 +68,5 @@ Apart from that, lovely. I'm buying another one for work.
 Ahhhhhhhhhh.........
 
    [1]: http://web.archive.org/web/20080401080101/http://www.humaxdigital.com/global/products/pvr-9200t.asp
-
-   [2]: {% asset 2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png @path %}
 
    [3]: http://www.randyrants.com/sharpkeys/

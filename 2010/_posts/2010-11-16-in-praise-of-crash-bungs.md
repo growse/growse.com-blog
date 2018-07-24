@@ -29,16 +29,12 @@ Here's some pictures showing some of the damage the bungs picked up. They'll
 still work in future, but they'll just look a bit rubbish until I get them
 replaced.
 
-![Ow][4]
+![Ow]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg @path %}" width="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg"].dimensions.width }}" height="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg"].dimensions.height }}"}
 
-![More ow][5]
+![More ow]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg @path %}" width="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg"].dimensions.width }}" height="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg"].dimensions.height }}"}
 
    [1]: http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection (Crash bungs)
 
    [2]: http://www.rg-racing.com/ (R&G Racing)
 
    [3]: http://www.motorworks.co.uk (Motorworks)
-
-   [4]: {% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg @path %}
-
-   [5]: {% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg @path %}

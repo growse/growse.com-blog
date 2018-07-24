@@ -76,13 +76,13 @@ cable, I found it actually worked.
 A diagram would be really useful at this point, but I've got nowt to draw it
 in. Oh wait, there's MS paint.
 
-![diagram of something][2]
+![diagram of something]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-05-22-the-blob-box/blobbox-diagram1.gif @path %}" width="{{ assets["2004-05-22-the-blob-box/blobbox-diagram1.gif"].dimensions.width }}" height="{{ assets["2004-05-22-the-blob-box/blobbox-diagram1.gif"].dimensions.height }}"}
 
 After realising this, I just had to short out the battery connector in the
 bass with the connector I bought, and then shove 9V down the cable. The
 circuit I built for the box looked something like this:
 
-![diagram of something else][3]
+![diagram of something else]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-05-22-the-blob-box/blobbox-diagram2.gif @path %}" width="{{ assets["2004-05-22-the-blob-box/blobbox-diagram2.gif"].dimensions.width }}" height="{{ assets["2004-05-22-the-blob-box/blobbox-diagram2.gif"].dimensions.height }}"}
 
 I'm sure that's fairly self explanatory. There's a DPDT switch, which switches
 on/off, with an LED for each state. Yes, there's an LED to say that it's off.
@@ -98,26 +98,16 @@ some pictures.
 
 ## Pictures!!!!!! (Wow!!)
 
-![pretty picture][4]
+![pretty picture]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-05-22-the-blob-box/blobbox1.jpg @path %}" width="{{ assets["2004-05-22-the-blob-box/blobbox1.jpg"].dimensions.width }}" height="{{ assets["2004-05-22-the-blob-box/blobbox1.jpg"].dimensions.height }}"}
 
 It's off. So there's a light to tell you so.
 
-![pretty picture][5]
+![pretty picture]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-05-22-the-blob-box/blobbox2.jpg @path %}" width="{{ assets["2004-05-22-the-blob-box/blobbox2.jpg"].dimensions.width }}" height="{{ assets["2004-05-22-the-blob-box/blobbox2.jpg"].dimensions.height }}"}
 
 And now it's on, and lighting the room up.
 
-![pretty picture][6]
+![pretty picture]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-05-22-the-blob-box/blobbox3.jpg @path %}" width="{{ assets["2004-05-22-the-blob-box/blobbox3.jpg"].dimensions.width }}" height="{{ assets["2004-05-22-the-blob-box/blobbox3.jpg"].dimensions.height }}"}
 
 The 1/4" jack sockets on the side. I might label them at some point...
 
    [1]: http://www.maplin.co.uk
-
-   [2]: {% asset 2004-05-22-the-blob-box/blobbox-diagram1.gif @path %}
-
-   [3]: {% asset 2004-05-22-the-blob-box/blobbox-diagram2.gif @path %}
-
-   [4]: {% asset 2004-05-22-the-blob-box/blobbox1.jpg @path %}
-
-   [5]: {% asset 2004-05-22-the-blob-box/blobbox2.jpg @path %}
-
-   [6]: {% asset 2004-05-22-the-blob-box/blobbox3.jpg @path %}

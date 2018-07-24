@@ -6,8 +6,6 @@ title: "Another linky..."
 
 And......
 
-![http://www.math.mcgill.ca/~dsavitt/GTM/lang.jpg][2]
-
 If I were a Springer-Verlag Graduate Text in Mathematics, I would be Serge
 Lang's **_Algebraic Number Theory_**.
 
@@ -27,8 +25,6 @@ and the last chapter on explicit formulas has been rewritten.
 Which Springer GTM would _you_ be? [The Springer GTM Test][3]
 
    [1]: http://www.ibiblio.org/harris/500milemail.html
-
-   [2]: http://www.math.mcgill.ca/~dsavitt/GTM/lang.jpg
 
    [3]: http://www.math.mcgill.ca/~dsavitt/GTM.html
 

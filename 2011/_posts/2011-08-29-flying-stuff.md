@@ -23,9 +23,11 @@ the Universe that gravity looks the other way for a bit.
 No. This was sitting at the controls of a plane and MAKING IT DO WHAT I
 WANTED!!!!!!
 
-Specifically, it was sitting at the controls of (G-BUFR)[1], which is
+Specifically, it was sitting at the controls of (G-BUFR), which is
 (apparently) a Slingsby T61 Venture T2. The more eagle-eyed amongst you will
 notice, instantly, that this isn't actually a plane, but a motorised glider.
+
+![G-BUFR]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2011-08-29-flying-stuff/T61-G-BUFR.jpg @path %}" width="{{ assets["2011-08-29-flying-stuff/T61-G-BUFR.jpg"].dimensions.width }}" height="{{ assets["2011-08-29-flying-stuff/T61-G-BUFR.jpg"].dimensions.height }}"}
 
 This is where it gets interesting. A motorised glider is, depending on your
 perspective, a plane with wings that are a bit unsociably long, or a glider
@@ -54,6 +56,4 @@ you can really start to enjoy yourself.
 
 I can see myself doing this sort of thing some day. Maybe after I've mastered
 sailing. Sailing, I shall talk about soon.
-
-   [1]: {% asset 2011-08-29-flying-stuff/T61-G-BUFR.jpg @path %}
 

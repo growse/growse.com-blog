@@ -22,6 +22,6 @@ Realising I wouldn't get a lot for a broken bike, and not wanting to spend more 
 
 After turning up on the back of a lorry, sitting in my shed for two weeks, I found a free weekend to do the work:
 
-![Bike in bits]({% asset 2011-11-03-the-story-of-a-broken-bmw-bike/the-story-of-a-broken-bmw-bike.jpg @path %})
+![Bike in bits]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2011-11-03-the-story-of-a-broken-bmw-bike/the-story-of-a-broken-bmw-bike.jpg @path %}" width="{{ assets["2011-11-03-the-story-of-a-broken-bmw-bike/the-story-of-a-broken-bmw-bike.jpg"].dimensions.width }}" height="{{ assets["2011-11-03-the-story-of-a-broken-bmw-bike/the-story-of-a-broken-bmw-bike.jpg"].dimensions.height }}"}
 
 It only took around 10 hours to do, and everything seems to work perfectly after it's been put back together. I do have one or two bolts left over, I'm sure I'll find somewhere to put them....
