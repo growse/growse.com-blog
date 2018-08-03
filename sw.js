@@ -38,7 +38,7 @@ self.addEventListener("activate", function(e){
                 }).map(function(cacheName){
                     return cache.delete(cacheName);
                 })
-            )ß
+            );
         })
     )
 });
