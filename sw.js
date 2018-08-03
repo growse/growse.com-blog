@@ -8,6 +8,7 @@ console.log("installing service worker");
 const urlsToCache = [
     "/",
     "/comments/js/embed.min.js",
+    "/posts.json",
     {% for post in site.posts limit:10 %}
     "{{ post.url }}",
     {% endfor %}
@@ -34,7 +35,7 @@ self.addEventListener("activate", function(e){
             return Promise.all(
                 cacheNames.filter(function(cacheName){
                     return cacheName.startsWith(staticCachePrefix)
-                        && cacheName != staticCacheName;
+                        && cacheName !== staticCacheName;
                 }).map(function(cacheName){
                     return cache.delete(cacheName);
                 })
@@ -46,6 +47,7 @@ self.addEventListener("activate", function(e){
 self.addEventListener("fetch", function(e){
     e.respondWith(
         caches.match(e.request).then(function(response) {
+            console.info(`Fetching ${e} ${e.request}`);
             return response || fetch(e.request);
         })
     )
