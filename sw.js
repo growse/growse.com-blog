@@ -20,6 +20,7 @@ const urlsToCache = [
     "{% asset andada-400 @path %}"
 ];
 
+/* Start downloading the cache preempt list on install */
 self.addEventListener("install", function(e){
     self.skipWaiting();
     e.waitUntil(
@@ -29,6 +30,7 @@ self.addEventListener("install", function(e){
     )
 });
 
+/* Delete any old caches */
 self.addEventListener("activate", function(e){
     e.waitUntil(
         caches.keys().then(function(cacheNames){
@@ -44,11 +46,10 @@ self.addEventListener("activate", function(e){
     )
 });
 
-self.addEventListener("fetch", function(e){
-    e.respondWith(
-        caches.match(e.request).then(function(response) {
-            console.info(`Fetching ${e} ${e.request}`);
-            return response || fetch(e.request);
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        fetch(event.request).catch(function() {
+            return caches.match(event.request);
         })
-    )
+    );
 });
