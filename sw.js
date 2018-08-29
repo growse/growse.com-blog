@@ -1,5 +1,7 @@
 ---
-    ---
+layout: null
+---
+
 const staticCachePrefix = "growse.com-cache-";
 const staticCacheName = staticCachePrefix + "v1";
 
