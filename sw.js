@@ -11,12 +11,9 @@ const urlsToCache = [
     "/",
     "/comments/js/embed.min.js",
     "/posts.json",
-    { %
-for post in site.posts limit:10 %
-}
+    {% for post in site.posts limit:10 %}
 "{{ post.url }}",
-{ % endfor %
-}
+{% endfor %}
 "{% asset png-transparent.png @path %}",
     "{% asset critical.scss @path %}",
     "{% asset main.scss @path %}",
@@ -24,8 +21,7 @@ for post in site.posts limit:10 %
     "{% asset opensans-400 @path %}",
     "{% asset inconsolata-500 @path %}",
     "{% asset andada-400 @path %}"
-]
-;
+];
 
 /* Start downloading the cache preempt list on install */
 self.addEventListener("install", function (e) {
