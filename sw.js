@@ -9,7 +9,6 @@ console.log("installing service worker");
 
 const urlsToCache = [
     "/",
-    "/comments/js/embed.min.js",
     "/posts.json",
     {% for post in site.posts limit:10 %}
 "{{ post.url }}",
