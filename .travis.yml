@@ -3,6 +3,9 @@ cache: bundler
 rvm:
 - 2.4.1
 
+git:
+  depth: 5
+
 before_install:
 - sudo apt-get install -y debsigs
 - echo $DEBSIGN | base64 -d | gpg --import
