@@ -1,7 +1,5 @@
 language: ruby
 cache: bundler
-rvm:
-- 2.4.1
 
 git:
   depth: 5
@@ -12,7 +10,7 @@ before_install:
 
 script:
 - bundle exec jekyll b
-- bundle exec fpm -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.1-$TRAVIS_BUILD_NUMBER _site/=growse-jekyll
+- ./fpm.sh -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.1-$TRAVIS_BUILD_NUMBER _site/=growse-jekyll
 - debsigs --sign=origin --default-key=63F29D43F8F9E605 _site/growse-com-jekyll_1.0.1-"$TRAVIS_BUILD_NUMBER"_all.deb
 
 after_success:
