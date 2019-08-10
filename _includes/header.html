@@ -29,7 +29,18 @@
                 </fieldset>
             </form>
         </div>
-        <p>I'm on <a href="https://keybase.io/growse" title="Keybase">Keybase</a>.</p>
+        <div id="social-container">
+            <a href="https://twitter.com/growse">
+                <object class="social-logo" data="{% asset twitter.svg @path %}" type="image/svg+xml">
+                    I'm on twitter
+                </object>
+            </a>
+            <a href="https://keybase.io/growse">
+                <object class="social-logo" data="{% asset keybase.svg @path %}" type="image/svg+xml">
+                    I'm on keybase
+                </object>
+            </a>
+        </div>
         <div id="location">
         </div>
     </header>

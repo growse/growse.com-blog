@@ -54,6 +54,15 @@ html {
           width: 200px;
           font-weight: 400;
           float: right;
+          #social-container {
+            text-align: center;
+          }
+          .social-logo {
+            pointer-events: none;
+            margin: 4px;
+            width: 24px;
+            height: 24px;
+          }
           div {
             text-align: center;
             margin: 1em;
