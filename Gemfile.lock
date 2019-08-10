@@ -8,8 +8,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    arr-pm (0.0.10)
-      cabin (> 0)
     aws-eventstream (1.0.3)
     aws-sdk (2.11.330)
       aws-sdk-resources (= 2.11.330)
@@ -20,17 +18,11 @@ GEM
       aws-sdk-core (= 2.11.330)
     aws-sigv4 (1.1.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
-    backports (3.15.0)
-    cabin (0.9.0)
-    childprocess (0.9.0)
-      ffi (~> 1.0, >= 1.0.11)
-    clamp (1.0.1)
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
     deb-s3 (0.10.0)
       aws-sdk (~> 2)
       thor (~> 0.19.0)
-    dotenv (2.7.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -41,22 +33,9 @@ GEM
     fastimage (2.1.5)
     ffi (1.11.1)
     forwardable-extended (2.6.0)
-    fpm (1.11.0)
-      arr-pm (~> 0.0.10)
-      backports (>= 2.6.2)
-      cabin (>= 0.6.0)
-      childprocess (= 0.9.0)
-      clamp (~> 1.0.0)
-      ffi
-      json (>= 1.7.7, < 2.0)
-      pleaserun (~> 0.0.29)
-      ruby-xz (~> 0.2.3)
-      stud
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    insist (1.0.0)
-    io-like (0.3.0)
     jekyll (3.8.6)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -92,7 +71,6 @@ GEM
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jmespath (1.4.0)
-    json (1.8.6)
     kramdown (1.17.0)
     libv8 (3.16.14.19)
     liquid (4.0.3)
@@ -106,18 +84,10 @@ GEM
     mercenary (0.3.6)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    mustache (0.99.8)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    pleaserun (0.0.30)
-      cabin (> 0)
-      clamp
-      dotenv
-      insist
-      mustache (= 0.99.8)
-      stud
     public_suffix (3.1.1)
     rack (2.0.7)
     rb-fsevent (0.10.3)
@@ -125,9 +95,6 @@ GEM
       ffi (~> 1.0)
     ref (2.0.0)
     rouge (3.8.0)
-    ruby-xz (0.2.3)
-      ffi (~> 1.9)
-      io-like (~> 0.3)
     ruby_dep (1.5.0)
     safe_yaml (1.0.5)
     sass (3.7.4)
@@ -138,7 +105,6 @@ GEM
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    stud (0.0.23)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -155,7 +121,6 @@ PLATFORMS
 DEPENDENCIES
   deb-s3
   execjs (~> 2.7)
-  fpm
   jekyll
   jekyll-assets
   jekyll-feed
