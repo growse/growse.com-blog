@@ -1,5 +1,5 @@
 //= require highlight
-//= require jquery-3.1.1.min
+//= require jquery.min
 //= require jquery.nanoscroller
 //= require jquery.timeago
 //= require jquery.dateFormat.min
