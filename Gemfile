@@ -26,7 +26,7 @@ end
 gem "deb-s3"
 
 # Added at 2018-03-01 22:47:39 +0000 by growse:
-gem "uglifier", "~> 4.1"
+gem "uglifier", "~> 4.2"
 
 # Added at 2018-03-02 22:32:10 +0000 by growse:
 gem "execjs", "~> 2.7"
