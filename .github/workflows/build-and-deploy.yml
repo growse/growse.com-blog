@@ -19,3 +19,9 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Build Jekyll
         run: bundle exec jekyll b
+      - name: Get Build number
+        uses: einaregilsson/build-number@v1
+        with:
+          token: ${{secrets.github_token}}
+      - name: Make deb package
+        run: ./fpm.sh -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.2-$VERSION _site/=growse-jekyll
