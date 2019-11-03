@@ -22,9 +22,6 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
 end
 
-# Added at 2017-08-21 21:06:32 +0100 by growse:
-gem "deb-s3"
-
 # Added at 2018-03-01 22:47:39 +0000 by growse:
 gem "uglifier", "~> 4.1"
 

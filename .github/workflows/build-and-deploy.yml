@@ -38,13 +38,16 @@ jobs:
         with:
           ruby-version: 2.6.x
       - name: Install fpm and deb-s3
+        env:
+          BUNDLE_GEMFILE: Gemfile.deploy
         run: |
-          gem install fpm
-          gem install deb-s3
+          gem install bundler
+          bundle install --jobs 4 --retry 3
       - name: Get Build number
         uses: einaregilsson/build-number@v1
         with:
           token: ${{secrets.github_token}}
-
       - name: Make deb package
-        run: fpm.sh -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.2-$VERSION _site/=growse-jekyll
+        env:
+          BUNDLE_GEMFILE: Gemfile.deploy
+        run: bundle exec fpm -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.2-$VERSION _site/=growse-jekyll
