@@ -1,5 +1,4 @@
 ---
-layout: null
 ---
 
 const staticCachePrefix = "growse.com-cache-";
@@ -14,7 +13,6 @@ const urlsToCache = [
 "{{ post.url }}",
 {% endfor %}
 "{% asset png-transparent.png @path %}",
-    "{% asset critical.scss @path %}",
     "{% asset main.scss @path %}",
     "{% asset opensans-300 @path %}",
     "{% asset opensans-400 @path %}",

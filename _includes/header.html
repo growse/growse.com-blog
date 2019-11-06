@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} :: growse.com</title>
     <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>
-    <style rel="stylesheet">{% asset critical.scss @inline %}</style>
+    <style rel="stylesheet">
+        {% capture sass_file %}
+        {% include critical.scss %}
+        {% endcapture %}
+        {{ sass_file | scssify | strip_newlines }}
+    </style>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% asset apple-touch-icon.png @path %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% asset favicon-32x32.png @path %}">

@@ -1,6 +1,11 @@
-name: Build and deploy
+name: Build, package and upload
 on:
-  - push
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -28,6 +33,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name != 'pull_request'
     steps:
       - name: Download site artifact
         uses: actions/download-artifact@v1

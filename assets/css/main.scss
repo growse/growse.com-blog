@@ -1,12 +1,24 @@
+---
+---
+
 @import 'vars';
 @import 'nanoscroller';
 @import 'solarizeddark';
 @import 'mixins';
 @import 'fonts';
 
+@import "vars";
 html {
+
+
   body {
     #container {
+      a {
+        img {
+          border: 0;
+        }
+      }
+
       @media screen and (max-width: 1023px) {
         nav {
           display: none;
@@ -21,13 +33,16 @@ html {
           width: $lefthandwidth;
           padding: 0;
           height: 100%;
+
           ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+
             li {
               background: #111;
               @include prefixtime('box-shadow', '0px 2px 2px rgba(10, 10, 10, 0.75)');
+
               a {
                 //outline: solid ;
                 font-family: $navlinkfont;
@@ -54,21 +69,31 @@ html {
           width: 200px;
           font-weight: 400;
           float: right;
+
           #social-container {
             text-align: center;
           }
+
           .social-logo {
             pointer-events: none;
             margin: 4px;
             width: 24px;
             height: 24px;
           }
+
+          p {
+            font-size: 0.7rem;
+            text-align: center;
+          }
+
           div {
             text-align: center;
             margin: 1em;
           }
+
           h1 {
             text-align: center;
+
             a {
               font-weight: 400;
               font-family: $pagetitlefont;
@@ -76,6 +101,7 @@ html {
               color: $primary-highlight-color;
             }
           }
+
           h2 {
             text-align: center;
             font-family: $subheadlinefont;
@@ -83,18 +109,17 @@ html {
             font-weight: 300;
             line-height: 1.0rem;
           }
-          p {
-            font-size: 0.7rem;
-            text-align: center;
-          }
+
           fieldset {
             border: 0;
+
             input {
               padding: 0.5em;
               background-color: $background-hl-color;
               width: 10em;
             }
           }
+
           input#searchbox {
             font-family: $formfont;
             border-width: 0 1px 1px 1px;
@@ -112,12 +137,8 @@ html {
           }
         }
       }
+
       #content {
-        &.nonav {
-          margin-left: 0;
-        }
-        background-color: $background-color;
-        height: 100%;
         @media screen and (max-width: 767px) {
           margin: 0;
         }
@@ -133,13 +154,16 @@ html {
         @media screen and (min-width: 768px) {
           padding: 2rem;
         }
+        background-color: $background-color;
+        height: 100%;
+
+        &.nonav {
+          margin-left: 0;
+        }
+
         article {
           header {
-            width: auto;
-            height: auto;
-            float: none;
-            background: none;
-            min-height: 5rem;
+
             @media screen and (max-width: 767px) {
               h1 {
                 text-align: left;
@@ -159,15 +183,6 @@ html {
               }
             }
             @media screen and (min-width: 768px) {
-              h1 {
-                text-align: left;
-                font-family: $headlinefont;
-                margin: 0 0 1rem 0;
-                font-size: 2.5rem;
-                color: $primary-highlight-color;
-                font-weight: 300;
-              }
-
               time.plain {
                 display: none;
               }
@@ -177,11 +192,11 @@ html {
                 float: right;
                 width: 5rem;
                 height: 4rem;
+
                 p {
                   @include prefixtime('box-shadow', '0px 0px 6px rgba(0,0,0,0.3);');
                   background: $background-hl-color;
                   font-size: 1rem;
-                  font-size: 16px;
                   font-weight: normal;
                   font-family: $datefont;
                   text-align: center;
@@ -191,6 +206,7 @@ html {
                   margin: 0;
                   padding: 0;
                   border-radius: 5px;
+
                   span {
                     color: $font-color;
                     background: #444;
@@ -200,6 +216,7 @@ html {
                     display: block;
                     padding: 0 0 0 0;
                   }
+
                   span.year {
                     border-radius: 0 0 5px 5px;
                     font-size: 0.85rem;
@@ -213,9 +230,7 @@ html {
               }
             }
           }
-          img {
-            max-width: 100%;
-          }
+
           pre {
             code {
               font-family: $monospacefont;
@@ -230,46 +245,42 @@ html {
               margin: 1em 0;
             }
           }
-          code {
-            border: 1px solid #556;
-            padding: 2px;
-            font-family: $monospacefont;
-            background: #223;
-          }
-          section {
-            line-height: 1.6em;
-          }
-          h2 {
-            font-family: $articlesectionheadingfont;
-          }
+
         }
+
         #searchresults {
           nav {
             #paginator {
               float: right;
             }
           }
+
           ol {
             padding: 0;
             list-style-type: none;
+
             li {
               article.searchresult {
                 padding: 0;
                 margin: 0 0 4rem 0;
+
                 header {
                   min-height: 0;
+
                   time {
                     float: right;
                     width: auto;
                     height: auto;
                     font-size: 0.7rem;
                   }
+
                   h2 {
                     font-weight: 400;
                     text-align: left;
                     font-size: 1.5rem;
                   }
                 }
+
                 mark {
                   background-color: transparent;
                   color: inherit;
@@ -281,25 +292,8 @@ html {
         }
       }
 
-      input {
-        margin: 0;
-        padding: 2px;
-        color: $font-color;
-        font-size: 0.8rem;
-        border: 1px solid #666;
-        font-family: $formfont;
-        background: $background-color;
-      }
-
       iframe {
         border: 0;
-      }
-
-      footer {
-        font-size: 0.8rem;
-        background-color: $background-hl-color;
-        padding: 10px;
-        text-align: right;
       }
 
       .right {
@@ -354,11 +348,6 @@ html {
         font-size: 11px;
       }
 
-      .nano > .nano-pane {
-        background: $background-hl-color;
-        -webkit-border-radius: 0;
-        border-radius: 0;
-      }
 
       .nano > .nano-slider {
         background: #fff;

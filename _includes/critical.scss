@@ -1,0 +1,99 @@
+@import "vars";
+
+html {
+  font-size: 100%;
+
+  body {
+    font-size: 1.0rem;
+    font-family: $bodyfont;
+    color: $font-color;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    background-color: $background-hl-color;
+    line-height: 1.625;
+    -webkit-font-smoothing: antialiased;
+
+    #container {
+      background: $background-hl-color;
+      text-align: left;
+      vertical-align: middle;
+      margin: 0;
+      padding: 0;
+
+      a {
+        text-decoration: none;
+        color: $secondary-highlight-color;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      input {
+        margin: 0;
+        padding: 2px;
+        color: $font-color;
+        font-size: 0.8rem;
+        border: 1px solid #666;
+        font-family: $formfont;
+        background: $background-color;
+      }
+
+      #content {
+        article {
+          header {
+            width: auto;
+            height: auto;
+            float: none;
+            background: none;
+            min-height: 5rem;
+            @media screen and (min-width: 768px) {
+              h1 {
+                text-align: left;
+                font-family: $headlinefont;
+                margin: 0 0 1rem 0;
+                font-size: 2.5rem;
+                color: $primary-highlight-color;
+                font-weight: 300;
+              }
+            }
+          }
+
+          code {
+            border: 1px solid #556;
+            padding: 2px;
+            font-family: $monospacefont;
+            background: #223;
+          }
+
+          section {
+            line-height: 1.6em;
+          }
+
+          h2 {
+            font-family: $articlesectionheadingfont;
+          }
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .nano > .nano-pane {
+        background: $background-hl-color;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        background-color: $background-hl-color;
+        padding: 10px;
+        text-align: right;
+      }
+    }
+  }
+}

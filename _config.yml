@@ -1,4 +1,4 @@
-title: Pointless musings
+title: growse.com Pointless musings
 email: $"RFC3696"IS\\Best RFC=hurray@growse.com
 description: >
   DESCRIPTIONG
@@ -6,7 +6,21 @@ baseurl: ""
 url: "https://www.growse.com"
 
 assets:
+  digest: true
+  compress:
+    js: true
+    css: true
   autosize: true
+  sources:
+    - _assets/css
+    - _assets/fonts
+    - _assets/images
+    - _assets/videos
+    - _assets/javascript
+    - _assets/video
+    - _assets/image
+    - _assets/img
+    - _assets/js
 
 monthly_archive:
   path: "/archive"
@@ -21,5 +35,6 @@ exclude:
   - Gemfile.lock
   - "*.iml"
   - vendor
+  - .idea
 
 permalink: /:year/:month/:day/:title:output_ext

@@ -17,16 +17,9 @@ gem "jekyll"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem 'jekyll-assets', :git => 'https://github.com/kou/jekyll-assets.git', :branch => 'add-support-for-sprockets-4.0'
+  gem 'jekyll-sanity', :git => 'https://github.com/envygeeks/jekyll-sanity.git'
+  gem 'sass'
   gem "jekyll-feed"
-  gem "jekyll-assets"
   gem "jekyll-sitemap"
 end
-
-# Added at 2018-03-01 22:47:39 +0000 by growse:
-gem "uglifier", "~> 4.1"
-
-# Added at 2018-03-02 22:32:10 +0000 by growse:
-gem "execjs", "~> 2.7"
-
-# Added at 2018-03-02 22:32:20 +0000 by growse:
-gem "therubyracer", "~> 0.12.3"
