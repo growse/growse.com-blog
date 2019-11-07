@@ -22,6 +22,12 @@ html {
       margin: 0;
       padding: 0;
 
+      header {
+        fieldset {
+          border:0;
+        }
+      }
+
       a {
         text-decoration: none;
         color: $secondary-highlight-color;

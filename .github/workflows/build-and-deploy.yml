@@ -33,7 +33,12 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: Gemfile.deploy
-          path: Gemfile.deploy*
+          path: Gemfile.deploy
+      - name: Upload Gemfile.deploy.lock
+        uses: actions/upload-artifact@v1
+        with:
+          name: Gemfile.deploy.lock
+          path: Gemfile.deploy.lock
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -44,10 +49,14 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: site-dir
-      - name: Download site artifact
+      - name: Download Gemfile.deploy artifact
         uses: actions/download-artifact@v1
         with:
           name: Gemfile.deploy
+      - name: Download gemfile.deploy.lock artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: Gemfile.deploy.lock
       - name: Set up Ruby 2.6
         uses: actions/setup-ruby@v1
         with:
