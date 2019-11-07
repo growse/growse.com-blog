@@ -29,34 +29,18 @@ jobs:
         with:
           name: site-dir
           path: _site/
-      - name: Upload Gemfile.deploy
-        uses: actions/upload-artifact@v1
-        with:
-          name: Gemfile.deploy
-          path: Gemfile.deploy
-      - name: Upload Gemfile.deploy.lock
-        uses: actions/upload-artifact@v1
-        with:
-          name: Gemfile.deploy.lock
-          path: Gemfile.deploy.lock
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name != 'pull_request'
     steps:
+      - name: Check out code
+        uses: actions/checkout@v1
       - name: Download site artifact
         uses: actions/download-artifact@v1
         with:
           name: site-dir
-      - name: Download Gemfile.deploy artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: Gemfile.deploy
-      - name: Download gemfile.deploy.lock artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: Gemfile.deploy.lock
       - name: Set up Ruby 2.6
         uses: actions/setup-ruby@v1
         with:
