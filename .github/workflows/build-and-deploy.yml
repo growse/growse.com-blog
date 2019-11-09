@@ -58,4 +58,4 @@ jobs:
       - name: Make deb package
         env:
           BUNDLE_GEMFILE: Gemfile.deploy
-        run: bundle exec fpm -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p _site -a noarch  -v 1.0.2-$VERSION _site/=growse-jekyll
+        run: bundle exec fpm -s dir -t deb -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p site-dir -a noarch  -v 1.0.2-$VERSION site-dir/=growse-jekyll
