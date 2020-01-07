@@ -2,7 +2,7 @@
 layout: post
 title: "Abandonment of resolutions"
 ---
-Last year, I made [some new year's resolutions](http://www.growse.com/news/comments/some-kind-of-new-thing-for-the-new-year-and-all-that/) in which I decided that I would get certain things done during the year.
+Last year, I made [some new year's resolutions](/2011/01/16/some-kind-of-new-thing-for-the-new-year-and-all-that.html) in which I decided that I would get certain things done during the year.
 
 Some of these, I managed to do, mostly through inevitability (see, buying a house), or through actually trying (porting this site to Django). Many I didn't do at all. But there's good reasons for all of these (I count 'laziness' as a good reason).
 

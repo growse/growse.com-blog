@@ -2,7 +2,7 @@
 layout: post
 title: "Europe, and permanently not Z1000"
 ---
-Following on from [my previous post](/2015/07/08/temporarily-z1000/) about having a loan bike, and that loan bike being a Kawasaki Z1000, a number of things have since happened. I had the loaner because someone decided it would be fun to drive into the side of my bike with me still on it.
+Following on from [my previous post](/2015/07/08/temporarily-z1000.html) about having a loan bike, and that loan bike being a Kawasaki Z1000, a number of things have since happened. I had the loaner because someone decided it would be fun to drive into the side of my bike with me still on it.
 
 Many, many interesting things have happened. Firstly, the company repairing my bike went into administration. This has caused the insurance company loaning me the Z1000 to get fed up and take it back. This then caused an epic scrabble by my insurance company to get me a bike to go to Europe with.
 

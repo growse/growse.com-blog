@@ -16,8 +16,7 @@ infested Windows XP desktops which repeatedly attempt to connect to my
 mailserver in the hope that they might actually put some gibberish in front of
 my face that may entice me into spending some money on Viagra. I've a plan!
 
-   [1]: http://www.growse.com/news/comments/spammage-more-of-it-loads-of-it-
-yay/
+   [1]: /2010/01/19/spammage-more-of-it-loads-of-it-yay.html
 
-   [2]: /projects/spamwatch/
+   [2]: /2009/01/19/spamwatch.html
 

@@ -10,5 +10,5 @@ letterhead. I think I might put "Getting money out of a phone company" down in
 my list of things to be done before I'm 35, just after "Get a job" and before
 "Win the lottery".And something blue arrived in the post. Pretty :)
 
-   [1]: http://www.singlepoint4u.co.uk" target="_blank_
+   [1]: http://www.singlepoint4u.co.uk
 

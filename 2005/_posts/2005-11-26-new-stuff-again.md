@@ -16,14 +16,14 @@ assuming it's plugged in. I soon mastered the technique:
 
 After doing one or two and generally getting the hang of it, I did a few here
 and there. Some were crap, some were ok - I put the ok ones up in the magic
-[Videos][1] section. At some point I'll put pictures as the links instead of
+videos section. At some point I'll put pictures as the links instead of
 text showing exactly what's going on. Can't be arsed at the moment.
 
 Now I'm going to talk about my day.
 
 First thing I found out this morning is that my project has raised a purchase
 order of around 246,000.00 CHF (that's 108,761.48 GBP according to
-[xe.com][2]) of which about half was for the wrong stuff. Whether that money
+[xe.com][1]) of which about half was for the wrong stuff. Whether that money
 has been spent yet, I don't know. Anyway, I've now got to figure out exactly
 how many licences for Microsoft SQL server I need bearing in mind they come in
 two different flavours (one about £5k and the other being about £15k). This
@@ -39,7 +39,5 @@ rather a lot of bandwidth. So next week is going to be fun.
 And I'm getting seriously pissed off with this keyboard. I will actually break
 it. Maybe. I'll buy a new one first. Yes.
 
-   [1]: http://www.growse.com/videos/
-
-   [2]: http://www.xe.com
+   [1]: http://www.xe.com
 

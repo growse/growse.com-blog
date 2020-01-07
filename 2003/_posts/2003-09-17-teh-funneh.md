@@ -7,5 +7,5 @@ the pub and the next morning seeing what artwork I created on receipts are too
 many to count. They all certainly look nothing like my signature.Roll on the
 pin-number scheme.
 
-   [1]: http://www.zug.com/pranks/credit/" target="_blank_
+   [1]: http://www.zug.com/pranks/credit/
 

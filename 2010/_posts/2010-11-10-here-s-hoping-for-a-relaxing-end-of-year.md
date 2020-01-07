@@ -16,16 +16,13 @@ only to have it suddenly start be expensive on me.
 Hopefully, all of this will change. Soon I'll be in a new house. With a new
 TV. And then I'll go skiing. Because that's awesome.
 
-And if anyone's paying attention, I'm going to be singing [Britten's War
-Requiem][2] in [Coventry Cathedral][3] this Saturday to commemorate the 70th
+And if anyone's paying attention, I'm going to be singing [Britten's War Requiem][2] in [Coventry Cathedral][3] this Saturday to commemorate the 70th
 anniversary of it being bombed. 'Epic' doesn't come close to describing what
 that'll be like.
 
-   [1]: http://www.growse.com/news/comments/big-things-very-big-things/ (Big
-Things. Very big things.)
+   [1]: /2010/04/26/big-things-very-big-things.html
 
-   [2]: http://www.growse.com/news/comments/big-things-very-big-things/ (War
-Requiem)
+   [2]: /2010/04/26/big-things-very-big-things.html
 
-   [3]: http://en.wikipedia.org/wiki/Coventry_Cathedral (Coventry Cathedral)
+   [3]: http://en.wikipedia.org/wiki/Coventry_Cathedral
 

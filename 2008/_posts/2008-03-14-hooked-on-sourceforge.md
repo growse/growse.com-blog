@@ -17,7 +17,7 @@ from [Fitzbillies][5] - should make me suitably popular in the office. :)
 
    [3]: http://psplant.sourceforge.net
 
-   [4]: http://www.growse.com/news/comments/feedling-again/
+   [4]: /2008/02/27/feedling-again.html
 
    [5]: http://www.fitzbillies.co.uk/v2/index.php
 

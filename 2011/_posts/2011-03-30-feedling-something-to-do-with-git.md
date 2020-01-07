@@ -16,9 +16,8 @@ things with the service that I want to, but I like its simplicity so far.
 Highly recommended.
 
    [1]: https://github.com/downloads/growse/Feedling/Feedling_Installer.msi
-(Feedling v0.8)
 
-   [2]: https://github.com/growse/Feedling (Feedling)
+   [2]: https://github.com/growse/Feedling
 
-   [3]: http://github.com (Github)
+   [3]: http://github.com
 

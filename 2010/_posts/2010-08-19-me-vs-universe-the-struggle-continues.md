@@ -26,5 +26,5 @@ hope to sort this out at the weekend. Much fun will then be had.
 I'm sad the summer had gone so quickly and that I seem to have done nothing
 with it. Maybe I'm just getting old and grumpy.
 
-   [1]: http://www.growse.com/news/comments/brrrm-brrrrrrrrrrrrrmmmmmm/
+   [1]: /2009/09/28/brrrm-brrrrrrrrrrrrrmmmmmm.html
 

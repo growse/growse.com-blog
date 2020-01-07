@@ -12,5 +12,5 @@ hall in the middle of the first bar. Sensibly, they started again.I also made
 an important discovery today - I need more money. But at least this time in
 two days I'll be in Spain :-)
 
-   [1]: http://www.bbc.co.uk/radio3/" target="_blank_
+   [1]: http://www.bbc.co.uk/radio3/
 

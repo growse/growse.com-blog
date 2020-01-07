@@ -22,5 +22,5 @@ For anyone that might be bothered, I've got to be up early tomorrow and I'm
 not feeling particularly 100% (more like 4%) so I might just go get lots and
 lots of shut-eye.
 
-   [1]: http://www.crucial.com/uk" target="_blank_
+   [1]: http://www.crucial.com/uk
 

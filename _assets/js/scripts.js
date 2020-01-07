@@ -6,8 +6,8 @@
 //= require lazysizes.min.js
 
 const growse = {
-    searchEndpoint: "/search/",
-    locationEndpoint: "/location/",
+    searchEndpoint: "https://www.growse.com/search/",
+    locationEndpoint: "https://www.growse.com/location/",
     getLocation: function () {
         $.getJSON(this.locationEndpoint, function (data) {
             $(document).ready(function () {
@@ -60,7 +60,7 @@ const growse = {
             $.get('/posts.json', function (data) {
                 $(document).ready(function () {
                     data.posts.forEach(function (d) {
-                        $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url == d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
+                        $("#articlenav").append("<li data-datestamp=\"" + d.date + "\" data-id=\"" + d.title + "\"><a " + (post_url === d.url ? "class=\"here\"" : "") + " href=\"" + d.url + "\" title=\"" + d.title + "\"><span>" + d.title + "</span></a> </li>");
                     });
                     //Scroll the left nav to the right point.
                     const hereClass = '.here';
@@ -87,9 +87,9 @@ growse.getLocation();
 growse.getPostList();
 
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js").then(function(registration) {
+    navigator.serviceWorker.register("/sw.js").then(function (registration) {
         console.log("Service Worker registration successful with scope: ", registration.scope);
-    }).catch(function(err) {
+    }).catch(function (err) {
         console.log("Service Worker registration failed: ", err);
     });
 }

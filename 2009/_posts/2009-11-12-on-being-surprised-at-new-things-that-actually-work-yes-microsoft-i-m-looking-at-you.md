@@ -44,9 +44,9 @@ controls, such as NotifyIcon, a decent color picker, any sort of font chooser
 etc. You have to steal these from winforms still. That said, it's a better app
 now, and mostly that's Microsoft's doing.
 
-   [1]: http://www.growse.com/projects/feedling/
+   [1]: /2008/02/26/feedling-an-rss-reader.html
 
-   [2]: http://www.growse.com/news/comments/hooked-on-sourceforge/
+   [2]: /2008/03/14/hooked-on-sourceforge.html
 
    [3]: http://www.codeproject.com/KB/GDI-plus/perpxalpha_sharp.aspx
 

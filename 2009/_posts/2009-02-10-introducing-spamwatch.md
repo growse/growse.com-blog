@@ -20,9 +20,9 @@ cursing later I got something working, and I've put the results over at
 [SpamWatch][3]. I'm not quite sure what the purpose of this is, or what the
 graph is meant to show. I'll think of something.
 
-   [1]: http://www.growse.com/news/comments/wonderful-spam/
+   [1]: /2008/08/21/wonderful-spam.html
 
    [2]: http://www.amcharts.com/
 
-   [3]: http://www.growse.com/projects/spamwatch/
+   [3]: /2009/01/19/spamwatch.html
 
