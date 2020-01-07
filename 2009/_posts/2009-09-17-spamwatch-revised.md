@@ -23,9 +23,9 @@ So far, it seems to be working. It's been a couple of days and my syslog table
 is 50,000 lines long. Now I need to get some numbers out of it and compare
 them to what I'm getting from the old fudge-and-gaffer-tape way.
 
-   [1]: http://www.growse.com/news/comments/introducing-spamwatch/
+   [1]: /2009/02/10/introducing-spamwatch.html
 
-   [2]: http://www.growse.com/projects/spamwatch/
+   [2]: /2009/01/19/spamwatch.html
 
    [3]: http://www.rsyslog.com/
 

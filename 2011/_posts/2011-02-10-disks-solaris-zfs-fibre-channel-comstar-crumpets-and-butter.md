@@ -93,16 +93,16 @@ any shouting, spend a lot of money. If you like a lot of head-scratching,
 shouting, reading and a general sense of achievement when it does all work,
 build it yourself.
 
-   [1]: http://xbmc.org/ (xbmc)
+   [1]: http://xbmc.org/
 
-   [2]: http://en.wikipedia.org/wiki/ZFS (ZFS)
+   [2]: http://en.wikipedia.org/wiki/ZFS
 
-   [3]: http://www.growse.com/news/comments/django-awesomeness/ (Django.Awesomeness.)
+   [3]: /2010/11/03/django-awesomeness.html
 
    [4]: http://www.xcase.co.uk/X-Case-RM-420-Hotswap-4u-p/case-rm420.htm
 (X-case RM420)
 
-   [5]: http://nexenta.org/ (Nexenta)
+   [5]: http://nexenta.org/
 
    [6]: http://serverfault.com/questions/230427/solaris-fibre-channel-target-configure-qlogic-qla2340
 

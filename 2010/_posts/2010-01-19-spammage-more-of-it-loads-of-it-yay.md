@@ -49,5 +49,5 @@ spamd filter. It'll be interesting finding out.
 
    [3]: http://www.openbsd.org/
 
-   [4]: http://www.growse.com/projects/spamwatch/
+   [4]: /2009/01/19/spamwatch.html
 

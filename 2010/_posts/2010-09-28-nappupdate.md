@@ -36,13 +36,13 @@ Windows Update. You just can't use it.
 
 Microsoft: WHY!!!!???
 
-   [1]: http://en.wikipedia.org/wiki/ClickOnce (ClickOnce)
+   [1]: http://en.wikipedia.org/wiki/ClickOnce
 
-   [2]: http://msdn.microsoft.com/en-us/library/ff650611.aspx (Application Updater Block)
+   [2]: http://msdn.microsoft.com/en-us/library/ff650611.aspx
 
-   [3]: http://www.code972.com/blog/2010/08/nappupdate-application-auto-update-framework-for-dotnet/ (NAppUpdate)
+   [3]: http://www.code972.com/blog/2010/08/nappupdate-application-auto-update-framework-for-dotnet/
 
-   [4]: http://feedling.sourceforge.net (Feedling)
+   [4]: http://feedling.sourceforge.net
 
-   [5]: http://en.wikipedia.org/wiki/Advanced_Packaging_Tool (apt)
+   [5]: http://en.wikipedia.org/wiki/Advanced_Packaging_Tool
 

@@ -33,8 +33,8 @@ replaced.
 
 ![More ow]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg @path %}" width="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg"].dimensions.width }}" height="{{ assets["2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg"].dimensions.height }}"}
 
-   [1]: http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection (Crash bungs)
+   [1]: http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection
 
-   [2]: http://www.rg-racing.com/ (R&G Racing)
+   [2]: http://www.rg-racing.com/
 
-   [3]: http://www.motorworks.co.uk (Motorworks)
+   [3]: http://www.motorworks.co.uk

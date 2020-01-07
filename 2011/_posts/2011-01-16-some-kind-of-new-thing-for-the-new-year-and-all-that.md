@@ -36,15 +36,13 @@ year.
 And that's it. I'll probably get to December and find that I've done none of
 these things. Hope not.
 
-   [1]: http://www.growse.com/news/comments/me-vs-universe-the-struggle-
-continues/ (Me vs Universe. The struggle continues)
+   [1]: /2010/08/19/me-vs-universe-the-struggle-continues.html
 
    [2]: http://www.djangoproject.com/
 
-   [3]: http://www.growse.com/news/comments/django-awesomeness/ (Django.
-Awesomeness.)
+   [3]: /2013/11/03/django-updates-and-thingies.html
 
-   [4]: http://en.wikipedia.org/wiki/South_Downs_Way (South Downs Way)
+   [4]: http://en.wikipedia.org/wiki/South_Downs_Way
 
-   [5]: http://feedling.sourceforge.net/ (Feedling)
+   [5]: http://feedling.sourceforge.net/
 

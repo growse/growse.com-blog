@@ -45,7 +45,7 @@ hugely shielded from the amount of lifting that goes on under the covers (all
 of which adds to latency and hurts performance) but everything feels
 lightweight, efficient and easy. I like it.
 
-   [1]: http://en.wikipedia.org/wiki/Sun_Microsystems (Sun Microsystems)
+   [1]: http://en.wikipedia.org/wiki/Sun_Microsystems
 
    [2]: http://www.oracle.com (Oracle)
 
@@ -55,8 +55,7 @@ lightweight, efficient and easy. I like it.
 
    [5]: http://sstallion.blogspot.com/2010/08/opensolaris-is-dead.html
 
-   [6]:
-http://www.basementcoders.com/transcripts/James_Gosling_Transcript.html
+   [6]: http://www.basementcoders.com/transcripts/James_Gosling_Transcript.html
 
    [7]: http://video.google.com/videoplay?docid=6297126166376226181#
 

@@ -10,5 +10,5 @@ opportunity :)To add to that, I was in a theatre all day yesterday (doing a
 tech) and will be for bits of this week. Hurrah!That, and I've got far too
 much work to do.
 
-   [1]: http://www.reducedshakespeare.co.uk/" target="_blank_
+   [1]: http://www.reducedshakespeare.co.uk/
 

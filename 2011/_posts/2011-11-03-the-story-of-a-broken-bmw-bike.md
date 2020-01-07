@@ -2,7 +2,7 @@
 layout: post
 title: "The story of a broken BMW bike"
 ---
-As i may have hinted at [last time](http://www.growse.com/news/comments/random-bits-and-bobs/), I've been having a couple of issues with my motorbike. It serves a very useful purpose in my life, specifically allowing me to get to work in under an hour and for only £20's worth of petrol a week. Contrast this to the train which is £20 per day, and takes 90 mins each way.
+As i may have hinted at [last time](/2011/10/03/random-bits-and-bobs.html), I've been having a couple of issues with my motorbike. It serves a very useful purpose in my life, specifically allowing me to get to work in under an hour and for only £20's worth of petrol a week. Contrast this to the train which is £20 per day, and takes 90 mins each way.
 
 Therefore, when it decided to suffer from total and complete engine failure about a month ago, I was a little stuck. There were many things that were annoying about this situation, but the most annoying aspect was the total lack of help that BMW appeared to want to offer me. 
 

@@ -20,7 +20,7 @@ Of course, what is now likely to happen is that I actually buy it, and then
 I'll hate it in about 2 months for whatever reason. Still, nothing like living
 in the present.
 
-   [1]: http://www.growse.com/news/comments/picsie-reborn/
+   [1]: /2006/11/28/picsie-reborn.html
 
    [2]: http://www.adobe.com/products/photoshoplightroom/
 

@@ -39,7 +39,7 @@ I could buy in my local shop (quite a lot of them), but then I decided I would
 get amazingly large amazingly quickly. So I binned that idea.
 
 I'm out of things to say. Nothing's happening at work, things are slowly
-progressing on the [PSPlant][5] front but we can't do much until the new host
+progressing on the PSPlant front but we can't do much until the new host
 is up and I have no cake. Must buy some cake.
 
    [1]: http://www.register1.net
@@ -49,6 +49,4 @@ is up and I have no cake. Must buy some cake.
    [3]: http://www.coverpop.com/whitney/index.php?var=v0
 
    [4]: http://www.benjerry.com/
-
-   [5]: http://www.growse.com/projects/psplant/
 

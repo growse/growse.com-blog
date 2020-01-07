@@ -2,7 +2,7 @@
 layout: post
 title: "Feedling, WPF and making stuff look pretty"
 ---
-One of my [new year's resolutions](http://www.growse.com/news/comments/some-kind-of-new-thing-for-the-new-year-and-all-that/) was to release a stable release of [Feedling](http://feedling.net). I have both good news and bad news to report: The bad news is that this isn't going to happen this year. The good news is that there's a very good reason for that.
+One of my [new year's resolutions](/2011/01/16/some-kind-of-new-thing-for-the-new-year-and-all-that.html) was to release a stable release of [Feedling](http://feedling.net). I have both good news and bad news to report: The bad news is that this isn't going to happen this year. The good news is that there's a very good reason for that.
 
 It's not for lack of trying. I've done a fair amount of work in the little free time I've had this year, and I've both learned a lot and made it a better piece of software. All good things. However, the single biggest problem with it so far is that it's got an awful looking UI. 
 

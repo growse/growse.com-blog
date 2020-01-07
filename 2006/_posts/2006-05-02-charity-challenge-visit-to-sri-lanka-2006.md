@@ -20,8 +20,6 @@ application, awaited the departure date. We were joined at the airport by 6
 people from [Martin Currie][5], an Investment Management company based in
 Edinburgh. Our total number was therefore 19.
 
-Pictures collection is [here][6].
-
 It was at some point between travelling to the airport and landing there I
 decided to keep a short journal of the week, mainly for my benefit as I didn't
 really want to forget what it was like. As these entries were made at the end
@@ -218,6 +216,4 @@ station, the journey home was fairly uneventful.
    [4]: http://www.reuters.com/
 
    [5]: http://www.martincurrie.com/
-
-   [6]: http://photos.growse.com/2006-04 - sri lanka
 

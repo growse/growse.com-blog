@@ -55,7 +55,7 @@ heavy, but great.
 
 And that concludes the news.
 
-   [1]: /news/comments/the-joy-of-beer/ (The Joy Of Beer)
+   [1]: /news/comments/the-joy-of-beer/
 
    [2]: http://en.wikipedia.org/wiki/Java_Persistence_API
 

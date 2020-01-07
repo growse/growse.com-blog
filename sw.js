@@ -49,7 +49,7 @@ self.addEventListener("activate", function (e) {
 /* Cache, then network, then generic */
 self.addEventListener('fetch', function (event) {
     const url = event.request.url;
-
+    console.log(event);
     event.respondWith(
         // Try the cache
         caches.match(event.request).then(function (response) {
