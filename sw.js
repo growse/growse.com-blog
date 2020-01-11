@@ -9,20 +9,18 @@ console.log("installing service worker");
 const urlsToCache = [
     "/",
     "/posts.json",
-    {% for post in site.posts limit:10 %}
-"{{ post.url }}",
-{% endfor %}
-"{% asset png-transparent.png @path %}",
-    "{% asset main.scss @path %}",
-    "{% asset opensans-300 @path %}",
-    "{% asset opensans-400 @path %}",
-    "{% asset inconsolata-500 @path %}",
-    "{% asset andada-400 @path %}"
+//     {% assign font_files = site.static_files | where: "font", true %}
+//     {% for font in font_files %}
+//     "{{font.path}}",
+//     {% endfor %}
+//     {% for post in site.posts limit:10 %}
+// "{{ post.url }}",
+// {% endfor %}
 ];
 
 /* Start downloading the cache preempt list on install */
 self.addEventListener("install", function (e) {
-    self.skipWaiting();
+    self.skipWaiting().then(r => {console.log(`r? ${r}`)});
     e.waitUntil(
         caches.open(staticCacheName).then(function (cache) {
             return cache.addAll(urlsToCache);
@@ -49,7 +47,6 @@ self.addEventListener("activate", function (e) {
 /* Cache, then network, then generic */
 self.addEventListener('fetch', function (event) {
     const url = event.request.url;
-    console.log(event);
     event.respondWith(
         // Try the cache
         caches.match(event.request).then(function (response) {
@@ -58,8 +55,9 @@ self.addEventListener('fetch', function (event) {
         }).catch(function (e) {
             if (url.endsWith(".png") || url.endsWith(".jpg")) {
                 // If both fail, show a generic fallback:
-                return caches.match("{% asset png-transparent.png @path %}");
+                return caches.match("/assets/img/png-transparent.png");
             } else {
+                console.error(`TOOT! ${url}`);
                 console.error(e, e.message);
             }
         })

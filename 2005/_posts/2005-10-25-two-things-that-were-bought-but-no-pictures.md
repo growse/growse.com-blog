@@ -50,7 +50,7 @@ it's a bargain.
 
 Second thing I bought was slightly cheaper:
 
-![Buying things]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png @path %}" width="{{ assets["2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png"].dimensions.width }}" height="{{ assets["2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png"].dimensions.height }}"}
+![Buying things](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2005-10-25-two-things-that-were-bought-but-no-pictures/two-things-that-were-bought-but-no-pictures.png"}
 
 Yes, it's an Apple keyboard. Only delivered today (grand cost of £19) so I've
 only had an hour to type on it.

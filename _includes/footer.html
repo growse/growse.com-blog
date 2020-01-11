@@ -1,17 +1,20 @@
 <footer>
-    Almost everything (c) 2002-{{ site.time|date: "%Y" }} <a rel="author" itemprop="author"
-                                                     href="https://plus.google.com/+AndrewRowson">Andrew
-    Rowson</a>. If you break anything because of something you read here, that's your own problem.
+    Almost everything (c) 2002-{{ site.time|date: "%Y" }} Andrew Rowson. If you break anything because of something you
+    read here, that's your own problem.
 </footer>
 </div>
 <script type="text/javascript">
-    var post_url = '{{page.url}}';
+    const post_url = '{{page.url}}';
 </script>
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-{% asset scripts async:true %}
-{% asset opensans-300 %}
-{% asset opensans-400 %}
-{% asset inconsolata-500 %}
-{% asset andada-400 %}
+{% assign css_files = site.static_files | where: "css", true %}
+{% for css in css_files %}
+<link rel="stylesheet" href="{{ css.path}}">
+{% endfor %}
+
+
+{% assign js_files = site.static_files | where: "js", true %}
+{% for js in js_files %}
+<script src="{{js.path}}" async></script>
+{% endfor %}
 </body>
 </html>
