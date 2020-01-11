@@ -5,3 +5,7 @@ _site
 .asset-cache
 .idea
 *.iml
+_yarn/node_modules
+/assets/js/
+/assets/css/
+/_includes/critical.css

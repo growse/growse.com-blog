@@ -12,6 +12,6 @@ insanely pretty, and it'll probably rain lots, and you get a fun filled time
 In other news, a bank was recently spotted giving me money. It is with this
 that I have bought my latest "toy": The DI box.
 
-![Boxy box]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-07-11-off-to-the-lakes/off-to-the-lakes.jpg @path %}" width="{{ assets["2004-07-11-off-to-the-lakes/off-to-the-lakes.jpg"].dimensions.width }}" height="{{ assets["2004-07-11-off-to-the-lakes/off-to-the-lakes.jpg"].dimensions.height }}"}
+![Boxy box](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2004-07-11-off-to-the-lakes/off-to-the-lakes.jpg"}
 
 Hurrah!!

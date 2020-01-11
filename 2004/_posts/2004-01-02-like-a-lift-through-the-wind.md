@@ -7,7 +7,7 @@ A number of interesting things occured
 1. I got paid. This is a good thing. It caused (2)
 2. I bought a camera.
  
-![Piccie!!!!!!]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2004-01-02-like-a-lift-through-the-wind/like-a-lift-through-the-wind.jpg @path %}" width="{{ assets["2004-01-02-like-a-lift-through-the-wind/like-a-lift-through-the-wind.jpg"].dimensions.width }}" height="{{ assets["2004-01-02-like-a-lift-through-the-wind/like-a-lift-through-the-wind.jpg"].dimensions.height }}"}
+![Piccie!!!!!!](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2004-01-02-like-a-lift-through-the-wind/like-a-lift-through-the-wind.jpg"}
 
 However, I ran out of money directly after buying the camera, which means I can take a total of about 15
 photos before I run out of space on the supplied memory card thingie.

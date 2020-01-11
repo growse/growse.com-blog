@@ -14,6 +14,6 @@ The insurance company ended up giving me a CBF1000 for the trip, which is about 
 
 In the meantime, my bike has now been written off (presumably due to the faff of dealing with the administrators). So I'm going to gleefully take the money and have put a deposit down on this:
 
-![Speed Triple R]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2015-09-26-europe-and-permanently-not-z1000/europe-and-permanently-not-z1000.jpg @path %}" width="{{ assets["2015-09-26-europe-and-permanently-not-z1000/europe-and-permanently-not-z1000.jpg"].dimensions.width }}" height="{{ assets["2015-09-26-europe-and-permanently-not-z1000/europe-and-permanently-not-z1000.jpg"].dimensions.height }}"}
+![Speed Triple R](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2015-09-26-europe-and-permanently-not-z1000/europe-and-permanently-not-z1000.jpg"}
 
 Funfun!

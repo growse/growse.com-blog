@@ -8,10 +8,10 @@ I decided at the time that I'd take the opportunity to brush up on my Android an
 
 Well, it's 2015 now, which means I've got one year's worth of data. And when I crunch the numbers, it turns out that I travelled about *57,046.30 miles*. Now, that's somewhat overly precise, given that I'm just adding up the straight line distance between points captured 15 minutes apart, with an accuracy that's sometimes only as good as the nearest km, and obviously only when the phone is on. But still, that puts my average speed for 2014 at *2.11mph*. This might seem high, but I've actually been a fair few places this year. I decided to crack out [D3](http://d3js.org/), and especially [D3 Geo Projections](https://github.com/mbostock/d3/wiki/Geo-Projections) in order to make some pictures.
 
-![Everywhere]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2015-01-01-geo-tracking-and-me/geo-tracking-and-me1.png @path %}" width="{{ assets["2015-01-01-geo-tracking-and-me/geo-tracking-and-me1.png"].dimensions.width }}" height="{{ assets["2015-01-01-geo-tracking-and-me/geo-tracking-and-me1.png"].dimensions.height }}"}
+![Everywhere](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2015-01-01-geo-tracking-and-me/geo-tracking-and-me1.png"}
 
 
-![Just the UK]({% asset png-transparent.png @path %}){:class="lazyload" data-src="{% asset 2015-01-01-geo-tracking-and-me/geo-tracking-and-me2.png @path %}" width="{{ assets["2015-01-01-geo-tracking-and-me/geo-tracking-and-me2.png"].dimensions.width }}" height="{{ assets["2015-01-01-geo-tracking-and-me/geo-tracking-and-me2.png"].dimensions.height }}"}
+![Just the UK](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2015-01-01-geo-tracking-and-me/geo-tracking-and-me2.png"}
 
 
 I'm not brilliant with javascript, and D3 isn't the most intuitive library, so there's probably a million ways these could be better. Still, it's nice to look back on the year and remember that, gosh, actually I ended up doing rather a lot. Australia and California probably account for the bulk of the mileage. But at the same time, it's nice to look and reminisce about the hoilday in the Canaries, the epic bikeroadtrip to a a farflung, damp corner of Ireland, and that one time I went to Devon.

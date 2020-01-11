@@ -1,0 +1,33 @@
+{
+  "name": "growse.com-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:growse/growse.com-blog.git",
+  "author": "Andrew Rowson <github@growse.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "yarn clean && yarn run build:js && yarn run build:css",
+    "build:js": "browserify ts/scripts.ts -p [ tsify ] > ../assets/js/bundle.js",
+    "postbuild:js": "hashmark -r -l 8 ../assets/js/*.js ../assets/js/{name}.{hash}.js",
+    "build:css": "node-sass scss/main.scss > ../assets/css/main.css && node-sass scss/critical.scss > ../_includes/critical.css",
+    "postbuild:css": "hashmark -r -l 8 ../assets/css/*.css ../assets/css/{name}.{hash}.css",
+    "clean": "rm -f ../_includes/critical.css && rm -rf ../assets/js/* && rm -rf ../assets/css/*"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "hashmark": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "tsify": "^4.0.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/jquery": "^3.3.31",
+    "@types/nanoscroller": "^0.8.4",
+    "highlight.js": "^9.17.1",
+    "jquery": "^3.4.1",
+    "nanoscroller": "^0.8.7"
+  }
+}

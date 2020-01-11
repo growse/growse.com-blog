@@ -1,16 +1,10 @@
----
----
+@import 'includes/vars';
+@import 'includes/nanoscroller';
+@import 'includes/solarizeddark';
+@import 'includes/mixins';
+@import 'includes/fonts';
 
-@import 'vars';
-@import 'nanoscroller';
-@import 'solarizeddark';
-@import 'mixins';
-@import 'fonts';
-
-@import "vars";
 html {
-
-
   body {
     #container {
       a {

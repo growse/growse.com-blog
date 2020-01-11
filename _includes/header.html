@@ -5,19 +5,18 @@
     <meta name="google-site-verification" content="Sr-L2EMmHr-hc4npzb8p1f7zi9ew1Iev84ly519r1p4"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} :: growse.com</title>
-    <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>
+<!--    <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>-->
     <style rel="stylesheet">
         {% capture sass_file %}
-        {% include critical.scss %}
+        {% include critical.css %}
         {% endcapture %}
-        {{ sass_file | scssify | strip_newlines }}
+        {{ sass_file }}
     </style>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{% asset apple-touch-icon.png @path %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% asset favicon-32x32.png @path %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% asset favicon-16x16.png @path %}">
-    <link rel="mask-icon" href="{% asset safari-pinned-tab.svg @path %}" color="#5bbad5">
-    <link rel="manifest" href="{% asset manifest.json @path %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
@@ -36,12 +35,12 @@
         </div>
         <div id="social-container">
             <a href="https://twitter.com/growse">
-                <object class="social-logo" data="{% asset twitter.svg @path %}" type="image/svg+xml">
+                <object class="social-logo" data="/assets/img/twitter.svg" type="image/svg+xml">
                     I'm on twitter
                 </object>
             </a>
             <a href="https://keybase.io/growse">
-                <object class="social-logo" data="{% asset keybase.svg @path %}" type="image/svg+xml">
+                <object class="social-logo" data="/assets/img/keybase.svg" type="image/svg+xml">
                     I'm on keybase
                 </object>
             </a>

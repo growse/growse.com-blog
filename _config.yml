@@ -5,30 +5,29 @@ description: >
 baseurl: ""
 url: "https://www.growse.com"
 
-assets:
-  digest: true
-  compress:
-    js: true
-    css: true
-  autosize: true
-  sources:
-    - _assets/css
-    - _assets/fonts
-    - _assets/images
-    - _assets/videos
-    - _assets/javascript
-    - _assets/video
-    - _assets/image
-    - _assets/img
-    - _assets/js
-
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+  - scope:
+      path: "assets/fonts"
+    values:
+      font: true
+  - scope:
+      path: "assets/js"
+    values:
+      js: true
+  - scope:
+      path: "assets/css"
+    values:
+      css: true
 monthly_archive:
   path: "/archive"
 
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-assets
   - jekyll-sitemap
 exclude:
   - Gemfile
