@@ -7,7 +7,7 @@ const staticCacheName = staticCachePrefix + "v1";
 console.log("installing service worker");
 
 const urlsToCache = [
-    "/",
+    // "/",
     "/posts.json",
 //     {% assign font_files = site.static_files | where: "font", true %}
 //     {% for font in font_files %}
@@ -20,7 +20,7 @@ const urlsToCache = [
 
 /* Start downloading the cache preempt list on install */
 self.addEventListener("install", function (e) {
-    self.skipWaiting().then(r => {console.log(`r? ${r}`)});
+    self.skipWaiting();
     e.waitUntil(
         caches.open(staticCacheName).then(function (cache) {
             return cache.addAll(urlsToCache);
