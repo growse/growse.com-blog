@@ -8,9 +8,13 @@
   "private": true,
   "scripts": {
     "build": "yarn clean && yarn run build:js && yarn run build:css",
+    "prebuild:js": "mkdir -p ../assets/js/ && yarn clean:js",
     "build:js": "browserify ts/scripts.ts -p [ tsify ] > ../assets/js/bundle.js",
     "postbuild:js": "hashmark -r -l 8 ../assets/js/*.js ../assets/js/{name}.{hash}.js",
+    "clean:js": " rm -rf ../assets/js/**",
+    "prebuild:css": "mkdir -p ../assets/css/ && yarn clean:css",
     "build:css": "node-sass scss/main.scss > ../assets/css/main.css && node-sass scss/critical.scss > ../_includes/critical.css",
+    "clean:css": "rm -f ../_includes/critical.css && rm -rf ../assets/css/*",
     "postbuild:css": "hashmark -r -l 8 ../assets/css/*.css ../assets/css/{name}.{hash}.css",
     "clean": "rm -f ../_includes/critical.css && rm -rf ../assets/js/* && rm -rf ../assets/css/*"
   },
