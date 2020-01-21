@@ -1,11 +1,11 @@
 import highlightjs from "highlight.js";
-
-import {Posts} from "./posts";
 import {Locator} from "./location";
+import {Posts} from "./posts";
 
 new Locator().getLocation();
 new Posts().getPostList();
 highlightjs.initHighlightingOnLoad();
+
 
 //
 // const growse = {

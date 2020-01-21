@@ -4,8 +4,6 @@
 const staticCachePrefix = "growse.com-cache-";
 const staticCacheName = staticCachePrefix + "v1";
 
-console.log("installing service worker");
-
 const urlsToCache = [
     // "/",
     "/posts.json",
