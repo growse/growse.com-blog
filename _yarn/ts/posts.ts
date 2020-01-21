@@ -9,6 +9,33 @@ interface Post {
 }
 
 export class Posts {
+    private overlayScrollBarOptions: OverlayScrollbars.Options = {
+        className: "os-theme-light",
+        resize: "none",
+        sizeAutoCapable: false,
+        clipAlways: false,
+        normalizeRTL: true,
+        paddingAbsolute: false,
+        autoUpdate: null,
+        autoUpdateInterval: 33,
+        nativeScrollbarsOverlaid: {
+            showNativeScrollbars: false,
+            initialize: true
+        },
+        overflowBehavior: {
+            x: "hidden",
+            y: "visible-scroll"
+        },
+        scrollbars: {
+            visibility: "visible",
+            autoHide: "leave",
+            autoHideDelay: 400,
+            dragScrolling: true,
+            clickScrolling: false,
+            touchSupport: true,
+            snapHandle: false
+        }
+    };
 
     public getPostList(): void {
         const hereClass = 'here';
@@ -32,51 +59,23 @@ export class Posts {
                 if (document.location.pathname == "/") {
                     $("#articlenav > li:first > a").addClass(hereClass)
                 }
-            });
-            let postListElement = document.getElementById("postlist")!
-            let overlayScrollbars = OverlayScrollbars(postListElement, {
-                    className: "os-theme-light",
-                    resize: "none",
-                    sizeAutoCapable: false,
-                    clipAlways: false,
-                    normalizeRTL: true,
-                    paddingAbsolute: false,
-                    autoUpdate: null,
-                    autoUpdateInterval: 33,
-                    nativeScrollbarsOverlaid: {
-                        showNativeScrollbars: false,
-                        initialize: true
-                    },
-                    overflowBehavior: {
-                        x: "hidden",
-                        y: "visible-scroll"
-                    },
-                    scrollbars: {
-                        visibility: "visible",
-                        autoHide: "leave",
-                        autoHideDelay: 400,
-                        dragScrolling: true,
-                        clickScrolling: false,
-                        touchSupport: true,
-                        snapHandle: false
+
+                let postListElement = document.getElementById("postlist")!;
+                let overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);
+
+                //Scroll the left nav to the right point.
+                if ($("." + hereClass).length > 0 && $(window).height()) {
+                    const windowHeight = $(window).height()!;
+                    const percentageDown = ($(`.${hereClass}`).position().top / windowHeight) * 100;
+                    if (percentageDown > 50) {
+                        const value = $('.here').position().top - (windowHeight / 2) + ($('nav ul li:first').height()! / 2);
+                        console.log(value);
+                        overlayScrollbars.scroll({y: value});
+                    } else {
+                        overlayScrollbars.scroll({y: 0});
                     }
                 }
-            );
-
-            //Scroll the left nav to the right point.
-            console.log($(window).height());
-            console.log($(hereClass).length);
-            if ($(hereClass).length > 0 && $(window).height()) {
-                const windowHeight = $(window).height()!;
-                const percentageDown = ($(`.${hereClass}`).position().top / windowHeight) * 100;
-                if (percentageDown > 50) {
-                    const value = $('.here').position().top - (windowHeight / 2) + ($('nav ul li:first').height()! / 2);
-                    console.log(value);
-                    overlayScrollbars.scroll({y: "100%"});
-                } else {
-                    overlayScrollbars.scroll(0)
-                }
-            }
+            });
         })
     }
 }
