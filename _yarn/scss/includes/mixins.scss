@@ -8,8 +8,3 @@
 @mixin prefixtime($property, $value) {
   @include build-prefix-values($property, $value);
 }
-
-@mixin striped-bg($bg-color: $background-hl-color, $darken-amount: 5%, $stripe-color: darken($bg-color, $darken-amount)) {
-  background: $bg-color linear-gradient(-45deg, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
-}
