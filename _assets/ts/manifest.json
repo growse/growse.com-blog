@@ -1,9 +1,0 @@
-{
-  "name": "growse.com",
-  "short_name": "growse.com",
-  "start_url": "https://www.growse.com",
-  "display": "browser",
-  "theme_color": "#ff9900",
-  "background_color": "#111",
-  "description": "Pointless ramblings"
-}
