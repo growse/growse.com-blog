@@ -42,9 +42,9 @@ first. The problems came with the software. The Nexenta installation went
 without a hitch, but when it next booted, the Solaris kernel promptly told me
 that a number of AMD Errata hadn't been corrected in the BIOS, before promptly
 giving me a kernel panic with:
-
-    panic[cpu2]/thread=fec203a0: Too many lgrps for platform (4)
-
+```
+panic[cpu2]/thread=fec203a0: Too many lgrps for platform (4)
+```
 Great.
 
 Solaris' recommendation was that I update the BIOS, which might be tricky
@@ -70,11 +70,11 @@ A few days later, this turned up, and worked. Properly. You have to set a
 firmware is up to date, but other than that, smoothness. I'm properly
 impressed with COMSTAR too - the configuration required to get something up
 and running is so minimal:
-
-    $ zfs create -V 500g tank/comstar/target1
-    $ sbdadm create-lu /dev/zvol/rdsk/tank/comstar/target1
-    $ stmfadm add-view
-
+```shell
+$ zfs create -V 500g tank/comstar/target1
+$ sbdadm create-lu /dev/zvol/rdsk/tank/comstar/target1
+$ stmfadm add-view
+```
 And that's it. You can get more complex with host groups and target groups,
 but that's not really necessary for something like this. What's more, because
 it's ZFS, you get built-in SMB and NFS sharing, deduplication, compression,
@@ -100,7 +100,6 @@ build it yourself.
    [3]: /2010/11/03/django-awesomeness.html
 
    [4]: http://www.xcase.co.uk/X-Case-RM-420-Hotswap-4u-p/case-rm420.htm
-(X-case RM420)
 
    [5]: http://nexenta.org/
 

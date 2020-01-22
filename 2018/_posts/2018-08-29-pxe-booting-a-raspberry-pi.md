@@ -18,15 +18,15 @@ PXE booting is essentially a simple, yet powerful process for getting computers 
 ## The client (device)
 
 The client is easy. We have one of those in the form of a rPI (let's assume v3). Annoyingly you have to actually specifically enable PXE booting by booting it into linux from an sd card and programming the OTP memory:
-
-    $ echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
-    $ reboot
-    
+```shell
+$ echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
+$ reboot
+```
 When it reboots, you can check it with 
-
-    $ vcgencmd otp_dump | grep 17:
-    17:3020000a
-
+``` shell
+$ vcgencmd otp_dump | grep 17:
+17:3020000a
+```
 This bit is all covered in [this rPI page](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/net_tutorial.md), but who knows, that may go away at some point.
 
 ## The DHCP Server
@@ -39,69 +39,73 @@ Surprisingly, [IBM has some pretty good documentation](https://www.ibm.com/suppo
 
 In our case, we will see a DHCP request from the rPI, and need to send it some magic values in option 43 to get it to work. In Kea, we need to define the option format:
 
-    "Dhcp4":
-    {      
-      "option-def": [     
-        {
-            "name": "PXEDiscoveryControl",
-            "code": 6,
-            "space": "vendor-encapsulated-options-space",
-            "type": "uint8",
-            "array": false
-        },
-        {
-            "name": "PXEMenuPrompt",
-            "code": 10,
-            "space": "vendor-encapsulated-options-space",
-            "type": "record",
-            "array": false,
-            "record-types": "uint8,string"
-        },
-        {
-            "name": "PXEBootMenu",
-            "code": 9,
-            "space": "vendor-encapsulated-options-space",
-            "type": "record",
-            "array": false,
-            "record-types": "uint16,uint8,string"
-        }
-      ],
+```json
+"Dhcp4":
+{      
+  "option-def": [     
+    {
+        "name": "PXEDiscoveryControl",
+        "code": 6,
+        "space": "vendor-encapsulated-options-space",
+        "type": "uint8",
+        "array": false
+    },
+    {
+        "name": "PXEMenuPrompt",
+        "code": 10,
+        "space": "vendor-encapsulated-options-space",
+        "type": "record",
+        "array": false,
+        "record-types": "uint8,string"
+    },
+    {
+        "name": "PXEBootMenu",
+        "code": 9,
+        "space": "vendor-encapsulated-options-space",
+        "type": "record",
+        "array": false,
+        "record-types": "uint16,uint8,string"
     }
+  ],
+}
+```
 
 This tells Kea that we're sometimes going to be setting an option that looks like this. We just need `PXEDiscoveryControl`, `PXEMenuControl` and `PXEBootMenu` to be set.
 
 The other thing we need to do with Kea is tell it to set some DHCP options for any request that is an rPI PXE boot request. Incoming DHCP requests contain a bunch of useful information, one of which is the `vendor-class-identifier`. This is the same for all rPI clients, so we can filter on that:
-
-    "Dhcp4":
+```json
+"Dhcp4":
+{
+  "client-classes": [
     {
-      "client-classes": [
-        {
-          "name": "rpi-pxe",
-          "test": "option[vendor-class-identifier].text == 'PXEClient:Arch:00000:UNDI:002001'",
-          "option-data": [
-            {"name": "boot-file-name", "data": "bootcode.bin"},
-            {"name": "vendor-class-identifier", "data": "PXEClient" },
-            {"name": "vendor-encapsulated-options"},
-            {"name": "PXEBootMenu", "csv-format":true, "data": "0,17,Raspberry Pi Boot","space":"vendor-encapsulated-options-space"},
-            {"name": "PXEDiscoveryControl", "data": "3","space":"vendor-encapsulated-options-space"},
-            {"name": "PXEMenuPrompt", "csv-format":true, "data": "0,PXE","space":"vendor-encapsulated-options-space"}
-          ]
-        }
+      "name": "rpi-pxe",
+      "test": "option[vendor-class-identifier].text == 'PXEClient:Arch:00000:UNDI:002001'",
+      "option-data": [
+        {"name": "boot-file-name", "data": "bootcode.bin"},
+        {"name": "vendor-class-identifier", "data": "PXEClient" },
+        {"name": "vendor-encapsulated-options"},
+        {"name": "PXEBootMenu", "csv-format":true, "data": "0,17,Raspberry Pi Boot","space":"vendor-encapsulated-options-space"},
+        {"name": "PXEDiscoveryControl", "data": "3","space":"vendor-encapsulated-options-space"},
+        {"name": "PXEMenuPrompt", "csv-format":true, "data": "0,PXE","space":"vendor-encapsulated-options-space"}
       ]
     }
+  ]
+}
+```
 
 So, every rPI that sends a PXE DHCP request will set the `vendor-class-identifier` to `PXEClient:Arch:00000:UNDI:002001`, and the above configures Kea to respond to such requests with a response that includes some options. First, we specify `boot-file-name` (option 67) to be `bootcode.bin` - this is the first request the client is going to make from the tftp server. We also set the `vendor-class-identifier` (Option 60) to be the necessary value `PXEClient` and then the magic values required in the vendor-specific space.
 
 Finally, we need to set the DHCP `next-server` value to the address of our TFTP server:
-
-    "Dhcp4":
+```json
+"Dhcp4":
+{
+ "subnet4": [
     {
-     "subnet4": [
-      {     ...
-            "next-server": "192.168.2.2",
-            ...
-      }
-    } 
+      "next-server": "192.168.2.2"
+    }
+  ]
+} 
+```
     
 Now, if you plug the rPI in, it should make a request of the DHCP server and then contact the TFTP server requesting `bootcode.bin`.
 
@@ -109,8 +113,9 @@ Now, if you plug the rPI in, it should make a request of the DHCP server and the
 
 This usually works. However, sometimes the client receives a valid response and then hangs. It turns out there's a bug in the rPI PXE code where a race condition causes an unrecoverable hang after receiving the DHCP response. [Someone](https://www.raspberrypi.org/blog/piserver/#comment-1375406) worked out a solution involving periodically sending broadcast to the network to 'kick' the rPI into waking up and making the request. I just run a constant broadcast ping on my LAN, seems to work
 
-    $ ping -b 192.168.2.255
-    
+```shell
+$ ping -b 192.168.2.255
+```
 ## TFTP server
 
 A TFTP server setup is pretty easy. I use the one that comes with FreeNAS. Get a valid `bootcode.bin` from a raspbian distribution and place it in the root. Once the rPI has download `bootcode.bin`, it'll then start to make requests for a few other things. Some of these things aren't strictly necessary (e.g. `bootcode.sig`), but others are. 
@@ -119,7 +124,9 @@ The rPI will make a request to the TFTP server for a bunch of files that expects
 
 Copy the contents of `/boot` from a raspbian image to this folder. One of the files there will be `cmdline.txt` which details all the arguments to be passed to the kernel - it's here where we tell the rPI that it should use a network root disk:
 
-    dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.2.2:/mnt/newtank/pxe/proxybot/,vers=3,tcp rw ip=dhcp rootwait elevator=deadline cgroup_enable=memory cgroup_memory=1
+```
+dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.2.2:/mnt/newtank/pxe/proxybot/,vers=3,tcp rw ip=dhcp rootwait elevator=deadline cgroup_enable=memory cgroup_memory=1
+```
 
 In this case, setting `root=/dev/nfs` indicates that an NFS-based root device is required, and `nfsroot=...` specifies the details of where that share is. When the rPI boots, you should see it initialize the kernel, attempt to mount the NFS root and resume booting from it.
 
@@ -128,9 +135,10 @@ In this case, setting `root=/dev/nfs` indicates that an NFS-based root device is
 Again, I'm using FreeNAS, so an NFS share is a pretty easy thing to expose. I configured the share to only be accessible to the fixed IP address reservation that I know the DHCP server will handle out, and set the root user to be `root`. Once setup, the raspbian filesystem can be copied to it, and that's all that should be needed. 
 
 The only tweaking I do past this point is allow the `apt` mechanism to update the kernel by exposing the rPI-specific folder on the TFTP server over NFS and mounting that on `/boot`. From `/etc/fstab`:
+```
+192.168.2.2:/mnt/newtank/tftproot/proxybot  /boot   nfs     vers=3  0       0
+```
 
-    192.168.2.2:/mnt/newtank/tftproot/proxybot  /boot   nfs     vers=3  0       0
- 
 This means that when the kernel is updated by upstream, the relevent files on the TFTP folder are also updated, which saves having to manually copy things round.
 
 ## Results

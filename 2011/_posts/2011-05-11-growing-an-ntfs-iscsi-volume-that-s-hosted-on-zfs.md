@@ -23,14 +23,14 @@ minutes. Here's how.
 Step 1: First you have to make the ZFS volume bigger. Falling into exactly the
 same trap as before, I just said "Oh, 300Gb is surely going to be enough". I
 did this:
-
-    zfs set volsize=300G tank/comstar/sqldata
-
+``` shell
+$ zfs set volsize=300G tank/comstar/sqldata
+```
 Step 2: Now, you need to tell SCSI block disk thingie that the LUN's changed.
 Otherwise, it's got no clue what's going on.
-
-    sbdadm modify-lu -s 300g
-
+``` shell
+$ sbdadm modify-lu -s 300g
+```
 Step 3: Head over to Windows, open the disk storage manager where (hopefully)
 it should have recognised that you've got a massively bigger disk with a tiny
 partition, hit right-click and "Extend".

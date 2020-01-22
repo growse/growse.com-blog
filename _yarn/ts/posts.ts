@@ -77,7 +77,6 @@ export class Posts {
                     const percentageDown = ($(`.${hereClass}`).position().top / windowHeight) * 100;
                     if (percentageDown > 50) {
                         const value = $('.here').position().top - (windowHeight / 2) + ($('nav ul li:first').height()! / 2);
-                        console.log(value);
                         overlayScrollbars.scroll({y: value});
                     } else {
                         overlayScrollbars.scroll({y: 0});

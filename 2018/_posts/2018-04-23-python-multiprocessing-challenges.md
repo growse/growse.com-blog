@@ -17,48 +17,48 @@ This sounds straightforward. However, it turns out, it's not.
 First problem: There are two events that should cause my program to stop. Either a subtask encounters a stop condition, or the program receives a signal (`SIGTERM` etc.). How do you handle this? There are two broad ways of doing concurrency in Python. You can either use the [`multiprocessing`](https://docs.python.org/2/library/multiprocessing.html) module, where you can essentially `fork()` to a separate process to do your evil sub-bidding, or you can use [`threading`](https://docs.python.org/2/library/threading.html) which uses a more shared thready-thing. There's pros and cons to each - shared/unshared heap, shared/unshared GIL etc. I chose `multiprocessing` as I had long-running subtasks and didn't care about sharing memory or startup overhead.
 
 My plan was to use a shared [`multiprocessing.Event`](https://docs.python.org/2/library/multiprocessing.html#multiprocessing.Event) to block the execution of the "master" process. This (in theory) has the nice property in that you can share it across multiple `Process` objects, and coordinate activity between them. One process that's blocked on `Event.wait()` is released when another calls `Event.set()`. Coupled with a signal handler, you might expect the following to be sane:
+```python
+#!/usr/bin/env python
 
-    #!/usr/bin/env python
-    
-    import multiprocessing
-    import signal
-    
-    my_event = multiprocessing.Event()
-    
-    
-    def signal_handler(received_signal, _):
-        my_event.set()
-    
-    
-    for signame in (signal.SIGINT, signal.SIGTERM, signal.SIGQUIT):
-        signal.signal(signame, signal_handler)
-    
-    my_event.wait()
+import multiprocessing
+import signal
 
+my_event = multiprocessing.Event()
+
+
+def signal_handler(received_signal, _):
+    my_event.set()
+
+
+for signame in (signal.SIGINT, signal.SIGTERM, signal.SIGQUIT):
+    signal.signal(signame, signal_handler)
+
+my_event.wait()
+```
 
 This should block until `my_event` is set, right? What happens when it receives `SIGINT`? The signal handler should fire on `MainThread`, and try to call `my_event.set()`. In fact, it does exactly this, but `my_event.set()` deadlocks, presumably because there's an active `wait()` call. Hurray!
 
 Fun fact, if you use `threading.Event()` instead, it doesn't deadlock! Hurray!
 
 But wait! Is this true of all `multiprocessing` classes that provide some sort of `wait()`/`set()` type functionality? What about a queue?
+```python
+#!/usr/bin/env python
 
-    #!/usr/bin/env python
-    
-    import multiprocessing
-    import signal
-    
-    my_queue = multiprocessing.Queue()
-    
-    
-    def signal_handler(received_signal, _):
-        my_queue.put("HI I'M A MESSAGE")
-    
-    
-    for signame in (signal.SIGINT, signal.SIGTERM, signal.SIGQUIT):
-        signal.signal(signame, signal_handler)
-    
-    my_queue.get() # Block until we get a message
-    
+import multiprocessing
+import signal
+
+my_queue = multiprocessing.Queue()
+
+
+def signal_handler(received_signal, _):
+    my_queue.put("HI I'M A MESSAGE")
+
+
+for signame in (signal.SIGINT, signal.SIGTERM, signal.SIGQUIT):
+    signal.signal(signame, signal_handler)
+
+my_queue.get() # Block until we get a message
+```
 *This works just fine*. WTF python?
 
 ## `multiprocessing.Event` is useless
@@ -88,17 +88,19 @@ When you `fork()` a process, it inherits whatever signal handler you had on the 
 
 In reality, what this looks like is something like this:
 
-    def my_subprocess_1():
-        my_event = threading.Event()
-    
-        def my_signal_handler(signal, _):
-            my_event.set()
-    
-        for signame in signals:
-            signal.signal(signame, my_signal_handler)
-        while not my_event.is_set():
-            do_boring_thing()
-            my_event.wait(5)
+```python
+def my_subprocess_1():
+    my_event = threading.Event()
+
+    def my_signal_handler(signal, _):
+        my_event.set()
+
+    for signame in signals:
+        signal.signal(signame, my_signal_handler)
+    while not my_event.is_set():
+        do_boring_thing()
+        my_event.wait(5)
+```
 
 This will happily `do_boring_thing()` repeatedly, waiting 5 seconds between each invocation. If the process receives a signal that's in `signals`, it will set `my_event`. If the subprocess is blocked on `my_event.wait(5)`, it will just unblock and exit the loop. If it's in the middle of `do_boring_thing()`, it will finish that, then exit the loop. Nice and straightforward. (Notice use of `threading.Event` here - it's a useful thing to use even if you're not doing anything explicitly concurrently, because signal handlers are asynchronous - they fire whenever the VM feels like).
 
@@ -110,19 +112,21 @@ What if the OS sends `SIGTERM` just to the subprocess? Or, worse, `SIGKILL`?
 
 It turns out POSIX defines a special signal: `SIGCHLD` ([Details here](http://man7.org/linux/man-pages/man7/signal.7.html)). Every process has a parent process (except PID 1), and when a process receives any kind of signal (including `SIGKILL`), the parent receives `SIGCHLD`. So! This gives us a way for the master process to be notified that one of the subprocesses has been given a signal and may be terminating. it just needs to handle `SIGCHLD`:
 
-    def signal_handler(received_signal, _):
-        if received_signal == signal.SIGCHLD:
-            pid, status = os.waitpid(-1, os.WNOHANG | os.WUNTRACED | os.WCONTINUED)
-            if os.WIFCONTINUED(status) or os.WIFSTOPPED(status):
-                return
-            if os.WIFSIGNALED(status) or os.WIFEXITED(status):
-                my_queue.put(True)
-        else:
+```python
+def signal_handler(received_signal, _):
+    if received_signal == signal.SIGCHLD:
+        pid, status = os.waitpid(-1, os.WNOHANG | os.WUNTRACED | os.WCONTINUED)
+        if os.WIFCONTINUED(status) or os.WIFSTOPPED(status):
+            return
+        if os.WIFSIGNALED(status) or os.WIFEXITED(status):
             my_queue.put(True)
-     
-    signals = (signal.SIGINT, signal.SIGTERM, signal.SIGCHLD, signal.SIGQUIT)
-    for signame in signals:
-        signal.signal(signame, my_signal_handler) 
+    else:
+        my_queue.put(True)
+ 
+signals = (signal.SIGINT, signal.SIGTERM, signal.SIGCHLD, signal.SIGQUIT)
+for signame in signals:
+    signal.signal(signame, my_signal_handler) 
+```
 
 This is a somewhat simplified version, but should be clear. The downside of handling SIGCHLD is you get notified of pretty much every event, even the ones you don't care about. So you have to tell the difference between a subprocess being told to exit, or just being told to stop/resume. There's a bunch of stuff in `os` that can let you determine things from the value of `status`.
 
@@ -132,19 +136,21 @@ Interestingly, we also get to decide here what happens if a subprocess has quit.
 
 The subprocess I have above is pretty simple. Do a thing, wait 5 seconds, repeat. But what if you want a subprocess that can also decide it wants to stop the whole program? 
 
-    def my_subprocess_2():
-        my_event = threading.Event()
-    
-        def my_signal_handler(signal, _):
-            my_event.set()
-    
-        for signame in signals:
-            signal.signal(signame, my_signal_handler)
-        while not my_event.is_set():
-            should_i_quit = do_other_boring_thing()
-            if should_i_quit:
-                my_event.set()                
-            my_event.wait(5)
+```python
+def my_subprocess_2():
+    my_event = threading.Event()
+
+    def my_signal_handler(signal, _):
+        my_event.set()
+
+    for signame in signals:
+        signal.signal(signame, my_signal_handler)
+    while not my_event.is_set():
+        should_i_quit = do_other_boring_thing()
+        if should_i_quit:
+            my_event.set()                
+        my_event.wait(5)
+```
 
 This basically does the same thing as the first subprocess. However, this time, the boring work it does returns a result, indicating whether or not the program should stop. If the value is `True`, it sets `my_event`, exits the loop, and the subprocess stops.
 
@@ -158,30 +164,32 @@ The other subprocesses are still running. They don't know their faithful colleag
 
 There's a number of different ways of solving this. I chose to use the master process as the coordination point. Specifically, when it gets unblocked from `my_queue.get()`, it should attemp to terminate all the subprocesses by sending them `SIGTERM`:
 
-    joinables = []
-    
-    subprocess1 = multiprocessing.Process(target=my_subprocess_1)
-    joinables.append(subprocess1)
-    subprocess1.start()
-    
-    subprocess2 = multiprocessing.Process(target=my_subprocess_2)
-    joinables.append(subprocess2)
-    subprocess2.start()
+```python
+joinables = []
 
-    my_queue.get()
-    signal.signal(signal.SIGCHLD, signal.SIG_DFL)  # We don't care for SIGCHLDs any more.
-    
-    for joinable in joinables:
-        try:
-            joinable.terminate()
-        except OSError:
-            # Turns out the subprocess might not exist any more, even if the master thinks it does
-            pass
-    
-    # Wait for stuff to stop
-    for joinable in joinables:
-        logging.info("joining on {}".format(joinable))
-        joinable.join()
+subprocess1 = multiprocessing.Process(target=my_subprocess_1)
+joinables.append(subprocess1)
+subprocess1.start()
+
+subprocess2 = multiprocessing.Process(target=my_subprocess_2)
+joinables.append(subprocess2)
+subprocess2.start()
+
+my_queue.get()
+signal.signal(signal.SIGCHLD, signal.SIG_DFL)  # We don't care for SIGCHLDs any more.
+
+for joinable in joinables:
+    try:
+        joinable.terminate()
+    except OSError:
+        # Turns out the subprocess might not exist any more, even if the master thinks it does
+        pass
+
+# Wait for stuff to stop
+for joinable in joinables:
+    logging.info("joining on {}".format(joinable))
+    joinable.join()
+```
 
 There's a few things here. Firstly, we keep track of our subprocesses in a list called `joinables`.
 
@@ -203,20 +211,22 @@ In our case, if the master receives `SIGKIL`, the subprocesses are essentially u
 
 So! We need a little more work to just check the parent PID on each loop in the subprocess to make sure it's not changed:
 
-    def my_subprocess_1():
-        ppid = os.getppid()
-        my_event = threading.Event()
-    
-        def my_signal_handler(signal, _):
+```python
+def my_subprocess_1():
+    ppid = os.getppid()
+    my_event = threading.Event()
+
+    def my_signal_handler(signal, _):
+        my_event.set()
+
+    for signame in signals:
+        signal.signal(signame, my_signal_handler)
+    while not my_event.is_set():
+        do_boring_thing()
+        my_event.wait(5)
+        if ppid != os.getppid():
             my_event.set()
-    
-        for signame in signals:
-            signal.signal(signame, my_signal_handler)
-        while not my_event.is_set():
-            do_boring_thing()
-            my_event.wait(5)
-            if ppid != os.getppid():
-                my_event.set()
+```
 
 It's a bit crude, but it's essentially "Write down which parent started you, and if that changes, something's wrong."
 
@@ -233,12 +243,14 @@ I made a [gist of the final program](https://gist.github.com/growse/f37ca9da772d
 The gist works great on Python 2.7.14 on my laptop (Arch Linux), but failed on Python 2.7.11 on RHEL6. The issue was that `my_queue` never received the message, it seemed to be the same deadlock as before. 
 
 A simple change from `my_queue.get()` to this sorted it:
- 
-    result = None
-    while not result:
-        try:
-            result = my_queue.get(timeout=1):
-        except Queue.Empty:
-            pass    
-            
+
+```python 
+result = None
+while not result:
+    try:
+        result = my_queue.get(timeout=1):
+    except Queue.Empty:
+        pass    
+```        
+    
 I have no idea why this works.
