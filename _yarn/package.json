@@ -29,11 +29,9 @@
   "dependencies": {
     "@types/highlight.js": "^9.12.3",
     "@types/jquery": "^3.3.31",
-    "@types/nanoscroller": "^0.8.4",
     "@types/overlayscrollbars": "^1.9.0",
     "highlight.js": "^9.17.1",
     "jquery": "^3.4.1",
-    "nanoscroller": "^0.8.7",
     "overlayscrollbars": "^1.10.2"
   }
 }
