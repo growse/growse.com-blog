@@ -28,11 +28,11 @@
     "uglify-js": "^3.7.6"
   },
   "dependencies": {
-    "@types/highlight.js": "^9.12.3",
     "@types/jquery": "^3.3.31",
     "@types/overlayscrollbars": "^1.9.0",
-    "highlight.js": "^9.17.1",
     "jquery": "^3.4.1",
-    "overlayscrollbars": "^1.10.2"
+    "lazyload": "^2.0.0-rc.2",
+    "overlayscrollbars": "^1.10.2",
+    "vanilla-lazyload": "^12.4.0"
   }
 }

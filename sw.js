@@ -4,17 +4,7 @@
 const staticCachePrefix = "growse.com-cache-";
 const staticCacheName = staticCachePrefix + "v1";
 
-const urlsToCache = [
-    // "/",
-    "/posts.json",
-//     {% assign font_files = site.static_files | where: "font", true %}
-//     {% for font in font_files %}
-//     "{{font.path}}",
-//     {% endfor %}
-//     {% for post in site.posts limit:10 %}
-// "{{ post.url }}",
-// {% endfor %}
-];
+const urlsToCache = [];
 
 /* Start downloading the cache preempt list on install */
 self.addEventListener("install", function (e) {

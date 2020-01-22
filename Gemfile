@@ -10,3 +10,5 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
 end
+
+gem "jekyll-image-size", "~> 1.2"
