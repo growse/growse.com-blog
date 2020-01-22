@@ -29,9 +29,9 @@ Here's some pictures showing some of the damage the bungs picked up. They'll
 still work in future, but they'll just look a bit rubbish until I get them
 replaced.
 
-![Ow](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg"}
+{% include image.html alt="Ow" src="/assets/img/2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs1.jpg" %}
 
-![More ow](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg"}
+{% include image.html alt="More ow" src="/assets/img/2010-11-16-in-praise-of-crash-bungs/in-praise-of-crash-bungs2.jpg" %}
 
    [1]: http://en.wikipedia.org/wiki/Motorcycle_accessories#Crash_damage_protection
 

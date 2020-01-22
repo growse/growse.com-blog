@@ -39,4 +39,4 @@ I wanted to see how much the temperature and humidity varied in my home office, 
 
 As above, packages are created in the same way and then published onto my APT repository. Build enough devices and you get pretty graphs:
 
-![Temperature Graph](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2019-11-01-promtail-apt-packages-and-home-made-environment-sensors/temp_graph.png"}
+{% include image.html alt="Temperature Graph" src="/assets/img/2019-11-01-promtail-apt-packages-and-home-made-environment-sensors/temp_graph.png" %}

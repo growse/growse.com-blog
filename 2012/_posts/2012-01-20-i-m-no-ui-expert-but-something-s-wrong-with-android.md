@@ -6,7 +6,7 @@ I'm a big fan of Android. If you don't know what Android is, stop reading now.
 
 However, with this whole new ICS / Android v4.0 new UI paradigm thingie, I've noticed a problem. Take, for example, the new Google Music app running on my Samsung Galaxy SII.
 
-![My thumb and Google Music on Android](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2012-01-20-i-m-no-ui-expert-but-something-s-wrong-with-android/Manhattan-20120120-00037.jpg"}
+{% include image.html alt="My thumb and Google Music on Android" src="/assets/img/2012-01-20-i-m-no-ui-expert-but-something-s-wrong-with-android/Manhattan-20120120-00037.jpg" %}
 
 Notice my giant, fat, stubby finger, waiting to pounce on any of the random UI elements that might be presented to me. Smart people will realise that right-handed people who hold their phone with one hand will vastly prefer to press buttons that are nearer the bottom right-hand corner of the screen than to the top left hand corner. This is why the most commonly-used soft button "back" is down there. Google have handily put the playback controls on the bottom as well. However, guess how I get back to the previous 'view', say if i wanted to go back to the current album list? That's right, I hit this button:
 
@@ -23,7 +23,7 @@ I'm not saying I know what the right answer is, but this just seems a little wro
 
 Maybe the buttons should be at the bottom. Maybe phones should be smaller. Maybe I'm genetically inferior. What's interesting is that Apple have been doing this for a while in IOS - those familiar will know that the main place to look for a 'back' button is in the top left. E.g.:
 
-![choose a city by cindyli, on Flickr](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2012-01-20-i-m-no-ui-expert-but-something-s-wrong-with-android/3784225736_695aabd7a9_m.jpg"}
+{% include image.html alt="choose a city by cindyli, on Flickr" src="/assets/img/2012-01-20-i-m-no-ui-expert-but-something-s-wrong-with-android/3784225736_695aabd7a9_m.jpg" %}
 
 This probably works for IOS, because the iPhone only has a 3.5" screen, so even my diminuative hands should be able to reach it. There's a [whole bunch of rumours](http://crave.cnet.co.uk/mobiles/iphone-5-has-4-3-inch-screen-says-french-source-50005417/) about the next iPhone having a much bigger screen. I'm curious to know if Apple, who are typically renowned for their UI guidelines, will have anything to say about button placement in the top left of the screen on the newer, bigger devices.
 
