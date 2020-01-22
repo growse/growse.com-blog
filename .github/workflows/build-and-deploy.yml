@@ -16,15 +16,15 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
-      - uses: bahmutov/npm-install@v1.1.0
-        with:
-          working-directory: _yarn
+      - uses: actions/setup-node@v1
       - name: Install gems
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
       - name: Build web assets
-        run: yarn run build
+        run: |
+          yarn install
+          yarn run build
         working-directory: _yarn
       - name: Build Jekyll
         run: bundle exec jekyll b
