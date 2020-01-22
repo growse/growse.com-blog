@@ -26,9 +26,14 @@ monthly_archive:
   path: "/archive"
 
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-image-size
 exclude:
   - Gemfile
   - Gemfile.lock

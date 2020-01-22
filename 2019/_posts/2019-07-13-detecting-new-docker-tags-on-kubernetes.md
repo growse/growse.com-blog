@@ -11,7 +11,7 @@ One of the challenges I had with this model is knowing when a new release comes 
 
 Therefore, I wrote a script. It's simple and bug-ridden:
 
-```
+``` shell
 #!/bin/bash
 for p in $(kubectl get deployments -o jsonpath='{range .items[*]}{range .spec.template.spec.containers[*]}{.image}{"\n"}{end}'| grep -v  "latest\|stable"); do 
     IFS=:

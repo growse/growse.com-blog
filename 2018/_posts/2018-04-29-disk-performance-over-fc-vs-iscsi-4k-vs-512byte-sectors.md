@@ -10,11 +10,11 @@ I then ran [atto benchmark](https://www.atto.com/disk-benchmark/):
 
 ### iSCSI
 
-![iSCSI](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png"}
+{% include image.html alt="iSCSI" src='/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png' %}
 
 ### 4GB FC
 
-![FC](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png"}
+{% include image.html alt="FC" src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png" %}
 
 
 So, fairly obviously, the iSCSI drive is bumping into the 1GbE network limitation, which has a theoretical max throughput of 125MB/s. The FC link has a limit of 500MB/s and it looks like that's getting closer to that. 
