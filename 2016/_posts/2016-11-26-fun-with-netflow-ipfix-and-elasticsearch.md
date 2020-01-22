@@ -147,5 +147,5 @@ Specifically, it's useful to make sure that the IP address fields are set to typ
 
 Putting it all together with Kibana, you can start to pull together some pretty pictures:
 
-![PIE CHARTS](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/pies.png"}
-![MAPS](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/map.png"}
+{% include image.html alt="PIE CHARTS" src="/assets/img/2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/pies.png" %}
+{% include image.html alt="MAPS" src="/assets/img/2016-11-26-fun-with-netflow-ipfix-and-elasticsearch/map.png" %}

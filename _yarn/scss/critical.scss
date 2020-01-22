@@ -27,10 +27,16 @@ html {
           border:0;
         }
         .social-logo {
-          pointer-events: none;
+          pointer-events: bounding-box;
           margin: 4px;
           width: 24px;
           height: 24px;
+          path.twitterpath {
+            fill: #FFFFFFAA;
+          }
+          path.keybasepath {
+            fill: #999999;
+          }
         }
       }
 

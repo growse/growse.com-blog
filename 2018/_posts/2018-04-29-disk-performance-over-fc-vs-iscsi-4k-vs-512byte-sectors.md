@@ -27,7 +27,7 @@ Of course, this is all deeply unscientific - I'm comparing a software target / i
 
 While I was there, I thought I'd compare the new 500GB target with my existing 1,329GB target. The disks in my NAS are all 4k sector disks, but the older target had been configured with 512-byte sectors. This means a) more operations needed for a given long write and b) the NAS was having to work to 'translate' 512-byte sector writes into 4k sector disks. The new target I created for this test was configured with 4k, so *in theory* should perform a little better. I ran the same test on my 512-byte sector FC target:
 
-![FC 512-byte](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png"}
+{% include image.html alt="FC 512-byte" src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc-512.png" %}
 
 
 The biggest difference appears to be on write performance. Reads look about the same, but the 4k sector target shows roughly a doubling in throughput on larger writes, and even more dramatic improvement on smaller writes.

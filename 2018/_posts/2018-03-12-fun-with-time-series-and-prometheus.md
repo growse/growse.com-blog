@@ -21,4 +21,4 @@ For (3), this seems to relate to scalability. If you have a bunch of different f
 
 With all that said, I've been pretty impressed. I've been running Prometheus, the node_exporter, the [blackbox exporter](https://github.com/prometheus/blackbox_exporter) and [Grafana](https://grafana.com/) on my laptop for a while, and it barely uses any noticable resources. At the same time, I can now draw fun graphs of things like ping RTT to judge the quality of various wifi networks here and there:
 
-![Ping RTTs graph](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2018-03-12-fun-with-time-series-and-prometheus/rtt.png"}
+{% include image.html alt="Ping RTTs graph" src="/assets/img/2018-03-12-fun-with-time-series-and-prometheus/rtt.png" %}

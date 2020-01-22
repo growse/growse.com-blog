@@ -27,7 +27,7 @@ Specifically, it was sitting at the controls of (G-BUFR), which is
 (apparently) a Slingsby T61 Venture T2. The more eagle-eyed amongst you will
 notice, instantly, that this isn't actually a plane, but a motorised glider.
 
-![G-BUFR](/assets/img/png-transparent.png){:class="lazyload" data-src="/assets/img/2011-08-29-flying-stuff/T61-G-BUFR.jpg"}
+{% include image.html alt="G-BUFR" src="/assets/img/2011-08-29-flying-stuff/T61-G-BUFR.jpg" %}
 
 This is where it gets interesting. A motorised glider is, depending on your
 perspective, a plane with wings that are a bit unsociably long, or a glider
