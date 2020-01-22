@@ -22,10 +22,9 @@ self.addEventListener("activate", function (e) {
         caches.keys().then(function (cacheNames) {
             return Promise.all(
                 cacheNames.filter(function (cacheName) {
-                    return cacheName.startsWith(staticCachePrefix)
-                        && cacheName !== staticCacheName;
+                    return cacheName !== staticCacheName;
                 }).map(function (cacheName) {
-                    return cache.delete(cacheName);
+                    return caches.delete(cacheName);
                 })
             );
         })
