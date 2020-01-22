@@ -45,11 +45,10 @@ html {
                 text-overflow: ellipsis;
                 padding: 0.2rem 1rem;
                 border-top: 1px solid $background-color;
-
-                .here {
-                  background-color: $background-color;
-                  border: 0;
-                }
+              }
+              a.here {
+                background-color: $background-color;
+                border: 0;
               }
             }
           }

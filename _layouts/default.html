@@ -7,16 +7,15 @@
     <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <header>
             <time class="fancy" itemprop="datePublished"
-                  datetime="{{page.publishDate}}">
+                  datetime="{{page.date | date: "%Y-%m-%d"}}">
                 <p>{{page.date|date: "%b"}} <span
                         class="day">{{page.date|date: "%d"}}</span><span
                         class="year">{{page.date|date: "%Y"}}</span></p></time>
             <h1 itemprop="name headline">{{ page.title }}</h1>
             <time class="plain" itemprop="datePublished"
-                  datetime="{{page.publishDate}}">
+                  datetime="{{page.date | date: "%Y-%m-%d"}}">
                 {{page.date|date_to_long_string}}
             </time>
-            <meta itemprop="author" content="Andrew Rowson"/>
             <link href="https://plus.google.com/+AndrewRowson" rel="author" content="Andrew Rowson">
         </header>
         <section itemprop="articleBody">
