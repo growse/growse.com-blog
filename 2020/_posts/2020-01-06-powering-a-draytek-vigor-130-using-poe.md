@@ -21,5 +21,4 @@ I ended up taking a punt on the [TP-link TL-POE10R](https://www.tp-link.com/uk/b
 
 Amazingly (I'm not sure why it's amazing, it's pretty straightforward), it worked! The window sill is now much tidier, and I'm now wondering what other low-power DC devices I can also power this way.
 
-
- 
+![Draytek modem powered using PoE](/assets/img/2020-01-06-powering-a-draytek-vigor-130-using-poe/draytek-modem-poe.jpg)

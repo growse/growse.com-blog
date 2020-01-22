@@ -12,16 +12,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v1
-      - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
+      - uses: bahmutov/npm-install@v1.1.0
+        with:
+          working-directory: _yarn
       - name: Install gems
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
+      - name: Build web assets
+        run: yarn run build
+        working-directory: _yarn
       - name: Build Jekyll
         run: bundle exec jekyll b
       - name: Upload site
@@ -35,8 +39,7 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     steps:
-      - name: Check out code
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Download site artifact
         uses: actions/download-artifact@v1
         with:

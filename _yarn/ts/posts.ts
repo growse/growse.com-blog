@@ -1,11 +1,16 @@
 import $ from "jquery";
 
 import OverlayScrollbars from 'overlayscrollbars';
+import jqXHR = JQuery.jqXHR;
 
 interface Post {
     readonly title: string;
     readonly date: string;
     readonly url: string;
+}
+
+interface PostList {
+    readonly posts: Array<Post>
 }
 
 export class Posts {
@@ -37,12 +42,15 @@ export class Posts {
         }
     };
 
-    public getPostList(): void {
+    private fetchPostList(): jqXHR {
+        return $.getJSON('/posts.json');
+    }
+
+    public getPostList() {
         const hereClass = 'here';
-        $.getJSON('/posts.json').then(data => {
+        this.fetchPostList().then(data => {
             $(() => {
-                data.posts.forEach(function (result: Object) {
-                    const post: Post = <Post>result;
+                (<PostList>data).posts.forEach(function (post: Post) {
                     const li = $("<li>");
                     const a = $("<a>", {href: post.url, title: post.title});
                     const span = $("<span>", {text: post.title});
@@ -79,5 +87,3 @@ export class Posts {
         })
     }
 }
-
-
