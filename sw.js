@@ -2,7 +2,7 @@
 ---
 
 const staticCachePrefix = "growse.com-cache-";
-const staticCacheName = staticCachePrefix + "v1";
+const staticCacheName = staticCachePrefix + "v2";
 
 const urlsToCache = [];
 
