@@ -12,8 +12,6 @@
 {% for css in css_files %}
 <link rel="stylesheet" href="{{ css.path}}">
 {% endfor %}
-
-
 {% assign js_files = site.static_files | where: "js", true %}
 {% for js in js_files %}
 <script src="{{js.path}}" async></script>
