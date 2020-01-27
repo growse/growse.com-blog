@@ -4,7 +4,7 @@ title: "New Laptop Time"
 ---
 I've been using a 2011 Macbook Pro for approximately the last 5 years, and it's been a great laptop. It's had at least one new battery, but even with upgraded memory and an SSD, it just wasn't cutting it in terms of performance and usability. Specifically, it only has a screen resolution of 1280x768, which isn't brilliant by today's standards.
 
-The last time I looked for a laptop to buy was about [about 10 years ago](/2008/05/19/i-think-i-want-a-new-latop-but-i-m-not-really-sure-why.html), which resulted in my buy a ridiculously small Asus EEE 901 (I still have it!). This time, I needed something a little more like the MBP, but just better.
+The last time I looked for a laptop to buy was about [about 10 years ago]({% post_url /2008/2008-05-19-i-think-i-want-a-new-latop-but-i-m-not-really-sure-why %}), which resulted in my buy a ridiculously small Asus EEE 901 (I still have it!). This time, I needed something a little more like the MBP, but just better.
 
 I've never been a fan of spending a huge amount of money on computery bits, given the premium you end up spending on getting new things. There's very little this year's hardware can do that older hardware can't do (that I care about, at least). And so, I set myself a budget of about £300 and set about finding out what that buys you on the second hand market.
 

@@ -5,8 +5,6 @@ title: "At home with Kubernetes, MetalLB and BGP"
 
 # A Home Lab
 
-
-
 Ever since I had my first house and ran a server on top of the fridge, I've always found some sort of excuse to operate a home lab, much like a lot of people. This started out life as the aforementioned "single box sitting on the fridge" but has, over the years, evolved into a more complex environment which primarily serves the purpose of having somewhere to mess around with. There are other benefits as well though - the most important part of the "playground to learn in" is the "learning" bit. As someone who learns by doing, my home lab has taught me more about hardware, software, distributed infrastructures and failure conditions more than many real-world jobs.
 
 # Kubernetes

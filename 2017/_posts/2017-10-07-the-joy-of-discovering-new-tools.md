@@ -30,7 +30,7 @@ This is so simple, it's possible to use this approach for the smallest things. I
 
 # Wireguard
 
-I can't remember where I discovered [Wireguard](https://www.wireguard.com/), but at some point it made it onto my list of "Things I should get around to looking at eventually". I've often run into problems being on hostile networks where traffic is blocked or altered and have used a number of different [solutions](/2014/05/05/ssh-vpn-in-ubuntu-using-networkmanager.html) to solve this problem in the past. A lot of the time, these solutions are complex and quite brittle.
+I can't remember where I discovered [Wireguard](https://www.wireguard.com/), but at some point it made it onto my list of "Things I should get around to looking at eventually". I've often run into problems being on hostile networks where traffic is blocked or altered and have used a number of different [solutions]({% post_url /2014/2014-05-05-ssh-vpn-in-ubuntu-using-networkmanager %}) to solve this problem in the past. A lot of the time, these solutions are complex and quite brittle.
 
 Wireguard tries to solve the "I'd like two machines to communicate with each other in a way that is secret and resistant to interference". Previously, IPsec was the main thing that worked in this space - it works, but can be challenging to set up and (mis-)configure. By contrast, Wireguard is pretty seamless. It also uses modern cryptography primitives, including the noise framework (the same used at Signal and by WhatsApp) and is formally verified. There's been a lot of effort put into doing the security bit right, without losing sight of the end goal of making it usable.
 

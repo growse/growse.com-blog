@@ -15,7 +15,7 @@ However, one thing remained broken.
 
 # How does IP Routing work again?
 
-Previously, I wrote about [using MetalLB on Kubernetes to advertise services over BGP]({% post_url 2019-04-13-at-home-with-kubernetes-metallb-and-bgp %}). The general idea is that if you have a Kubernetes cluster and want to expose services on IP addresses that are routable by other machines, there's a number of different options. I went for the [MetalLB](https://metallb.universe.tf/) option which provides for the ability to advertise K8s service `loadBalancerIP` addresses over BGP.
+Previously, I wrote about [using MetalLB on Kubernetes to advertise services over BGP]({% post_url 2019/2019-04-13-at-home-with-kubernetes-metallb-and-bgp %}). The general idea is that if you have a Kubernetes cluster and want to expose services on IP addresses that are routable by other machines, there's a number of different options. I went for the [MetalLB](https://metallb.universe.tf/) option which provides for the ability to advertise K8s service `loadBalancerIP` addresses over BGP.
 
 In combination with a friendly router, this should result in the situation where traffic from clients goes via its default route (the router) which then forwards it on according to the routing table. If it's traffic destined for a K8s service, the router then forwards it onto the relevent K8s node that's advertising that address, which then handles the traffic.
 

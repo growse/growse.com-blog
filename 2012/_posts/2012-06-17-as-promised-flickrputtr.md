@@ -2,7 +2,7 @@
 layout: post
 title: "As promised... FlickrPuttr!"
 ---
-So, [last time around](/2012/06/10/all-flickr-uploaders-suck-so-i-m-going-to-write-my-own.html) I said something about uploading to Flickr being a really bad experience, and that I was going to write my own.
+So, [last time around]({% post_url /2012/2012-06-10-all-flickr-uploaders-suck-so-i-m-going-to-write-my-own %}) I said something about uploading to Flickr being a really bad experience, and that I was going to write my own.
 
 This is now (somewhat) done.
 

@@ -3,7 +3,7 @@ layout: post
 title: "Fun with time series and Prometheus"
 ---
 
-A few years ago, [Graphite](/2012/08/19/graphite-omgz.html) appeared and the world rejoiced. Finally there was a fun new database that was simple to use, relatively simple to setup and drew pretty pictures.
+A few years ago, [Graphite]({% post_url /2012/2012-08-19-graphite-omgz %}) appeared and the world rejoiced. Finally there was a fun new database that was simple to use, relatively simple to setup and drew pretty pictures.
 
 Since then, there's been a bit of an explosion of "things that will store datapoint triples" (i.e. a name, timestamp and a value). I used [InfluxDB](https://www.influxdata.com/) for a while, which is very easy to setup and integrates well with monitoring systems like Sensu. However, the new hotness appears to be [Prometheus](https://prometheus.io/).
 

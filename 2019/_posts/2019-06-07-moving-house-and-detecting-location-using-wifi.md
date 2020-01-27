@@ -7,7 +7,7 @@ Recently, I moved house. Not too far, I'm still in West Yorkshire ("Yarkshare").
 
 Most phones / location-aware devices use a bunch of different sources to figure out where they are. If they can see the sky, then GPS is one of the best data sources. If not though, they have to rely on other methods. This often includes trigangulation based on the GSM base stations it can see, but it also involves seeing what WiFi APs (via the BSSID) are nearby, and then consulting a database that maps BSSIDs to probable locations.
 
-There's a few of these databases. Google has one (obviously), Mozilla has one (I've [written about](/2017/04/09/mozilla-location-services.html) contributing to that before). They all work the same way - rely on devices that have known good locations and capture what BSSIDs are in the vicinity. Then, if another device doesn't have a good fix but can see the same BSSIDs, then it's likely in a similar place.
+There's a few of these databases. Google has one (obviously), Mozilla has one (I've [written about]({% post_url /2017/2017-04-09-mozilla-location-services %}) contributing to that before). They all work the same way - rely on devices that have known good locations and capture what BSSIDs are in the vicinity. Then, if another device doesn't have a good fix but can see the same BSSIDs, then it's likely in a similar place.
 
 The glaring flaw in this model is that if you physically move the location of the Wifi APs, it breaks.
 
