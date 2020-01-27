@@ -15,11 +15,11 @@ defaults:
     values:
       font: true
   - scope:
-      path: "assets/js"
+      path: "assets/js/*.js"
     values:
       js: true
   - scope:
-      path: "assets/css"
+      path: "assets/css/*.css"
     values:
       css: true
 monthly_archive:

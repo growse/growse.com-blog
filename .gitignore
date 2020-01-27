@@ -6,6 +6,8 @@ _site
 .idea
 *.iml
 _yarn/node_modules
+_yarn/ts/*.js
+_yarn/yarn-error.log
 /assets/js/
 /assets/css/
 /_includes/critical.css
