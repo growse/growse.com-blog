@@ -8,6 +8,5 @@ _site
 _yarn/node_modules
 _yarn/ts/*.js
 _yarn/yarn-error.log
-/assets/js/
-/assets/css/
+/assets/packed/
 /_includes/critical.css

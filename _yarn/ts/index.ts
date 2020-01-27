@@ -7,6 +7,8 @@ new Locator().getLocation();
 new Posts().getPostList();
 
 
+import '../scss/main.scss';
+
 //
 // const growse = {
 //     searchEndpoint: "https://www.growse.com/search/",
