@@ -2,7 +2,7 @@
 
 {% assign page = post %}
 
-{% include header.html %}
+{% include header.html root=true %}
 <div id="content">
     <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <header>
@@ -16,7 +16,6 @@
                   datetime="{{page.date | date: "%Y-%m-%d"}}">
                 {{page.date|date_to_long_string}}
             </time>
-            <link href="https://plus.google.com/+AndrewRowson" rel="author" content="Andrew Rowson">
         </header>
         <section itemprop="articleBody">
             {{post.content | markdownify}}
