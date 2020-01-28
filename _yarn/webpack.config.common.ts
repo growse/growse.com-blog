@@ -1,7 +1,6 @@
 import webpack = require("webpack");
 import path from 'path'
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const config: webpack.Configuration = {
     entry: './ts/index.ts',
@@ -10,11 +9,7 @@ const config: webpack.Configuration = {
         path: path.resolve(__dirname, '..', 'assets', 'packed'),
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[name].css',
-        })
+        new CleanWebpackPlugin()
     ],
     module: {
         rules: [
