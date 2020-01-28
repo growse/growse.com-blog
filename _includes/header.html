@@ -7,11 +7,24 @@
     <title>{{ page.title }} :: growse.com</title>
     <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml"/>
     <style rel="stylesheet">{% capture sass_file %}{% include critical.css %}{% endcapture %}{{ sass_file }}</style>
-
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="prefetch" href="https://www.growse.com/location/" />
+    <link rel="prefetch" href="/posts.json" />
+    <link rel="preload" href="https://www.growse.com/location/" />
+    <link rel="preload" href="/posts.json" />
+    {% assign css_files = site.static_files | where: "css", true %}
+    {% for css in css_files %}
+    <link rel="prefetch" href="{{ css.path}}">
+    <link rel="preload" href="{{ css.path}}">
+    {% endfor %}
+    {% assign js_files = site.static_files | where: "js", true %}
+    {% for js in js_files %}
+    <link rel="prefetch" href="{{js.path}}" />
+    <link rel="preload" href="{{js.path}}" />
+    {% endfor %}
+    <meta name="msapplication-TileColor" content="#ff9000">
     <meta name="theme-color" content="#ff9000">
 
     <meta name="twitter:card" content="summary">

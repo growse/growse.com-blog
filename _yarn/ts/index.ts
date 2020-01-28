@@ -8,7 +8,7 @@ new Posts().getPostList();
 
 
 import '../scss/main.scss';
-
+import '../scss/critical.scss';
 //
 // const growse = {
 //     searchEndpoint: "https://www.growse.com/search/",

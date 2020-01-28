@@ -44,7 +44,7 @@ self.addEventListener('fetch', function (event) {
                 // If both fail, show a generic fallback:
                 return caches.match("/assets/img/png-transparent.png");
             } else {
-                console.error(`TOOT! ${url}`);
+                console.error(`SW failed to fetch: ${url}`);
                 console.error(e, e.message);
             }
         })

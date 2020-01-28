@@ -7,12 +7,13 @@ const config: webpack.Configuration = {
     entry: './ts/index.ts',
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, '..', 'assets','packed'),
+        path: path.resolve(__dirname, '..', 'assets', 'packed'),
     },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
+            chunkFilename: '[name].css',
         })
     ],
     module: {
@@ -23,14 +24,16 @@ const config: webpack.Configuration = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /critical\.scss$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    // Creates `style` nodes from JS strings
-                    // 'style-loader',
-                    // // Translates CSS into CommonJS
-                    'css-loader',
-                    // // Compiles Sass to CSS
+                    {loader: 'file-loader', options: {name: '[name].css',}},
+                    'sass-loader'
+                ],
+            },
+            {
+                test: /main\.scss$/i,
+                use: [
+                    {loader: 'file-loader', options: {name: 'css/[name].[hash].css',}},
                     'sass-loader',
                 ],
             },

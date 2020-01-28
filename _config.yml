@@ -19,7 +19,7 @@ defaults:
     values:
       js: true
   - scope:
-      path: "assets/packed/*.css"
+      path: "assets/packed/css/*.css"
     values:
       css: true
 monthly_archive:
@@ -40,5 +40,6 @@ exclude:
   - "*.iml"
   - vendor
   - .idea
+  - _yarn
 
 permalink: /:year/:month/:day/:title:output_ext
