@@ -9,4 +9,3 @@ _yarn/node_modules
 _yarn/ts/*.js
 _yarn/yarn-error.log
 /assets/packed/
-/_includes/critical.css
