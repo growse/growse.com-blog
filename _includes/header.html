@@ -12,17 +12,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="prefetch" href="https://www.growse.com/location/" />
     <link rel="prefetch" href="/posts.json" />
-    <link rel="preload" href="https://www.growse.com/location/" />
-    <link rel="preload" href="/posts.json" />
+    <link rel="preload" as="script" href="https://www.growse.com/location/" />
+    <link rel="preload" as="script" href="/posts.json" />
     {% assign css_files = site.static_files | where: "css", true %}
     {% for css in css_files %}
     <link rel="prefetch" href="{{ css.path}}">
-    <link rel="preload" href="{{ css.path}}">
+    <link rel="preload" as="style" href="{{ css.path}}">
     {% endfor %}
     {% assign js_files = site.static_files | where: "js", true %}
     {% for js in js_files %}
     <link rel="prefetch" href="{{js.path}}" />
-    <link rel="preload" href="{{js.path}}" />
+    <link rel="preload" as="script" href="{{js.path}}" />
     {% endfor %}
     <meta name="msapplication-TileColor" content="#ff9000">
     <meta name="theme-color" content="#ff9000">

@@ -6,7 +6,6 @@ new LazyLoad({elements_selector: ".lazyload"}, document.querySelectorAll(".lazyl
 new Locator().getLocation();
 new Posts().getPostList();
 
-
 import '../scss/main.scss';
 import '../scss/critical.scss';
 //
