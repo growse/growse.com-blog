@@ -3,6 +3,8 @@ layout: post
 title: "Problems with unmounted SAN LUNs and Windows clients"
 ---
 
+This is about a problem with computers and storage devices. There is no satisfying conclusion. I do think I fixed the issue, but I still don't really know what caused it. Grrr.
+
 # Block storage on Kubernetes
 
 I've got a couple of the HP Microserver G8s at home, one of which is running [FreeNAS](https://freenas.org). It's generally one of the few things I have that I don't tinker with and (as a result) doesn't really break that often. I've got 4 spinning rust discs in it, plus a couple of SSDs that are doing ZFS caching things.
