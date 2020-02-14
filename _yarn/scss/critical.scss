@@ -262,6 +262,10 @@ html {
 
           section {
             line-height: 1.6em;
+            img { // Images get squished without this
+                width: auto;
+                height: auto;
+            }
           }
 
           h2 {
