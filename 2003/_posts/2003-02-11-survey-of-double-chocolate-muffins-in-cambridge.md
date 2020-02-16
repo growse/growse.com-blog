@@ -7,7 +7,7 @@ shop sold the best double chocolate muffins. In case you do not know, a double
 chocolate muffin is a large-ish mushroom shaped cake made of chocolate sponge
 with chocolate chips in. Here's a diagram:
 
-{% include image.html alt="Diagram of a Muffin" src="/assets/img/2003-02-11-survey-of-double-chocolate-muffins-in-cambridge/cake.gif" %}
+{% include image.html alt="Diagram of a Muffin" src="/assets/img/2003-02-11-survey-of-double-chocolate-muffins-in-cambridge/cake.png" %}
 
 These vary hugely in quality, size and price. I knew what had to be done to
 clear up any confusion on this hotly debated topic. Please note, this is not

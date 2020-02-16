@@ -1,5 +1,12 @@
 <picture>
-<!--    <source class="lazyload" type="image/webp" data-src="{{ include.src }}.webp" data-sizes="100w" />-->
-    <img src="/assets/img/png-transparent.png" alt="{{ include.alt }}" class="lazyload" data-src="{{ include.src }}" {% imagesize {{include.src}}:props %} />
+    {% assign extension = include['src'] | slice: -4,4 %}
+    <source type="image/webp" data-srcset="{{ include.src }}.webp" />
+    {% case extension %}
+    {% when ".png" %}
+    <source type="image/png" data-srcset="{{ include.src }}" />
+    {% when '.jpg' %}
+    <source type="image/jpeg" data-srcset="{{ include.src }}" />
+    {% endcase %}
+    <img src="/assets/img/png-transparent.png" alt="{{ include.alt }}" class="lazyload" data-src="{{ include.src }}" {% imagesize {{include.src}}:props %}/>
 </picture>
-<noscript><img src="{{include.src}}" alt="{{ include.alt }}" {% imagesize {{include.src}}:props %} /></noscript>
+<noscript><img src="{{include.src}}" alt="{{ include.alt }}" {% imagesize {{include.src}}:props %}/></noscript>

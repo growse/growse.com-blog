@@ -76,13 +76,13 @@ cable, I found it actually worked.
 A diagram would be really useful at this point, but I've got nowt to draw it
 in. Oh wait, there's MS paint.
 
-{% include image.html alt="diagram of something" src="/assets/img/2004-05-22-the-blob-box/blobbox-diagram1.gif" %}
+{% include image.html alt="diagram of something" src="/assets/img/2004-05-22-the-blob-box/blobbox-diagram1.png" %}
 
 After realising this, I just had to short out the battery connector in the
 bass with the connector I bought, and then shove 9V down the cable. The
 circuit I built for the box looked something like this:
 
-{% include image.html alt="diagram of something else" src="/assets/img/2004-05-22-the-blob-box/blobbox-diagram2.gif" %}
+{% include image.html alt="diagram of something else" src="/assets/img/2004-05-22-the-blob-box/blobbox-diagram2.png" %}
 
 I'm sure that's fairly self explanatory. There's a DPDT switch, which switches
 on/off, with an LED for each state. Yes, there's an LED to say that it's off.
