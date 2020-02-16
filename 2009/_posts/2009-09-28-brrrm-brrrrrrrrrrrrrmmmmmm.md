@@ -46,5 +46,5 @@ new era involving not being depressed by the tube awaits.
 
    [2]: http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Old+Street&sll=51.513351,-0.304214&sspn=0.078948,0.154324&ie=UTF8&z=15&iwloc=A
 
-   [3]: http://ww1.honda.co.uk/motorcycles/DispatcherServlet?hidAction=Lookup&hidActionDetail=view_introduction&hidMSGID=11&hidMSGCode=CC125&hidMSGName=125+CC&hidProductID=116&hidSelectedProductCode=CBF125&hidProductName=CBF125#focusHere
+   [3]: https://www.honda.co.uk/motorcycles/range/125cc/cb125f-2015/overview.html
 
