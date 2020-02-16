@@ -2,17 +2,21 @@ import webpack = require("webpack");
 import path from 'path'
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const config: webpack.Configuration = {
     entry: './ts/index.ts',
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, '..', 'assets', 'packed'),
+        path: path.resolve(__dirname, '..', 'assets'),
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({filename: 'css/[name].[hash].css',})
+        new MiniCssExtractPlugin({filename: 'css/[name].[hash].css',}),
+        new CopyWebpackPlugin([{
+            from: 'img/',
+            to: 'img/'
+        }])
     ],
     module: {
         rules: [
@@ -34,7 +38,7 @@ const config: webpack.Configuration = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: "/assets/packed"
+                            publicPath: "/assets"
                         }
                     },
                     'css-loader',

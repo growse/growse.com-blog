@@ -17,8 +17,8 @@
     <link rel="preload" as="script" href="/posts.json" />
     {% assign css_files = site.static_files | where: "css", true %}
     {% for css in css_files %}
-    <link rel="prefetch" href="{{ css.path}}">
-    <link rel="preload" as="style" href="{{ css.path}}">
+    <link rel="prefetch" href="{{css.path}}" />
+    <link rel="preload" as="style" href="{{css.path}}" />
     {% endfor %}
     {% assign js_files = site.static_files | where: "js", true %}
     {% for js in js_files %}

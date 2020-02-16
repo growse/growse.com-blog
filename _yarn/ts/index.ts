@@ -2,7 +2,13 @@ import LazyLoad from 'vanilla-lazyload';
 import {Locator} from "./location";
 import {Posts} from "./posts";
 
-new LazyLoad({elements_selector: ".lazyload"}, document.querySelectorAll(".lazyload"));
+new LazyLoad(
+    {
+        elements_selector: ".lazyload",
+        use_native: true
+    },
+    document.querySelectorAll(".lazyload")
+);
 new Locator().getLocation();
 new Posts().getPostList();
 

@@ -119,7 +119,7 @@ html {
 
             > a {
               svg.social-logo {
-                pointer-events: bounding-box;
+                pointer-events: all;
                 margin: 4px;
                 width: 24px;
                 height: 24px;
