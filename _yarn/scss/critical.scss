@@ -156,6 +156,7 @@ html {
       #content {
         height: 100%;
         background-color: $background-color;
+
         article {
           header {
             width: auto;
@@ -237,6 +238,7 @@ html {
             }
 
           }
+
           // Paragraph code blocks
           pre {
             code {
@@ -252,6 +254,7 @@ html {
               margin: 1em 0;
             }
           }
+
           // Inline code blocks
           code {
             border: 1px solid #556;
@@ -262,9 +265,16 @@ html {
 
           section {
             line-height: 1.6em;
+
             img { // Images get squished without this
-                width: auto;
-                height: auto;
+              width: auto;
+              height: auto;
+            }
+
+            figure {
+              figcaption {
+                font-style: italic;
+              }
             }
           }
 
@@ -276,6 +286,7 @@ html {
             max-width: 100%;
           }
         }
+
         @media screen and (max-width: 767px) {
           margin: 0;
         }

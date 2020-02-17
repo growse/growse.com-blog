@@ -8,13 +8,10 @@ Some people might say "why not use iSCSI instead?", and I thought I'd quickly te
  
 I then ran [atto benchmark](https://www.atto.com/disk-benchmark/):
 
-### iSCSI
-
-{% include image.html alt="iSCSI" src='/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png' %}
-
-### 4GB FC
-
-{% include image.html alt="FC" src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png" %}
+<figure>
+{% include image.html alt="iSCSI" src='/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/iscsi.png' %} {% include image.html alt="FC" src="/assets/img/2018-04-29-disk-performance-over-fc-vs-iscsi-4k-vs-512byte-sectors/fc.png" %}
+<figcaption>iSCSI first, then FC</figcaption>
+</figure>
 
 
 So, fairly obviously, the iSCSI drive is bumping into the 1GbE network limitation, which has a theoretical max throughput of 125MB/s. The FC link has a limit of 500MB/s and it looks like that's getting closer to that. 
