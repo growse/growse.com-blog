@@ -1,7 +1,4 @@
-import $ from "jquery";
-
 import OverlayScrollbars from 'overlayscrollbars';
-import jqXHR = JQuery.jqXHR;
 
 interface Post {
     readonly title: string;
@@ -15,7 +12,7 @@ interface PostList {
 
 export class Posts {
     private readonly disabledPaths = ["/search.html"];
-    private enabled = true;
+    private readonly enabled: boolean = true;
 
     constructor() {
         this.enabled = !this.disabledPaths.includes(document.location.pathname);
@@ -49,9 +46,6 @@ export class Posts {
         }
     };
 
-    private fetchPostList(): jqXHR {
-        return $.getJSON('/posts.json');
-    }
 
     public displayPostList() {
         if (!this.enabled) {
@@ -59,41 +53,52 @@ export class Posts {
         }
         document.querySelector("nav#postlist")?.classList.remove("hidden");
         const hereClass = 'here';
-        this.fetchPostList().then(data => {
-            $(() => {
-                (<PostList>data).posts.forEach(function (post: Post) {
-                    const li = $("<li>");
-                    const a = $("<a>", {href: post.url, title: post.title});
-                    const span = $("<span>", {text: post.title});
-                    // span.text(post.title);
-                    li.data("datestamp", post.date);
-                    li.data("id", post.title);
+        fetch('/posts.json')
+            .then(response => response.json() as Promise<PostList>)
+            .then(postList => {
+                postList.posts.forEach(function (post: Post) {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.setAttribute("href", post.url);
+                    a.setAttribute("title", post.title);
+
+                    const span = document.createElement("span");
+                    span.innerText = post.title;
+                    li.setAttribute("data-datestamp", post.date);
+                    li.setAttribute("data-id", post.title);
                     if (document.location.pathname.endsWith(post.url)) {
-                        a.addClass(hereClass);
+                        a.classList.add(hereClass);
                     }
                     a.append(span);
                     li.append(a);
-                    $("#articlenav").append(li);
+                    document.getElementById("articlenav")?.appendChild(li);
                 });
                 if (document.location.pathname == "/") {
-                    $("#articlenav > li:first > a").addClass(hereClass)
+                    document.querySelector("#articlenav > li:first > a")?.classList.add(hereClass)
                 }
+                setTimeout(() => {
 
-                let postListElement = document.getElementById("postlist")!;
-                let overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);
-
-                //Scroll the left nav to the right point.
-                if ($("." + hereClass).length > 0 && $(window).height()) {
-                    const windowHeight = $(window).height()!;
-                    const percentageDown = ($(`.${hereClass}`).position().top / windowHeight) * 100;
+                    const postListElement = document.getElementById("postlist")!;
+                    const overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);
+                    console.log(overlayScrollbars.options());
+                    overlayScrollbars.scroll({y: 0});
+                    const windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                    const currentNavLink = document.querySelector(`ul#articlenav>li>a.${hereClass}`);
+                    const currentNavLinkTop = currentNavLink?.getBoundingClientRect().top;
+                    const percentageDown = (currentNavLinkTop!! / windowHeight) * 100;
+                    console.log(`Window height is ${windowHeight} and currentNavLInk Top is ${currentNavLinkTop}. Percentagedown ${percentageDown}`);
+                    console.log(`Scrolly: ${overlayScrollbars.scroll().position.y}`);
+                    console.log(currentNavLink);
+                    console.log(currentNavLink?.getBoundingClientRect());
+                    console.log(document.querySelectorAll(`ul#articlenav>li>a`)?.length);
+                    console.log(document.querySelectorAll(`ul#articlenav>li>a`)[0].getBoundingClientRect());
                     if (percentageDown > 50) {
-                        const value = $('.here').position().top - (windowHeight / 2) + ($('nav ul li:first').height()! / 2);
+                        const value = currentNavLinkTop!! - (windowHeight / 2) + (document.querySelector('nav#postlist ul li')?.getBoundingClientRect().height! / 2);
                         overlayScrollbars.scroll({y: value});
                     } else {
                         overlayScrollbars.scroll({y: 0});
                     }
-                }
+                }, 2000);
             });
-        })
     }
 }
