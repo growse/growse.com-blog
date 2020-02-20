@@ -76,29 +76,19 @@ export class Posts {
                 if (document.location.pathname == "/") {
                     document.querySelector("#articlenav > li:first > a")?.classList.add(hereClass)
                 }
-                setTimeout(() => {
-
-                    const postListElement = document.getElementById("postlist")!;
-                    const overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);
-                    console.log(overlayScrollbars.options());
+                const postListElement = document.getElementById("postlist")!;
+                const overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);
+                overlayScrollbars.scroll({y: 0});
+                const windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                const currentNavLink = document.querySelector(`ul#articlenav>li>a.${hereClass}`);
+                const currentNavLinkTop = currentNavLink?.getBoundingClientRect().top;
+                const percentageDown = (currentNavLinkTop!! / windowHeight) * 100;
+                if (percentageDown > 50) {
+                    const value = currentNavLinkTop!! - (windowHeight / 2) + (document.querySelector('nav#postlist ul li')?.getBoundingClientRect().height! / 2);
+                    overlayScrollbars.scroll({y: value});
+                } else {
                     overlayScrollbars.scroll({y: 0});
-                    const windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-                    const currentNavLink = document.querySelector(`ul#articlenav>li>a.${hereClass}`);
-                    const currentNavLinkTop = currentNavLink?.getBoundingClientRect().top;
-                    const percentageDown = (currentNavLinkTop!! / windowHeight) * 100;
-                    console.log(`Window height is ${windowHeight} and currentNavLInk Top is ${currentNavLinkTop}. Percentagedown ${percentageDown}`);
-                    console.log(`Scrolly: ${overlayScrollbars.scroll().position.y}`);
-                    console.log(currentNavLink);
-                    console.log(currentNavLink?.getBoundingClientRect());
-                    console.log(document.querySelectorAll(`ul#articlenav>li>a`)?.length);
-                    console.log(document.querySelectorAll(`ul#articlenav>li>a`)[0].getBoundingClientRect());
-                    if (percentageDown > 50) {
-                        const value = currentNavLinkTop!! - (windowHeight / 2) + (document.querySelector('nav#postlist ul li')?.getBoundingClientRect().height! / 2);
-                        overlayScrollbars.scroll({y: value});
-                    } else {
-                        overlayScrollbars.scroll({y: 0});
-                    }
-                }, 2000);
+                }
             });
     }
 }
