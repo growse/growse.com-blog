@@ -2,7 +2,7 @@
 layout: search
 title: Search Results
 ---
-<script type="application/template" id="searchResultTemplate">
+<template id="searchResultTemplate">
     <li>
         <article itemtype="https://schema.org/BlogPosting" itemscope class="searchresult">
             <header>
@@ -15,13 +15,22 @@ title: Search Results
             <p class="fragment"></p>
         </article>
     </li>
-</script>
+</template>
 <section id="searchresults" itemtype="https://schema.org/SearchResultsPage" itemscope>
+
     <header>
         <h1>Search Results</h1>
 
-        <p>You looked for <strong id="searchterm"></strong>. I found <span id="totalhits"></span>
+        <p id="summary">You searched for <mark id="searchterm"></mark>. I found <span id="totalhits"></span>
             things that might have something to do with this.</p>
+        <nav>
+            <ul id="pager"></ul>
+        </nav>
     </header>
-    <ol itemscope itemtype="https://schema.org/ItemList"></ol>
+    <div id="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <ol itemscope itemtype="https://schema.org/ItemList" id="searchResultList"></ol>
 </section>

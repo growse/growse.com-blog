@@ -45,11 +45,14 @@ html {
         background: $background-color;
       }
 
-      nav {
+      nav#postlist {
         @media screen and (max-width: 1023px) {
           display: none;
         }
         @media screen and (min-width: 1024px) {
+          &.hidden {
+            display: none;
+          }
           position: fixed;
           float: left;
           width: $lefthandwidth;
@@ -113,7 +116,17 @@ html {
             font-weight: 300;
             line-height: 1.0rem;
           }
+          div#search {
+            &.visible {
+              display: block;
+            }
 
+            display: none;
+
+            fieldset {
+              border: none;
+            }
+          }
           #social-container {
             text-align: center;
 
@@ -148,7 +161,6 @@ html {
               font-size: 0.7rem;
             }
           }
-
         }
       }
 
@@ -156,6 +168,10 @@ html {
       #content {
         height: 100%;
         background-color: $background-color;
+
+        &.nonav {
+          margin-left: 0;
+        }
 
         article {
           header {
@@ -287,6 +303,18 @@ html {
           }
         }
 
+        div#searchresults {
+          header {
+            p#summary {
+              display: none;
+
+              &.visible {
+                display: block;
+              }
+            }
+          }
+        }
+
         @media screen and (max-width: 767px) {
           margin: 0;
         }
@@ -302,14 +330,12 @@ html {
         @media screen and (min-width: 768px) {
           padding: 2rem;
         }
-
-
       }
 
       footer {
         font-size: 0.8rem;
         background-color: $background-hl-color;
-        padding: 10px;
+        paadding: 10px;
         text-align: right;
       }
     }

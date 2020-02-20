@@ -26,14 +26,40 @@ html {
       }
 
       #content {
-        &.nonav {
-          margin-left: 0;
-        }
-
         #searchresults {
+          mark {
+            background-color: transparent;
+            color: $primary-highlight-color;
+            font-weight: bold;
+          }
           nav {
-            #paginator {
-              float: right;
+            ul#pager {
+              list-style-type: none;
+              padding-left: 0;
+
+              li {
+                display: inline-block;
+
+                a {
+                  padding: 0.5rem;
+                  border: 1px solid $background-hl-color;
+                  border-right: 0;
+
+                  &.current {
+                    background-color: $background-hl-color;
+                  }
+                }
+
+                a:last-child {
+                  border-right: 1px solid $background-hl-color;
+                }
+              }
+
+              @media screen and (max-width: 768px) {
+                a.absolutePage {
+                  display: none;
+                }
+              }
             }
           }
 
@@ -62,15 +88,62 @@ html {
                     font-size: 1.5rem;
                   }
                 }
-
-                mark {
-                  background-color: transparent;
-                  color: inherit;
-                  font-weight: bold;
-                }
               }
             }
           }
+
+          div#spinner {
+            &.hidden {
+              display: none;
+            }
+
+            margin: 100px auto 0;
+            width: 70px;
+            text-align: center;
+
+
+            > div {
+              width: 18px;
+              height: 18px;
+              background-color: #333;
+
+              border-radius: 100%;
+              display: inline-block;
+              -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+              animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            }
+
+            div.bounce1 {
+              -webkit-animation-delay: -0.32s;
+              animation-delay: -0.32s;
+            }
+
+            div.bounce2 {
+              -webkit-animation-delay: -0.16s;
+              animation-delay: -0.16s;
+            }
+
+            @-webkit-keyframes sk-bouncedelay {
+              0%, 80%, 100% {
+                -webkit-transform: scale(0)
+              }
+              40% {
+                -webkit-transform: scale(1.0)
+              }
+            }
+
+            @keyframes sk-bouncedelay {
+              0%, 80%, 100% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+              }
+              40% {
+                -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+              }
+            }
+          }
+
         }
       }
     }

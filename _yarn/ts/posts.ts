@@ -14,6 +14,13 @@ interface PostList {
 }
 
 export class Posts {
+    private readonly disabledPaths = ["/search.html"];
+    private enabled = true;
+
+    constructor() {
+        this.enabled = !this.disabledPaths.includes(document.location.pathname);
+    }
+
     private overlayScrollBarOptions: OverlayScrollbars.Options = {
         className: "os-theme-light",
         resize: "none",
@@ -46,7 +53,11 @@ export class Posts {
         return $.getJSON('/posts.json');
     }
 
-    public getPostList() {
+    public displayPostList() {
+        if (!this.enabled) {
+            return;
+        }
+        document.querySelector("nav#postlist")?.classList.remove("hidden");
         const hereClass = 'here';
         this.fetchPostList().then(data => {
             $(() => {
