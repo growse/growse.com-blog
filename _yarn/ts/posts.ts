@@ -74,7 +74,7 @@ export class Posts {
                     document.getElementById("articlenav")?.appendChild(li);
                 });
                 if (document.location.pathname == "/") {
-                    document.querySelector("#articlenav > li:first > a")?.classList.add(hereClass)
+                    document.querySelector("#articlenav > li > a")?.classList.add(hereClass)
                 }
                 const postListElement = document.getElementById("postlist")!;
                 const overlayScrollbars = OverlayScrollbars(postListElement, this.overlayScrollBarOptions);

@@ -10,7 +10,7 @@ new LazyLoad(
     },
     document.querySelectorAll(".lazyload")
 );
-// new Locator().getLocation();
+new Locator().getLocation();
 new Posts().displayPostList();
 new Search();
 
