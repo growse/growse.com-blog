@@ -11,9 +11,9 @@ export class Locator {
     public getLocation() {
         fetch(this.locationEndpoint).then(response => response.json() as Promise<Location>).then(data => {
             let location = <Location>data;
-            document.getElementById('#location')?.append(
+            document.getElementById('location')!!.innerHTML =
                 `<p>Last seen floating around near <a href="http://maps.google.com/?q=${location.latitude},${location.longitude}">
-                ${location.name}</a>. ${location.totalDistance.toLocaleString()} miles this year.</p>`);
+                ${location.name}</a>. ${location.totalDistance.toLocaleString()} miles this year.</p>`;
         });
     }
 }
