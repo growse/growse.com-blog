@@ -15,10 +15,15 @@ layout: compress
                   datetime="{{page.date | date: "%Y-%m-%d"}}">
                 {{page.date|date_to_long_string}}
             </time>
+
         </header>
         <section itemprop="articleBody">
             {{content}}
         </section>
+        <nav>
+            {% if page.previous %}<p>Prev: <a href="{{page.previous.url}}"> {{page.previous.title}}</a></p>{% endif %}
+            {% if page.next %}<p>Next: <a href="{{page.next.url}}">Next: {{page.next.title}}</a></p>{% endif %}
+        </nav>
     </article>
 </div>
 {% include footer.html %}
