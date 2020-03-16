@@ -4174,10 +4174,10 @@ osenv@0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-overlayscrollbars@^1.10.2:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-1.10.2.tgz#7eaa04a9b6f17432ada9ae0e604517755544b33b"
-  integrity sha512-xlT6CT9NziK8VegHjJRw9O2QrMDi7HTrmPD1ZGYCG0ukJwdsR5l6JnRBAr5NBfsRjnsJpxvGPraRKR17zeGEBg==
+overlayscrollbars@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-1.11.0.tgz#374a14f37b78214e0166db50c1a489b6af53eddb"
+  integrity sha512-Wdzzfdta5/5Tc77FoibH14Cr34r7op0jh3eI9z1zvz9K4YiRIzNxvNIh3Rbezr8cs4Bn7NTNKzT8OHsJB58CxQ==
 
 p-cancelable@^0.3.0:
   version "0.3.0"
