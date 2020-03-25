@@ -42,6 +42,6 @@
   },
   "dependencies": {
     "overlayscrollbars": "^1.11.0",
-    "vanilla-lazyload": "^12.4.0"
+    "vanilla-lazyload": "^14.0.0"
   }
 }
