@@ -13,7 +13,7 @@ The problem here is that it effectively executes every single time the shell dec
 
 So let's see how `powerline-shell` performs. On my laptop (recent MBP, python 3.7.7):
 
-```shell script
+```shell
 [mac]$ time powerline-shell
 real    0m0.096s
 user    0m0.066s
@@ -22,7 +22,7 @@ sys     0m0.032s
 
 On a small cloud VPS running debian:
 
-```shell script
+```shell
 [cloud-host]$ time powerline-shell
 real    0m0.081s
 user    0m0.058s
@@ -31,7 +31,7 @@ sys     0m0.022s
 
 Not too bad. 80-90ms is probably ok-enough. Let's see how it runs on a Raspberry Pi 2 (arm7, hf) with an NFS root.
 
-```shell script
+```shell
 [rpi 2]$ time powerline-shell
 real    0m1.019s
 user    0m0.760s
@@ -40,7 +40,7 @@ sys     0m0.248s
 
 Oh. How about an rPi zero (arm6, hf)?
 
-```shell script
+```shell
 [rpi-zero]$ time powerline-shell
 real    0m1.401s
 user    0m1.136s
@@ -53,7 +53,7 @@ Hmm. Waiting a second for your shell to be responsive after running a command is
 
 Computers are pretty quick these days, but using python to write a program that has to execute very quickly doesn't seem like a good idea. Thankfully, some other people on the internet have had a similar thought: someone's got a [decent version available in golang](https://github.com/justjanne/powerline-go). Let's see how that does.
 
-```shell script
+```shell
 [mac]$ time powerline-go
 real    0m0.030s
 user    0m0.013s
@@ -95,14 +95,14 @@ In rust, it's a little more complex. The compiler has to output the actual assem
 
 The `cargo` utility is what takes care of building and managing the dependencies of any rust project. In theory, cross-compiling is as simple as specifying the target that you want to build for when executing `cargo build`. So let's try and build for `arm-unknown-linux-musleabihf` (I'm using musl because it'll a little lighter than glibc so should run faster - I should test this though).
 
-```shell script
+```shell
 $ cargo build --target=arm-unknown-linux-musleabihf
 ...
 the `arm-unknown-linux-musleabihf` target may not be installed
 ```
 
 Ok, so we install with rustup
-```shell script
+```shell
 $ rustup target add arm-unknown-linux-musleabihf
 $ cargo build --target=arm-unknown-linux-musleabihf
 ...
@@ -111,7 +111,7 @@ error occurred: Failed to find tool. Is `arm-linux-musleabihf-gcc` installed?
 
 Ah, it's looking for a compiler that can compile some of the dependencies for the requested target. The problem I have is that I'm building this on Ubuntu Bionic (18.04), and this doesn't have any package that provides the `musl` version of armhf gcc. However, it does offer `gcc-8-arm-linux-gnueabihf` (the glibc version) and `musl-tools`. `musl-tools` supplies a script called `musl-gcc` which sets some arguments pointing to the musl libs and then executes the actual CC. In cargo, we can tell it to use a specific compiler by overriding `TARGET_CC`. We also need to set the environment variable `REALGCC` to be the actual cross-compiler we want to use, as this is then invoked by `musl-gcc`. The default (I think) is just to invoke the `gcc` for whatever the current arch is, and we don't want that (we want ARM!).
 
-```shell script
+```shell
 $ REALGCC=arm-linux-gnueabihf-gcc-8 TARGET_CC=musl-gcc cargo build --target=arm-unknown-linux-musleabihf
 ...
 error: linking with `cc` failed: exit code: 1
@@ -123,7 +123,7 @@ Oh, the linker has failed. So the compiler worked! Progress!
 
 More magic variables are needed. Cargo needs to be told what linker to use for each target if it's not the default linker. So we set `CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABIHF_LINKER` to be the cross-suite's arm linker: `arm-linux-gnueabihf-ld`
 
-```shell script
+```shell
 $ CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABIHF_LINKER=arm-linux-gnueabihf-ld REALGCC=arm-linux-gnueabihf-gcc-8 TARGET_CC=musl-gcc cargo build --target=arm-unknown-linux-musleabihf
 ...
 Finished dev [unoptimized + debuginfo] target(s) in 1.19s
@@ -133,7 +133,7 @@ Success!
 
 Let's build a release version (`cargo build [...] --release`) and see how it performs.
 
-```shell script
+```shell
 [mac]$ time powerline-rust
 real    0m0.009s
 user    0m0.004s
@@ -157,7 +157,7 @@ Hmm. Something's odd about the rpi-zero build. This is an ARMv6 chip that defini
 
 Let's try GNU instead of MUSL.
 
-```shell script
+```shell
 [build]$ CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabihf-gcc-8 TARGET_CC=arm-linux-gnueabihf-gcc-8  cargo build --target=arm-unknown-linux-gnueabihf
 [rpi-zero]$ ./powerline-rust-arm-gnueabihf
 Illegal Instruction 
@@ -169,7 +169,7 @@ Nope. What?
 
 Let's have a look at the binary to find out what it is.
 
-```shell script
+```shell
 $ readelf -A powerline-rust-arm-gnueabihf
 Attribute Section: aeabi
 File Attributes
@@ -194,7 +194,7 @@ File Attributes
 
 Um, GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I have no idea why this happens. Let's try soft-float:
 
-```shell script
+```shell
 [build]$ root@f8704b95def8:~/src# CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabi-gcc-8 TARGET_CC=arm-linux-gnueabi-gcc-8  cargo build --target=arm-unknown-linux-gnueabi
 [rpi-zero]$ ./powerline-rust-arm-gnueabi
 \[\e[38;5;250m\]\[\e[48;5;240m\] growse \[\e[48;5;238m\]\[\e[38;5;240m\]\[\e[38;5;250m\]\[\e[48;5;238m\] sensorbot01 \[\e[48;5;31m\]\[\e[38;5;238m\]\[\e[38;5;254m\]\[\e[48;5;31m\] ~ \[\e[48;5;161m\]\[\e[38;5;31m\]\[\e[38;5;15m\]\[\e[48;5;161m\] Big Bang \[\e[48;5;22m\]\[\e[38;5;161m\]\[\e[38;5;15m\]\[\e[48;5;22m\] 11✔ \[\e[48;5;130m\]\[\e[38;5;22m\]\[\e[38;5;15m\]\[\e[48;5;130m\] 10✎ \[\e[48;5;52m\]\[\e[38;5;130m\]\[\e[38;5;15m\]\[\e[48;5;52m\] 11❓ \[\e[48;5;161m\]\[\e[38;5;52m\]\[\e[38;5;15m\]\[\e[48;5;161m\] $ \[\e[0m\]\[\e[38;5;161m\]\[\e[0m\]
@@ -202,7 +202,7 @@ Um, GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I have
 
 So, this works. Let's check the ELF attributes:
 
-```shell script
+```shell
 $ readelf -A powerline-rust-arm-gnueabi
 Attribute Section: aeabi
 File Attributes
@@ -228,7 +228,7 @@ The problem here is really the linker. If the one that ships with Ubuntu doesn't
 
 ([This issue](https://github.com/BurntSushi/ripgrep/issues/676#issuecomment-374058198) and [this reddit thread](https://www.reddit.com/r/rust/comments/9io0z8/run_crosscompiled_code_on_rpi_0/) were pretty useful in helping me figure it out).
 
-```shell script
+```shell
 [build]$ git clone --depth=1 https://github.com/raspberrypi/tools.git rpi-tools
 [build]$ export MAGIC_RPI_GCC=rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-gcc
 [build]$ CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=$MAGIC_RPI_GCC TARGET_CC=$MAGIC_RPI_GCC cargo build --target=arm-unknown-linux-gnueabihf --release
@@ -257,7 +257,7 @@ File Attributes
 
 Great! Looks like we have a binary that should work - it's ARMv6 and VPFv2, which is what the rPI needs as a baseline. How does it perform?
 
-```shell script
+```shell
 [rpi 2]$ time powerline-rust
 real    0m0.030s
 user    0m0.002s
