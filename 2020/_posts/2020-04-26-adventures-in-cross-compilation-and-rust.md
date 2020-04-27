@@ -87,9 +87,9 @@ So in theory, a version of `powerline-shell` in rust should perform pretty well.
 
 # Compile for everything!
 
-One thing that a lot of "newer" languages and environments have in common is a recognition that sometimes the type of computer you're developing / building you application on is not the same as what it will eventually run on. Hence them making cross-compiling very straightforward.
+One thing that a lot of "newer" languages and environments have in common is a recognition that sometimes the type of computer you're developing / building you application on is not the same as what it will eventually run on. Hence them making cross-compiling very straightforward (at least in theory).
 
-In golang, cross-compilation is very easy: just set the `GOOS` and `GOARCH` environment variables before building it and the output you'll end up with is a binary that will execute on that platform. I assume this is straightforward because golang code fundamentally runs on a VM, so cross compiling is just a case of bundling the right VM for the target system with the binary. 
+In golang, cross-compilation is very easy: just set the `GOOS` and `GOARCH` environment variables before building it and the output you'll end up with is a binary that will execute on that platform. I assume this is simple because golang code fundamentally runs on a VM, so cross compiling is just a case of bundling the right VM for the target system with the binary. 
 
 In rust, it's a little more complex. The compiler has to output the actual assembler that will execute on the target architecture, in a format that can be run by the target OS. The process is described pretty well [here](https://rustc-dev-guide.rust-lang.org/overview.html).
 
@@ -155,7 +155,7 @@ Illegal instruction
 
 Hmm. Something's odd about the rpi-zero build. This is an ARMv6 chip that definitely has hard-float, so an arm eabihf build should work fine. If I build the same output on OSX (using https://github.com/osx-cross/homebrew-arm), I get a binary that works. So what's happening?
 
-Let's try GNU instead of MUSL.
+Maybe it's just musl being odd. Let's try GNU instead.
 
 ```shell
 [build]$ CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabihf-gcc-8 TARGET_CC=arm-linux-gnueabihf-gcc-8  cargo build --target=arm-unknown-linux-gnueabihf
@@ -163,7 +163,7 @@ Let's try GNU instead of MUSL.
 Illegal Instruction 
 ``` 
 
-Nope. What?
+Nope. Something else independent of the libc implementation is causing a binary to be made that doesn't work on ARMv6.
 
 # Stupid compilers and their opinions
 
@@ -192,15 +192,17 @@ File Attributes
   Tag_ABI_FP_16bit_format: IEEE 754
 ```
 
-Um, GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I have no idea why this happens. Let's try soft-float:
+Aha! GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I had made an assumption here: because rustup supports targets like `armv5te-unknown-linux-gnueabi` (for ARMv5), `arm-unknown-linux-gnueabihf` (v6) and `armv7-unknown-linux-gnueabihf` (v7), I had assumed that the `arm-` prefix generically meant "v6" as a sort-of default. I had also assumed that when cargo builds for a given target, it instructs the compiler to use the correct arch version (if the compiler happens to support multiple). It turns out this isn't true.  
+ 
+For no reason at all, what happens if we try soft-float?
 
 ```shell
-[build]$ root@f8704b95def8:~/src# CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabi-gcc-8 TARGET_CC=arm-linux-gnueabi-gcc-8  cargo build --target=arm-unknown-linux-gnueabi
+[build]$ root@f8704b95def8:~/src# CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABI_LINKER=arm-linux-gnueabi-gcc-8 TARGET_CC=arm-linux-gnueabi-gcc-8  cargo build --target=arm-unknown-linux-gnueabi
 [rpi-zero]$ ./powerline-rust-arm-gnueabi
-\[\e[38;5;250m\]\[\e[48;5;240m\] growse \[\e[48;5;238m\]\[\e[38;5;240m\]\[\e[38;5;250m\]\[\e[48;5;238m\] sensorbot01 \[\e[48;5;31m\]\[\e[38;5;238m\]\[\e[38;5;254m\]\[\e[48;5;31m\] ~ \[\e[48;5;161m\]\[\e[38;5;31m\]\[\e[38;5;15m\]\[\e[48;5;161m\] Big Bang \[\e[48;5;22m\]\[\e[38;5;161m\]\[\e[38;5;15m\]\[\e[48;5;22m\] 11✔ \[\e[48;5;130m\]\[\e[38;5;22m\]\[\e[38;5;15m\]\[\e[48;5;130m\] 10✎ \[\e[48;5;52m\]\[\e[38;5;130m\]\[\e[38;5;15m\]\[\e[48;5;52m\] 11❓ \[\e[48;5;161m\]\[\e[38;5;52m\]\[\e[38;5;15m\]\[\e[48;5;161m\] $ \[\e[0m\]\[\e[38;5;161m\]\[\e[0m\]
+(successful output)
 ```
 
-So, this works. Let's check the ELF attributes:
+Hmm, this works. Let's check the ELF attributes:
 
 ```shell
 $ readelf -A powerline-rust-arm-gnueabi
@@ -222,9 +224,9 @@ File Attributes
   Tag_ABI_FP_16bit_format: IEEE 754
 ```
 
-How strange. Digging around, it looks like the GCC that's shipped with Debian / Ubuntu has some interesting defaults, which means that building for ARMv6 is somewhat tricky: [https://stackoverflow.com/questions/35132319/build-for-armv6-with-gnueabihf/51201725#51201725](https://stackoverflow.com/questions/35132319/build-for-armv6-with-gnueabihf/51201725#51201725). I'd probably go as far as saying that it looks like building for anything less than ARMv7 on the GCC toolchain that Debian supplies isn't supported. Why the hard-float toolchain chucks out an ARMv7 binary, but the soft-float an ARMv6 one is beyond me.
+How strange. Digging around, it looks like the GCC that's shipped with Debian / Ubuntu has some interesting defaults, which means that building for ARMv6 is somewhat tricky: [https://stackoverflow.com/questions/35132319/build-for-armv6-with-gnueabihf/51201725#51201725](https://stackoverflow.com/questions/35132319/build-for-armv6-with-gnueabihf/51201725#51201725). I'd probably go as far as saying that it looks like building for anything less than ARMv7 on the GCC toolchain that Debian supplies isn't supported. Why the hard-float toolchain chucks out an ARMv7 binary, but the soft-float an ARMv6 one is beyond me. Computers!
 
-The problem here is really the linker. If the one that ships with Ubuntu doesn't work, then I need to get one that does. I could compile my own, but this is a bit of a faff. Usefully, the Raspberry Pi lot [provide their own gcc binaries that are build for the correct target arch](https://github.com/raspberrypi/tools.git). It's quite an old version of gcc (4.9.3) but it should work. Unfortunately, it doesn't work with `musl-tools`, so we might have to compile against a glibc target.
+So, the GCC toolchain is the problem here. If the one that ships with Ubuntu doesn't work, then I need to get one that does. I could compile my own, but this is a bit of a faff. Usefully, the Raspberry Pi lot [provide their own gcc binaries that are build for the correct target arch](https://github.com/raspberrypi/tools.git). It's quite an old version of gcc (4.9.3) but it should work. Unfortunately, it doesn't work with `musl-tools`, so we might have to compile against a glibc target.
 
 ([This issue](https://github.com/BurntSushi/ripgrep/issues/676#issuecomment-374058198) and [this reddit thread](https://www.reddit.com/r/rust/comments/9io0z8/run_crosscompiled_code_on_rpi_0/) were pretty useful in helping me figure it out).
 
