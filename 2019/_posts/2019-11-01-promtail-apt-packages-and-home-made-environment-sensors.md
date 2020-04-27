@@ -3,7 +3,7 @@ layout: post
 title: "Promtail Apt packages and Home-made Environment sensors"
 ---
 
-# Packaging
+## Packaging
 
 I'm a big fan of [fpm](https://github.com/jordansissel/fpm) - created a while back by [@jordansissel](https://twitter.com/jordansissel/) in frustration at how hard it was to package software on a variety of platforms, it does a nice job of simplifying the creation of a deb file. I care about this because I use Debian.
 
@@ -11,7 +11,7 @@ I also care about this because of an apparent trend for software maintainers to 
 
 Look, I get it. Docker's great. But I don't want to run docker on my router - I just want to `apt-get install awesome-thing` (carefully, via an ansible playbook of course). The "Hey look! We made a binary!" crowd seem to be predominantly golang users. If you're not aware, if you write some golang code and compile it, your output is (typically - not always) a single file containing the entire runtime and all dependencies. In many ways, this is a bit like a docker image - a single binary "thing" you can ship to any host with the right architecture and OS and just execute without having to worry about what's already present on the box. It's a nice idea, but it does seem to lead people down the path of asking "What's the point?" when thinking about bundling their software in a deb/rpm/msi/whatever.
 
-# Promtail
+## Promtail
 
 One good example of this is the [Loki](https://github.com/grafana/loki/) project. Loki is a log ingest, storage and ingest server and it's really very good. A total reaction to the over-complexity of ElasticSearch and its needy ecosystem, Loki is simple to deploy and configure and then just quietly gets on with things. Sure, it does *much less*. But this is why it's *great*.
 
@@ -29,7 +29,7 @@ This was also an interesting excuse to take a look at [Github Actions](https://g
 
 Usefully, this approach is pretty easy to use as a template for any other bits of golang software I feel like packaging. Which brings me to...
 
-# Sensor-MQTT
+## Sensor-MQTT
 
 A common "my first electronics / raspberry pi project" is building an environment sensor. This is pretty easy to do: get something like a [Bosch BME280](https://www.bosch-sensortec.com/bst/products/all_products/bme280) sensor, solder a header to it and then attach it to the I2C pins of your favourite tiny computer. Boot it up, and it's pretty straightforward to then query the values over the I2C bus in a bunch of different programming languages.
 

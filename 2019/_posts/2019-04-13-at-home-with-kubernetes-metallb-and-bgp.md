@@ -3,11 +3,11 @@ layout: post
 title: "At home with Kubernetes, MetalLB and BGP"
 ---
 
-# A Home Lab
+## A Home Lab
 
 Ever since I had my first house and ran a server on top of the fridge, I've always found some sort of excuse to operate a home lab, much like a lot of people. This started out life as the aforementioned "single box sitting on the fridge" but has, over the years, evolved into a more complex environment which primarily serves the purpose of having somewhere to mess around with. There are other benefits as well though - the most important part of the "playground to learn in" is the "learning" bit. As someone who learns by doing, my home lab has taught me more about hardware, software, distributed infrastructures and failure conditions more than many real-world jobs.
 
-# Kubernetes
+## Kubernetes
 
 This brings me to [Kubernetes](https://kubernetes.io/) (k8s), a framework for coordinating and distributing containerized tasks across a heterogenous infrastructure that has a famously steep learning curve.
 
@@ -25,7 +25,7 @@ After playing around with various capabilities and other bits of software that a
 
 However, it did force me to learn some stuff about some things. Let's talk about load balancing.
 
-# MetalLB
+## MetalLB
 
 The idea behind load balancing is simple. A client sends some TCP (usually) traffic to a port on an IP address, and expects a response. That IP address is some sort of magic thing that automatically figures out how to send that traffic to one of a pool of real clients, and then relays the response traffic back to the client. There's a bunch of different ways of achieving this, but most often you buy a physical device (or provision a cloudy version) that can be configured to provide services on IP addresses and then relay traffic to pools of server IP addresses.
 
@@ -37,7 +37,7 @@ MetalLB presents a couple of different ways of solving the load balancer problem
 
 There's a couple of downsides to this approach. First, your service IP needs to be in the same network as your node IPs (this may or may not be an actual problem). Secondly, it depends on ARP actually working properly. If your clients are just modern OSs, then it's probably fine. However, I found that I've got at least a couple of older switches that don't implement ARP caching properly, and therefore ended up with outages when a k8s node went down, but clients were still trying to send ethernet traffic to that node's MAC address.
 
-# BGP
+## BGP
 
 MetalLB provides an alternative, which is to use [BGP](https://metallb.universe.tf/configuration/#bgp-configuration) to announce IPs. BGP is the common protocol widely used for routers to announce available routes to other routers, and thus coordinate available routes for IP traffic. A typical BGP announcement is (simplistically) of the form "Hi, Subnet `x` can be routed via IP `y` with a metric of `z`", so in the context of load-balancing, MetaLB just announces that a subnet of a single IPv4 address (a `/32`) is to be routed via the node IPv4 address that is hosting the correct pod.
 
@@ -175,7 +175,7 @@ $ dig @192.168.254.6
 ```
 If I were to reboot `192.168.2.13` or move the pod to the other node, the route is re-announced and traffic is re-directed by the router.
 
-# Conclusion
+## Conclusion
 
 So after running this for a few months now, I've had no issues with restarting services / nodes / pods and losing service. It's been very reliable to the point that I can just forget about it working. Knowing I can just create a new k8s service when I like and know that the load-balanced IP will just be automatically advertised and reachable is very pleasing.
 

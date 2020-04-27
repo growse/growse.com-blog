@@ -185,7 +185,7 @@ for joinable in joinables:
         # Turns out the subprocess might not exist any more, even if the master thinks it does
         pass
 
-# Wait for stuff to stop
+## Wait for stuff to stop
 for joinable in joinables:
     logging.info("joining on {}".format(joinable))
     joinable.join()

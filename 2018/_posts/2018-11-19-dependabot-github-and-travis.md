@@ -3,7 +3,7 @@ layout: post
 title: "Dependabot, Github and Travis CI"
 ---
 
-# Dependabot
+## Dependabot
 
 The application ecosystem on [Github](https://github.com/marketplace) has really exploded recently. I'm quite late to this particular party, but the ease with which you can hook magic things up to one or more repositories is really powerful.
 
@@ -15,7 +15,7 @@ The day job came up with an interesting implementation of an idea that's been ki
 
 Having gotten used to this, I was then pleased to find that Dependabot is a real-world implementation of the same idea. It's a paid service, but free for personal or open source projects. In my experience, where this becomes invaluable is for those dormant projects that might not have been worked on for a while and have perhaps gone a little bit stale. Automated dependency upgrades means that you don't have to worry about how out of date things are when you pick the project back up.
 
-# Travis CI
+## Travis CI
 
 I enabled Dependabot for a few different repositories that I dip in and out of. One thing I noticed was that it was quite hard to get job triggering on [CircleCI](http://circleci.com) working properly. I've got some repos which have a two-stage build/deploy workflow and I couldn't figure out how to trigger just the build whenever a PR was open. Builds off commits published worked fine, but builds off open PRs did not. Consensus on the discussion forums was this "wasn't possible at the moment".
 
@@ -23,6 +23,6 @@ The [OwnTracks Android repo](https://github.com/owntracks/android) uses [Travis 
 
 Also, Comic Sans on the interface is a joy.
 
-# Standing up
+## Standing up
 
 I also bought a standing desk. Bits of me ache, but in a good way.

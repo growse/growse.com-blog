@@ -3,7 +3,7 @@ layout: post
 title: "Adventures in Cross Compilation and Rust"
 ---
 
-# Pretty shell prompts
+## Pretty shell prompts
 
 I've [previously talked about]({% post_url /2019-11-01-promtail-apt-packages-and-home-made-environment-sensors %}) doing some simple software packaging for other people's projects, where the maintainer doesn't currently generate any packages I can use across debian-based systems.
 
@@ -49,7 +49,7 @@ sys     0m0.203s
 
 Hmm. Waiting a second for your shell to be responsive after running a command is going to send you quietly insane.
  
-# Golang to the rescue!?
+## Golang to the rescue!?
 
 Computers are pretty quick these days, but using python to write a program that has to execute very quickly doesn't seem like a good idea. Thankfully, some other people on the internet have had a similar thought: someone's got a [decent version available in golang](https://github.com/justjanne/powerline-go). Let's see how that does.
 
@@ -77,7 +77,7 @@ sys     0m0.128s
 
 Pretty good! This is getting towards usable, although a 250ms wait on the rpi-zero would start to get annoying. I had a look at the golang code and did some profiling, but it didn't seem there were any obvious places in which latency could be improved.
 
-# How about Rust?
+## How about Rust?
 
 Then I discovered that someone had [done a port in rust](https://github.com/cirho/powerline-rust). Intrigued, I wanted to find out how this performed. I've been dabbling in rust recently and seem to be going through the same learning curve as most other people. Initial excitement at how good the language and stdlib feel (along with the excellent tooling) followed by complete despair at my inability to write even the most simple program without the compiler complaining about literally everything. Without sounding too Stockholm-y, this isn't rust's fault - it's just enforcing some pretty simple rules about memory management. It's actually *my* fault for not understanding what I actually want to do.
 
@@ -85,7 +85,7 @@ Anyhow, the other reason for wanting to play with it is that it's not an interpr
 
 So in theory, a version of `powerline-shell` in rust should perform pretty well. But first we have to build it.
 
-# Compile for everything!
+## Compile for everything!
 
 One thing that a lot of "newer" languages and environments have in common is a recognition that sometimes the type of computer you're developing / building you application on is not the same as what it will eventually run on. Hence them making cross-compiling very straightforward (at least in theory).
 
@@ -165,7 +165,7 @@ Illegal Instruction
 
 Nope. Something else independent of the libc implementation is causing a binary to be made that doesn't work on ARMv6.
 
-# Stupid compilers and their opinions
+## Stupid compilers and their opinions
 
 Let's have a look at the binary to find out what it is.
 

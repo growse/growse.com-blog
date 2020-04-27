@@ -6,13 +6,13 @@ For a long time, I've had a small box plugged into my TV running [Kodi](https://
 
 As time wore on, a few things happened. Firstly, I didn't make too much of an effort to make it particularly quiet. There's a lot I could do to reduce fan noise and get it down to a whisper, but I can't really be bothered. Secondly, with the acquisition of a couple of HP's excellent value Gen8 Microservers, I don't really *need* that much compute power (and therefore, cooling) under my TV. Finally, [Raspberry Pis](https://www.raspberrypi.org/) became [awesome](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/). They always were awesome, but with a faster processor, a decent amount of memory and the existing built-in hardware video decoding, it becomes a serious proposition for a silent, media playback machine.
 
-# Lovely Pi
+## Lovely Pi
 
 I really like the rPI platform - I've currently got 2 in use, one as a [VOIP PBX running Asterisk](/2007/03/19/setting-up-home-voip-with-asterisk/) and another that uploads ADSB data to [FlightRadar24](https://www.flightradar24.com). I've yet to be one of these slightly more hardcore electrical engineer types who actually solder stuff together and driver it with python, but I'm sure that day will come. 
 
 I had a spare rPI 2, so I downloaded the latest [Raspbian](https://www.raspbian.org/), imaged it to a microSD card, plugged it into the TV and booted it up. Actually, I forgot that since last year, Raspbian disable the SSH server on their image unless you place an empty file called `ssh` on the `/boot` partition. So I subsequently turned it off, copied the file to the disk and then turned it back on again. 
 
-# Kodi
+## Kodi
 
 Kodi is available in the default repository so installing it is as simple as 
 ```shell
@@ -28,7 +28,7 @@ systemctl enable kodi
 ```
 On an rPI 2 (and a 3), browsing the UI is pretty smooth. It's a little juddery in places, but nothing to complain too much about. Where you'll really notice the lack of CPU ability is when you ask it to do a lot: e.g. load a media library while also trying to use the UI. Then you'll see the temperature spike and things start to slow down. Usefully, you only have to import a library once.
 
-# Tweaks (or, "Bits I needed to do and am documenting for my future self")
+## Tweaks (or, "Bits I needed to do and am documenting for my future self")
 
 There are a few things that I needed to do to fix some issues.
 
@@ -95,9 +95,9 @@ In `/etc/lirc/hardware.conf` the important bits:
 ```
 LOAD_MODULES=true
 
-# Run "lircd --driver=help" for a list of supported drivers.
+## Run "lircd --driver=help" for a list of supported drivers.
 DRIVER="devinput"
-# usually /dev/lirc0 is the correct setting for systems using udev 
+## usually /dev/lirc0 is the correct setting for systems using udev 
 DEVICE="/dev/input/by-id/usb-Streamzap__Inc._Streamzap_Remote_Control-event-if00"
 ```
 and in `/etc/lirc/lircd.conf`:

@@ -10,7 +10,7 @@ This appears to be especially true in software, where every developer relies on 
 
 Anyhow, rambling aside, I find tools pleasing. So it's nice to discover new ones, even if they're not particularly new. Here's a couple I've been playing with recently:
 
-# FPM
+## FPM
 
 For some reason, packaging software is hard. Given that software should be immutable and easy to deploy, packaging is an obvious solution to this. And yet there are seemingly billions of different packaging formats (deb, rpm, msi, gem etc) and the process of going from a build artifact to a package varies hugely in terms of process and difficulty.
 
@@ -28,7 +28,7 @@ Once created, I can then use [deb-s3](https://github.com/krobertson/deb-s3) to u
 
 This is so simple, it's possible to use this approach for the smallest things. I've been playing with [Sensu](https://sensuapp.org/) for some monitoring, and I wanted a check to tell me how many apt packages were due an update on an endpoint. I'm sure there used to be a plugin for this, but I couldn't find anything. After putting together a [tiny shell script](https://github.com/growse/sensu-check-apt), I can now package this up and deploy it in the same way across all the servers that I care about.
 
-# Wireguard
+## Wireguard
 
 I can't remember where I discovered [Wireguard](https://www.wireguard.com/), but at some point it made it onto my list of "Things I should get around to looking at eventually". I've often run into problems being on hostile networks where traffic is blocked or altered and have used a number of different [solutions]({% post_url /2014/2014-05-05-ssh-vpn-in-ubuntu-using-networkmanager %}) to solve this problem in the past. A lot of the time, these solutions are complex and quite brittle.
 

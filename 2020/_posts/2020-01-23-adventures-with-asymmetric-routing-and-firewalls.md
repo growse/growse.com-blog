@@ -3,7 +3,7 @@ layout: post
 title: "Adventures with Asymmetric Routing and Firewalls"
 ---
 
-# New Router!
+## New Router!
 
 I've had some free time on my hands lately, so have gone on a bit of an upgrade-rampage. The first casualty was my pretty old (and, thanks to the dog, pretty broken) HP ProCurve 1810-24G switch, which I replaced with a Unifi 24-port PoE switch (the 250W version). I'm generally a fan of the Unifi product, although not necessarily of their [attitudes towards the GPL](https://sfconservancy.org/blog/2019/oct/02/cambium-ubiquiti-gpl-violations/) (I live in hope that they'll become less shady). Having used their APs and cameras for a while, and having also bought a small 8-port PoE switch before, it made sense to get something that fitted in with the existing software platform and made configuration relatively straightforward. It's noisier than I expected, but replacing the 2 existing fans with Noctua NF-A4x20 FLX fans has quietened it a lot, without really making much of a difference to its temperature. 
 
@@ -13,7 +13,7 @@ For hardware, my requirements are pretty simple. Passively cooled, Intel NICs an
 
 However, one thing remained broken.
 
-# How does IP Routing work again?
+## How does IP Routing work again?
 
 Previously, I wrote about [using MetalLB on Kubernetes to advertise services over BGP]({% post_url 2019/2019-04-13-at-home-with-kubernetes-metallb-and-bgp %}). The general idea is that if you have a Kubernetes cluster and want to expose services on IP addresses that are routable by other machines, there's a number of different options. I went for the [MetalLB](https://metallb.universe.tf/) option which provides for the ability to advertise K8s service `loadBalancerIP` addresses over BGP.
 
@@ -21,7 +21,7 @@ In combination with a friendly router, this should result in the situation where
 
 This seemed to work great on the old router. However, when I replaced it with the *new* router, it stopped working. What's worse is that it didn't stop working reliably - it intermittently worked on some clients, and didn't work at all on others. And it always worked on the router itself.
 
-# Broken
+## Broken
 
 I had a client on `192.168.2.109`, a router at `192.168.2.1` and a k8s service at `http://192.168.254.1:3142` that was hosted by a k8s node living on `192.168.2.20`. The `192.168.254.1/32 via 192.168.2.20` route is published over BGP to `192.168.2.1`.
 
@@ -44,7 +44,7 @@ listening on enp1s0, link-type EN10MB (Ethernet), capture size 262144 bytes
  
 And yet I got an HTTP response from the service back to the client. More interestingly is that subsequent `curl` requests generated no more traffic on the router. Somehow, the client was no longer talking to the service via the router, it had... found another path?
 
-# Behold, the ICMP Redirect
+## Behold, the ICMP Redirect
 
 Taking `tcpdump` to the client, it became more obvious what was happening.
 
@@ -101,7 +101,7 @@ net.ipv4.conf.enp1s0/2.send_redirects = 0
 
 Now it's broken consistently for everyone! Progress!
 
-# Why you no route?
+## Why you no route?
 
 So the problem now is that the router doesn't seem to be forwarding packets to the destination, something that's surprising given that it's the main reason for its existence. What's interesting here is that it seems to be forwarding some packets between two hosts, but not others.
 
@@ -168,7 +168,7 @@ It might not be initially obvious what's going on here, but what we appear to ha
 
 This, in itself, isn't a problem. The client receives the `SYN-ACK` and responds with an `ACK`, hoping to complete the TCP three-way handshake. But this `ACK` never makes it to the K8s node. The router sees it (`ack 2310816705`) but... drops it? Why would it do that?
 
-# Connection tracking, and firewalls
+## Connection tracking, and firewalls
 
 There's a number of reasons why a router might drop a packet. Maybe it doesn't know what to do with it, or maybe the kernel has been configured to drop it either via something in the IP stack (maybe forwarding is disabled on that interface) or via some sort of firewall. 
 

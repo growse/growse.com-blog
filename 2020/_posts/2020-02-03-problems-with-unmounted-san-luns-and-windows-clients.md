@@ -5,7 +5,7 @@ title: "Problems with unmounted SAN LUNs and Windows clients"
 
 This is about a problem with computers and storage devices. There is no satisfying conclusion. I do think I fixed the issue, but I still don't really know what caused it. Grrr.
 
-# Block storage on Kubernetes
+## Block storage on Kubernetes
 
 I've got a couple of the HP Microserver G8s at home, one of which is running [FreeNAS](https://freenas.org). It's generally one of the few things I have that I don't tinker with and (as a result) doesn't really break that often. I've got 4 spinning rust discs in it, plus a couple of SSDs that are doing ZFS caching things.
 
@@ -19,7 +19,7 @@ The NFS provisioner creates a new ZFS filesystem and then configures the NFS ser
 
 The iSCSI provisioner does a similar thing, except it creates a ZVOL instead and exposes that over iSCSI.
 
-# Mixing iSCSI and FC
+## Mixing iSCSI and FC
 
 My desktop (running Windows 10) also uses a FreeNAS ZVOL over [fibre channel]({% post_url /2016/2016-03-19-more-fibre-channel-nonsense %}). This is mostly frivolous and slightly pointless, but does have the advantage of providing the benefits of ZFS (checksumming etc.) to a 'locally-attached' disk in Windows. It's a pretty simple setup, a single ZVOL is mounted by the Windows client and formatted with NTFS.
 
@@ -55,7 +55,7 @@ This output shows I have two FC ports (`isp0` and `isp1`) wihch are exposing all
 
 Because all of the LUNs are exposed over FC, this meant that the Windows client could 'see' all of the block devices in the disk manager, but they get shown as 'offline'. Because they've been provisioned by Kubernetes, they're mostly `ext4` formatted and Windows doesn't understand this.
 
-# Suddenly error, remounting read-only
+## Suddenly error, remounting read-only
 
 However, there was a problem. Occasionally I saw that some of the services on Kubernetes would stop working. Sometimes this would result in the pod going down, other times the pod was healthy but the software not working properly. Digging into the pod logs showed that the pods were having problems writing to volumes that were mounted over iSCSI. Connecting to one of the nodes directly and listing the mountpoints showed that a lot (all?) of the iSCSI mounts were mounted `ro`. 
 
@@ -79,7 +79,7 @@ Uh oh. Bad! Very bad! `Buffer I/O error` is not a fun error. If this were an act
 
 The network is the next obvious cause - maybe something is happening on the network which is causing all the mounts to suddenly trip offline. This is a relatively new problem too, it's only started happening recently. What's changed?
 
-# Windows bug?
+## Windows bug?
 
 As I said above, this story does not have a particularly satisfying conclusion. I eventually figured out that the mounts had started going offline ever since I enabled sleep/suspend on my desktop PC. I previously had just been turning it on / off as required, but after measuring how much power it drew if I forgot to turn it off, I decided that letting it sleep after some time of inactivity would be a good thing.
 

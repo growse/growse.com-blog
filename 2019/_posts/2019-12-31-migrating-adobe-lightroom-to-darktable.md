@@ -3,7 +3,7 @@ layout: post
 title: "Migrating Adobe Lightroom to Darktable"
 ---
 
-# Back in the olden days
+## Back in the olden days
 
 I remember when Lightroom came out. It was a brilliant, slightly expensive piece of software to help manage and process RAW image files off cameras. I got my first proper camera (a Canon 350D) back in 2006, and since then my photo collection has grown to ~45k images. Over 13 years (!), Lightroom has been brilliantly useful in letting me catalogue, search, export and generally manage the collection. For me (as I imagine it is for a lot of people), this photo archive is probably the best documentation of "what I've done", "where I've been" and "who I've done those things with". Now that phone cameras are absurdly good, I've got multiple sources for photos as well - it's not just stuff I've captured when I happen to be holding a big Canon thing.
 
@@ -11,7 +11,7 @@ But over the years, I've started to realise that locking such a valuable resourc
 
 So while I'm happy in general to give someone money for this problem, I'm much less happy about being locked in. Looking around, the obvious competitor that meets my needs of "don't be locked in" is [Darktable](https://www.darktable.org/).  
 
-# Darktable
+## Darktable
 
 Darktable is both open source and apparently sworn-by for a lot of people who are a lot more serious about photography than me. Having such a healthy community around a piece of open source software is usually a good sign. Version 3.0.0 [just came out](https://www.darktable.org/2019/12/darktable-30/) so I had a quick poke around.
 
