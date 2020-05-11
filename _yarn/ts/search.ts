@@ -75,7 +75,7 @@ export class Search {
         if (searchResults.totalHits == 0) {
             return;
         }
-        const pages = 1 + Math.floor(searchResults.totalHits / this.resultsPerPage);
+        const pages = Math.ceil(searchResults.totalHits / this.resultsPerPage);
         if (pages == 1) {
             return;
         }
