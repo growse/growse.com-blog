@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Adventures in Cross Compilation and Rust"
+title: "Adventures in Rust and Cross Compilation for the Raspberry Pi"
 ---
 
 ## Pretty shell prompts
 
-I've [previously talked about]({% post_url /2019-11-01-promtail-apt-packages-and-home-made-environment-sensors %}) doing some simple software packaging for other people's projects, where the maintainer doesn't currently generate any packages I can use across debian-based systems.
+I've [previously talked about]({% post_url /2019/2019-11-01-promtail-apt-packages-and-home-made-environment-sensors %}) doing some simple software packaging for other people's projects, where the maintainer doesn't currently generate any packages I can use across debian-based systems.
 
 As a big fan of [powerline-shell](https://github.com/b-ryan/powerline-shell), I wanted to see if I could distribute this in a usable form to my systems that I frequently log into. There's not many, but they do vary in power and architecture (some x86_64, some arm7, some arm6 etc). The idea behind powerline-shell is that you include its output as part of your shell's prompt output, and it gives you a useful (and pretty!) prompt line. It's trivial, but I find it useful and pleasing.
 
