@@ -2849,10 +2849,10 @@ ignore@^3.3.5:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
   integrity sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==
 
-imagemin-webp-webpack-plugin@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.1.tgz#c9a969033507de2f51801e1dc43c840d224942ae"
-  integrity sha512-9AZE61DfOVOa8Yl4kiezTEBN3O9cmTbpvAueOAoxrU3lvaQWgDgfl7Z8CLHI+tglwbt//e5/RbF2ZQu5TKHDGQ==
+imagemin-webp-webpack-plugin@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.2.tgz#9d7d57ac71ff78ab0841a92ef33b9496e901795a"
+  integrity sha512-kLHO+Fu5JdEBdTbyFGOjuk7dMpbK2G1ykesgulIoExhWNyCCEw+2TJzlEQm53rpYJOsQHDklclS2zze22dDIrw==
   dependencies:
     imagemin "^6.1.0"
     imagemin-webp "^5.1.0"
