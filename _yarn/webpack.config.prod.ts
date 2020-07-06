@@ -1,5 +1,5 @@
 import webpack = require("webpack");
-import merge from 'webpack-merge'
+import {merge} from 'webpack-merge'
 import common from './webpack.config.common'
 import TerserPlugin from "terser-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
