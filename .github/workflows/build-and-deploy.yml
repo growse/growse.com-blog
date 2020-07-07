@@ -17,6 +17,8 @@ jobs:
         with:
           ruby-version: 2.6.x
       - uses: actions/setup-node@v1
+        with:
+          node-version: '12'  
       - name: Install gems
         run: |
           gem install bundler
