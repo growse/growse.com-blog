@@ -4,7 +4,7 @@ import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
-var ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
 
 const config: webpack.Configuration = {
@@ -16,15 +16,19 @@ const config: webpack.Configuration = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({filename: 'css/[name].[hash].css',}),
-        new CopyWebpackPlugin([{
-            from: 'img/',
-            to: 'img/'
-        }]),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'img/',
+                    to: 'img/'
+                },
+            ],
+        }),
         new ImageminWebpWebpackPlugin({
             config: [{
                 test: /\.(jpe?g|png)/,
                 options: {
-                    quality:  75
+                    quality: 75
                 }
             }],
             overrideExtension: false,
