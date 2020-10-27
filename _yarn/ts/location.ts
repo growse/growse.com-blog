@@ -6,7 +6,7 @@ interface Location {
 }
 
 export class Locator {
-    private locationEndpoint = "https://www.growse.com/location/";
+    private locationEndpoint = "/location/";
 
     public getLocation() {
         fetch(this.locationEndpoint).then(response => response.json() as Promise<Location>).then(data => {
