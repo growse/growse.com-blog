@@ -2,4 +2,3 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "fpm"
-gem "deb-s3"
