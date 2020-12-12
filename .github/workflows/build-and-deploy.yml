@@ -66,6 +66,6 @@ jobs:
           APT_CREDENTIALS: ${{ secrets.APT_CREDENTIALS }}
         run: |
           echo $APT_CREDENTIALS > aptly-auth
-          find -maxdepth 1 -name "*.deb" -exec curl --netrc-file aptly-auth -XPOST -F file=@{} https://apttoo.growse.com/api/files/growse-com-blog \;
-          curl --netrc-file aptly-auth -X POST https://apttoo.growse.com/api/repos/defaultrepo/file/growse-com-blog
+          find -maxdepth 1 -name "*.deb" -exec curl --netrc-file aptly-auth -XPOST -F file=@{} https://apttoo.growse.com/api/files/blog \;
+          curl --netrc-file aptly-auth -X POST https://apttoo.growse.com/api/repos/defaultrepo/file/blog
           curl --netrc-file aptly-auth -X PUT https://apttoo.growse.com/api/publish/:./stablish
