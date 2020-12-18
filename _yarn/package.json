@@ -40,7 +40,7 @@
     "webpack-merge": "^5.7.2"
   },
   "dependencies": {
-    "overlayscrollbars": "^1.13.0",
+    "overlayscrollbars": "^1.13.1",
     "vanilla-lazyload": "^17.3.0"
   }
 }
