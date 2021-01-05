@@ -6,10 +6,9 @@ import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 
 const config: webpack.Configuration = merge(common, {
     mode: 'production',
-    devtool: 'source-map',
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()],
+        minimizer: [new TerserPlugin({extractComments: false}), new OptimizeCssAssetsPlugin()],
     }
 });
 
