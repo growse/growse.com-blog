@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/copy-webpack-plugin": "^6.4.0",
     "@types/mini-css-extract-plugin": "^1.2.2",
-    "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.2",
     "@types/overlayscrollbars": "^1.12.0",
     "@types/terser-webpack-plugin": "^5.0.2",
     "@types/webpack": "^4.41.25",
