@@ -23,7 +23,7 @@
     "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^5.2.0",
     "file-loader": "^6.2.0",
-    "imagemin-webp-webpack-plugin": "^3.3.3",
+    "imagemin-webp-webpack-plugin": "^3.3.4",
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
