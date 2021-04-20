@@ -16,15 +16,10 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
+          bundler-cache: true
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'  
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-${{ github.repository }}-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ github.repository }}-${{ hashFiles('**/Gemfile.lock') }}
+          node-version: '12'
       - name: Install gems
         run: |
           gem install bundler
@@ -56,6 +51,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6.x
+          bundler-cache: true
       - name: Install fpm
         env:
           BUNDLE_GEMFILE: Gemfile.deploy
@@ -68,7 +64,6 @@ jobs:
         run: bundle exec fpm -s dir -t deb --deb-priority optional --maintainer github@growse.com --vendor github@growse.com -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p site-dir -a noarch  -v 1.0.2-$GITHUB_RUN_NUMBER site-dir/=growse-jekyll
       - name: Upload to Apt repo
         env:
-          KEY_PASSPHRASE: ${{ secrets.DEBSIGN_KEY_PASSPHRASE }}
           APT_CREDENTIALS: ${{ secrets.APT_CREDENTIALS }}
         run: |
           echo $APT_CREDENTIALS > aptly-auth
