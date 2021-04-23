@@ -51,6 +51,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name != 'pull_request'
+    env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
+      BUNDLE_GEMFILE: Gemfile.deploy
     steps:
       - uses: actions/checkout@v1
       - name: Download site artifact
@@ -63,14 +65,10 @@ jobs:
           ruby-version: 2.7.3
           bundler-cache: true
       - name: Install fpm
-        env:
-          BUNDLE_GEMFILE: Gemfile.deploy
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
       - name: Make deb package
-        env:
-          BUNDLE_GEMFILE: Gemfile.deploy
         run: bundle exec fpm -s dir -t deb --deb-priority optional --maintainer github@growse.com --vendor github@growse.com -n growse-com-jekyll --description "growse.com static content" --url https://www.growse.com/ --prefix /var/www/ -p site-dir -a noarch  -v 1.0.2-$GITHUB_RUN_NUMBER site-dir/=growse-jekyll
       - name: Upload to Apt repo
         env:
