@@ -3,7 +3,6 @@ import path from 'path'
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
 
@@ -35,7 +34,7 @@ const config: webpack.Configuration = {
             detailedLogs: false,
             silent: false,
             strict: true
-        }) as webpack.Plugin
+        })
     ],
     module: {
         rules: [
