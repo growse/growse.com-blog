@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "overlayscrollbars": "^1.13.1",
-    "vanilla-lazyload": "^17.3.1"
+    "vanilla-lazyload": "^17.3.2"
   }
 }
