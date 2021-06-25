@@ -27,7 +27,7 @@
     "sass": "^1.35.1",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.1.0",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.0.0",
     "ts-loader": "^9.2.3",
     "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
