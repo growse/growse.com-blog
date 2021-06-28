@@ -6,7 +6,7 @@ interface Location {
 }
 
 export class Locator {
-    private locationEndpoint = "/location/";
+    private locationEndpoint = "https://location.growse.com/location/";
 
     public getLocation() {
         fetch(this.locationEndpoint)
