@@ -20,7 +20,7 @@
     "@types/copy-webpack-plugin": "^8.0.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^9.0.1",
-    "css-loader": "^5.2.6",
+    "css-loader": "^5.2.7",
     "file-loader": "^6.2.0",
     "imagemin-webp-webpack-plugin": "^3.3.4",
     "mini-css-extract-plugin": "^2.1.0",
