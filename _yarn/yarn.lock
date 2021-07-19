@@ -511,7 +511,7 @@ bin-version@^3.0.0:
     execa "^1.0.0"
     find-versions "^3.0.0"
 
-bin-wrapper@^4.0.1:
+bin-wrapper@^4.0.0, bin-wrapper@^4.0.1:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bin-wrapper/-/bin-wrapper-4.1.0.tgz#99348f2cf85031e3ef7efce7e5300aeaae960605"
   integrity sha512-hfRmo7hWIXPkbpi0ZltboCMVrU+0ClXR/JgbCKKjlDjQf6igXa7OwdqNcFWQZPZTgiY7ZpzE3+LjjkLiTN2T7Q==
@@ -1234,7 +1234,7 @@ file-type@5.2.0, file-type@^5.2.0:
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-5.2.0.tgz#2ddbea7c73ffe36368dfae49dc338c058c2b8ad6"
   integrity sha1-LdvqfHP/42No365J3DOMBYwritY=
 
-file-type@^10.5.0:
+file-type@^10.4.0, file-type@^10.5.0:
   version "10.11.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-10.11.0.tgz#2961d09e4675b9fb9a3ee6b69e9cd23f43fd1890"
   integrity sha512-uzk64HRpUZyTGZtVuvrjP0FYxzQrBf4rojot6J65YMEbwBLB0CWm0CLojVpwpmFmxcE/lkvYICgfcGozbBq6rw==
@@ -1367,6 +1367,15 @@ get-stream@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.0.tgz#3e0012cb6827319da2706e601a1583e8629a6718"
   integrity sha512-A1B3Bh1UmL0bidM/YX2NsCOTnGJePL9rO/M+Mw3m9f2gUpfokS0hi5Eah0WSUEWZdZhIZtMjkIYS7mDfOqNHbg==
+
+gif2webp-bin@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/gif2webp-bin/-/gif2webp-bin-3.0.2.tgz#8620540fc07b8cdcc262a91d55d7c99d873a1d4f"
+  integrity sha512-X0y79D8TLABh7RVDyCqTX3QqX/cDm1Fg9qCrgbFxpV0lun62v6hXpb7MEXG+cB9jf1ONd1lLVY/jfxL81r7mxw==
+  dependencies:
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.0"
+    logalot "^2.0.0"
 
 glob-parent@^5.1.0, glob-parent@~5.1.0:
   version "5.1.2"
@@ -1543,12 +1552,22 @@ ignore@^5.1.1, ignore@^5.1.4:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-imagemin-webp-webpack-plugin@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.4.tgz#fd91015e4200bb822f4beb3775438cd428bc4663"
-  integrity sha512-tDchhIWlWayDykHbF4++rYWdC9lGT/5sUTLBy4Yihee1cIBeMoJAnwb69bb5I495Uq5jzIWIaRI18wsH2HbWUg==
+imagemin-gif2webp@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin-gif2webp/-/imagemin-gif2webp-3.0.0.tgz#7685e45727f667594cc81705211dddc62ae7fdbd"
+  integrity sha512-PxDWmh0z3ecOtp5bO5HatJBb+04KBrp8f7BjARB9fZuvKz5131/VUnoIFZ1umhjYa0JDOgIydfNLiJE91/y6Mw==
+  dependencies:
+    exec-buffer "^3.0.0"
+    gif2webp-bin "^3.0.0"
+    is-gif "^3.0.0"
+
+imagemin-webp-webpack-plugin@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.5.tgz#8316cde145123dec9e4a8f175bdd15040680718b"
+  integrity sha512-kFrk5uf1oBi4VQ+XFjEEAruftbbzlUOmlN+jKb5J+CO4aMEWmFFOAQMvqkd/wyT6pAqMeJvmXwLw1NrHaATO8Q==
   dependencies:
     imagemin "^7.0.1"
+    imagemin-gif2webp "^3.0.0"
     imagemin-webp "^6.0.0"
 
 imagemin-webp@^6.0.0:
@@ -1657,6 +1676,13 @@ is-finite@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-finite/-/is-finite-1.1.0.tgz#904135c77fb42c0641d6aa1bcdbc4daa8da082f3"
   integrity sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==
+
+is-gif@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-gif/-/is-gif-3.0.0.tgz#c4be60b26a301d695bb833b20d9b5d66c6cf83b1"
+  integrity sha512-IqJ/jlbw5WJSNfwQ/lHEDXF8rxhRgF6ythk2oiEvhpG29F704eX9NO6TvPfMiq9DrbwgcEDnETYNcZDPewQoVw==
+  dependencies:
+    file-type "^10.4.0"
 
 is-glob@^4.0.1, is-glob@~4.0.1:
   version "4.0.1"
@@ -1852,7 +1878,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-logalot@^2.1.0:
+logalot@^2.0.0, logalot@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/logalot/-/logalot-2.1.0.tgz#5f8e8c90d304edf12530951a5554abb8c5e3f552"
   integrity sha1-X46MkNME7fElMJUaVVSruMXj9VI=
