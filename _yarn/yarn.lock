@@ -1561,10 +1561,10 @@ imagemin-gif2webp@^3.0.0:
     gif2webp-bin "^3.0.0"
     is-gif "^3.0.0"
 
-imagemin-webp-webpack-plugin@^3.3.5:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.5.tgz#8316cde145123dec9e4a8f175bdd15040680718b"
-  integrity sha512-kFrk5uf1oBi4VQ+XFjEEAruftbbzlUOmlN+jKb5J+CO4aMEWmFFOAQMvqkd/wyT6pAqMeJvmXwLw1NrHaATO8Q==
+imagemin-webp-webpack-plugin@^3.3.6:
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/imagemin-webp-webpack-plugin/-/imagemin-webp-webpack-plugin-3.3.6.tgz#fd17c0e9058d18ec243a06a3db7ee0f67605fa36"
+  integrity sha512-ZMhnssTCjY7D8NJkINeUn2rArn6t1c6Qihp1LVrUTqtVr2T9TgWghw6lUxx3q+sYqaEZsclbGJQEzbwr7bynHQ==
   dependencies:
     imagemin "^7.0.1"
     imagemin-gif2webp "^3.0.0"
