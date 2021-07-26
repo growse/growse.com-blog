@@ -57,7 +57,7 @@ const config: webpack.Configuration = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: "/assets"
+                            publicPath: "/assets/"
                         }
                     },
                     'css-loader',
