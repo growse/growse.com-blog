@@ -12,6 +12,7 @@ const config: webpack.Configuration = {
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, '..', 'assets'),
+        assetModuleFilename: "[name].[hash][ext]"
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -47,9 +48,12 @@ const config: webpack.Configuration = {
             {
                 test: /critical\.scss$/i,
                 use: [
-                    {loader: 'file-loader', options: {name: '[name].css',}},
                     'sass-loader'
                 ],
+                type: "asset/resource",
+                generator: {
+                    filename: '[name].css',
+                },
             },
             {
                 test: /main\.scss$/i,
@@ -72,7 +76,7 @@ const config: webpack.Configuration = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: {loader: 'file-loader', options: {name: "[name].[hash].[ext]"}}
+                type: 'asset/resource'
             }
         ],
     },
