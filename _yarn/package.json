@@ -23,7 +23,7 @@
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "imagemin-webp-webpack-plugin": "^3.3.6",
-    "mini-css-extract-plugin": "^2.1.0",
+    "mini-css-extract-plugin": "^2.2.0",
     "sass": "^1.37.2",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.1.0",
