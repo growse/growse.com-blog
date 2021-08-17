@@ -10,13 +10,13 @@ const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const config: webpack.Configuration = {
     entry: './ts/index.ts',
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].[fullhash].js',
         path: path.resolve(__dirname, '..', 'assets'),
-        assetModuleFilename: "[name].[hash][ext]"
+        assetModuleFilename: "[name].[fullhash][ext]"
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({filename: 'css/[name].[hash].css',}),
+        new MiniCssExtractPlugin({filename: 'css/[name].[fullhash].css',}),
         new CopyWebpackPlugin({
             patterns: [
                 {
