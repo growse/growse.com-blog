@@ -77,6 +77,6 @@ digging, I found a fix:
 ```
 Thanks to [these guys][2] for pointing me in the right direction.
 
-   [1]: http://www.benhaines.co.uk
+   [1]: https://web.archive.org/web/20080117225950/http://www.benhaines.co.uk/
 
    [2]: http://weblogs.asp.net/bleroy/archive/2005/08/09/how-to-put-a-div-over-a-select-in-ie.aspx

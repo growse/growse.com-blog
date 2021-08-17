@@ -41,5 +41,7 @@ exclude:
   - vendor
   - .idea
   - _yarn
+  - searchIndex
+  - searchIndexServer
 
 permalink: /:year/:month/:day/:title:output_ext
