@@ -6,6 +6,7 @@ blog/_yarn/node_modules
 blog/_yarn/ts/*.js
 blog/_yarn/yarn-error.log
 blog/assets
+blog/vendor
 searchIndexServer/generate_index
 searchIndexServer/search_server
 searchIndex
