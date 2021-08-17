@@ -2,7 +2,7 @@
 
 build: blog/_site searchIndex searchIndexServer/search_server
 
-blog/assets: $(wildcard _yarn/**/*)
+blog/assets: $(wildcard blog/_yarn/**/*.ts) blog/_yarn/package.json blog/_yarn/yarn.lock
 	cd blog/_yarn && yarn install && yarn build
 
 blog/_site: blog/assets $(wildcard blog/**/*.md) blog/_config.yml
