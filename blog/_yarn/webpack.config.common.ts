@@ -1,8 +1,9 @@
 import webpack = require("webpack");
-import path from 'path'
+import * as path from 'path'
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import CopyWebpackPlugin from "copy-webpack-plugin";
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
@@ -12,7 +13,7 @@ const config: webpack.Configuration = {
     output: {
         filename: '[name].[fullhash].js',
         path: path.resolve(__dirname, '..', 'assets'),
-        assetModuleFilename: "[name].[fullhash][ext]"
+        assetModuleFilename: "[name].[hash][ext]"
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -21,7 +22,10 @@ const config: webpack.Configuration = {
             patterns: [
                 {
                     from: 'img/',
-                    to: 'img/'
+                    to: 'img/',
+                    globOptions: {
+                        ignore: ["**/*.drawio"]
+                    }
                 },
             ],
         }),
