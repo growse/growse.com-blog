@@ -5,6 +5,15 @@ blog/_site
 blog/_yarn/node_modules
 blog/_yarn/ts/*.js
 blog/_yarn/yarn-error.log
+
+blog/_yarn/.yarn/*
+!blog/_yarn/.yarn/patches
+!blog/_yarn/.yarn/releases
+!blog/_yarn/.yarn/plugins
+!blog/_yarn/.yarn/sdks
+!blog/_yarn/.yarn/versions
+.pnp.*
+
 blog/assets
 blog/vendor
 searchIndexServer/generate_index
