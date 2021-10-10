@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Running Asterisk on Kubernetes - Part 1"
+description: "Getting Asterisk to play nice with Kubernetes' somewhat complex networking thingies"
 ---
 
 Having [run my own little voip server]({% post_url /2007/2007-03-19-setting-up-home-voip-with-asterisk %}) at home for a

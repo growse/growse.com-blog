@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Check your PoE budgets!"
+description: "How weird PoE device behaviour could be caused by not enough power juice"
 ---
 
 Power over ethernet (PoE) is a magical thing. Having had enough of dealing with eleventy billion different incompatible AC/DC adapters and then dealing with the inevitable drawer/box/cupboard of sadness, the idea that you can power a device over *the same cable* that you deliver connectivity over is a good one. I'm a little bit obsessed. PoE or bust.

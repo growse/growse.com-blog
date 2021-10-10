@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="Sr-L2EMmHr-hc4npzb8p1f7zi9ew1Iev84ly519r1p4" />
-    <meta name="description" content="I write things about what I do here" />
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <title>{{ page.title }} :: growse.com</title>
     <link rel="alternate" title="RSS Feed" href="/feed.xml" type="application/rss+xml" />
     <style rel="stylesheet">{% capture sass_file %}{% include critical.css %}{% endcapture %}{{ sass_file }}</style>
@@ -32,14 +32,14 @@
     <meta name="twitter:site" content="@growse" />
     <meta name="twitter:creator" content="@growse" />
     {% if include.root %}
-    <meta name="twitter:url" content="https://www.growse.com/" />
-    <meta name="twitter:title" content="I write things here" />
-    <meta name="twitter:description" content="Things that I have written" />
+    <meta name="twitter:url" content="{{ site.url }}" />
+    <meta name="twitter:title" content="{{ site.title }}" />
+    <link rel="canonical" href="{{site.url}}{{ site.posts[0].url }}" />
     {% else %}
     <meta name="twitter:url" content="https://www.growse.com{{ page.url }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="I wrote a thing" />
     {% endif %}
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:image" content="https://www.growse.com/assets/img/apple-touch-icon.png" />
     <meta name="twitter:dnt" content="on" />
     <meta name="pinterest" content="nopin" />
