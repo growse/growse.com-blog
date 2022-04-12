@@ -39,12 +39,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cspotcode/source-map-support@npm:0.6.1":
-  version: 0.6.1
-  resolution: "@cspotcode/source-map-support@npm:0.6.1"
+"@cspotcode/source-map-support@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@cspotcode/source-map-support@npm:0.7.0"
   dependencies:
     "@cspotcode/source-map-consumer": 0.8.0
-  checksum: da9fb4f6404ebd210537bfa8b2821a747407bf422d2d3d46f29bf85c7c3a68a126de1a9ec41398d57ca116c3bef56d58c2fb4def0800630b1ec82533ad2447c2
+  checksum: 9faddda7757cd778b5fd6812137b2cc265810043680d6399acc20441668fafcdc874053be9dccd0d9110087287bfad27eb3bf342f72bceca9aa9059f5d0c4be8
   languageName: node
   linkType: hard
 
@@ -148,13 +148,6 @@ __metadata:
   version: 1.0.2
   resolution: "@tsconfig/node16@npm:1.0.2"
   checksum: ca94d3639714672bbfd55f03521d3f56bb6a25479bd425da81faf21f13e1e9d15f40f97377dedbbf477a5841c5b0c8f4cd1b391f33553d750b9202c54c2c07aa
-  languageName: node
-  linkType: hard
-
-"@types/anymatch@npm:*":
-  version: 1.3.1
-  resolution: "@types/anymatch@npm:1.3.1"
-  checksum: 1eeb16286102a98eda415e1ade6fb980ff0a001fc21e777af8932001ebbd324d0d2fbbd5ef51c828346ff71847ba00af3f73d1dfea434efb9b72467b8cf0343a
   languageName: node
   linkType: hard
 
@@ -270,20 +263,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/source-list-map@npm:*":
-  version: 0.1.2
-  resolution: "@types/source-list-map@npm:0.1.2"
-  checksum: fda8f37537aca9d3ed860d559289ab1dddb6897e642e6f53e909bbd18a7ac3129a8faa2a7d093847c91346cf09c86ef36e350c715406fba1f2271759b449adf6
-  languageName: node
-  linkType: hard
-
-"@types/tapable@npm:^1":
-  version: 1.0.7
-  resolution: "@types/tapable@npm:1.0.7"
-  checksum: efae5c6cd184cbd768f98c0777c829e30045d57664731f36fcc7e32a372fd01c0f50283375e8cd6e325d321d7962906d2bdb82ee4595f7b9f53cefd3011bfa82
-  languageName: node
-  linkType: hard
-
 "@types/terser-webpack-plugin@npm:^5.0.4":
   version: 5.0.4
   resolution: "@types/terser-webpack-plugin@npm:5.0.4"
@@ -291,40 +270,6 @@ __metadata:
     terser: ^5.3.8
     webpack: ^5.1.0
   checksum: 7b3845526d4ed7b636f7b2f8f35b5d7e45211f7a55afc85e32a66655eaf65cd193e2fec195bcdb473c0d9a5b2828798b9c23196fdc86e9cd2e9420227012f438
-  languageName: node
-  linkType: hard
-
-"@types/uglify-js@npm:*":
-  version: 3.9.3
-  resolution: "@types/uglify-js@npm:3.9.3"
-  dependencies:
-    source-map: ^0.6.1
-  checksum: 5f16c591c7d558cd1548dfe48b7a07f1146725e1d95eebb48937d996469894c72f58d66ab7649751e1f9fc51a306852a35272ef8cf8309959c334688198af33a
-  languageName: node
-  linkType: hard
-
-"@types/webpack-sources@npm:*":
-  version: 1.4.2
-  resolution: "@types/webpack-sources@npm:1.4.2"
-  dependencies:
-    "@types/node": "*"
-    "@types/source-list-map": "*"
-    source-map: ^0.7.3
-  checksum: 315cbc3db4a92e0b4815add0c43367d435e33e06468578dcd076e8090a08e89d69ea4b62818c1710eb9ca149c662fe76c728274601bac1c9a0621198e301c237
-  languageName: node
-  linkType: hard
-
-"@types/webpack@npm:^4.4.31":
-  version: 4.41.27
-  resolution: "@types/webpack@npm:4.41.27"
-  dependencies:
-    "@types/anymatch": "*"
-    "@types/node": "*"
-    "@types/tapable": ^1
-    "@types/uglify-js": "*"
-    "@types/webpack-sources": "*"
-    source-map: ^0.6.0
-  checksum: e502f308846bae6d2e94df083022be1bf151f7e6be73738854d6c7cf7fb581218712114717190b91f6d16a827f6d977bf9c04deda2e8a81203ad2a712cc9121f
   languageName: node
   linkType: hard
 
@@ -1033,7 +978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.3.0, chalk@npm:^2.4.2":
+"chalk@npm:^2.0.0, chalk@npm:^2.3.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -1096,15 +1041,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clean-webpack-plugin@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "clean-webpack-plugin@npm:3.0.0"
+"clean-webpack-plugin@npm:4.0.0":
+  version: 4.0.0
+  resolution: "clean-webpack-plugin@npm:4.0.0"
   dependencies:
-    "@types/webpack": ^4.4.31
     del: ^4.1.1
   peerDependencies:
-    webpack: "*"
-  checksum: ca933e80d34e079084ca2fd70f05bed1d0e93fcb5cd21a6ab8aeca521ab92749d28a28ea7600b9b92de9326ddc253147187dee8b1bea9d60b0be0b76600914d6
+    webpack: ">=4.0.0 <6.0.0"
+  checksum: 199425e87b8c4a24ea321ec8116408219930f2ef86e27dd4cdf0ed77ed7b8b3a6908ed5160e4e981c773e015ba1d79d3f53f2fdcfebc5dc0b68f1478dea08fff
   languageName: node
   linkType: hard
 
@@ -2249,19 +2193,19 @@ fsevents@~2.3.1:
     "@types/overlayscrollbars": ^1.12.1
     "@types/terser-webpack-plugin": ^5.0.4
     "@types/webpack": ^5.28.0
-    clean-webpack-plugin: ^3.0.0
+    clean-webpack-plugin: 4.0.0
     copy-webpack-plugin: ^9.0.1
     css-loader: ^6.2.0
     file-loader: ^6.2.0
     imagemin-webp-webpack-plugin: ^3.3.6
     mini-css-extract-plugin: ^2.2.0
     overlayscrollbars: ^1.13.1
-    resolve-url-loader: ^4.0.0
+    resolve-url-loader: 5.0.0
     sass: ^1.37.5
     sass-loader: ^12.1.0
-    style-loader: ^3.2.1
+    style-loader: 3.3.1
     ts-loader: ^9.2.5
-    ts-node: ^10.2.0
+    ts-node: 10.7.0
     tslint: ^6.1.3
     typescript: 4.6.3
     vanilla-lazyload: ^17.4.0
@@ -3233,6 +3177,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.3.1":
+  version: 3.3.2
+  resolution: "nanoid@npm:3.3.2"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 376717f0685251fad77850bd84c6b8d57837c71eeb1c05be7c742140cc1835a5a2953562add05166d6dbc8fb65f3fdffa356213037b967a470e1691dc3e7b9cc
+  languageName: node
+  linkType: hard
+
 "neo-async@npm:^2.6.2":
   version: 2.6.2
   resolution: "neo-async@npm:2.6.2"
@@ -3625,6 +3578,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"picocolors@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "picocolors@npm:1.0.0"
+  checksum: a2e8092dd86c8396bdba9f2b5481032848525b3dc295ce9b57896f931e63fc16f79805144321f72976383fc249584672a75cc18d6777c6b757603f372f745981
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.0.5, picomatch@npm:^2.2.1":
   version: 2.2.2
   resolution: "picomatch@npm:2.2.2"
@@ -3752,14 +3712,14 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"postcss@npm:^7.0.35":
-  version: 7.0.36
-  resolution: "postcss@npm:7.0.36"
+"postcss@npm:^8.2.14":
+  version: 8.4.12
+  resolution: "postcss@npm:8.4.12"
   dependencies:
-    chalk: ^2.4.2
-    source-map: ^0.6.1
-    supports-color: ^6.1.0
-  checksum: 4cfc0989b9ad5d0e8971af80d87f9c5beac5c84cb89ff22ad69852edf73c0a2fa348e7e0a135b5897bf893edad0fe86c428769050431ad9b532f072ff530828d
+    nanoid: ^3.3.1
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
   languageName: node
   linkType: hard
 
@@ -3966,24 +3926,16 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"resolve-url-loader@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "resolve-url-loader@npm:4.0.0"
+"resolve-url-loader@npm:5.0.0":
+  version: 5.0.0
+  resolution: "resolve-url-loader@npm:5.0.0"
   dependencies:
     adjust-sourcemap-loader: ^4.0.0
     convert-source-map: ^1.7.0
     loader-utils: ^2.0.0
-    postcss: ^7.0.35
+    postcss: ^8.2.14
     source-map: 0.6.1
-  peerDependencies:
-    rework: 1.0.1
-    rework-visit: 1.0.0
-  peerDependenciesMeta:
-    rework:
-      optional: true
-    rework-visit:
-      optional: true
-  checksum: 8e5bcf97867a5e128b6b86988d445b7fbd1214f7c5c0214332f835e8607438e153d9b3899799a03ddd03540254bb591e572feb330981a4478be934f6f045c925
+  checksum: 6d483733a4c26f75ce930a61943113bf730b5ba33a7186791cf1ae9c2ca02c3e94610bc6484ca008a372ee9e31750eccea74856a89daf1a29b8437ff564d27f2
   languageName: node
   linkType: hard
 
@@ -4321,6 +4273,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"source-map-js@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "source-map-js@npm:1.0.2"
+  checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
+  languageName: node
+  linkType: hard
+
 "source-map-support@npm:~0.5.19":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
@@ -4338,7 +4297,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.7.3, source-map@npm:~0.7.2":
+"source-map@npm:~0.7.2":
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
   checksum: cd24efb3b8fa69b64bf28e3c1b1a500de77e84260c5b7f2b873f88284df17974157cc88d386ee9b6d081f08fdd8242f3fc05c953685a6ad81aad94c7393dedea
@@ -4513,12 +4472,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"style-loader@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "style-loader@npm:3.2.1"
+"style-loader@npm:3.3.1":
+  version: 3.3.1
+  resolution: "style-loader@npm:3.3.1"
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 10e47c29f4fff7a95fd24cc905c61abba82910cf956730294e8823271b1c2777bd0a180248c2a5185fccf2555863c695b4be31f3b5a8ca2026aab31ee4cba809
+  checksum: 470feef680f59e2fce4d6601b5c55b88c01ad8d1dd693c528ffd591ff5fd7c01a4eff3bdbe62f26f847d6bd2430c9ab594be23307cfe7a3446ab236683f0d066
   languageName: node
   linkType: hard
 
@@ -4535,15 +4494,6 @@ fsevents@~2.3.1:
   dependencies:
     has-flag: ^3.0.0
   checksum: 95f6f4ba5afdf92f495b5a912d4abee8dcba766ae719b975c56c084f5004845f6f5a5f7769f52d53f40e21952a6d87411bafe34af4a01e65f9926002e38e1dac
-  languageName: node
-  linkType: hard
-
-"supports-color@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "supports-color@npm:6.1.0"
-  dependencies:
-    has-flag: ^3.0.0
-  checksum: 74358f9535c83ee113fbaac354b11e808060f6e7d8722082ee43af3578469134e89d00026dce2a6b93ce4e5b89d0e9a10f638b2b9f64c7838c2fb2883a47b3d5
   languageName: node
   linkType: hard
 
@@ -4708,11 +4658,11 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "ts-node@npm:10.2.0"
+"ts-node@npm:10.7.0":
+  version: 10.7.0
+  resolution: "ts-node@npm:10.7.0"
   dependencies:
-    "@cspotcode/source-map-support": 0.6.1
+    "@cspotcode/source-map-support": 0.7.0
     "@tsconfig/node10": ^1.0.7
     "@tsconfig/node12": ^1.0.7
     "@tsconfig/node14": ^1.0.0
@@ -4723,6 +4673,7 @@ fsevents@~2.3.1:
     create-require: ^1.1.0
     diff: ^4.0.1
     make-error: ^1.1.1
+    v8-compile-cache-lib: ^3.0.0
     yn: 3.1.1
   peerDependencies:
     "@swc/core": ">=1.2.50"
@@ -4737,10 +4688,11 @@ fsevents@~2.3.1:
   bin:
     ts-node: dist/bin.js
     ts-node-cwd: dist/bin-cwd.js
+    ts-node-esm: dist/bin-esm.js
     ts-node-script: dist/bin-script.js
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
-  checksum: da767e0fd5c1b4941f0b846c3532147f31cd2ac4d66a4809358e29ed5971a4e699720bd65f9e5a585a10bc7f9c55571a8fce9e485cedce6a224dcba3869bbd3a
+  checksum: 2a379e43f7478d0b79e1e63af91fe222d83857727957df4bd3bdf3c0a884de5097b12feb9bbf530074526b8874c0338b0e6328cf334f3a5e2c49c71e837273f7
   languageName: node
   linkType: hard
 
@@ -4898,6 +4850,13 @@ typescript@4.6.3:
   bin:
     uuid: ./bin/uuid
   checksum: 58de2feed61c59060b40f8203c0e4ed7fd6f99d42534a499f1741218a1dd0c129f4aa1de797bcf822c8ea5da7e4137aa3673431a96dae729047f7aca7b27866f
+  languageName: node
+  linkType: hard
+
+"v8-compile-cache-lib@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "v8-compile-cache-lib@npm:3.0.0"
+  checksum: 674e312bbca796584b61dc915f33c7e7dc4e06d196e0048cb772c8964493a1ec723f1dd014d9419fd55c24a6eae148f60769da23f622e05cd13268063fa1ed6b
   languageName: node
   linkType: hard
 
