@@ -17,7 +17,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
         working-directory: blog/_yarn
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         name: Yarn cache restore
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
@@ -25,14 +25,14 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         name: Ruby gems cache restore
         id: rubygems-cache
         with:
           path: blog/vendor/bundle
           key: ${{ runner.os }}-gems-v2-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: ${{ runner.os }}-gems-v2
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         name: Go modules cache restore
         id: golang-cache
         with:
