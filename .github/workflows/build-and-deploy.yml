@@ -116,6 +116,7 @@ jobs:
       - build-site
       - create-search-index
     steps:
+      - uses: actions/checkout@v1
       - name: Download site build artifact
         uses: actions/download-artifact@v3
         with:
