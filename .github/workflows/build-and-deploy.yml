@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: "12"
       - name: Install gems
         working-directory: ./blog
         run: |
@@ -57,10 +57,82 @@ jobs:
         env:
           BUNDLE_PATH: vendor/bundle
       - name: Build
-        run: make build
+        run: make blog/_site
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: blog/_site
+
+  build-search-tools:
+    runs-on: ubuntu-latest
+    name: Build search tools
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/cache@v3
+        name: Go modules cache restore
+        id: golang-cache
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      - name: Build
+        run: make searchIndexServer/search_server searchIndexServer/generate_index
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: searchIndexServer
+          path: |
+            searchIndexServer/generate_index
+            searchIndexServer/search_server
+
+  create-search-index:
+    runs-on: ubuntu-latest
+    name: Create search index
+    needs:
+      - build-search-tools
+      - build-site
+    steps:      
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      - name: Create Index
+        run: chmod +x searchIndexServer/generate_index && ./searchIndexServer/generate_index
+        env:
+          SEARCH_INDEXROOT: site
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: searchIndex
+          path: searchIndex
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    needs:
+      - build-search-tools
+      - build-site
+      - create-search-index
+    steps:
+      - name: Download site build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: blog/_site
+      - name: Download searchTools build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: searchIndexServer
+          path: searchIndexServer
+      - name: Download searchIndex build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: searchIndex
+          path: searchIndex
       - uses: superfly/flyctl-actions@1.3
-        if: github.event_name == 'push'
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         with:
-          args: "deploy"        
+          args: "deploy"
