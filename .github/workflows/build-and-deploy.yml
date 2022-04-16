@@ -48,7 +48,7 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
-          node-version: "12"
+          node-version: "16"
       - name: Build
         run: make blog/_site
       - name: Upload build artifact
