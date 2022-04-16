@@ -44,17 +44,11 @@ jobs:
             ${{ runner.os }}-go-
       - uses: ruby/setup-ruby@v1
         with:
+          working-directory: ./blog
           bundler-cache: true
       - uses: actions/setup-node@v3
         with:
           node-version: "12"
-      - name: Install gems
-        working-directory: ./blog
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
-        env:
-          BUNDLE_PATH: vendor/bundle
       - name: Build
         run: make blog/_site
       - name: Upload build artifact
