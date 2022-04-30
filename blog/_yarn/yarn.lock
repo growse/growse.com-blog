@@ -2317,7 +2317,7 @@ fsevents@~2.3.1:
     ts-node: 10.7.0
     tslint: 6.1.3
     typescript: 4.6.4
-    vanilla-lazyload: 17.7.0
+    vanilla-lazyload: 17.8.1
     webpack: 5.72.0
     webpack-cli: 4.9.2
     webpack-merge: 5.8.0
@@ -5037,10 +5037,10 @@ typescript@4.6.4:
   languageName: node
   linkType: hard
 
-"vanilla-lazyload@npm:17.7.0":
-  version: 17.7.0
-  resolution: "vanilla-lazyload@npm:17.7.0"
-  checksum: 55992c92d97383f8a9ac8b79f230ac0130ffd9b0a183b5fb6c01fbe053a9f72147fbea27656080ffccf491a896af43ee9f7d3a4138d00366ee11b2b4c4a765f6
+"vanilla-lazyload@npm:17.8.1":
+  version: 17.8.1
+  resolution: "vanilla-lazyload@npm:17.8.1"
+  checksum: 0a9bcdd8c38d79aa237fc630b4637f75e0967c725f7348ebe41753b5c219407df73ea7544041952b9992172ef0fe497fbcc9386021e0218b35eb591bc4623f26
   languageName: node
   linkType: hard
 
