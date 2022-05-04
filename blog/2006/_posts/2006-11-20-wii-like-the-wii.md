@@ -20,7 +20,4 @@ What's a Wii?", "Is something going on here?" etc was quite amusing.
 
 Anyway. I turned up, took some pictures, got bored, and went home at half
 eleven. Couldn't bear to be around when they finally opened the doors.
-Pictures will be up at the newly created [photos.growse.com][1] site.
-
-   [1]: http://photos.growse.com/
-
+Pictures will be up at the newly created photos.growse.com site.

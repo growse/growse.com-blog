@@ -9,7 +9,7 @@ lot. I've almost got it working, I just need the bit that actually returns the
 details about the search results. Shouldn't take me long, it's finding that
 time that's the main problem.
 
-I've also been doing some stuff with the [photos site][2]. It's been a bit of
+I've also been doing some stuff with the photos site. It's been a bit of
 a mess at the moment, with most galleries as some flash thing and some in a
 weird experimental HTML thing. Anyway, I've been working on replicating the
 flash interface in javascript and it's coming along pretty well. So far, I've
@@ -22,6 +22,3 @@ beach, the sea, fish and chips and temperatures so cold my ears fell off.
 Isn't summer great!
 
    [1]: http://www.sphinxsearch.com/
-
-   [2]: http://photos.growse.com
-

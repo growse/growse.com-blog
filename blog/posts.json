@@ -5,7 +5,7 @@ layout: null
 "posts": [
 {% for post in site.posts %}
 {
-"title": "{{ post.title | xml_escape }}",
+"title": "{{ post.title }}",
 "url": "{{ post.url }}",
 "date": "{{ post.date | date_to_xmlschema }}"
 }{% unless forloop.last %},{% endunless %}

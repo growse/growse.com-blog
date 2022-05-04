@@ -12,7 +12,4 @@ discovering why I killed it in the first place.
 
 Anyway, I'll put some blurb up on the projects page, and eventually let people
 download the code :) In the meantime, I'll be redirecting my photos page to
-[Picsie][1].
-
-   [1]: http://photos.growse.com
-
+Picsie.

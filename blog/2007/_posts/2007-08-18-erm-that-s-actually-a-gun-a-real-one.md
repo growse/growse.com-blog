@@ -3,7 +3,7 @@ layout: post
 title: "Erm, that's actually a gun. A real one."
 ---
 Today was a first for me. I went to a shooting range and fired a variety of
-handguns. Now, I've [shot shotguns][1] before, but this was a completely
+handguns. Now, I've shot shotguns before, but this was a completely
 different experience.
 
 We (there were about 9 of us) turned up at this shooting range in the middle
@@ -41,6 +41,3 @@ I can commit to being on a particular side. All I know is that I went and shot
 some bits of paper in a safe and controlled environment and that it's
 completely unlike anything I've ever done before. I'd recommend to anyone
 who's never done it to at least give it a try if they ever get the chance.
-
-   [1]: http://photos.growse.com/2006-05-06%20-%20shooting/
-
