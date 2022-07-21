@@ -1,6 +1,6 @@
 module github.com/growse/growse.com-blog
 
-go 1.16
+go 1.18
 
 require (
 	github.com/antchfx/htmlquery v1.2.5
