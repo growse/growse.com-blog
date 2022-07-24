@@ -2293,7 +2293,7 @@ fsevents@~2.3.1:
     file-loader: 6.2.0
     imagemin-webp-webpack-plugin: 3.3.6
     mini-css-extract-plugin: 2.6.1
-    overlayscrollbars: 1.13.2
+    overlayscrollbars: 1.13.3
     resolve-url-loader: 5.0.0
     sass: 1.54.0
     sass-loader: 13.0.2
@@ -3453,10 +3453,10 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"overlayscrollbars@npm:1.13.2":
-  version: 1.13.2
-  resolution: "overlayscrollbars@npm:1.13.2"
-  checksum: b5498bdb5acf8d4f7a1d231af45ea50c0788a81322beb12d965918a2ed567c79938e42726a0012cf03ba9bb6159fbe6a9a3fd3036d83c7fb892ecd75ae101496
+"overlayscrollbars@npm:1.13.3":
+  version: 1.13.3
+  resolution: "overlayscrollbars@npm:1.13.3"
+  checksum: 90dca151990a616b14de3a9234cb48ddfd03bf8953aa7a7388e107185a71ee6094f73ff14b822913313c25a2d4949fc537383d4b9a66f024579dfe21496cddac
   languageName: node
   linkType: hard
 
