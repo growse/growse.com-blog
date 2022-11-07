@@ -26,21 +26,29 @@
     <link rel="preload" as="script" href="{{js.path}}" />
     {% endfor %}
     <meta name="msapplication-TileColor" content="#ff9000" />
-    <meta name="theme-color" content="#ff9000" />
+    <meta name="theme-color" content="#ff9000" />    
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@growse" />
     <meta name="twitter:creator" content="@growse" />
+    <meta property="twitter:domain" content="www.growse.com" />
+    <meta property="og:type" content="website">
     {% if include.root %}
     <meta name="twitter:url" content="{{ site.url }}" />
+    <meta property="og:url" content="{{ site.url }}" />
     <meta name="twitter:title" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ site.title }}" />
     <link rel="canonical" href="{{site.url}}{{ site.posts[0].url }}" />
-    {% else %}
-    <meta name="twitter:url" content="https://www.growse.com{{ page.url }}" />
+    {% else %}    
+    <meta property="twitter:url" content="https://www.growse.com{{ page.url }}" />
+    <meta property="og:url" content="https://www.growse.com{{ page.url }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
+    <meta property="og:title" content="{{ page.title }}" />
     {% endif %}
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="twitter:image" content="https://www.growse.com/assets/img/apple-touch-icon.png" />
+    <meta property="og:image" content="https://www.growse.com/assets/img/og-image.png" />
     <meta name="twitter:dnt" content="on" />
     <meta name="pinterest" content="nopin" />
 </head>
