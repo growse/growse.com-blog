@@ -2275,7 +2275,7 @@ __metadata:
     file-loader: 6.2.0
     imagemin-webp-webpack-plugin: 3.3.6
     mini-css-extract-plugin: 2.7.0
-    overlayscrollbars: 1.13.3
+    overlayscrollbars: 2.0.1
     resolve-url-loader: 5.0.0
     sass: 1.56.1
     sass-loader: 13.2.0
@@ -3419,10 +3419,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"overlayscrollbars@npm:1.13.3":
-  version: 1.13.3
-  resolution: "overlayscrollbars@npm:1.13.3"
-  checksum: 90dca151990a616b14de3a9234cb48ddfd03bf8953aa7a7388e107185a71ee6094f73ff14b822913313c25a2d4949fc537383d4b9a66f024579dfe21496cddac
+"overlayscrollbars@npm:2.0.1":
+  version: 2.0.1
+  resolution: "overlayscrollbars@npm:2.0.1"
+  checksum: 14a728558f20df155220eecd5b9b9cf1b4b4747a531f258ed9c8a8529a73aca0befa11aca99621faddfd2114ce7a7340e63c937647b8d00e16647b80dc54a2f4
   languageName: node
   linkType: hard
 
