@@ -1,7 +1,7 @@
 package search
 
 import (
-	"github.com/blevesearch/bleve"
+	"github.com/blevesearch/bleve/v2"
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"os"
@@ -20,7 +20,6 @@ func TestAddingFilesToIndexAddsTheFilesToTheIndex(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, uint64(2), count)
 }
-
 
 func CreateTestSearchIndex(t *testing.T, contentMap map[string]string) (error, bleve.Index) {
 	tempDir, err := ioutil.TempDir("", "testprefix")

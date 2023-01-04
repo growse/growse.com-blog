@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/blevesearch/bleve"
 	"github.com/braintree/manners"
 	"github.com/gin-gonic/gin"
 	"github.com/growse/growse.com-blog/search"
