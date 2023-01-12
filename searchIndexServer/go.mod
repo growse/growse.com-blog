@@ -3,7 +3,7 @@ module github.com/growse/growse.com-blog
 go 1.16
 
 require (
-	github.com/antchfx/htmlquery v1.2.5
+	github.com/antchfx/htmlquery v1.2.6
 	github.com/blevesearch/bleve/v2 v2.3.6
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.8.2
