@@ -9,7 +9,7 @@ meant that you could pick up a [Samsung 980 Pre PCIe 4.0 M.2 SSD](https://web.ar
 for £100.
 
 The last time I bought an M.2 SSD for my desktop was back in 2015, when I paid £72 for a [128GB Samsung SM951 M.2](https://semiconductor.samsung.com/newsroom/tech-blog/sm951-product-overview/).
-So in 6 years, we've gone from £0.56/GB to £0.10/GB, and gone from a PCIe 3 to PCIe 4 interface. According to [UserBenchmark]https://ssd.userbenchmark.com/Compare/Samsung-980-Pro-NVMe-PCIe-M2-1TB-vs-Samsung-SM951-NVMe-PCIe-M2-128GB/m1302577vsm34737
+So in 6 years, we've gone from £0.56/GB to £0.10/GB, and gone from a PCIe 3 to PCIe 4 interface. According to [UserBenchmark](https://ssd.userbenchmark.com/Compare/Samsung-980-Pro-NVMe-PCIe-M2-1TB-vs-Samsung-SM951-NVMe-PCIe-M2-128GB/m1302577vsm34737)
 the 980 is not-quite twice-as-fast, so this is a pretty decent rate of progress.
 
 ## Why Windows?
