@@ -16,40 +16,40 @@ This system connects to the internet via an HTTP proxy. Internet Explorer stores
 
 I stumbled on [this post](http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/f4dc3550-f213-41ff-a17d-95c917bed027/) on the MSDN forums which helpfully described how to set the proxy programatically for the current user. In case that URL breaks, here's how:
 
-<div class="code">Public struct Struct_INTERNET_PROXY_INFO 
-{ 
-    public int dwAccessType; 
-    public IntPtr proxy; 
-    public IntPtr proxyBypass; 
-}; 
+    Public struct Struct_INTERNET_PROXY_INFO 
+    { 
+        public int dwAccessType; 
+        public IntPtr proxy; 
+        public IntPtr proxyBypass; 
+    }; 
 
-[DllImport("wininet.dll", SetLastError = true)] 
-private static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int lpdwBufferLength);
+    [DllImport("wininet.dll", SetLastError = true)] 
+    private static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int lpdwBufferLength);
 
-private void RefreshIESettings(string strProxy) 
-{ 
-    const int INTERNET_OPTION_PROXY = 38; 
-    const int INTERNET_OPEN_TYPE_PROXY = 3; 
-    
-    Struct_INTERNET_PROXY_INFO struct_IPI; 
-    
-    // Filling in structure 
-    struct_IPI.dwAccessType = INTERNET_OPEN_TYPE_PROXY; 
-    struct_IPI.proxy = Marshal.StringToHGlobalAnsi(strProxy); 
-    struct_IPI.proxyBypass = Marshal.StringToHGlobalAnsi("local"); 
-    
-    // Allocating memory 
-    IntPtr intptrStruct = Marshal.AllocCoTaskMem(Marshal.SizeOf(struct_IPI)); 
-    
-    // Converting structure to IntPtr 
-    Marshal.StructureToPtr(struct_IPI, intptrStruct, true); 
-    
-    bool iReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, intptrStruct, Marshal.SizeOf(struct_IPI)); 
-} 
+    private void RefreshIESettings(string strProxy) 
+    { 
+        const int INTERNET_OPTION_PROXY = 38; 
+        const int INTERNET_OPEN_TYPE_PROXY = 3; 
 
-private void SomeFunc() 
-{ 
-    RefreshIESettings("192.168.1.200:1010");     
-}</div>
+        Struct_INTERNET_PROXY_INFO struct_IPI; 
+
+        // Filling in structure 
+        struct_IPI.dwAccessType = INTERNET_OPEN_TYPE_PROXY; 
+        struct_IPI.proxy = Marshal.StringToHGlobalAnsi(strProxy); 
+        struct_IPI.proxyBypass = Marshal.StringToHGlobalAnsi("local"); 
+
+        // Allocating memory 
+        IntPtr intptrStruct = Marshal.AllocCoTaskMem(Marshal.SizeOf(struct_IPI)); 
+
+        // Converting structure to IntPtr 
+        Marshal.StructureToPtr(struct_IPI, intptrStruct, true); 
+
+        bool iReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, intptrStruct, Marshal.SizeOf(struct_IPI)); 
+    } 
+
+    private void SomeFunc() 
+    { 
+        RefreshIESettings("192.168.1.200:1010");     
+    }
 
 And this works rather well :)
