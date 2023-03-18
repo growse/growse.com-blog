@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/antchfx/htmlquery v1.3.0
-	github.com/blevesearch/bleve/v2 v2.3.6
+	github.com/blevesearch/bleve/v2 v2.3.7
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.9.0
 	github.com/grokify/html-strip-tags-go v0.0.1
