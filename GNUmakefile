@@ -9,10 +9,10 @@ blog/_site: blog/assets $(wildcard blog/**/*.md) blog/_config.yml
 	cd blog && bundle exec jekyll b
 
 searchIndexServer/generate_index: $(wildcard searchIndexServer/**/*.go) 
-	cd searchIndexServer && go build ./cmd/generate_index
+	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/generate_index
 
 searchIndexServer/search_server: $(wildcard searchIndexServer/**/*.go)
-	cd searchIndexServer && go build ./cmd/search_server
+	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/search_server
 
 searchIndex: export SEARCH_INDEXROOT=blog/_site
 searchIndex: searchIndexServer/generate_index blog/_site
