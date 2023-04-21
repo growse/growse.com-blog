@@ -1,10 +1,10 @@
 ---
-laytou: post
+layout: post
 title: "I, too, bought an iPad"
 description: "Steve still hates me though"
 ---
 
-I decided to follow in the footsteps of around 400 million other people, and purchased an iPad. Specifically,  I bought a used 2018 12.9" iPad Pro (for around £400ish). 
+I decided to follow in the footsteps of around 400 million other people, and purchased an iPad. Specifically,  I bought a used 2018 12.9" iPad Pro (for around £400ish).
 
 ## But why?!
 
