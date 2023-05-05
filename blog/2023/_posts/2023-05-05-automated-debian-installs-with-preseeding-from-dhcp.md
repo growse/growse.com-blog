@@ -8,7 +8,7 @@ I had to re-build one of my kubernetes nodes recently, and so wearily downloaded
 
 The Debian installer asks quite a lot of questions, and I usually have the same answers to all of them. As I was waiting for something to complete, I was idly poking around in the documentation around [Preseed](https://wiki.debian.org/DebianInstaller/Preseed), which I knew was a way to provide an "answer" file to the installer to skip over lots of the questions. This had always seemed like a bit of a faff to set up in the past, but what caught my eye was a suggestion that you could provide the preseed configuration as a [DHCP option](https://wiki.debian.org/DebianInstaller/Preseed#Autoloading_the_preseeding_file_from_a_webserver_via_DHCP).
 
-[I like DHCP options]{% post_url 2018/2018-08-29-pxe-booting-a-raspberry-pi %}, because they seem like nice, magic ways of settings configuration to devices on the network from a central place.
+[I like DHCP options]({% post_url 2018/2018-08-29-pxe-booting-a-raspberry-pi %}), because they seem like nice, magic ways of settings configuration to devices on the network from a central place.
 
 ## Things you need
 
