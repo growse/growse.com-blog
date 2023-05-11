@@ -113,3 +113,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         with:
           args: "deploy"
+      - name: Ping site maps
+        run: |
+          curl http://www.bing.com/ping?siteMap=https%3A%2F%2Fwww.growse.com%2Fsitemap.xml
+          curl https://www.google.com/ping?sitemap=https%3A%2F%2Fwww.growse.com%2Fsitemap.xml
