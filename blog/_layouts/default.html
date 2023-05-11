@@ -2,33 +2,10 @@
 layout: compress
 ---
 {% for post in site.posts limit: 1 %}
-
-{% assign page = post %}
-
-{% include header.html root=true %}
-<div id="content">
-    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-        <header>
-            <time class="fancy" itemprop="datePublished"
-                  datetime="{{page.date | date: "%Y-%m-%d"}}">
-                <p>{{page.date|date: "%b"}} <span
-                        class="day">{{page.date|date: "%d"}}</span><span
-                        class="year">{{page.date|date: "%Y"}}</span></p></time>
-            <h1 itemprop="name headline">{{ page.title }}</h1>
-            <time class="plain" itemprop="datePublished"
-                  datetime="{{page.date | date: "%Y-%m-%d"}}">
-                {{page.date|date_to_long_string}}
-            </time>
-        </header>
-        <section itemprop="articleBody">
-            {{post.content | markdownify}}
-        </section>
-        <nav>
-            {% if page.previous %}<p>Prev: <a href="{{page.previous.url}}">{{page.previous.title}}</a></p>{% endif %}
-            {% if page.next %}<p>Next: <a href="{{page.next.url}}">{{page.next.title}}</a></p>{% endif %}
-        </nav>
-    </article>
-</div>
-{% include footer.html %}
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url={{ post.url }}">
+</head>
+</html>
 
 {% endfor %}
