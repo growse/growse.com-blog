@@ -9,6 +9,6 @@ require (
 	github.com/gin-gonic/gin v1.9.0
 	github.com/grokify/html-strip-tags-go v0.0.1
 	github.com/pkg/errors v0.9.1
-	github.com/spf13/viper v1.15.0
+	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.8.4
 )
