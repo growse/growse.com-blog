@@ -9,4 +9,5 @@ COPY searchIndexServer/search_server /usr/local/bin/search_server
 RUN chmod +x /usr/local/bin/search_server
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN FRONTPAGE=$(cat /usr/share/nginx/html/frontpage.html) && sed -i 's@%FRONTPAGE%@'"$FRONTPAGE"'@' /etc/nginx/conf.d/default.conf
+EXPOSE 80
 COPY 40-run-search-server.sh /docker-entrypoint.d/
