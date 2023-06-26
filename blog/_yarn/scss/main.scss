@@ -40,6 +40,29 @@ html {
             }
           }
         }
+        section#archive-index {
+          header {
+            @media screen and (max-width: 767px) {
+              h1 {
+                @include top-title-narrow;
+              }
+            }
+            @media screen and (min-width: 768px) {
+              h1 {
+                @include top-title-wide;
+              }
+            }
+          }
+          nav {
+            ul {
+              list-style-type: none;
+              li.year {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+              }
+            }
+          }
+        }
         #searchresults {
           header {
             @media screen and (max-width: 767px) {

@@ -1,0 +1,38 @@
+---
+layout: compress
+title: Archive
+---
+{% include header.html show-nav=false %}
+<div id="content" class="nonav">
+    <section id="archive-index">
+        <header>
+            <h1>The Archive</h1>
+        </header>
+        <nav>
+    <ul>
+    {% assign lastPrintedYear = '' %}
+    {% for post in site.posts reversed %}
+        {% assign year = post.date | date: '%Y' %}
+        {% if year != lastPrintedYear %}
+            {% if lastPrintedYear != '' %}
+                </ul></li>
+            {% endif %}
+            <li class="year">{{ year }}</li>
+            <li><ul>
+            {% assign lastPrintedYear = year %}
+            {% assign lastPrintedMonth = '' %}
+        {% endif %}
+        {% assign month = post.date | date: '%m' %}
+        {% if month != lastPrintedMonth %}
+            <li class="month"><a href="/archive/{{year}}/{{month}}">{{ post.date | date: '%B' }}</a></li>
+            {% assign lastPrintedMonth = month %}
+        {% endif %}
+    {% endfor %}
+            </ul></li>
+        </ul>
+
+    </nav>
+    </section>
+
+</div>
+{% include footer.html %}
