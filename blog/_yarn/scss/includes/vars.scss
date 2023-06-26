@@ -1,9 +1,9 @@
 $background-hl-color: #333;
 $background-color: #222;
-$font-color: #aaa;
+$font-color: #bbb;
 
 $primary-highlight-color: #f90;
-$secondary-highlight-color: #6684E1;
+$secondary-highlight-color: #7b94ff;
 
 $sansfont: 'Open Sans', Trebuchet, Sans;
 $seriffont: 'Andada', Georgia, serif;
@@ -21,3 +21,23 @@ $datefont: $sansfont;
 
 $lefthandwidth: 200px;
 $default-prefixes: webkit moz ms o;
+
+@mixin top-title {
+  text-align: left;
+  font-family: $headlinefont;
+  color: $primary-highlight-color;
+}
+
+@mixin top-title-wide {
+  @include top-title;
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+@mixin top-title-narrow {
+  @include top-title;
+  margin: 0 0 0.5rem 0;
+  font-size: 2.0rem;
+  font-weight: 100;
+}

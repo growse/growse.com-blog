@@ -184,12 +184,7 @@ html {
             min-height: 5rem;
             @media screen and (max-width: 767px) {
               h1 {
-                text-align: left;
-                font-family: $headlinefont;
-                margin: 0 0 0.5rem 0;
-                font-size: 2.0rem;
-                color: $primary-highlight-color;
-                font-weight: 100;
+                @include top-title-narrow;
               }
 
               time.fancy {
@@ -202,12 +197,7 @@ html {
             }
             @media screen and (min-width: 768px) {
               h1 {
-                text-align: left;
-                font-family: $headlinefont;
-                margin: 0 0 1rem 0;
-                font-size: 2.5rem;
-                color: $primary-highlight-color;
-                font-weight: 300;
+                @include top-title-wide
               }
               time.plain {
                 display: none;

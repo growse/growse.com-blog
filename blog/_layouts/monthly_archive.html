@@ -1,13 +1,17 @@
 ---
 layout: parp
 ---
-<div class="monthly-archive">
-    <div>
-        <span class="title">Monthly archive for {{page.year}}/{{page.month}}</span>
-    </div>
-    <div>
-        <ul>
-            {{ content }}
-        </ul>
-    </div>
+{% include header.html show-nav=false %}
+<div id="content" class="nonav">
+    <section id="monthly-archive">
+        <header>
+            <h1>Monthly archive for {{page.month | prepend: '2006-' | append: '-01' | date: "%B"}} {{page.year}}</h1>
+        </header>
+        <div>
+            <ul>
+                {{ content }}
+            </ul>
+        </div>
+    </section>
 </div>
+{% include footer.html %}

@@ -26,12 +26,39 @@ html {
       }
 
       #content {
+        section#monthly-archive {
+          header {
+            @media screen and (max-width: 767px) {
+              h1 {
+                @include top-title-narrow;
+              }
+            }
+            @media screen and (min-width: 768px) {
+              h1 {
+                @include top-title-wide;
+              }
+            }
+          }
+        }
         #searchresults {
+          header {
+            @media screen and (max-width: 767px) {
+              h1 {
+                @include top-title-narrow;
+              }
+            }
+            @media screen and (min-width: 768px) {
+              h1 {
+                @include top-title-wide;
+              }
+            }
+          }
           mark {
             background-color: transparent;
             color: $primary-highlight-color;
             font-weight: bold;
           }
+
           nav {
             ul#pager {
               list-style-type: none;
@@ -143,7 +170,6 @@ html {
               }
             }
           }
-
         }
       }
     }
