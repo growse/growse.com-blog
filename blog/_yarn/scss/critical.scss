@@ -140,9 +140,11 @@ html {
                 path.twitter {
                   fill: #FFFFFFAA;
                 }
+
                 path.mastodon {
                   fill: #FFFFFFAA;
                 }
+
                 path.github {
                   fill: #FFFFFFAA;
                 }
@@ -247,31 +249,40 @@ html {
 
           }
 
-          // Paragraph code blocks
-          pre {
-            code {
-              font-family: $monospacefont;
-              font-size: 0.8rem;
-              line-height: 1.0;
-              border: 1px solid #556;
-              white-space: pre;
-              overflow: auto;
-              padding: 5px;
-              background: #223;
-              display: block;
-              margin: 1em 0;
-            }
-          }
-
-          // Inline code blocks
-          code {
-            border: 1px solid #556;
-            padding: 2px;
-            font-family: $monospacefont;
-            background: #223;
-          }
-
           section {
+            border-bottom: 1px solid #556;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+
+            pre {
+              code {
+                font-family: $monospacefont;
+                font-size: 0.9rem;
+                line-height: 1.3rem;
+                border: 1px solid #556;
+                white-space: pre;
+                overflow: auto;
+                padding: 0.5rem;
+                background: #223;
+                display: block;
+                margin: 1em 0;
+              }
+            }
+
+            // Inline code blocks
+            code {
+              border: 1px solid #556;
+              padding: 0.2rem;
+              font-family: $monospacefont;
+              background: #223;
+            }
+
+            blockquote {
+              border-left: 5px solid #556;
+              padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+              font-style: oblique;
+            }
+
             line-height: 1.6em;
 
             img { // Images get squished without this
