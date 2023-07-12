@@ -5,7 +5,7 @@ description: "Why won't my tools stop hitting me?"
 tags: [ "programming", "git" ]
 ---
 
-I was today years old when I got bitten by the minor assumptions on how git-lfs works.
+I was today years old when I got bitten by some minor assumptions on how git-lfs works.
 
 # Git-what?
 
