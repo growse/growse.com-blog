@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "overlayscrollbars": "1.13.3",
-    "vanilla-lazyload": "17.8.3"
+    "vanilla-lazyload": "17.8.4"
   },
   "packageManager": "yarn@3.6.1"
 }
