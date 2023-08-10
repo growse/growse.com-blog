@@ -254,6 +254,10 @@ html {
             margin-bottom: 1rem;
             padding-bottom: 0.8rem;
 
+            a {
+              border-bottom: 1px dotted $secondary-highlight-color;
+            }
+
             pre {
               code {
                 font-family: $monospacefont;
