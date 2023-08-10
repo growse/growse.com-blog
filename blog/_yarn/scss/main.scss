@@ -1,8 +1,8 @@
-@import 'includes/vars';
-@import 'includes/solarized-dark';
-@import 'includes/mixins';
-@import 'node_modules/overlayscrollbars/css/OverlayScrollbars';
-@import 'includes/fonts';
+@import "includes/vars";
+@import "includes/solarized-dark";
+@import "includes/mixins";
+@import "node_modules/overlayscrollbars/css/OverlayScrollbars";
+@import "includes/fonts";
 
 html {
   body {
@@ -28,7 +28,6 @@ html {
       #content {
         article {
           section {
-
           }
         }
         section#monthly-archive {
@@ -156,7 +155,6 @@ html {
             width: 70px;
             text-align: center;
 
-
             > div {
               width: 18px;
               height: 18px;
@@ -179,22 +177,26 @@ html {
             }
 
             @-webkit-keyframes sk-bouncedelay {
-              0%, 80%, 100% {
-                -webkit-transform: scale(0)
+              0%,
+              80%,
+              100% {
+                -webkit-transform: scale(0);
               }
               40% {
-                -webkit-transform: scale(1.0)
+                -webkit-transform: scale(1);
               }
             }
 
             @keyframes sk-bouncedelay {
-              0%, 80%, 100% {
+              0%,
+              80%,
+              100% {
                 -webkit-transform: scale(0);
                 transform: scale(0);
               }
               40% {
-                -webkit-transform: scale(1.0);
-                transform: scale(1.0);
+                -webkit-transform: scale(1);
+                transform: scale(1);
               }
             }
           }
