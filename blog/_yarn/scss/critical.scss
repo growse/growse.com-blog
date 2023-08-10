@@ -284,8 +284,10 @@ html {
               padding: 0.4rem 0.4rem 0.4rem 0.8rem;
               font-style: oblique;
             }
-
-            line-height: 1.8em;
+            p {
+              line-height: 1.8em;
+              margin-bottom: 1.5rem;
+            }
 
             img {
               // Images get squished without this
