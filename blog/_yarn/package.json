@@ -18,7 +18,7 @@
     "@types/node": "^18.11.9",
     "@types/overlayscrollbars": "1.12.1",
     "@types/terser-webpack-plugin": "5.0.4",
-    "@types/webpack": "5.28.1",
+    "@types/webpack": "5.28.2",
     "clean-webpack-plugin": "4.0.0",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.8.1",
