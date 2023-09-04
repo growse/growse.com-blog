@@ -16,7 +16,7 @@
     "@types/copy-webpack-plugin": "8.0.1",
     "@types/mini-css-extract-plugin": "2.5.0",
     "@types/node": "^18.11.9",
-    "@types/overlayscrollbars": "1.12.1",
+    "@types/overlayscrollbars": "1.12.2",
     "@types/terser-webpack-plugin": "5.0.4",
     "@types/webpack": "5.28.2",
     "clean-webpack-plugin": "4.0.0",
