@@ -2481,7 +2481,7 @@ __metadata:
     ts-node: 10.9.1
     tslint: 6.1.3
     typescript: 5.2.2
-    vanilla-lazyload: 17.8.4
+    vanilla-lazyload: 17.8.5
     webpack: 5.89.0
     webpack-cli: 5.1.4
     webpack-merge: 5.9.0
@@ -5245,10 +5245,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vanilla-lazyload@npm:17.8.4":
-  version: 17.8.4
-  resolution: "vanilla-lazyload@npm:17.8.4"
-  checksum: 218dc87d811612e79e65474f4592da06b962357ab68835c9f0bdbc7aed2c0f06f1d5bc14bfcb16c1a3fdd8aaaffc526587bff1cb51ef09ca03d2063f7cc3029d
+"vanilla-lazyload@npm:17.8.5":
+  version: 17.8.5
+  resolution: "vanilla-lazyload@npm:17.8.5"
+  checksum: 6c8a864a231cbaf278272279dc6fa00a70c0e9ff0a5fb3394395151b7d53de0f8381e464e37d914f38e2757fea9e73ddff7d6d65eac7fe9b75677d9f7e7e61d3
   languageName: node
   linkType: hard
 
