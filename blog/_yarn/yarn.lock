@@ -319,10 +319,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/overlayscrollbars@npm:1.12.2":
-  version: 1.12.2
-  resolution: "@types/overlayscrollbars@npm:1.12.2"
-  checksum: c5bc2cd07dab5bc99a503e2b2f0b4d1dfc36fc24f83ba9e617fe0679406757c2c3081a691b0a2cf8d2b204d465d30578c0e64c121804eb9897313854dfa4f813
+"@types/overlayscrollbars@npm:1.12.3":
+  version: 1.12.3
+  resolution: "@types/overlayscrollbars@npm:1.12.3"
+  checksum: 3d49bc0715e2eb9305786e0b40500ff05984315e95348fbfed915c758aceba2fe9e814740402091f7d0ce115bcb03d41fe025a80c9352d6b587107ee361702a7
   languageName: node
   linkType: hard
 
@@ -2471,7 +2471,7 @@ __metadata:
     "@types/copy-webpack-plugin": 8.0.1
     "@types/mini-css-extract-plugin": 2.5.0
     "@types/node": ^18.11.9
-    "@types/overlayscrollbars": 1.12.2
+    "@types/overlayscrollbars": 1.12.3
     "@types/terser-webpack-plugin": 5.0.4
     "@types/webpack": 5.28.3
     clean-webpack-plugin: 4.0.0
