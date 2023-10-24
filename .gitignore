@@ -2,16 +2,16 @@ blog/_site
 .jekyll-cache
 .idea
 *.iml
-blog/_yarn/node_modules
-blog/_yarn/ts/*.js
-blog/_yarn/yarn-error.log
+blog/_web/node_modules
+blog/_web/ts/*.js
+blog/_web/yarn-error.log
 
-blog/_yarn/.yarn/*
-!blog/_yarn/.yarn/patches
-!blog/_yarn/.yarn/releases
-!blog/_yarn/.yarn/plugins
-!blog/_yarn/.yarn/sdks
-!blog/_yarn/.yarn/versions
+blog/_web/.yarn/*
+!blog/_web/.yarn/patches
+!blog/_web/.yarn/releases
+!blog/_web/.yarn/plugins
+!blog/_web/.yarn/sdks
+!blog/_web/.yarn/versions
 .pnp.*
 
 blog/assets

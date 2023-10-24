@@ -38,6 +38,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
-  - _yarn
+  - _web
 
 permalink: /:year/:month/:day/:title:output_ext
