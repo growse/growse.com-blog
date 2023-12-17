@@ -12,12 +12,12 @@ jobs:
     name: Build Site
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - uses: ruby/setup-ruby@v1
         with:
           working-directory: ./blog
           bundler-cache: true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4
         with:
           node-version: "20"
           cache: "npm"
@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: make blog/_site
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4
         with:
           name: site
           path: blog/_site
@@ -34,8 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build search tools
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v3
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3
         name: Go modules cache restore
         id: golang-cache
         with:
@@ -48,7 +48,7 @@ jobs:
       - name: Build
         run: make searchIndexServer/search_server searchIndexServer/generate_index
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4
         with:
           name: searchIndexServer
           path: |
@@ -63,13 +63,13 @@ jobs:
       - build-site
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@7a1cd3216ca9260cd8022db641d960b1db4d1be4 # v4
       - name: Create Index
         run: chmod +x searchIndexServer/generate_index && ./searchIndexServer/generate_index
         env:
           SEARCH_INDEXROOT: site
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392 # v4
         with:
           name: searchIndex
           path: searchIndex
@@ -82,23 +82,23 @@ jobs:
       - build-site
       - create-search-index
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Download site build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@7a1cd3216ca9260cd8022db641d960b1db4d1be4 # v4
         with:
           name: site
           path: blog/_site
       - name: Download searchTools build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@7a1cd3216ca9260cd8022db641d960b1db4d1be4 # v4
         with:
           name: searchIndexServer
           path: searchIndexServer
       - name: Download searchIndex build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@7a1cd3216ca9260cd8022db641d960b1db4d1be4 # v4
         with:
           name: searchIndex
           path: searchIndex
-      - uses: superfly/flyctl-actions@v1.4
+      - uses: superfly/flyctl-actions@dfdfedc86b296f5e5384f755a18bf400409a15d0 # v1.4
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         with:
