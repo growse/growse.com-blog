@@ -3,7 +3,7 @@
 build: blog/_site searchIndex searchIndexServer/search_server
 
 blog/assets: $(wildcard blog/_web/**/*.ts) $(wildcard blog/_web/*.ts) blog/_web/package.json blog/_web/package-lock.json
-	cd blog/_web && npm install && npm run build
+	cd blog/_web && npm ci && npm run build
 
 blog/_site: blog/assets $(wildcard blog/**/*.md) blog/_config.yml
 	cd blog && bundle exec jekyll b
