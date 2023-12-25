@@ -7,7 +7,7 @@ tags: [ "programming", "git" ]
 
 I was today years old when I got bitten by some minor assumptions on how git-lfs works.
 
-# Git-what?
+## Git-what?
 
 [Git Large File Storage (LFS)](https://git-lfs.com/) is a neat little add-on to git that allows you to store things that
 aren't necessarily text based in a git repo. Git was designed for source code, which generally tends to exist as
@@ -19,7 +19,7 @@ the diffs somewhat. LFS tries to solve that problem by storing some files (that 
 file storage, and then storing a reference to that within the git repo itself. This you don't have to spend bandwidth
 pulling in every version of every large binary when you clone, they can be just fetched on-demand.
 
-# The problem
+## The problem
 
 I've been working on a feature for an Android project for a little while, trying to migrate away from
 the [ObjectBox](https://objectbox.io/) storage library for a bunch of boring reasons (mostly around the extent to which
@@ -36,34 +36,34 @@ repo. So, for the first time, I got out git LFS and told it to track those speci
 
 Everything worked great. Except that the tests failed on CI.
 
-# Works on my machine
+## Works on my machine
 
 This was confusing. The specific tests were failing at the same point every time, right at the point that the
 LMDB `Environment` was being initialized.
 
 ```stacktrace
 07-05 10:28:11.963  E java.lang.ArrayIndexOutOfBoundsException: length=9; index=12
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.DbMappedBuffer.flags-i8woANY(DbMappedBuffer.kt:110)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.PageHeader.<init>(PageHeader.kt:28)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.DbMappedBuffer.getPage-WZ4Q5Ns$lmdb_kt(DbMappedBuffer.kt:27)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.getMetadataPagesWithPageSize-Qn1smSk(Environment.kt:169)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.getMetadataPage(Environment.kt:149)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.getMetadataPage$default(Environment.kt:143)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.<init>(Environment.kt:78)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.<init>(Unknown Source:6)
-07-05 10:28:11.963  E 	at com.growse.lmdb_kt.Environment.<init>(Environment.kt:26)
-07-05 10:28:11.963  E 	at org.owntracks.android.data.waypoints.RoomWaypointsRepo$migrateFromLegacyStorage$1.invokeSuspend(RoomWaypointsRepo.kt:112)
-07-05 10:28:11.963  E 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
-07-05 10:28:11.963  E 	at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher.delegateDispatchWithCounting$lambda$0(EspressoTrackedDispatcher.kt:37)
-07-05 10:28:11.963  E 	at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher.$r8$lambda$im9-z3xxgDDV52szIGJhZ5tniMs(Unknown Source:0)
-07-05 10:28:11.963  E 	at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher$$ExternalSyntheticLambda0.run(Unknown Source:4)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.internal.LimitedDispatcher.run(LimitedDispatcher.kt:42)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:95)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
-07-05 10:28:11.963  E 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.DbMappedBuffer.flags-i8woANY(DbMappedBuffer.kt:110)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.PageHeader.<init>(PageHeader.kt:28)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.DbMappedBuffer.getPage-WZ4Q5Ns$lmdb_kt(DbMappedBuffer.kt:27)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.getMetadataPagesWithPageSize-Qn1smSk(Environment.kt:169)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.getMetadataPage(Environment.kt:149)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.getMetadataPage$default(Environment.kt:143)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.<init>(Environment.kt:78)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.<init>(Unknown Source:6)
+07-05 10:28:11.963  E  at com.growse.lmdb_kt.Environment.<init>(Environment.kt:26)
+07-05 10:28:11.963  E  at org.owntracks.android.data.waypoints.RoomWaypointsRepo$migrateFromLegacyStorage$1.invokeSuspend(RoomWaypointsRepo.kt:112)
+07-05 10:28:11.963  E  at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+07-05 10:28:11.963  E  at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:106)
+07-05 10:28:11.963  E  at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher.delegateDispatchWithCounting$lambda$0(EspressoTrackedDispatcher.kt:37)
+07-05 10:28:11.963  E  at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher.$r8$lambda$im9-z3xxgDDV52szIGJhZ5tniMs(Unknown Source:0)
+07-05 10:28:11.963  E  at org.owntracks.android.testutils.idlingresources.EspressoTrackedDispatcher$$ExternalSyntheticLambda0.run(Unknown Source:4)
+07-05 10:28:11.963  E  at kotlinx.coroutines.internal.LimitedDispatcher.run(LimitedDispatcher.kt:42)
+07-05 10:28:11.963  E  at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:95)
+07-05 10:28:11.963  E  at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:570)
+07-05 10:28:11.963  E  at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:750)
+07-05 10:28:11.963  E  at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:677)
+07-05 10:28:11.963  E  at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:664)
 ```
 
 I'd done a whole bunch of testing on different, weird LMDB databases to make sure my little `lmdb-kt` implementation
@@ -121,7 +121,7 @@ index `bitnum`. There are only 9 different database flags, and somehow bit 12 is
 
 Bit 12 should not be set!
 
-# But it doesn't work on my other machine
+## But it doesn't work on my other machine
 
 It seems obvious now that the CI and the local instance might be looking at different test fixtures. As much as it might
 be possible to attach a debugger to my CI instance somehow, I reverted the good old-fashioned
@@ -131,7 +131,7 @@ First, let's just dump the file size of `data.mdb` as we open it.
 
 Locally:
 
-```
+```shell
 Mapping file /data/user/0/org.owntracks.android.debug/files/objectbox/objectbox/data.mdb. Size is 12288, md5 is c5d30a30601833eee4807981c3d425f0
 ```
 
@@ -139,20 +139,20 @@ Looks good - 3* 4,096-byte pages. 12KB.
 
 On CI:
 
-```
+```shell
 Mapping file /data/user/0/org.owntracks.android.debug/files/objectbox/objectbox/data.mdb. Size is 130, md5 is 54e64601eec41e70e41e2de47e36dc0d
 ```
 
 130 bytes is ... not a multiple of 4,096. Ok, it's seeing a different file. Let's just dump the hex contents on the file
 to the log!
 
-```
+```shell
 76657273696f6e2068747470733a2f2f6769742d6c66732e6769746875622e636f6d2f737065632f76310a6f6964207368613235363a633035336261633963623562343339313463343138343837393332353262363634376637393061393937303865376561623132643532373830343237386565640a73697a652033323736380a
 ```
 
 That's.... ASCII?
 
-```
+```shell
 version https://git-lfs.github.com/spec/v1
 oid sha256:c053bac9cb5b43914c41848793252b6647f790a99708e7eab12d527804278eed
 size 32768
@@ -160,7 +160,7 @@ size 32768
 
 Oh look, it's the stub you get in a git repo when you use git LFS.
 
-# Lessons learned
+## Lessons learned
 
 Very specifically, the lesson is:
 
