@@ -13,7 +13,7 @@
     "watch": "webpack --watch --config webpack.config.dev.ts"
   },
   "devDependencies": {
-    "@types/copy-webpack-plugin": "8.0.1",
+    "@types/copy-webpack-plugin": "10.1.0",
     "@types/mini-css-extract-plugin": "2.5.0",
     "@types/node": "^20.0.0",
     "@types/overlayscrollbars": "1.12.5",
