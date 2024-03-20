@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "10.1.0",
-    "@types/mini-css-extract-plugin": "2.5.0",
+    "@types/mini-css-extract-plugin": "2.5.1",
     "@types/node": "^20.0.0",
     "@types/overlayscrollbars": "1.12.5",
     "@types/terser-webpack-plugin": "5.0.4",
