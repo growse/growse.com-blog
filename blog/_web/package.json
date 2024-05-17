@@ -27,7 +27,7 @@
     "mini-css-extract-plugin": "2.9.0",
     "prettier": "3.2.5",
     "resolve-url-loader": "5.0.0",
-    "sass": "1.77.1",
+    "sass": "1.77.2",
     "sass-loader": "14.2.1",
     "style-loader": "4.0.0",
     "ts-loader": "9.5.1",
