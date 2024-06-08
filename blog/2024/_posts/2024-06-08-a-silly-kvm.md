@@ -220,7 +220,7 @@ fn main() -> Result<(), Error> {
 }
 ```
 
-Great start. It definitely doesn't crash, or leak any memory!
+Great start. It definitely doesn't crash, is very fast, and doesn't leak any memory!
 
 This is going to be run on the CLI and need some configuring, so let's use [clap](https://clap.rs/). We're going to need
 a USB device to look for the presence / absence of, which takes the form of a vendor ID and a product ID. Let's also let
