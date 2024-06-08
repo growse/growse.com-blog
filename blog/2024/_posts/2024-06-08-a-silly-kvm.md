@@ -21,7 +21,7 @@ I seem to remember these were pretty cheap things, and it turns out that was tru
 everyone had a single VGA (or DVI)-connected monitor.
 
 The present is not like the past. I have 3 [Dell UP2615D monitors][monitors], which are each capable of running at
-2560x1440. If you look up how much it costs to get a triple-monitor KVM switch, you'll discover that they're both (a)
+2560x1440. If you look up how much it costs to get a triple-monitor KVM switch that supports that type of resolution, you'll discover that they're both (a)
 pretty uncommon and (b) hilariously expensive.
 
 ## Display Monitors are Computers too
@@ -30,7 +30,7 @@ There is, maybe, another way. The bit that's the problem here is the displays. E
 The Computer is a fairly simple USB device, and USB KVMs are plentiful and very cheap! So with a simple bit of cheap
 hardware, I can at least have a box that lets me switch the USB devices between Work Laptop and my desktop.
 
-At some people between the invention of the monitor and the present day, monitors got a bit more complicated. They've
+At some point between the invention of the monitor and the present day, monitors got a bit more complicated. They've
 gone from being simple analogue displays that can accept a bunch of different VGA modes and just draw a picture to
 full-on computing devices in their own right, with firmware and multiple types of input and correction and built-in USB
 hubs and chess engines and all sorts of other things. The bit that's important here is that they have multiple input
@@ -46,7 +46,7 @@ Since these devices are now quite complicated, someone surely must have invented
 This has been a thing on laptops for ages where you can use keyboard keys to adjust the brightness of the display.
 
 Turns out, there is an API. It's called [Display Data Channel][ddc]. It's essentially an I2C bus that runs on the
-DisplayPort / HDMI connection.
+DisplayPort / HDMI connection, and lets you both interrogate and command the display to do fancy things.
 
 Using the `ddcutil` command on linux, we can test to see if it works:
 
