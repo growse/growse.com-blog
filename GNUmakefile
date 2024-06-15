@@ -1,12 +1,15 @@
-.PHONY: build clean
+.PHONY: build clean serve
 
 build: blog/_site searchIndex searchIndexServer/search_server
+
+serve: build
+	cd blog && bundle exec jekyll s
 
 blog/assets: $(wildcard blog/_web/**/*.ts) $(wildcard blog/_web/*.ts) blog/_web/package.json blog/_web/package-lock.json
 	cd blog/_web && npm ci && npm run build
 
 blog/_site: blog/assets $(wildcard blog/**/*.md) blog/_config.yml
-	cd blog && bundle exec jekyll b
+	cd blog && bundle install && bundle exec jekyll b
 
 searchIndexServer/generate_index: $(wildcard searchIndexServer/**/*.go)
 	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/generate_index
