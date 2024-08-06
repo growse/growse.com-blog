@@ -36,7 +36,7 @@
     "webpack-merge": "^5"
   },
   "dependencies": {
-    "overlayscrollbars": "^1",
+    "overlayscrollbars": "^2.0.0",
     "vanilla-lazyload": "^19"
   }
 }
