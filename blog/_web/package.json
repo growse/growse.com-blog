@@ -26,7 +26,7 @@
     "prettier": "^3",
     "resolve-url-loader": "^5",
     "sass": "^1",
-    "sass-loader": "^14",
+    "sass-loader": "^16.0.0",
     "style-loader": "^4",
     "ts-loader": "^9",
     "ts-node": "^10.9.2",
