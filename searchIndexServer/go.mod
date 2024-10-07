@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.23.2
 
 require (
-	github.com/antchfx/htmlquery v1.3.2
+	github.com/antchfx/htmlquery v1.3.3
 	github.com/blevesearch/bleve/v2 v2.4.2
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.10.0
@@ -161,7 +161,7 @@ require (
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
 	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/andybalholm/brotli v1.0.5 // indirect
-	github.com/antchfx/xpath v1.3.1 // indirect
+	github.com/antchfx/xpath v1.3.2 // indirect
 	github.com/antihax/optional v1.0.0 // indirect
 	github.com/apache/arrow/go/v10 v10.0.1 // indirect
 	github.com/apache/arrow/go/v11 v11.0.0 // indirect
