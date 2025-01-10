@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: make blog/_site
       - name: Upload build artifact
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         with:
           name: site
           path: blog/_site
@@ -48,7 +48,7 @@ jobs:
       - name: Build
         run: make searchIndexServer/search_server searchIndexServer/generate_index
       - name: Upload build artifact
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         with:
           name: searchIndexServer
           path: |
@@ -69,7 +69,7 @@ jobs:
         env:
           SEARCH_INDEXROOT: site
       - name: Upload build artifact
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         with:
           name: searchIndex
           path: searchIndex
