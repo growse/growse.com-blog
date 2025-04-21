@@ -13,7 +13,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     fastimage (2.4.0)
-    ffi (1.17.1)
+    ffi (1.17.2)
     forwardable-extended (2.6.0)
     google-protobuf (4.30.2)
       bigdecimal
@@ -90,7 +90,7 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 RUBY VERSION
-   ruby 3.4.2p28
+   ruby 3.4.3p32
 
 BUNDLED WITH
    2.4.10
