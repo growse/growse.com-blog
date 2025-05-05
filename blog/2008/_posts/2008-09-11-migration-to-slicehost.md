@@ -39,4 +39,3 @@ it and I'll figure it out eventually.
    [4]: http://www.slicehost.com/
 
    [5]: http://www.benhaines.co.uk
-

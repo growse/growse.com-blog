@@ -27,4 +27,3 @@ Which Springer GTM would _you_ be? [The Springer GTM Test][3]
    [1]: http://www.ibiblio.org/harris/500milemail.html
 
    [3]: http://www.math.mcgill.ca/~dsavitt/GTM.html
-

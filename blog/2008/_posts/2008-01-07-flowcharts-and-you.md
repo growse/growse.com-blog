@@ -30,4 +30,3 @@ Infopath. How can something with so much promise turn out to be so crap?
 Actually, "so crap" makes it sound not so bad as I'm used to ranting about
 things. However, Microsoft have managed to invent something that makes the
 phrase "easy to use" even less truthful than "oceans are dry".
-

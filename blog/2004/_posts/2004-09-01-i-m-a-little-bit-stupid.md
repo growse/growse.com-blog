@@ -15,4 +15,3 @@ made sure no-one walked off with it, and they've got it.
 So now I have to go to London to pick it up. Grrrrrrrrrrrrr............
 
    [1]: /2004/05/22/the-blob-box.html
-

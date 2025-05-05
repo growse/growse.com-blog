@@ -12,44 +12,44 @@ In the context of a little console application, this worked brilliantly. However
 
 The fault actually lay with proxy settings, or more specifically, the rather strange way in which Windows handles proxy settings. I grabbed the source of the 'experimental' c# version of IECapt, and after hammering into place and tracing everything, everywhere, I discovered that while running under the context of a different user the process was firing a 'NavigateError' event with the code `0x800c0005`. This basically means "I can't connect".
 
-This system connects to the internet via an HTTP proxy. Internet Explorer stores proxy information on a per-user basis, which means if you run an IE process, it tries to connect to resources using the proxy settings stored under that user. This is fine if you're running as an actual user account, but if you run an IE process under a service or system account, there isn't an obvious way of altering the proxy data to something meaningful. There's a bunch of hacks around using [PSExec](http://technet.microsoft.com/en-us/sysinternals/bb896649) to start up an IE process under a different user and set the proxy manually. But I wanted a more reliable way of doing it. 
+This system connects to the internet via an HTTP proxy. Internet Explorer stores proxy information on a per-user basis, which means if you run an IE process, it tries to connect to resources using the proxy settings stored under that user. This is fine if you're running as an actual user account, but if you run an IE process under a service or system account, there isn't an obvious way of altering the proxy data to something meaningful. There's a bunch of hacks around using [PSExec](http://technet.microsoft.com/en-us/sysinternals/bb896649) to start up an IE process under a different user and set the proxy manually. But I wanted a more reliable way of doing it.
 
 I stumbled on [this post](http://social.msdn.microsoft.com/Forums/en-US/winforms/thread/f4dc3550-f213-41ff-a17d-95c917bed027/) on the MSDN forums which helpfully described how to set the proxy programatically for the current user. In case that URL breaks, here's how:
 
-    Public struct Struct_INTERNET_PROXY_INFO 
-    { 
-        public int dwAccessType; 
-        public IntPtr proxy; 
-        public IntPtr proxyBypass; 
-    }; 
+    Public struct Struct_INTERNET_PROXY_INFO
+    {
+        public int dwAccessType;
+        public IntPtr proxy;
+        public IntPtr proxyBypass;
+    };
 
-    [DllImport("wininet.dll", SetLastError = true)] 
+    [DllImport("wininet.dll", SetLastError = true)]
     private static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int lpdwBufferLength);
 
-    private void RefreshIESettings(string strProxy) 
-    { 
-        const int INTERNET_OPTION_PROXY = 38; 
-        const int INTERNET_OPEN_TYPE_PROXY = 3; 
+    private void RefreshIESettings(string strProxy)
+    {
+        const int INTERNET_OPTION_PROXY = 38;
+        const int INTERNET_OPEN_TYPE_PROXY = 3;
 
-        Struct_INTERNET_PROXY_INFO struct_IPI; 
+        Struct_INTERNET_PROXY_INFO struct_IPI;
 
-        // Filling in structure 
-        struct_IPI.dwAccessType = INTERNET_OPEN_TYPE_PROXY; 
-        struct_IPI.proxy = Marshal.StringToHGlobalAnsi(strProxy); 
-        struct_IPI.proxyBypass = Marshal.StringToHGlobalAnsi("local"); 
+        // Filling in structure
+        struct_IPI.dwAccessType = INTERNET_OPEN_TYPE_PROXY;
+        struct_IPI.proxy = Marshal.StringToHGlobalAnsi(strProxy);
+        struct_IPI.proxyBypass = Marshal.StringToHGlobalAnsi("local");
 
-        // Allocating memory 
-        IntPtr intptrStruct = Marshal.AllocCoTaskMem(Marshal.SizeOf(struct_IPI)); 
+        // Allocating memory
+        IntPtr intptrStruct = Marshal.AllocCoTaskMem(Marshal.SizeOf(struct_IPI));
 
-        // Converting structure to IntPtr 
-        Marshal.StructureToPtr(struct_IPI, intptrStruct, true); 
+        // Converting structure to IntPtr
+        Marshal.StructureToPtr(struct_IPI, intptrStruct, true);
 
-        bool iReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, intptrStruct, Marshal.SizeOf(struct_IPI)); 
-    } 
+        bool iReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_PROXY, intptrStruct, Marshal.SizeOf(struct_IPI));
+    }
 
-    private void SomeFunc() 
-    { 
-        RefreshIESettings("192.168.1.200:1010");     
+    private void SomeFunc()
+    {
+        RefreshIESettings("192.168.1.200:1010");
     }
 
 And this works rather well :)

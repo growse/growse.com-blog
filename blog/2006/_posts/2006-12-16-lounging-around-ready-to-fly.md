@@ -31,4 +31,3 @@ be fine. I should be able to manage that......
 Off to buy earplugs. Can't remember if you get them on the plane and I'd
 actually like to sleep this time. BA have been advertising new beds - hope
 they're comfier than the old ones :)
-

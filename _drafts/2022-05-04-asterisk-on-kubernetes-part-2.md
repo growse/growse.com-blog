@@ -399,7 +399,7 @@ CMD [ "/usr/sbin/asterisk", "-fp" ]
 
 So now that we have a baseline to start with, we can actually start configuring what we want.
 
-For our needs, we'll need two things: 
+For our needs, we'll need two things:
 
 1. A way to configure all the different SIP pieces, (endpoints, transports, aors etc.)
 2. A configuration for what to actually do when things happen (incoming calls received, outgoing numbers dialled etc.)

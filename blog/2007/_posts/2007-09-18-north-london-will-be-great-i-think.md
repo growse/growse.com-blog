@@ -20,4 +20,3 @@ contract for something I actually want to do. It seems a shame to start
 thinking about this only two weeks into a new role, but circumstance seems to
 have forced me into this position. Pay rise would be good though. Then I could
 afford a sofa.
-

@@ -17,4 +17,3 @@ here for a bit. Might even go to the park, provided the weather gets off its
 arse and does something approximating average for the time of year.
 
 Must find a black studded dress shirt. Hmmm....
-

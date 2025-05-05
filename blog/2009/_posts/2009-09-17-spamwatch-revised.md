@@ -28,4 +28,3 @@ them to what I'm getting from the old fudge-and-gaffer-tape way.
    [2]: /2009/01/19/spamwatch.html
 
    [3]: http://www.rsyslog.com/
-

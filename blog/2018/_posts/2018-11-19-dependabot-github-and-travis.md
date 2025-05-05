@@ -19,7 +19,7 @@ Having gotten used to this, I was then pleased to find that Dependabot is a real
 
 I enabled Dependabot for a few different repositories that I dip in and out of. One thing I noticed was that it was quite hard to get job triggering on [CircleCI](http://circleci.com) working properly. I've got some repos which have a two-stage build/deploy workflow and I couldn't figure out how to trigger just the build whenever a PR was open. Builds off commits published worked fine, but builds off open PRs did not. Consensus on the discussion forums was this "wasn't possible at the moment".
 
-The [OwnTracks Android repo](https://github.com/owntracks/android) uses [Travis CI](https://travis-ci.org/) for builds, so I thought I'd have a play. Turns out that building off open PRs is a first-class feature, and the configuration is much simpler than with CircleCI. I'm sure it can "do less", but for my purposes it seems to fit much better. 
+The [OwnTracks Android repo](https://github.com/owntracks/android) uses [Travis CI](https://travis-ci.org/) for builds, so I thought I'd have a play. Turns out that building off open PRs is a first-class feature, and the configuration is much simpler than with CircleCI. I'm sure it can "do less", but for my purposes it seems to fit much better.
 
 Also, Comic Sans on the interface is a joy.
 

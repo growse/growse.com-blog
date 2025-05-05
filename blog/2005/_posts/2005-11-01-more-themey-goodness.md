@@ -41,4 +41,3 @@ is useable though, so we'll see how frustrated I get with it. If it gets
 worse, I'll jump on it or something and buy one from logitech.
 
    [1]: http://www.apple.com/uk/retail/regentstreet/
-

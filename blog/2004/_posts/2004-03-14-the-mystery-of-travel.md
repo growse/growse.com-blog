@@ -18,4 +18,3 @@ wetter, today.
 
 Odd place. Like England with different money and a strange language.
 Hmmmmm.......
-

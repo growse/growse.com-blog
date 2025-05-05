@@ -25,4 +25,3 @@ that'll be like.
    [2]: /2010/04/26/big-things-very-big-things.html
 
    [3]: http://en.wikipedia.org/wiki/Coventry_Cathedral
-

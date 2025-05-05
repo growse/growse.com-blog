@@ -45,4 +45,3 @@ out the phishing problem. See someone using a non-traditional TLD, and they're
 probably trying to take all your money.
 
    [1]: http://www.reuters.com/article/internetNews/idUSN2635186520080627
-

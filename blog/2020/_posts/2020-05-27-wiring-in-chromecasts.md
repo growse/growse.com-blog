@@ -11,9 +11,9 @@ Having never really had time to debug (when I notice it's broken is when I want 
 
 It seemed pretty clear that something was wonky about the network. Something was getting lost somewhere. What was interesting is that when the problem was solved by rebooting the AP, the AP had been up for a while - typically > 3 months. Perhaps there's some internal state of the bridge on the AP that leaks something and falls over after a certain amount of time, but it's certainly not a reliable enough failure to be certain about that. I've [had issues before]({% post_url 2014/2014-04-23-unifi-wireless-ap-and-ipv6-weirdness %}) with Unifi APs dropping traffic randomly, but am wary of assuming it's the same thing here.
 
-## Actual copper wires to the rescue 
+## Actual copper wires to the rescue
 
-Obviously, the best answer to all network problems is to hard-wire everything in. Wifi is a kludgy hack that's only useful if you have a device that's impractical to wire in. 
+Obviously, the best answer to all network problems is to hard-wire everything in. Wifi is a kludgy hack that's only useful if you have a device that's impractical to wire in.
 
 My chromecast does not fall into this category. It never moves, and there's a network switch next to it. Let's wire it in!
 

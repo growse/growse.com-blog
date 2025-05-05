@@ -13,4 +13,3 @@ part, and I've distinctly decided I don't like the piece any more. If it had
 snowed that night, my opinion of it might be higher (don't ask), but it
 didn't. And I've just been informed that I have a new bed. This day is getting
 better and better already.
-

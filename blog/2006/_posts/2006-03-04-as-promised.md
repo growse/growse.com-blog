@@ -12,4 +12,3 @@ titanium black amex cards and a casual invite to the Monaco grand prix is
 going to be a good one.
 
 Ski time next!
-

@@ -22,4 +22,3 @@ time and in the time period allowed will be a strange novelty, to be swept
 away and to become something of a legend.
 
 Ah well, got to be up at 5. Sleep beckons.
-

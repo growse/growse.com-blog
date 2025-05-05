@@ -38,4 +38,3 @@ up.
 
 I was too scared to collect my rum by the 2 probably-not-wearing-any-clothes
 that were sharing a room with my bottle of rum.
-

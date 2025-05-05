@@ -13,7 +13,7 @@ But suddenly I need to do some actual commuting again, involving some bits of mo
 
 {% include image.html alt="BMW S1000R" src="/assets/img/2020-02-14-multicoloured-bike/bmw-s1000r.jpg" %}
 
-Yet another BMW! (Specifically, an S1000R). 
+Yet another BMW! (Specifically, an S1000R).
 
 This has also been on my "I'd really like on of these at some point". Having done 180 miles on the motorway after picking it up, I can confidently say that it does motorways "pretty well". It's got heated grips, cruise control (!), a sensible "oh no it's raining please turn yourself down" mode, and is generally a nice place to be. On the flip side, it's got 160bhp, fancy electronic damping and a magic dongle that basically turns on track mode, so it's good fun at the weekend too. I can already confidently assert that the traction control works.
 

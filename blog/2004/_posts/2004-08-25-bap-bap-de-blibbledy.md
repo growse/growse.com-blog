@@ -8,4 +8,3 @@ raining.
 I'm still alive.
 
 Just.
-

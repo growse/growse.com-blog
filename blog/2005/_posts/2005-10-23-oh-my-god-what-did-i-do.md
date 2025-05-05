@@ -15,4 +15,3 @@ I've heard many a good thing said about the apple pro. If, of course, it's
 crap, I'll send it back.
 
 Probably with some hate mail.
-

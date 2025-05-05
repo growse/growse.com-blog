@@ -9,4 +9,3 @@ amount of time someone gave up to do it.
 Anyway, I'm off to hit incompetant printers.
 
    [1]: http://www.geocities.com/le_chatelier_uk/song_index.html
-

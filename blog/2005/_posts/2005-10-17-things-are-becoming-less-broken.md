@@ -7,4 +7,3 @@ stylesheets as well as fix some of the code and close the guestbook. Now I've
 just got to build the new comments bit, fix the rest of the styleshets and set
 the style rotation starting again. It's stopped for the moment, on black.
 Which I'm sure you'll all appreciate.
-

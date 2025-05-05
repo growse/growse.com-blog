@@ -10,4 +10,3 @@ have every thought of. So I ditched 3 months of work and used that instead.
 Needless to say it's a lot better.
 
    [1]: http://www.oscommerce.com/
-

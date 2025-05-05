@@ -14,4 +14,3 @@ go and get my university card back off Scudamore's - they've had it for about
 Without it, I can't get into this library, so have to stand outside the door
 looking a bit silly until someone else goes in or comes out. Ah well.I think I
 had better go before my reaction explodes.
-

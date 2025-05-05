@@ -17,4 +17,3 @@ Possibly many other things.
 Or possibly only one other thing.
 
    [1]: http://www.trinityball.co.uk/
-

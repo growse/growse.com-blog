@@ -47,4 +47,3 @@ one.
    [2]: http://www.engadget.com/2008/02/19/hps-umpc-2133-revealed/
 
    [3]: http://en.wikipedia.org/wiki/MSI_Wind_PC
-

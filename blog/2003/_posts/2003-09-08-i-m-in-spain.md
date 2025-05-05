@@ -17,4 +17,3 @@ which means that I can stop stressing about mildly incompetant spanish people
 who refuse to speak english at me. Ah well.
 
 The beach is calling.
-

@@ -45,4 +45,3 @@ these things. Hope not.
    [4]: http://en.wikipedia.org/wiki/South_Downs_Way
 
    [5]: http://feedling.sourceforge.net/
-

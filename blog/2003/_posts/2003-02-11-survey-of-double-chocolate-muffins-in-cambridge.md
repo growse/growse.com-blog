@@ -62,7 +62,7 @@ venture further out into the great unkown for me that is the Cambridge Muffin
 culture, but I thought I would round things off here, make it pretty, and add
 more cake when I ate it. One day, I hope to have pictures :)
 
-|Place of buyage | Price | Good things | Bad things | Mark | 
+|Place of buyage | Price | Good things | Bad things | Mark |
 |-
 |Nadia's|80p|Scrummy|They have ways of making you buy more|9/10|
 |Pembroke|£1|Near to where I live|Eugh|2/10|
@@ -72,4 +72,3 @@ more cake when I ate it. One day, I hope to have pictures :)
 
 Well, that just about wraps it up here. I hope everyone had a lovely time, but
 there won't be souvenirs. I'm sorry.
-

@@ -17,4 +17,3 @@ So if anyone's reading this and can't get through to me, I don't actually have
 a phone. At all. You'll want to phone college.
 
 Now I need to go and buy a new phone.
-

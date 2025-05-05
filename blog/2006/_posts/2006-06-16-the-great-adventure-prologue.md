@@ -99,4 +99,3 @@ P.S. Go see [Avenue Q][2]! Don't ask why, just go see it!
    [1]: http://www.usembassy.org.uk/
 
    [2]: http://www.avenueqthemusical.co.uk/
-

@@ -10,4 +10,3 @@ with nice things :)
 This time next year, I'll hopefully have a new job as I leave the grad scheme.
 Will be interesting to see where I end up. Covered in chocolate if this year
 is anything to go by...
-

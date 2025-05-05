@@ -12,4 +12,3 @@ of my starting materials was dodgy and he didn't understand one of the
 spectra.
 
 And people ask me why I'm losing complete faith in the department.
-

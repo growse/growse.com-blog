@@ -12,4 +12,3 @@ Oh well.
 Never mind. I'll find some way of living with me.
 
 I'll stop being smug now and go out to find a bar. :)
-

@@ -20,4 +20,3 @@ letters in the graph. Who knows?
    [2]: http://www.jquery.com
 
    [3]: /2009/01/19/spamwatch.html
-

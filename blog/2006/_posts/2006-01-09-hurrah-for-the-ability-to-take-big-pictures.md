@@ -14,4 +14,3 @@ Better photos in the photo section to follow :-)
 
    [1]:
 http://www.sigmaphoto.com/lenses/lenses_all_details.asp?id=3261&navigator=2
-

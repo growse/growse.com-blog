@@ -26,4 +26,3 @@ and so the dress rehearsal (yesterday) was a bit shambolic. Still, today
 should be interesting.
 
 Add to that I'm on holiday (again!!!) in a few days :)
-

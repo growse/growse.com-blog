@@ -15,4 +15,3 @@ On a different note, it's sunny!!! Well, it has been. Really really "I don't
 need a coat" warm, which, given that it's March, is quite remarkable.
 
 Must go, duvet calls.
-

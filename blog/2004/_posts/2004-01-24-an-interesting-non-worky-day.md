@@ -15,4 +15,3 @@ desk. Joy.
    [1]: http://www.cambridgeartstheatre.com/
 
    [2]: http://www.stage-electrics.co.uk/eweb/index.htm
-

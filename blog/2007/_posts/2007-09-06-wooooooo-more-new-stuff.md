@@ -13,4 +13,3 @@ This means I have to learn it, and fairly quickly. Inexplicably, I'm staying
 in a hotel in Tower Hill next week, so this prevents me from learning stuff
 about this job, but I might learn other stuff about other things. It's called
 'training' or something.
-

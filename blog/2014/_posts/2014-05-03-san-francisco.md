@@ -12,4 +12,4 @@ Initial impressions.
 4. It is mildly pretentious and overpriced, in exactly the same way that I expected.
 5. There's a guy called 'Peet' (did he spell his own name wrong?) who's taking the fight to Starbucks.
 
-I'm losing the ability to think coherently so tomorrow I'll find a nice diner, eat sausages and maple syrup and look at some more stuff. 
+I'm losing the ability to think coherently so tomorrow I'll find a nice diner, eat sausages and maple syrup and look at some more stuff.

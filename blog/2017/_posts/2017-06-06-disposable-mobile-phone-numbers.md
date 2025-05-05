@@ -10,6 +10,4 @@ It turns out that in addition to being able to buy a landline number, they'll al
 
 There's quite a few different ways in which routing incoming calls from organisations through a PBX is useful, for those times when they decide to sell their database to someone who doesn't care about the law, or (more commonly) someone breaks in and steals the data before relentlessly spamming and/or phishing you.
 
-For the truely paranoid, you could in theory buy a bunch of numbers and give them out to different 'classes' of people: one for friends, one for family, one for mostly trustworthy companies, one for annoying internet portal sign-up forms etc. 
- 
- 
+For the truely paranoid, you could in theory buy a bunch of numbers and give them out to different 'classes' of people: one for friends, one for family, one for mostly trustworthy companies, one for annoying internet portal sign-up forms etc.

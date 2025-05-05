@@ -45,4 +45,3 @@ future.
 It would have been a lot easier to have been clever, and not stupid.
 
    [1]: https://calomel.org/spamd_config.html
-

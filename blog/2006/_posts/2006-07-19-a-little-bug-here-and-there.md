@@ -20,4 +20,3 @@ Statten Island ferry to discover that there doesn't seem to be anything
 interesting on Statten Island. I really should do something like go to the
 beach, or catch the bus to DC, or go and see Boston. Maybe even the Niagra
 Falls, although that's a 7 hour train journey...
-

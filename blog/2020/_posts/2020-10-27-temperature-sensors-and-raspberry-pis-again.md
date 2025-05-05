@@ -20,4 +20,3 @@ So I got some more jumper cables out and spaced it about 150mm away from the rPi
 Not only has the temperature reading dropped down to something much closer to what I'd expect, but now it's nicely following the heating profile of the room.
 
 There's a lesson here somewhere. Something about your sensor affecting the very environment it's trying to measure? I'm going to get an ESP8266 and see if that has the same problem next.
-    

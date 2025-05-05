@@ -20,7 +20,6 @@ think were spam, but which later turned out to be. Therefore any variation
 might be just as likely to be cause by spamassassin going wrong, than by any
 other sort of major world event.
 
-And because I like graphs, I made it into a graph. 
+And because I like graphs, I made it into a graph.
 
    [1]: http://www.exim.org/
-

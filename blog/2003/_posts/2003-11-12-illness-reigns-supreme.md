@@ -11,4 +11,3 @@ whose only purpose seems to be to make up for the fact that there was an
 excess of full-stops in the previous news entry; therefore the necessity of
 including a news entry in which there are as few full stops as possible is, or
 at least becomes, apparent for all to see./falls over.
-

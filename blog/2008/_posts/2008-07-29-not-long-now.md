@@ -26,4 +26,3 @@ publication. I will occasionally take copious notes and may even entertain the
 idea of taking PHOTOGRAPHS or VIDEO-like material.
 
 I must go now, to buy THINGS for the RACE!
-

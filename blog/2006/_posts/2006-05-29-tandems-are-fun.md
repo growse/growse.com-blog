@@ -29,4 +29,3 @@ spent careering around the back lanes and tracks of the local area before
 eventually giving in and coming back to London.
 
 Joyously, a hailstorm started as we got back.
-

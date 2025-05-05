@@ -60,4 +60,3 @@ In all, a rather good day involving strange gambling, good pizza and some
 rollercoasters with no queues.
 
    [1]: http://maps.google.com/maps?f=q&hl=en&q=farmingdale,+ny&ie=UTF8&om=1
-

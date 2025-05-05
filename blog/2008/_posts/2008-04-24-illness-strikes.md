@@ -34,4 +34,3 @@ I know)
 
 I sense a triumphant weekend of beating everyone I know at this singular
 triumph of karting fun.
-

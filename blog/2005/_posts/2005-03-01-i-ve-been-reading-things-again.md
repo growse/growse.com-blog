@@ -11,4 +11,3 @@ serving it up as applicaion/xhtml+xml rather than text/html. Hmmmmm...........
 If it doesn't work for a bit, that'll be why. You could solve it by either
 waiting for me to change my mind, or by using a better browser. Like firefox
 :)
-

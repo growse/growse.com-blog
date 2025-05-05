@@ -25,7 +25,7 @@ I used the debian [dnscrypt-autoinstaller](https://github.com/simonclausen/dnscr
         ;;
     ...
 
-## Bind 
+## Bind
 
 Next was building a DNS server that could handle the local network zone for both forward and reverse lookups. BIND is best supported for dynamic DNS, so I used that.
 
@@ -84,7 +84,7 @@ The last Base64 encoded piece is the key - take this and add it into the `named.
        secret "HxUhKWVJcuyL9ZsG5HGF7A==";
     };
 
-Finally, on debian jessie, I had to make sure that `/etc/bind` was owned by the `bind` user. This is because bind tries to create a journal file for ddns updates alongside the zone files, which in my case were in `/etc/bind`. 
+Finally, on debian jessie, I had to make sure that `/etc/bind` was owned by the `bind` user. This is because bind tries to create a journal file for ddns updates alongside the zone files, which in my case were in `/etc/bind`.
 
 Finally, we're not going to query this directly, but from another process locally, so we want to restrict what bind listens to. In `named.conf.options`:
 
@@ -105,7 +105,7 @@ Both of these seem to be necessary - just including the first one still causes f
 Then, web can simply set up stub zones for our locally-resolved zones, and then a general forward zone for everything else:
 
 
-    stub-zone: 
+    stub-zone:
         name: "4.3.2.1.1.1.1.0.1.0.0.2.ip6.arpa."
         stub-addr: 127.0.0.1
     stub-zone:
@@ -198,7 +198,7 @@ radvd.conf:
         AdvSendAdvert on;
         prefix ::/64
         {
-            AdvAutonomous off;  
+            AdvAutonomous off;
         };
     };
 

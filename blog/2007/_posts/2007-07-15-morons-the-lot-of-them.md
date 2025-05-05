@@ -35,4 +35,3 @@ in to the paper and explain why such people look like idiots. I suppose this
 may be a good thing as I find that the tactics behind editors' decisions over
 what letters to print usually result in the most weird and minority opinions
 being published. I'm looking forward to what they print on Monday.
-

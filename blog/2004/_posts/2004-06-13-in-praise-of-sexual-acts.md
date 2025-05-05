@@ -10,4 +10,3 @@ certain position. That's organisational position, as opposed to physical
 position.
 
 I'm going to go write chapter 2 of my book now.
-

@@ -9,4 +9,3 @@ I start for real in January.
 
 This can only be a short entry, I'm off to sit in a car whilst someone else
 tells me what to do. Happy Christmas to all. Hope it's snowing somewhere :)
-

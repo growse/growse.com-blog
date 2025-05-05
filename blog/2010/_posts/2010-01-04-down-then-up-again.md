@@ -13,4 +13,3 @@ plough on with the niggling thought in my mind that somewhere in my small
 corner of the world, something isn't working properly.
 
 At least we've not had any earthquakes.
-

@@ -11,4 +11,3 @@ sit in a chair for 3 hours. Thankfully, he said yes.
 
 I've now been up over 24 hours, and I won't sleep for another 15 hours at
 least. Great!
-

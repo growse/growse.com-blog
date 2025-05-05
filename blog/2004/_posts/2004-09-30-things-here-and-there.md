@@ -32,4 +32,3 @@ And that's what I'm doing.
 I'm slightly concerned that the civil service think I can't read though.
 
    [1]: http://uncertaintydivision.org/
-

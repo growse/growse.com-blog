@@ -26,7 +26,7 @@ However, you can also use Hiera as your data source for mapping hosts to roles. 
 	:json:
 		:datadir: /var/local/myapp/hieradata
 
-If you're not familiar with Hiera, this is basically a configuration that instructs puppet variables to be populated from files stored in the `datadir`. The `hierarchy` determines where Hiera looks first. In this case, it matches a file based in the `node` directory according to the host's FQDN. This can simply set the specific role / deployment / whatever for that specific host. Hiera then moves down the hierarchy matching the node's facts and parsing the relevent configuration files. 
+If you're not familiar with Hiera, this is basically a configuration that instructs puppet variables to be populated from files stored in the `datadir`. The `hierarchy` determines where Hiera looks first. In this case, it matches a file based in the `node` directory according to the host's FQDN. This can simply set the specific role / deployment / whatever for that specific host. Hiera then moves down the hierarchy matching the node's facts and parsing the relevent configuration files.
 
 The cunning part is that Hiera will populate variables _as it goes along_. In the above case, if `node/wibble.example.com.json` sets `myapp::role` to `database`, Hiera will in the same run look for `role/database.json` as it works down the hierarchy.
 
@@ -37,7 +37,7 @@ So, as an example, if I know I need another production database server, I decide
 	    "myapp::deployment" : "production"
 	}
 
-I then ping my cloud API and deploy an instance with that name, wait for it to complete and kick off a puppet run. As puppet runs, it first sets the `myapp::role` and `myapp::deployment` variables from the first Hiera hierarchy part, evaluates the other parts to set other role- or deployment-specific facts, and then compiles the manifest. 
+I then ping my cloud API and deploy an instance with that name, wait for it to complete and kick off a puppet run. As puppet runs, it first sets the `myapp::role` and `myapp::deployment` variables from the first Hiera hierarchy part, evaluates the other parts to set other role- or deployment-specific facts, and then compiles the manifest.
 
 This next bit is where I borrow from the nodeless puppet configuration linked above - I have a single `manifests/site.pp` which looks like this:
 
@@ -50,8 +50,8 @@ This simply includes `manifests/init.pp` inside the `myapp` modules. This manife
 	class myapp($role='', $deployment='') {
 		case $role {
 			'database': { include myapp::database }
-			'webserver': { include myapp::webserver }        
-		}   
+			'webserver': { include myapp::webserver }
+		}
 	}
 
 As should be fairly obvious, this simply includes the relevent class, based on the node. The great thing about this is that if you forgot to define your endpoint Hiera config, it effectively will have nothing set in the `role` and `deployment`, so nothing will get deployed. It won't error out, it'll sit and wait. You could, in theory, have a whole bunch of unconfigured VMs ready to be 'things', and when you need them, you simply add them into Hiera, and they get magically configured the next time they do a puppet run.

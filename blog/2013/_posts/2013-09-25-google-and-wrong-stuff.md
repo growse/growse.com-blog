@@ -16,6 +16,6 @@ For example. I was in Iceland. I was in a place called [Husavik](https://www.goo
 
 This is not useful.
 
-It turns out, that I should be searching for 'gas station'. Of all the companies in the world who have data on local language usage, and specific user preferences, you'd have thought Google should be able to get this stuff right. The 'new maps' feels a little bit half baked, released in a bit of a rush without giving much thought to what made Google so popular in the first place. I lost count of the number of times that I went to search for something in maps and wound up with a result that was on a completely different continent. 
+It turns out, that I should be searching for 'gas station'. Of all the companies in the world who have data on local language usage, and specific user preferences, you'd have thought Google should be able to get this stuff right. The 'new maps' feels a little bit half baked, released in a bit of a rush without giving much thought to what made Google so popular in the first place. I lost count of the number of times that I went to search for something in maps and wound up with a result that was on a completely different continent.
 
 Hopefully they can sort this out. There's a bunch of other things that are also missing from the new maps (e.g. multi-leg travel routes) that Google are apparently promising to deliver 'soon'. Whatever 'soon' means. I'm optimistic that this will get better, but only just.

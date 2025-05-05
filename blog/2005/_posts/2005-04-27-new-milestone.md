@@ -31,4 +31,3 @@ things in Photoshop. Also, I'm going back to New York (yay!) in a month. Yay!
    [1]: http://gentoo-wiki.com/Main_Page
 
    [2]: http://en.wikipedia.org/wiki/Main_Page
-

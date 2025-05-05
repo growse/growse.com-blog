@@ -8,4 +8,3 @@ rehearsing you see, and I've got to be up tomorrow at 8.
 
 I got 68.7% in a fifth of my part II as well. The courseworky bit, which isn't
 that bad I suppose. :)
-

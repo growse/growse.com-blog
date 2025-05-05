@@ -20,4 +20,3 @@ company I started up and running, and look for a job, and other important
 stuff.
 
 Still, life is looking up. Lunch is done.
-

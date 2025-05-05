@@ -23,4 +23,3 @@ it breaks.
    [2]: /links/
 
    [3]: http://delicious.com/
-

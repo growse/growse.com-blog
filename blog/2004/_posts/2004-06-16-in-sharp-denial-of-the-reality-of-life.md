@@ -8,4 +8,3 @@ a 3rd? What the fuck are these guys examining, because it fecking well isn't
 the ability to do chemistry.
 
 Well, that was a waste of 3 years of my life.
-

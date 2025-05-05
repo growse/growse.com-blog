@@ -19,4 +19,3 @@ trip to Manchester, doing the dishes again because I ate toast, re-packing
 etc. etc.
 
 I've just realised that I want to go back to work. :-(
-

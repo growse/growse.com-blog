@@ -15,4 +15,3 @@ over the weekend, if I get time (I won't - more exciting things to do). That
 and a nice new video section for cool time-lapse stuff.
 
 Must dash - Rover beckons.
-

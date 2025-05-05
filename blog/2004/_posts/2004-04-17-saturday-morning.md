@@ -37,4 +37,3 @@ Bleh. Dinnertime.
 Oh, forgot to add, there's new photos up. You'll find them in the photos
 section, which in this hideously easy-to-navigate website is linked to both on
 the left, and right down at the bottom. Bet you didn't know that.
-

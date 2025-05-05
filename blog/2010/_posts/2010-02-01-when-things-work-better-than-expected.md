@@ -19,4 +19,3 @@ my face that may entice me into spending some money on Viagra. I've a plan!
    [1]: /2010/01/19/spammage-more-of-it-loads-of-it-yay.html
 
    [2]: /2009/01/19/spamwatch.html
-

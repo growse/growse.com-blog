@@ -14,4 +14,3 @@ moving date of 3rd September, by which time I need to have bought things like
 beds and sofas, it's roaring up like a large thing that roars.
 
 On the upside, I got cake, which was good.
-

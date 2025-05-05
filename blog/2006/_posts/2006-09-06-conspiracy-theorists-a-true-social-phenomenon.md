@@ -26,4 +26,3 @@ such qualities allows them to get laid sooner, and with more people.
 Unfortunately, in most cases, the glaring lack of logic and reason only makes
 them appear to be closed-minded geeks trying to cling onto some sort of
 individualism to make themselves seem important. It's sad, but it's true.
-

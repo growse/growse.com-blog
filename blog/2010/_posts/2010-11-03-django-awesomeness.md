@@ -60,4 +60,3 @@ lightweight, efficient and easy. I like it.
    [7]: http://video.google.com/videoplay?docid=6297126166376226181#
 
    [8]: http://www.djangoproject.com/ (Django)
-

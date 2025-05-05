@@ -4,7 +4,7 @@ title: "Managing hostfiles with Puppet and lots of servers"
 ---
 Sometimes, DNS just doesn't work. Or doesn't work well enough. I discovered this building a Hadoop cluster on someone else's [Cloudstack](http://cloudstack.apache.org/) infrastructure because Hadoop requires every node to be able to reliably resolve and communicate with every other node. It turns out this particular Cloudstack deployment didn't have particularly reliable DNS, so I needed a better way.
 
-Somewhere, in some piece of Hadoop documentation, there's a note that you can simply use the hosts file on each cluster server to provide reliable address resolution to every other host in the cluster. This is a great idea, until you actually realise that you have a Hadoop cluster containing 100 nodes and you now need to build and distribute a hosts file with 100 entries to each server. 
+Somewhere, in some piece of Hadoop documentation, there's a note that you can simply use the hosts file on each cluster server to provide reliable address resolution to every other host in the cluster. This is a great idea, until you actually realise that you have a Hadoop cluster containing 100 nodes and you now need to build and distribute a hosts file with 100 entries to each server.
 
 Because it's flavour of the month, enter Puppet. Yay!
 

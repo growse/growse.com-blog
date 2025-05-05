@@ -14,4 +14,3 @@ which nearly smashed a few windows around here. And I've run out of food, so
 need some more. Lots more, in fact. And before I forget, my replacement cold
 cathode arrives tomorrow :) I really should send the other one back when I get
 a free moment - things which are rare right now. :(
-

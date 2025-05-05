@@ -14,4 +14,3 @@ Hopefully, 17" of tft should turn up tomorrow, which is good.
 Also, [the saga continues...][1]
 
    [1]: http://www.independent.co.uk/story.jsp?story=342909
-

@@ -57,4 +57,3 @@ living here.
 
    [3]: http://www.canon.co.uk/For_Home/Product_Finder/Cameras/EF_Lenses/Zoom_Lenses
 /EF-S_10-22mm_f-3.5-4.5/
-

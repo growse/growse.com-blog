@@ -19,7 +19,7 @@ tasks caused lots of stuttering (something something IO scheduling), the sound c
 as well as plain running out of space - 128GB is not really enough.
 
 I run [Arch Linux](https://archlinux.org/) on my Thinkpad T480s using KDE, and it's a pretty nice experience. Given that
-I've got some slightly [weird hardware]({% post_url /2016/2016-03-19-more-fibre-channel-nonsense %}) on my desktop, I 
+I've got some slightly [weird hardware]({% post_url /2016/2016-03-19-more-fibre-channel-nonsense %}) on my desktop, I
 thought it'd be a fun experiment to see if it worked here.
 
 After a couple of false starts where I couldn't get one of the three monitors working (turns out, it helps to plug it in)
@@ -27,4 +27,4 @@ I've now got everything configured and... it works great!?
 
 FC disks, steam, SMB mounts, audio - all of it works. Better still, it doesn't fall over when I do a big project build.
 
-Maybe 2023 really will be the "year of the Linux desktop"? 
+Maybe 2023 really will be the "year of the Linux desktop"?

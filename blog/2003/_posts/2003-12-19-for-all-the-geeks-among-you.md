@@ -13,4 +13,3 @@ quad xeon with 2.5Gb memory)</geek>
 For all you normal people out there, today might be my last day. Hurray! And
 I'm going on holiday in a week. Hurray! And it's Christmas day on Thursday.
 Hurray! And I need to by people things. Crap....
-

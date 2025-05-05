@@ -27,4 +27,3 @@ I'm sad the summer had gone so quickly and that I seem to have done nothing
 with it. Maybe I'm just getting old and grumpy.
 
    [1]: /2009/09/28/brrrm-brrrrrrrrrrrrrmmmmmm.html
-

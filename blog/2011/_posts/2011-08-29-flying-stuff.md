@@ -56,4 +56,3 @@ you can really start to enjoy yourself.
 
 I can see myself doing this sort of thing some day. Maybe after I've mastered
 sailing. Sailing, I shall talk about soon.
-

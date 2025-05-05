@@ -61,4 +61,3 @@ I have a plan. My plan is this. It's 7:43. BT open at 8. Surely no-one else
 can be as determined as me to move house?
 
    [1]: http://www.reuters.com/article/bondsNews/idUSN2740383220070927
-

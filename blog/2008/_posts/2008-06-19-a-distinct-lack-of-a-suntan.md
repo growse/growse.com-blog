@@ -13,4 +13,3 @@ them up and shout at them for not taking money from me over the past 3 years
 through PAYE. Muppets. Then there's the huge skiing holiday that I want, along
 with the big house and eventually I start to realise that it might be 4 years
 until I have another holiday. Oh well.
-

@@ -8,4 +8,3 @@ depositing me in the Atlantic. After that, it's swimming the whole way. Apart
 from that, it's been a good week. The show's really good (COME AND SEE IT!!!!)
 although I left my camera in the theatre, so no pictures for a month. Must go
 get that back at some point......
-

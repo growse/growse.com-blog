@@ -9,4 +9,3 @@ that challenges you, you can click on this amazing link:
 [The Blob Box][1]
 
    [1]: /2004/05/22/the-blob-box.html
-

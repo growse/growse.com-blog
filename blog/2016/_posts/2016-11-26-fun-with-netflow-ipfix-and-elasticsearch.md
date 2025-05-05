@@ -10,7 +10,7 @@ However, after a while, it became apparent that while the functionality was good
 
 ## IPTables
 
-IPTables is both awesome, and extensible. Which means you can just write a kernal module and get it to do whatever you like! Usefully, someone has written an [iptables module that can output netflow & IPFIX traffic](https://github.com/aabc/ipt-netflow). For this, I used IPFIX - Netflow is the original protocol invented by Cisco, and IPFIX is the evolved and more standardised IETF version. 
+IPTables is both awesome, and extensible. Which means you can just write a kernal module and get it to do whatever you like! Usefully, someone has written an [iptables module that can output netflow & IPFIX traffic](https://github.com/aabc/ipt-netflow). For this, I used IPFIX - Netflow is the original protocol invented by Cisco, and IPFIX is the evolved and more standardised IETF version.
 
 The installation instructions in the github repository are pretty comprehensive. Once the module is built and compiles, I added the `ipt_NETFLOW` line into `/etc/modules` (I'm on Debian 8, other distributions may vary) to ensure it gets loaded at boot time. To configure the module, I created `/etc/modprobe.d/ipt_NETFLOW.conf` with the following:
 
@@ -89,7 +89,7 @@ Usefully, Maxmind maintain an Ubuntu PPA (`ppa:maxmind/ppa`) containing a deb pa
 
     $ apt install devscripts build-essential
     $ echo "deb-src http://ppa.launchpad.net/maxmind/ppa/ubuntu wily main" > /etc/apt/sources.list.d/maxmind-ppa.list
-    $ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DE742AFA 
+    $ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DE742AFA
     $ apt update
     $ apt-get source --build geoipupdate
     $ dpkg -i geoipupdate_*.deb

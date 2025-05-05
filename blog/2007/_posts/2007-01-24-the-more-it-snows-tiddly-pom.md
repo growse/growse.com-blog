@@ -8,4 +8,3 @@ amazing. I had to trudge all the way to the station to discover that the
 wonderful train company had cancelled all the trains going to London. Still,
 that means I get to work from home, which isn't all that bad. I just have to
 figure out what lunch is going to look like.
-

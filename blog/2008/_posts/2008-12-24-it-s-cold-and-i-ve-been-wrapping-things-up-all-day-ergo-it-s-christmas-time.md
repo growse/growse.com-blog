@@ -16,4 +16,3 @@ which is surprisingly warm in comparison to last week.
 
 I'll probably spend all the time between now and the new year inventing new
 ways in which to get drunk. Mostly involving Martini glasses.
-

@@ -14,4 +14,3 @@ which in a way is probably good for me in the long run.
 The company is interviewing the technical grads for next year this week, so
 I'll hopefully be along to them to sit on "the other side" of the interviews
 and weigh in my opinion on who they should hire. It'll be fun :-)
-

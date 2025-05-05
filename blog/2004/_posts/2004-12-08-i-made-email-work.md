@@ -7,4 +7,3 @@ of life's great achievements: To get an TLS/SASL authing SMTP server up and
 running. Wow! Go me! Yay!
 
 God I'm bored.
-

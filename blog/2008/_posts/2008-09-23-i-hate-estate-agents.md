@@ -28,4 +28,3 @@ something. I'm sleeping on the floor. I'm not happy.
 
 Legally, I'm not sure where I stand. I'll see where things are by the end of
 the week.
-

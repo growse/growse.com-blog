@@ -8,4 +8,3 @@ many to count. They all certainly look nothing like my signature.Roll on the
 pin-number scheme.
 
    [1]: http://www.zug.com/pranks/credit/
-

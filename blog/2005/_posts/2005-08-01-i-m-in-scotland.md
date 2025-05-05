@@ -12,4 +12,3 @@ So, if the course of things is normal, I'm going to get to the venue to find
 out they've lost our application, don't know who we are, have no record of us
 giving them any money, and will have also lost the £2000 or so worth of kit
 I'm having delivered there. Just like old times :)
-

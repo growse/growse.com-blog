@@ -17,4 +17,3 @@ things.
 
 And I'm not coming home for another two weeks at best. It's nice here, but I'd
 have England any day. The summers don't melt your face for a start.
-

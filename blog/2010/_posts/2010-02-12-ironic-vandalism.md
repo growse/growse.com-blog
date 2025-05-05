@@ -27,4 +27,3 @@ On a different note, this site is now fully IPv6'd up! Hurrah. I mean fully in
 the actual literal sense, in that all the DNS responses from the root server
 downwards contain AAAA records. The IPv6 DNS glue is in place and working
 marvellously.
-

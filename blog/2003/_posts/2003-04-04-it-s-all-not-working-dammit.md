@@ -20,4 +20,3 @@ then France, and now it's back to Barcelona and it's looking at Malta in a
 scary way. Dammit.
 
 Mmmmmm. Chicken. Scary.
-

@@ -9,4 +9,3 @@ the rest of the general population.This is turning into a surreal evening.
 I've been drawing/writing things on walls. Not my walls, obviously, but
 someone elses. There is also a very good reason why, but it eludes me for the
 moment. The dragon looks fairly funky. :-)
-

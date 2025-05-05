@@ -14,4 +14,3 @@ Now it's plugged in and everything I don't have the heart to take the new one
 out. It's all shiney, and called Ronald.
 
 At least I have a spare.
-

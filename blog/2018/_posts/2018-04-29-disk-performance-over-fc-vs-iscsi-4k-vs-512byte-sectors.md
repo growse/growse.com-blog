@@ -5,7 +5,7 @@ title: "Disk performance over FC vs iSCSI, 4k vs 512byte sectors"
 I've [messed around]({% post_url /2016/2016-03-19-more-fibre-channel-nonsense %}) with [fibre channel]({% post_url /2011/2011-02-10-disks-solaris-zfs-fibre-channel-comstar-crumpets-and-butter %}) a little in the past, and have persisted in running some sort of fibre channel thing. For the past few years, I've had a few disks on my local PC hosted on my local [FreeNAS](http://www.freenas.org/) system. 4Gbit fibre-channel kit has now reached the point of obsolescence, which means absurdly cheap prices on ebay (even the 8GB stuff is getting cheap now). For the cost of a couple of adapters and a small length of magic glass, you too can forego having to stuff multiple annoying disks into your case and instead shove them into a noisy box and banish them all to the end of the garden.
 
 Some people might say "why not use iSCSI instead?", and I thought I'd quickly test some performance numbers to see what I'm missing out on. I created a 500GB ZVol and exposed it as a target. I could then see this on my desktop (Windows 10) both via the fibre card, and also via the built-in Windows iSCSI client. Network is simple 1GbE.
- 
+
 I then ran [atto benchmark](https://www.atto.com/disk-benchmark/):
 
 <figure>
@@ -14,11 +14,11 @@ I then ran [atto benchmark](https://www.atto.com/disk-benchmark/):
 </figure>
 
 
-So, fairly obviously, the iSCSI drive is bumping into the 1GbE network limitation, which has a theoretical max throughput of 125MB/s. The FC link has a limit of 500MB/s and it looks like that's getting closer to that. 
+So, fairly obviously, the iSCSI drive is bumping into the 1GbE network limitation, which has a theoretical max throughput of 125MB/s. The FC link has a limit of 500MB/s and it looks like that's getting closer to that.
 
 However, looking at the smaller size reads and all the write speeds the FC also perfoms better, especially at smaller writes. Once you get to larger write sizes, I think the write limit of the NAS starts to become the limiting factor.
 
-Of course, this is all deeply unscientific - I'm comparing a software target / initiator with the FC cards, where a lot of the work is done in hardware. It'd be interesting to repeat this test using proper, dedicated NICs that had fancy built-in iSCSI capabilities. Or even using multi-path - multiple paths between initiator and target can increase throughput.    
+Of course, this is all deeply unscientific - I'm comparing a software target / initiator with the FC cards, where a lot of the work is done in hardware. It'd be interesting to repeat this test using proper, dedicated NICs that had fancy built-in iSCSI capabilities. Or even using multi-path - multiple paths between initiator and target can increase throughput.
 
 ## Sectors!
 

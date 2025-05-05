@@ -23,4 +23,3 @@ that's all gone, I can go back to buying new things to fill up the space with.
 
    [2]: http://www.bhphotovideo.com/bnh/controller/home?O=Search&A=details&Q=&
 sku=264304&is=GREY&addedTroughType=search
-

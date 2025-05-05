@@ -41,4 +41,3 @@ towards the 'Aye'.
 
 Annoyingly I have to keep a workbook of everything I've learned each bright
 and sunny day. Like that's going to be useful...
-

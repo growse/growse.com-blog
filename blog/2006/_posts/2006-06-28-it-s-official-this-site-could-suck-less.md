@@ -12,4 +12,3 @@ everyone to get along better!
 SOMETHING GREAT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
    [1]: http://www.silktide.com
-

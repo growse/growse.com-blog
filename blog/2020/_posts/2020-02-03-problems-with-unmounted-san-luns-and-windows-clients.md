@@ -27,7 +27,7 @@ FreeBSD uses a single subsystem to manage the export of all block-level devices:
 
 Here's what this looks like from CTL's point of view:
 
-```shell 
+```shell
 $ ctladm portlist -i -v
 Port Online Frontend Name     pp vp
 3    YES    camtgt   isp0     0  0  naa.21000024ff56f970
@@ -57,13 +57,13 @@ Because all of the LUNs are exposed over FC, this meant that the Windows client 
 
 ## Suddenly error, remounting read-only
 
-However, there was a problem. Occasionally I saw that some of the services on Kubernetes would stop working. Sometimes this would result in the pod going down, other times the pod was healthy but the software not working properly. Digging into the pod logs showed that the pods were having problems writing to volumes that were mounted over iSCSI. Connecting to one of the nodes directly and listing the mountpoints showed that a lot (all?) of the iSCSI mounts were mounted `ro`. 
+However, there was a problem. Occasionally I saw that some of the services on Kubernetes would stop working. Sometimes this would result in the pod going down, other times the pod was healthy but the software not working properly. Digging into the pod logs showed that the pods were having problems writing to volumes that were mounted over iSCSI. Connecting to one of the nodes directly and listing the mountpoints showed that a lot (all?) of the iSCSI mounts were mounted `ro`.
 
-There's usually two reasons why an `ext4` filesystem would be mounted `ro`. Either you explicitly ask for it to be, or it was previously mounted `rw`, ran into a data issue or corruption problem, and re-mounted itself `ro`. It's a good example of trying-to-be-helpful-while-failing which ends up being actually not that helpful. I understand that re-mounting read-only might be useful in certain circumstances, but if I mounted a filesystem `rw`, then the chances are that I need to write to it. If the mount is problematic, just unmount the whole thing.  
+There's usually two reasons why an `ext4` filesystem would be mounted `ro`. Either you explicitly ask for it to be, or it was previously mounted `rw`, ran into a data issue or corruption problem, and re-mounted itself `ro`. It's a good example of trying-to-be-helpful-while-failing which ends up being actually not that helpful. I understand that re-mounting read-only might be useful in certain circumstances, but if I mounted a filesystem `rw`, then the chances are that I need to write to it. If the mount is problematic, just unmount the whole thing.
 
 Anyhow, the next question is *why* is the system having difficulty with the mount?
 
-```shell 
+```shell
 [35771.996877] sd 6:0:0:0: [sdb] tag#97 FAILED Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
 [35771.996884] sd 6:0:0:0: [sdb] tag#97 Sense Key : Not Ready [current]
 [35771.996889] sd 6:0:0:0: [sdb] tag#97 Add. Sense: Logical unit not ready, initializing command required
@@ -89,13 +89,13 @@ So somehow, a Windows 10 machine (not using iSCSI) going to sleep is causing pro
 
 To test this theory, I had a look to see if you could restrict which LUNs where available on FC ports on FreeBSD. Usefully, this is pretty straightforward. My Windows device is on LUN 1, so to expose LUN id 1 on port 3 (my connected FC port) as being available on LUN 1 to clients:
 
-```shell 
+```shell
 $ ctladm lunmap -p 3 -l 1 -L 1
 ```
 
 Now I can see:
 
-```shell 
+```shell
 $ ctladm portlist -i -v
 Port Online Frontend Name     pp vp
 3    YES    camtgt   isp0     0  0  naa.21000024ff56f970

@@ -73,4 +73,3 @@ update this once I get to the UK and have slept some.
 
    [9]: http://maps.google.co.uk/maps?f=q&hl=en&ie=UTF8&z=19&ll=51.475715,-0.0
 07524&spn=0.00146,0.005107&t=k&om=1
-

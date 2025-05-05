@@ -14,4 +14,3 @@ performances.showid=shows.id where shows.displayed=1 order by
 performances.date, performances.time;"
 
 I feel manly after that.
-

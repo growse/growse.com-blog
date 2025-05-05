@@ -14,4 +14,4 @@ To my surprise, it didn't take that long to get something that basically works. 
 
 I've learned a fair bit about writing codes to RFC standards during this. Specifically, I've learned to never write code that has to consume data, for fear of having to cater for a million edge cases. Writing code that produces data according to spec is much easier.
 
-With version 0.1.0.0 out the door, I now need to test this thing. I also need to stop this breaking in cases where I know it'll break. 
+With version 0.1.0.0 out the door, I now need to test this thing. I also need to stop this breaking in cases where I know it'll break.

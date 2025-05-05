@@ -44,4 +44,3 @@ IE7. Lets hope that Chrome makes a similar impact on the browser scene.
    [2]: http://www.amazon.co.uk
 
    [3]: http://www.google.com/googlebooks/chrome/
-

@@ -25,4 +25,3 @@ The 3P state is about 15B above the ground state, who's name I can't remember.
 Maybe it's Bob.
 
 Mercury 2+ is good for stuff.
-

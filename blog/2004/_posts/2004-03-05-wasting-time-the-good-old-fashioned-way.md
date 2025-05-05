@@ -31,4 +31,3 @@ exclaim that people in general are crap, and they're destroying my monopoly on
 being crap.
 
 Damn them, damn them all.
-

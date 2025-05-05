@@ -26,4 +26,3 @@ going to be that interesting. I hope it storms, or something.
 brightened my day :)
 
    [1]: http://www.youtube.com/watch?v=JzqumbhfxRo
-

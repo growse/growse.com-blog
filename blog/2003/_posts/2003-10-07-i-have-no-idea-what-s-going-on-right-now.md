@@ -12,4 +12,3 @@ but I really can't be bothered to wade through all the crap I've been given
 telling me when my practicals for the first 5 weeks are.Cambridge life(tm).
 There's nothing quite like it.P.S. The BBC want to talk to me about my
 involvement in the Cambridge University SETI project. W00tage.
-

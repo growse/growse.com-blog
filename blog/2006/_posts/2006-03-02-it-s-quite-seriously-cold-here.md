@@ -13,4 +13,3 @@ Hilton so I might just sit here and do some work instead of walking the 100
 yards to the office and doing it there.
 
 Ho Hum.
-

@@ -5,7 +5,7 @@ title: "Adventures with Asymmetric Routing and Firewalls"
 
 ## New Router!
 
-I've had some free time on my hands lately, so have gone on a bit of an upgrade-rampage. The first casualty was my pretty old (and, thanks to the dog, pretty broken) HP ProCurve 1810-24G switch, which I replaced with a Unifi 24-port PoE switch (the 250W version). I'm generally a fan of the Unifi product, although not necessarily of their [attitudes towards the GPL](https://sfconservancy.org/blog/2019/oct/02/cambium-ubiquiti-gpl-violations/) (I live in hope that they'll become less shady). Having used their APs and cameras for a while, and having also bought a small 8-port PoE switch before, it made sense to get something that fitted in with the existing software platform and made configuration relatively straightforward. It's noisier than I expected, but replacing the 2 existing fans with Noctua NF-A4x20 FLX fans has quietened it a lot, without really making much of a difference to its temperature. 
+I've had some free time on my hands lately, so have gone on a bit of an upgrade-rampage. The first casualty was my pretty old (and, thanks to the dog, pretty broken) HP ProCurve 1810-24G switch, which I replaced with a Unifi 24-port PoE switch (the 250W version). I'm generally a fan of the Unifi product, although not necessarily of their [attitudes towards the GPL](https://sfconservancy.org/blog/2019/oct/02/cambium-ubiquiti-gpl-violations/) (I live in hope that they'll become less shady). Having used their APs and cameras for a while, and having also bought a small 8-port PoE switch before, it made sense to get something that fitted in with the existing software platform and made configuration relatively straightforward. It's noisier than I expected, but replacing the 2 existing fans with Noctua NF-A4x20 FLX fans has quietened it a lot, without really making much of a difference to its temperature.
 
 With a new switch in place, I wanted to also replace the router. For about 8 years now my router has been a crappy-yet-awesome Jetway Atom 330-based Linux box running Debian with a 2-port Intel NIC shoved inside. But, it's noisy (can't run passively cooled), surprisingly power-hungry and pretty slow, so it was time to replace. The obvious thing to do was to replace it with one of the fancy Ubiquiti EdgeRouter (or similar) thingies, but there's something nice about having the router be an actual linux machine. Not only can I choose what to run on it (I happen to like Debian) but I can also configure it in the same way as the k8s cluster, the raspberry pis etc. - I use [DebOps](https://docs.debops.org/en/master/) for this.
 
@@ -30,7 +30,7 @@ So what does 'broken' actually look like? Running `telnet` or `curl` against my 
 First thing is to figure out what's causing that delay - it smells like a caching issue.
 
 My assumption was that traffic should flow from the client, through the router and onto the K8s cluster. So I used `tcpdump` on the router to filter for TCP traffic destined for port 3142. Curling the endpoint showed a flurry of TCP packets, but no HTTP traffic. Also, the `SYN-ACK` appears to be missing - more on that later:
- 
+
 ```shell
 $ tcpdump 'port 3142'
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
@@ -41,7 +41,7 @@ listening on enp1s0, link-type EN10MB (Ethernet), capture size 262144 bytes
 14:20:25.103104 IP 192.168.2.109.54124 > 192.168.254.1.3142: Flags [P.], seq 0:82, ack 1, win 502, options [nop,nop,TS val 2883894135 ecr 3323781338], length 82
 14:20:25.319062 IP 192.168.2.109.54124 > 192.168.254.1.3142: Flags [P.], seq 0:82, ack 1, win 502, options [nop,nop,TS val 2883894350 ecr 3323781338], length 82
 ```
- 
+
 And yet I got an HTTP response from the service back to the client. More interestingly is that subsequent `curl` requests generated no more traffic on the router. Somehow, the client was no longer talking to the service via the router, it had... found another path?
 
 ## Behold, the ICMP Redirect
@@ -69,7 +69,7 @@ listening on wlp3s0, link-type EN10MB (Ethernet), capture size 262144 bytes
 14:25:35.665077 IP 192.168.254.1.3142 > 192.168.2.109.54206: Flags [.], ack 84, win 217, options [nop,nop,TS val 3324091906 ecr 2884204692], length 0
 ```
 
-The initial TCP connection went from the client to the router, because it's the default route. However, the router had figured out that the next-hop for the service address was *local to the client* - the service `192.168.254.1` being hosted on `192.168.2.20`, which is in the same subnet as the client `192.168.2.109`. The router then tries to be helpful, and sends an [*ICMP Redirect*](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Redirect) (`ICMP redirect 192.168.254.1 to host 192.168.2.20`) to the client indicating that there's a more efficient route available and that the client should just use that instead. 
+The initial TCP connection went from the client to the router, because it's the default route. However, the router had figured out that the next-hop for the service address was *local to the client* - the service `192.168.254.1` being hosted on `192.168.2.20`, which is in the same subnet as the client `192.168.2.109`. The router then tries to be helpful, and sends an [*ICMP Redirect*](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Redirect) (`ICMP redirect 192.168.254.1 to host 192.168.2.20`) to the client indicating that there's a more efficient route available and that the client should just use that instead.
 
 ICMP is basically magic. There's all sorts of weird and wonderful capabilities present in that protocol, and if (like me) you just bumble around learning things as you stumble across them, it's entirely posible to be blissfully unaware of everything it can do. Reading around, it seems that this capability was invented in a simpler time (specifically, the early 80s when [RFCs only had 3 digits](http://www.networksorcery.com/enp/rfc/rfc792.txt)), when everyone trusted everyone else on the internet and people just wanted to get along. Nowadays, its use is [generally](https://askubuntu.com/questions/118273/what-are-icmp-redirects-and-should-they-be-blocked) [discouraged](https://www.cymru.com/gillsr/documents/icmp-redirects-are-bad.htm) because ICMP isn't a secure protocol and being able to remotely instruct clients where to start sending their traffic isn't a great idea.
 
@@ -77,8 +77,8 @@ When a client receives an ICMP redirect, it generates a 'temporary' static route
 
 ```shell
 $ ip route get 192.168.254.1
-192.168.254.1 via 192.168.2.20 dev wlp3s0 src 192.168.2.109 uid 0 
-    cache <redirected> expires 56sec 
+192.168.254.1 via 192.168.2.20 dev wlp3s0 src 192.168.2.109 uid 0
+    cache <redirected> expires 56sec
 ```
 
 So this explains why there's a small delay on first connect, and then packets don't seem to subsequently go via the default route.
@@ -109,7 +109,7 @@ Comparing the tcpdump output on the router to that on the K8s node and the clien
 
 The client:
 
-```shell 
+```shell
 $ tcpdump -n 'port 3142 or icmp'
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on wlp3s0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -134,7 +134,7 @@ listening on wlp3s0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 The router:
 
-```shell 
+```shell
 $ tcpdump 'port 3142'
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on enp1s0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -153,7 +153,7 @@ listening on enp1s0, link-type EN10MB (Ethernet), capture size 262144 bytes
 ```
 
 The K8s node:
-```shell 
+```shell
 $ tcpdump  'port 3142 or icmp'
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on enp2s0f0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -170,14 +170,14 @@ This, in itself, isn't a problem. The client receives the `SYN-ACK` and responds
 
 ## Connection tracking, and firewalls
 
-There's a number of reasons why a router might drop a packet. Maybe it doesn't know what to do with it, or maybe the kernel has been configured to drop it either via something in the IP stack (maybe forwarding is disabled on that interface) or via some sort of firewall. 
+There's a number of reasons why a router might drop a packet. Maybe it doesn't know what to do with it, or maybe the kernel has been configured to drop it either via something in the IP stack (maybe forwarding is disabled on that interface) or via some sort of firewall.
 
 Using DebOps to configure the router, I was making use of the handy [ferm](https://docs.debops.org/en/master/ansible/roles/ferm/index.html) role to automatically configure and set up the firewall for me. Out of the box, you get some sensible defaults including some rules that set it up as a stateful firewall. What this means is that the kernel will track the *state* of all the TCP connections it's currently forwarding and accept packets that are part of an existing TCP connection and reject those that don't appear to be valid. It's a pretty common setup and is mostly enabled using two `iptables` rules:
 
-```shell 
+```shell
 $ iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 $ iptables -A FORWARD -m conntrack --ctstate INVALID -j DROP
-```  
+```
 
 (I think we know where this is going).
 
@@ -191,13 +191,13 @@ To confirm, I added an `iptables` rule to direct packets that matched `--ctstate
 
 ```
 Jan 21 15:40:53 talktoobot kernel: [  580.489507] IN=enp1s0.2 OUT=enp1s0.2 MAC=00:0d:b9:54:2d:18:00:15:17:bf:db:6a:08:00 SRC=192.168.2.109 DST=192.168.254.1 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=14446 DF PROTO=TCP SPT=55110 DPT=3142 WINDOW=1028 RES=0x00 ACK URGP=0
-``` 
+```
 
 It dropped the `ACK`.
 
 The simple solution here is to add in a new firewall rule that explicitly permits `INVALID` packets from my LAN interface through to the service subnet, recognizing that this traffic path is asymmetrical and therefore the router doesn't see the full packet flow:
 
-```shell 
+```shell
 $ iptables -A FORWARD -d 192.168.254.0/24 -i enp1s0.2 -m state --state INVALID -j ACCEPT
 ```
 

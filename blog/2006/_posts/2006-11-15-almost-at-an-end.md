@@ -35,4 +35,3 @@ I'm going for lunch now. I think I'm going to miss the guy in the Europa
 downstairs - he always knows what I want for lunch (not hard as I have the
 same thing every day) and his nametag says "Jesus". I think the next time I
 come to NY, I'll go there for lunch again and see if he's still there.
-

@@ -2,7 +2,7 @@
 layout: post
 title: "I'm no UI expert, but something's wrong with Android."
 ---
-I'm a big fan of Android. If you don't know what Android is, stop reading now. 
+I'm a big fan of Android. If you don't know what Android is, stop reading now.
 
 However, with this whole new ICS / Android v4.0 new UI paradigm thingie, I've noticed a problem. Take, for example, the new Google Music app running on my Samsung Galaxy SII.
 
@@ -19,7 +19,7 @@ It seems to me that this is due to one, or all of the following:
 3. The phone's got a 4.3" screen
 4. Google have put the button in a bad place
 
-I'm not saying I know what the right answer is, but this just seems a little wrong. It's even now codefied in [Google's new Android design guidelines](http://developer.android.com/design/get-started/ui-overview.html) (see the Common App UI bit at the bottom) - they want the 'Main action bar' to be at the top. The main way to do *anything* within a typical app is for the thumb to magically extend itself by a couple of inches so you can reach the buttons. 
+I'm not saying I know what the right answer is, but this just seems a little wrong. It's even now codefied in [Google's new Android design guidelines](http://developer.android.com/design/get-started/ui-overview.html) (see the Common App UI bit at the bottom) - they want the 'Main action bar' to be at the top. The main way to do *anything* within a typical app is for the thumb to magically extend itself by a couple of inches so you can reach the buttons.
 
 Maybe the buttons should be at the bottom. Maybe phones should be smaller. Maybe I'm genetically inferior. What's interesting is that Apple have been doing this for a while in IOS - those familiar will know that the main place to look for a 'back' button is in the top left. E.g.:
 

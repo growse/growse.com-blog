@@ -14,4 +14,3 @@ shows tomorrow. And I've got a get-in the day after that. And lots of work to
 do. Yay!
 
 As I've been writing this, it's stopped snowing. There may be a god after all.
-

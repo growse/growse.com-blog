@@ -14,4 +14,3 @@ watching the little numbers tick by as the overnight trades are filled was
 quite fun.
 
 Right. Time for some actual work!
-

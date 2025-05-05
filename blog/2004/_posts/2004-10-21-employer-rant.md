@@ -23,4 +23,3 @@ Oh well.
 
 Sorry, had to get that off my chest. I realise it's only a temp position, but
 now I've got no income again and an expenditure of about £500 a month. Dammit.
-

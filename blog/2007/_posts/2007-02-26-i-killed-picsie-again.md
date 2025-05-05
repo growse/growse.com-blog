@@ -23,4 +23,3 @@ in the present.
    [1]: /2006/11/28/picsie-reborn.html
 
    [2]: http://www.adobe.com/products/photoshoplightroom/
-

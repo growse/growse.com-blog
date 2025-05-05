@@ -40,4 +40,3 @@ And I'm getting seriously pissed off with this keyboard. I will actually break
 it. Maybe. I'll buy a new one first. Yes.
 
    [1]: http://www.xe.com
-

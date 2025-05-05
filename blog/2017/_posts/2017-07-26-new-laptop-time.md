@@ -20,7 +20,7 @@ In the end, I spent £389 for a T440s with an i5-4300M, 8GB RAM (I'll upgrade th
 
 Things I like:
 
-* I love the keyboard. I thought the MBP keyboard was good, although it started to fail near the end. This is much nicer. They key depth is a little deeper, giving a more confident feel, and the key material is strangely grippy. 
+* I love the keyboard. I thought the MBP keyboard was good, although it started to fail near the end. This is much nicer. They key depth is a little deeper, giving a more confident feel, and the key material is strangely grippy.
 * 1920x1080 on a laptop was absolutely worth holding out for
 * It's got two batteries - a removable one, and an internal one. Being a 2012 laptop, neither are in the best condition, but it runs down the removable one first. This means that in theory you can run down the removable, and then swap it out without having to power it off. I shall get a 6-cell removable battery at some point.
 * Intel wifi - so much better than awful Broadcom awfulness.

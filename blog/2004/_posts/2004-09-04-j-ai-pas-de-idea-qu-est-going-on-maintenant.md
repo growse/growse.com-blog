@@ -15,4 +15,3 @@ magically mean I can now afford lots of stuff - I've still got no money, just
 like any other student. At some point I need a house and a job as well.
 
 Woe.
-

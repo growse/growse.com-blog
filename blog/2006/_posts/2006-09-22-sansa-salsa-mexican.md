@@ -44,4 +44,3 @@ http://www.samsung.com/Products/Monitor/LCD_Multi_Function/LS24BRBABXAA.asp
    [3]: http://www.sandisk.com/Products/ProductInfo.aspx?ID=1946
 
    [4]: http://www.rioaudio.com/shop/_templates/item_main_Rio.asp?model=267
-

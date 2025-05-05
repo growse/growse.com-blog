@@ -16,4 +16,3 @@ of Terabytes, but I'll think about that frantic-buying issue when I get to it.
 As far as projects go, I'm a bit swamped.
 
    [1]: http://www.mythtv.org/
-

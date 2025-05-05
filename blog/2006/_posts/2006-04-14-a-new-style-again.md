@@ -9,4 +9,3 @@ But now there's this nice new orange thingie thing which I'll vow to keep for
 2 months. Still working on it a bit, but it's mostly done now. :-)
 
 In other news, Sri Lanka in just over a week!!!
-

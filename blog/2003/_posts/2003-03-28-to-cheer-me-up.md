@@ -13,4 +13,3 @@ title: "To cheer me up."
    [2]: http://tv.yahoo.com/news/wwn/20030319/104808600007.html
 
    [3]: http://www.bbspot.com/News/2003/03/elite.html
-

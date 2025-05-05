@@ -9,4 +9,3 @@ here)
 
 It was a fun week. Nice place. Expensive. Good food in the pub. Odd hotel. Not
 enough full stops.
-

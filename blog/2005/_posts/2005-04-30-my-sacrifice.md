@@ -18,4 +18,3 @@ because if you're earning that much, you can afford to pay that much. However,
 increasing an across-the-board tax is just stupid.
 
 Oh well. I'll go back to counting the pennies.
-

@@ -16,4 +16,3 @@ your stupid predicament.
    [1]: http://www.techhead.co.uk/vmware-esxi-purple-screen-of-death-on-hp-proliant-ml110-or-ml115
 
    [2]: http://forum.lettronics.com/forums/thread/1273.aspx
-

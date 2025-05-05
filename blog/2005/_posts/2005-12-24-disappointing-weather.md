@@ -15,4 +15,3 @@ code in to turn it off. Honestly.
 
 I'm on the xda so long text is painful, but hope everyone has a nice Christmas
 where far too much food is eaten. That's what i'm planning anyway.
-

@@ -13,4 +13,3 @@ themselves back to my room to drink themselves silly whilst preventing me from
 sleeping is, I think, a key contributor towards my lack of sleep problem. Ah
 well. I could always try pulling off the trick of getting everyone to do
 everything for me. It's nearly working so far....
-

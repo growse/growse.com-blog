@@ -31,4 +31,3 @@ certificate revocation. Then I'll do a proper write-up.
    [2]: http://en.wikipedia.org/wiki/AICCU
 
    [3]: http://ipsec-tools.sourceforge.net/
-

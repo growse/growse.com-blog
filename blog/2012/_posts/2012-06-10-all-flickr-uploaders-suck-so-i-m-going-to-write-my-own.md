@@ -6,7 +6,7 @@ I use [Flickr](http://www.flickr.com). I put all the photos I've ever taken on t
 
 Since moving house, we've had some difficulty getting together the process of figuring out some basic stuff, such as "What pictures shall we put on the walls".
 
-"Aha!", I said. "I've got all my photos on Flickr, so they can be collectively viewed, commented upon, and recommended by all parties with an interest of the subject of 'What goes on the wall'". 
+"Aha!", I said. "I've got all my photos on Flickr, so they can be collectively viewed, commented upon, and recommended by all parties with an interest of the subject of 'What goes on the wall'".
 
 "But what about *my* pictures?" came the immediate, and not surprising riposte from what can only be described as 'The general manager'. "What if we want one of them on the walls?"
 

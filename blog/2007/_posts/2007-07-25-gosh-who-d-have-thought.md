@@ -14,4 +14,3 @@ and some really think that there is nothing worse than spending a month in
 some dusty midwest city. It's slightly worrying that the people who like are
 the slightly strange types who most people like to avoid. In any case, it's
 the US. The food can't be that bad....
-

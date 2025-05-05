@@ -22,4 +22,3 @@ It's 11:30, and I just got up. Sundays are a wonderful thing :-)
    [1]: http://www.electric6.com/
 
    [2]: http://www.boweryballroom.com/
-

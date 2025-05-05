@@ -25,4 +25,3 @@ those.
    [2]: http://www.kittenauth.com/
 
    [3]: /projects/
-

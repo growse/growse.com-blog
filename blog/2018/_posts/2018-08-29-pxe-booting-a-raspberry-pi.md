@@ -22,7 +22,7 @@ The client is easy. We have one of those in the form of a rPI (let's assume v3).
 $ echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
 $ reboot
 ```
-When it reboots, you can check it with 
+When it reboots, you can check it with
 ``` shell
 $ vcgencmd otp_dump | grep 17:
 17:3020000a
@@ -35,14 +35,14 @@ Next up, the DHCP server. This is where things start to get tricky. Many interne
 
 DHCP is request/response and PXE works by fiddling with some of the bits in the response to specific types of request. DHCP responses contain values that live in numbered fields - the spec determines the purpose and type of each field (or 'option'). To get this working, we need to stuff some data into option 43 of the DHCP response. Option 43 is where "Vendor Specific Information" lives and the spec basically says you can pretty much put whatever you like in here, and a client is free to interpret it how thye like (go look at §8.4 of [RFC2132](https://www.ietf.org/rfc/rfc2132.txt) if you care). It's essentially a binary field, each with its own set of fields, lengths and values.
 
-Surprisingly, [IBM has some pretty good documentation](https://www.ibm.com/support/knowledgecenter/SS3HLM_7.1.1.9/com.ibm.tivoli.tpm.osd.doc_7.1.1.9/install/rosd_dhcpoptions.html) on how to set option 43 for PXE booting. 
+Surprisingly, [IBM has some pretty good documentation](https://www.ibm.com/support/knowledgecenter/SS3HLM_7.1.1.9/com.ibm.tivoli.tpm.osd.doc_7.1.1.9/install/rosd_dhcpoptions.html) on how to set option 43 for PXE booting.
 
 In our case, we will see a DHCP request from the rPI, and need to send it some magic values in option 43 to get it to work. In Kea, we need to define the option format:
 
 ```json
 "Dhcp4":
-{      
-  "option-def": [     
+{
+  "option-def": [
     {
         "name": "PXEDiscoveryControl",
         "code": 6,
@@ -104,9 +104,9 @@ Finally, we need to set the DHCP `next-server` value to the address of our TFTP 
       "next-server": "192.168.2.2"
     }
   ]
-} 
+}
 ```
-    
+
 Now, if you plug the rPI in, it should make a request of the DHCP server and then contact the TFTP server requesting `bootcode.bin`.
 
 ### A slight hitch
@@ -118,9 +118,9 @@ $ ping -b 192.168.2.255
 ```
 ## TFTP server
 
-A TFTP server setup is pretty easy. I use the one that comes with FreeNAS. Get a valid `bootcode.bin` from a raspbian distribution and place it in the root. Once the rPI has download `bootcode.bin`, it'll then start to make requests for a few other things. Some of these things aren't strictly necessary (e.g. `bootcode.sig`), but others are. 
+A TFTP server setup is pretty easy. I use the one that comes with FreeNAS. Get a valid `bootcode.bin` from a raspbian distribution and place it in the root. Once the rPI has download `bootcode.bin`, it'll then start to make requests for a few other things. Some of these things aren't strictly necessary (e.g. `bootcode.sig`), but others are.
 
-The rPI will make a request to the TFTP server for a bunch of files that expects to be inside a directory corresponding to the serial number of the rPI. So you might see a bunch of TFTP requests for something like `//df90a038/start.elf` - in my case `df90a038` is the serial number of my device. I find it easiest to just try and boot it whilst watching the TFTP log and seeing what it requests, then create that directory on the TFTP root. 
+The rPI will make a request to the TFTP server for a bunch of files that expects to be inside a directory corresponding to the serial number of the rPI. So you might see a bunch of TFTP requests for something like `//df90a038/start.elf` - in my case `df90a038` is the serial number of my device. I find it easiest to just try and boot it whilst watching the TFTP log and seeing what it requests, then create that directory on the TFTP root.
 
 Copy the contents of `/boot` from a raspbian image to this folder. One of the files there will be `cmdline.txt` which details all the arguments to be passed to the kernel - it's here where we tell the rPI that it should use a network root disk:
 
@@ -132,7 +132,7 @@ In this case, setting `root=/dev/nfs` indicates that an NFS-based root device is
 
 ## NFS server
 
-Again, I'm using FreeNAS, so an NFS share is a pretty easy thing to expose. I configured the share to only be accessible to the fixed IP address reservation that I know the DHCP server will handle out, and set the root user to be `root`. Once setup, the raspbian filesystem can be copied to it, and that's all that should be needed. 
+Again, I'm using FreeNAS, so an NFS share is a pretty easy thing to expose. I configured the share to only be accessible to the fixed IP address reservation that I know the DHCP server will handle out, and set the root user to be `root`. Once setup, the raspbian filesystem can be copied to it, and that's all that should be needed.
 
 The only tweaking I do past this point is allow the `apt` mechanism to update the kernel by exposing the rPI-specific folder on the TFTP server over NFS and mounting that on `/boot`. From `/etc/fstab`:
 ```

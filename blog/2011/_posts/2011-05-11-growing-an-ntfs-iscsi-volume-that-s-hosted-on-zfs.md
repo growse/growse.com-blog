@@ -39,4 +39,3 @@ That's it. It seems to work. Best of all, no iSCSI disconnects, no MSSQL
 burps, the data collector didn't notice and just ploughed on.
 
 I love ZFS. Shame Oracle had to ruin everything.
-

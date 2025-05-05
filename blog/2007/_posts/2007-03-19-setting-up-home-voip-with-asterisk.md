@@ -207,9 +207,9 @@ priorityjumping=no
 [globals]
 SpeakingClock=2
 
-[default] 
+[default]
 exten => 1234567,1,Dial(SIP/my-phone)
-exten => 1234567,2,VoiceMail(1234@default) 
+exten => 1234567,2,VoiceMail(1234@default)
 exten => 1234567,3,HangUp()
 exten => _9.,1,Dial(SIP/${EXTEN:1}@sipgate.co.uk,30,r)
 exten => 1,1,VoicemailMain,s1234 exten => ${SpeakingClock},1,Wait(1)
@@ -386,4 +386,3 @@ Sites I found really useful in setting this all up:
    [7]: http://www.asteriskguru.com/
 
    [8]: http://www.google.com
-

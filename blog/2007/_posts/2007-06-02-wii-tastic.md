@@ -16,4 +16,3 @@ bit heavy-handed. Oh well, film was confusing as well.
 
 In other news, we got a Wii. It's great! I need to hook it up to the wireless
 now. :)
-

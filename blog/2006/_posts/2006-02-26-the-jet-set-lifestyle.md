@@ -26,4 +26,3 @@ Next post here will probably be from the 1st class lounge at Heathrow terminal
 4. :-)
 
    [1]: http://www.ba.com
-

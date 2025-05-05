@@ -10,4 +10,3 @@ post. Oh, and thank you to [Richard][1] for sending me [this][2].
    [1]: http://www.radiac.net
 
    [2]: http://www.enzine.net/index.php?id=8c9d72da50
-

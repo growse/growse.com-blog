@@ -106,4 +106,3 @@ build it yourself.
    [6]: http://serverfault.com/questions/230427/solaris-fibre-channel-target-configure-qlogic-qla2340
 
    [7]: http://serverfault.com/
-

@@ -48,7 +48,7 @@ sys     0m0.203s
 ```
 
 Hmm. Waiting a second for your shell to be responsive after running a command is going to send you quietly insane.
- 
+
 ## Golang to the rescue!?
 
 Computers are pretty quick these days, but using python to write a program that has to execute very quickly doesn't seem like a good idea. Thankfully, some other people on the internet have had a similar thought: someone's got a [decent version available in golang](https://github.com/justjanne/powerline-go). Let's see how that does.
@@ -89,7 +89,7 @@ So in theory, a version of `powerline-shell` in rust should perform pretty well.
 
 One thing that a lot of "newer" languages and environments have in common is a recognition that sometimes the type of computer you're developing / building you application on is not the same as what it will eventually run on. Hence them making cross-compiling very straightforward (at least in theory).
 
-In golang, cross-compilation is very easy: just set the `GOOS` and `GOARCH` environment variables before building it and the output you'll end up with is a binary that will execute on that platform. I assume this is simple because golang code fundamentally runs on a VM, so cross compiling is just a case of bundling the right VM for the target system with the binary. 
+In golang, cross-compilation is very easy: just set the `GOOS` and `GOARCH` environment variables before building it and the output you'll end up with is a binary that will execute on that platform. I assume this is simple because golang code fundamentally runs on a VM, so cross compiling is just a case of bundling the right VM for the target system with the binary.
 
 In rust, it's a little more complex. The compiler has to output the actual assembler that will execute on the target architecture, in a format that can be run by the target OS. The process is described pretty well [here](https://rustc-dev-guide.rust-lang.org/overview.html).
 
@@ -119,7 +119,7 @@ error: linking with `cc` failed: exit code: 1
 collect2: error: ld returned 1 exit status
 ```
 
-Oh, the linker has failed. So the compiler worked! Progress! 
+Oh, the linker has failed. So the compiler worked! Progress!
 
 More magic variables are needed. Cargo needs to be told what linker to use for each target if it's not the default linker. So we set `CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABIHF_LINKER` to be the cross-suite's arm linker: `arm-linux-gnueabihf-ld`
 
@@ -160,8 +160,8 @@ Maybe it's just musl being odd. Let's try GNU instead.
 ```shell
 [build]$ CARGO_TARGET_ARM_UNKNOWN_LINUX_GNUEABIHF_LINKER=arm-linux-gnueabihf-gcc-8 TARGET_CC=arm-linux-gnueabihf-gcc-8  cargo build --target=arm-unknown-linux-gnueabihf
 [rpi-zero]$ ./powerline-rust-arm-gnueabihf
-Illegal Instruction 
-``` 
+Illegal Instruction
+```
 
 Nope. Something else independent of the libc implementation is causing a binary to be made that doesn't work on ARMv6.
 
@@ -192,8 +192,8 @@ File Attributes
   Tag_ABI_FP_16bit_format: IEEE 754
 ```
 
-Aha! GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I had made an assumption here: because rustup supports targets like `armv5te-unknown-linux-gnueabi` (for ARMv5), `arm-unknown-linux-gnueabihf` (v6) and `armv7-unknown-linux-gnueabihf` (v7), I had assumed that the `arm-` prefix generically meant "v6" as a sort-of default. I had also assumed that when cargo builds for a given target, it instructs the compiler to use the correct arch version (if the compiler happens to support multiple). It turns out this isn't true.  
- 
+Aha! GCC appears to have built an ARMv7 binary. No wonder it doesn't work! I had made an assumption here: because rustup supports targets like `armv5te-unknown-linux-gnueabi` (for ARMv5), `arm-unknown-linux-gnueabihf` (v6) and `armv7-unknown-linux-gnueabihf` (v7), I had assumed that the `arm-` prefix generically meant "v6" as a sort-of default. I had also assumed that when cargo builds for a given target, it instructs the compiler to use the correct arch version (if the compiler happens to support multiple). It turns out this isn't true.
+
 For no reason at all, what happens if we try soft-float?
 
 ```shell
@@ -254,7 +254,7 @@ File Attributes
   Tag_ABI_VFP_args: VFP registers
   Tag_CPU_unaligned_access: v6
   Tag_ABI_FP_16bit_format: IEEE 754
-  Tag_DIV_use: Not allowed 
+  Tag_DIV_use: Not allowed
 ```
 
 Great! Looks like we have a binary that should work - it's ARMv6 and VPFv2, which is what the rPI needs as a baseline. How does it perform?

@@ -18,4 +18,3 @@ takes me to do things, I'm getting rather good at looking busy. :-) Currently,
 1$ is worth 56.56p. I know it's a record low, but dammit it needs to go even
 lower. I just hope there isn't a surge in the market before I leave on
 holiday...
-

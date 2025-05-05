@@ -9,4 +9,3 @@ few days, with the snow :)
 
 It is rather cold though, and I still have to buy people chocolate, and other
 such nice things.
-

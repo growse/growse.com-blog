@@ -92,4 +92,3 @@ their charges. Who'd go overdrawn if you got charged £200 every time?
 Furthermore, the morons who do manage to spend money they haven't got could
 fund free mortgages for everyone. Ok, maybe the maths doesn't quite work on
 that one, but it's worth a try.
-

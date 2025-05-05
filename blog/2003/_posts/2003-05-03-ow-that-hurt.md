@@ -23,4 +23,3 @@ not feeling particularly 100% (more like 4%) so I might just go get lots and
 lots of shut-eye.
 
    [1]: http://www.crucial.com/uk
-

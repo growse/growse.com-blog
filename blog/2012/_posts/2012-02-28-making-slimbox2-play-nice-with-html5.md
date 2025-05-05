@@ -15,7 +15,7 @@ with a different attribute, `data-rel` (or whatever you like)
 ``` html
 <a data-rel="lightbox" href="...">
 ```
-   
+
 
 Then, the slimbox javascript code just needs a little tweak. Specifically, the following replacement needs to be made:
 ``` javascript

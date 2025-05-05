@@ -22,4 +22,3 @@ everyone else, which makes a nice change. Still, I'm looking forward to the
 day everything just magically works again. Can't be long now.
 
    [1]: http://www.aaisp.net.uk
-

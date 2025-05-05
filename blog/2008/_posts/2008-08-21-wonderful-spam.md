@@ -47,4 +47,3 @@ And yes, the BEST MAN DIARY is coming. Soon!
    [1]: http://spamassassin.apache.org/
 
    [2]: http://www.exim.org/
-

@@ -2,7 +2,7 @@
 layout: post
 title: "The joy of discovering new tools"
 ---
-I love tools. They're brilliant precipitations of knowledge and learning into a single artifact, designed to solve a single specific problem. Or, at least, they should be - if your tool is 
+I love tools. They're brilliant precipitations of knowledge and learning into a single artifact, designed to solve a single specific problem. Or, at least, they should be - if your tool is
 
 Good tools often have a huge amount of time, effort and expertise put into crafting them, and often their only purpose is to help other builders / tinkerers build other things more easily. There's a sort of metaness / layerness that's quite enjoyable.
 
@@ -21,7 +21,7 @@ I've a few little software projects that up until now have existed without givin
 This blog is built on [Jekyll](https://jekyllrb.com/). Deploying new posts / updates used to be a case of running `jekyll b` and then copying the resulting `_site` folder to the server. Rebuilding the server meant having to remember to find the build output and re-copy it to the right place. Now, with fpm, I can issue a single command:
 
     bundle exec fpm -s dir -t deb -n growse-com-jekyll --prefix /var/www/ -p _site -a noarch  -v 1.0.0-$CIRCLE_BUILD_NUM _site/=growse-jekyll
-    
+
 This creates a single deb file which, when installed, puts the whole jekyll site in the correct location on the target. (I use [CircleCI](https://circleci.com/) for building, hence the `$CIRCLE_BUILD_NUM` var).
 
 Once created, I can then use [deb-s3](https://github.com/krobertson/deb-s3) to upload the deb file to an apt repository on Amazon's S3. Deploying a new version is a simple case of `apt-get upgrade`.

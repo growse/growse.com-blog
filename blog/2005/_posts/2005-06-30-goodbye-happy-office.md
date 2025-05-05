@@ -13,4 +13,3 @@ turn up to put stuff in (were meant to be here on Tusday), and wait for labels
 to put things on (we don't have enough).
 
 This is meant to be a "very smooth clockwork-like operation". Pah.
-

@@ -8,19 +8,19 @@ But then! I found [this page detailing how to uninstall using msiexec](https://k
 
 In case that page goes away, you want these commands:
 
-VirusScan Enterprise 8.8 
+VirusScan Enterprise 8.8
 
     msiexec /x {CE15D1B6-19B6-4D4D-8F43-CF5D2C3356FF} REMOVE=ALL REBOOT=R /q
- 
-VirusScan Enterprise 8.7i 
+
+VirusScan Enterprise 8.7i
 
     msiexec /x {147BCE03-C0F1-4C9F-8157-6A89B6D2D973} REMOVE=ALL REBOOT=R /q
- 
-VirusScan Enterprise 8.5i 
+
+VirusScan Enterprise 8.5i
 
     msiexec.exe /x {35C03C04-3F1F-42C2-A989-A757EE691F65} REMOVE=ALL REBOOT=R /q
 
-VirusScan Enterprise 8.0i 
+VirusScan Enterprise 8.0i
 
     msiexec.exe /x {5DF3D1BB-894E-4DCD-8275-159AC9829B43} REMOVE=ALL REBOOT=R /q
 

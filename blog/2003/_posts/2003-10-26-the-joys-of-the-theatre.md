@@ -11,4 +11,3 @@ tech) and will be for bits of this week. Hurrah!That, and I've got far too
 much work to do.
 
    [1]: http://www.reducedshakespeare.co.uk/
-

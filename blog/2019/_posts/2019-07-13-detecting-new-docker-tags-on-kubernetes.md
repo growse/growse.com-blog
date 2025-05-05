@@ -13,7 +13,7 @@ Therefore, I wrote a script. It's simple and bug-ridden:
 
 ``` shell
 #!/bin/bash
-for p in $(kubectl get deployments -o jsonpath='{range .items[*]}{range .spec.template.spec.containers[*]}{.image}{"\n"}{end}'| grep -v  "latest\|stable"); do 
+for p in $(kubectl get deployments -o jsonpath='{range .items[*]}{range .spec.template.spec.containers[*]}{.image}{"\n"}{end}'| grep -v  "latest\|stable"); do
     IFS=:
     read -r -a array <<< "$p"
     latest=$(curl -s https://hub.docker.com/v2/repositories/"${array[0]}"/tags/ | jq -r '[.results[]|select(.name | test("^v?\\d+\\.\\d+\\.\\d(-\\d+)?$"))][0].name')

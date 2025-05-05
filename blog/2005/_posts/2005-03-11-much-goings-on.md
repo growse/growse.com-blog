@@ -15,4 +15,3 @@ thought, September
   * Mod rewrites are fun.
 
 Anyway, must go. Washing up to do.
-

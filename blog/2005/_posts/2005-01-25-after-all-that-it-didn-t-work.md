@@ -13,4 +13,3 @@ browser. People should use text browsers more. Pictures are overrated. Really.
 
 Pah, only a few more hundred hours and then it's done, and the sound won't
 work.
-

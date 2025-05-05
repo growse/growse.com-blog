@@ -2,7 +2,7 @@
 layout: post
 title: "Google and Free Stuff"
 ---
-I've always had a bit of a soft spot for Google. My impression of how they've built themselves over the last few years has fit with the concept of a company that's engineer-driven, making cool stuff and giving it away. The idea presumably is to see what works and carry on doing that. This contrasts with a lot of other tech companies that are so transparently driven by boring businessy stuff, like *making money* and *selling things*. 
+I've always had a bit of a soft spot for Google. My impression of how they've built themselves over the last few years has fit with the concept of a company that's engineer-driven, making cool stuff and giving it away. The idea presumably is to see what works and carry on doing that. This contrasts with a lot of other tech companies that are so transparently driven by boring businessy stuff, like *making money* and *selling things*.
 
 Now, things are changing, and Google appear to be turning a bunch of things off. This is both entirely expected, and yet a bit sad. The latest thing appears to be [Latitude](http://www.google.co.uk/latitude) which was quite useful in some cases. This is being removed from their maps app and rolled into [Google+](http://plus.google.com). This is hot on the heals of [Reader](http://www.google.com/reader), which ceremoniously shut down last month. This is the flip side of seeing what works - you have to turn off the things that don't work. Reader obviously wasn't helping Google's bottom line.
 

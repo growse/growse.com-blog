@@ -216,4 +216,3 @@ station, the journey home was fairly uneventful.
    [4]: http://www.reuters.com/
 
    [5]: http://www.martincurrie.com/
-

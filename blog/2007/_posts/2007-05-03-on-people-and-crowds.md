@@ -47,4 +47,3 @@ they're not really thinking straight.
 
 I think Excel has decided it has now, properly crashed. I shall try to
 resurrect it, but I'm not optimistic.
-

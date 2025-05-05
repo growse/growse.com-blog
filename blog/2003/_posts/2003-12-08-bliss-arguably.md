@@ -9,4 +9,3 @@ cold outside. Lunch might be interesting. But then again, I do have over a
 kilo of chocolate sat next to me. Technically, I'm working for the next 3
 weeks, and then I depart for snowy places across the pond. I should buy some
 gloves before then.
-

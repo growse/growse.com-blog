@@ -24,4 +24,3 @@ Throw Mac Pro away.
 
 Conclusion: Macs suck. Maybe not for everyone, but for the things I want to do
 with them, they suck.
-

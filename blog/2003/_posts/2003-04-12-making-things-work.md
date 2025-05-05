@@ -19,4 +19,3 @@ holiday? I meant extremely stressful and hardworking choir tour :p
    [1]: http://www.icq.com
 
    [2]: http://www.nokia.com/nokia/0,4879,133,00.html
-

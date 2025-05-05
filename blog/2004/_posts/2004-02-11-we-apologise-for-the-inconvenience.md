@@ -10,4 +10,3 @@ isn't finished, but it's close.
 If you're using Firefox, I hate you. If you're using Opera, I hate your
 browser. If you're using IE, I hate not only you, your existance, your
 browser, but I won't make any effort to make it look good for you.
-

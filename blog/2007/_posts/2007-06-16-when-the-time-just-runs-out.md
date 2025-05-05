@@ -22,4 +22,3 @@ the moment. Hopefully 0.3 will bring more improvements.
    [2]: http://www.allinlondon.co.uk/clubs_bars/venue-2305.php
 
    [3]: http://maps.google.co.uk/maps?f=q&hl=en&q=sw9+9ph&ie=UTF8&ll=51.46632,-0.125763&spn=0.006283,0.014591&z=16&om=1
-

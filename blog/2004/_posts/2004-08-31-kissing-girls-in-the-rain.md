@@ -18,4 +18,3 @@ lunch, two of which aren't necessarily easy. Should be interesting trying
 though. Bah.
 
 I might busk with my bass.
-

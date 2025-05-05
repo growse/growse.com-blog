@@ -11,4 +11,3 @@ drinking game. Fun!
 Now that the new year is here, I think it's important to start doing some
 things right. Like paying rent on time, getting a job, and not being so
 grumpy. :-)
-

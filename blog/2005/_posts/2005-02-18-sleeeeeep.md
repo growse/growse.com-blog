@@ -10,4 +10,3 @@ If you're in Cambridge, come see the show I'm doing! [Apocalypse The
 Musical][1] - it's only on until Saturday, and is rather good.Yay!
 
    [1]: http://www.apocalypse-the-musical.com
-

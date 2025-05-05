@@ -12,4 +12,3 @@ put lots and lots and lots of posters up round Cambridge. Fun!
    [1]: http://www.bbc.co.uk
 
    [2]: http://www.pslx.co.uk/store/storepics/30111t.jpg
-

@@ -9,4 +9,3 @@ train which has no seat with my name on it.
 
 I might have to shoot some people to get my way, but I'll make sure I'll be
 humane.
-

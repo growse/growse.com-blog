@@ -72,11 +72,11 @@ In our case, we have a number of subtasks that can reach a state where they want
 
 In addition, the master process can also reach a state where it decides that it wants to quit: receiving `SIGTERM` or similar.
 
-We can use the above program as a starting point. We know we can use a `multiprocessing.Queue` to interrupt the master process in the event that it receives a signal, and thus trigger a shut down. 
+We can use the above program as a starting point. We know we can use a `multiprocessing.Queue` to interrupt the master process in the event that it receives a signal, and thus trigger a shut down.
 
 ## Signals all the way down
 
-The next question is: how can we also get a message from any of the subtasks to the master process (and each other) that the time has come to stop? 
+The next question is: how can we also get a message from any of the subtasks to the master process (and each other) that the time has come to stop?
 
 How do processes normally send control state messages to each other?
 
@@ -104,7 +104,7 @@ def my_subprocess_1():
 
 This will happily `do_boring_thing()` repeatedly, waiting 5 seconds between each invocation. If the process receives a signal that's in `signals`, it will set `my_event`. If the subprocess is blocked on `my_event.wait(5)`, it will just unblock and exit the loop. If it's in the middle of `do_boring_thing()`, it will finish that, then exit the loop. Nice and straightforward. (Notice use of `threading.Event` here - it's a useful thing to use even if you're not doing anything explicitly concurrently, because signal handlers are asynchronous - they fire whenever the VM feels like).
 
-If the master process receives a `SIGTERM`, so do all the subprocesses - they all go down gracefully, along with the master process which uses the queueing mechanism above. 
+If the master process receives a `SIGTERM`, so do all the subprocesses - they all go down gracefully, along with the master process which uses the queueing mechanism above.
 
 What if the OS sends `SIGTERM` just to the subprocess? Or, worse, `SIGKILL`?
 
@@ -122,10 +122,10 @@ def signal_handler(received_signal, _):
             my_queue.put(True)
     else:
         my_queue.put(True)
- 
+
 signals = (signal.SIGINT, signal.SIGTERM, signal.SIGCHLD, signal.SIGQUIT)
 for signame in signals:
-    signal.signal(signame, my_signal_handler) 
+    signal.signal(signame, my_signal_handler)
 ```
 
 This is a somewhat simplified version, but should be clear. The downside of handling SIGCHLD is you get notified of pretty much every event, even the ones you don't care about. So you have to tell the difference between a subprocess being told to exit, or just being told to stop/resume. There's a bunch of stuff in `os` that can let you determine things from the value of `status`.
@@ -134,7 +134,7 @@ Interestingly, we also get to decide here what happens if a subprocess has quit.
 
 ### Subprocesses that actually want to die
 
-The subprocess I have above is pretty simple. Do a thing, wait 5 seconds, repeat. But what if you want a subprocess that can also decide it wants to stop the whole program? 
+The subprocess I have above is pretty simple. Do a thing, wait 5 seconds, repeat. But what if you want a subprocess that can also decide it wants to stop the whole program?
 
 ```python
 def my_subprocess_2():
@@ -148,7 +148,7 @@ def my_subprocess_2():
     while not my_event.is_set():
         should_i_quit = do_other_boring_thing()
         if should_i_quit:
-            my_event.set()                
+            my_event.set()
         my_event.wait(5)
 ```
 
@@ -156,7 +156,7 @@ This basically does the same thing as the first subprocess. However, this time, 
 
 But what then?
 
-We've got a `SIGCHLD` handler on the master process, so that dutifully gets executed (the subprocess stopping will fire `SIGCHLD` and indicate that the processes called `exit()`). Alternatively, we can actually pass `my_queue` to the subprocess and get it to send a message to the master explicitly. Either way, the master process is unblocked on `my_queue.get()` and quits. Great! 
+We've got a `SIGCHLD` handler on the master process, so that dutifully gets executed (the subprocess stopping will fire `SIGCHLD` and indicate that the processes called `exit()`). Alternatively, we can actually pass `my_queue` to the subprocess and get it to send a message to the master explicitly. Either way, the master process is unblocked on `my_queue.get()` and quits. Great!
 
 No.
 
@@ -203,11 +203,11 @@ Finally, we wait for everything to exit by calling `join()` on each `Process`.
 
 Surely this must be complete now. Almost!
 
-What happens if the master process receives `SIGKILL`? 
+What happens if the master process receives `SIGKILL`?
 
 `SIGKILL` is a way for the OS to kill a process without that process having a say in what happens. It's brutal, and there's no way to handle it. The process just stops. Parents get notified, but not children. (Not by default anyway, a child can `prctl` and `PR_SET_DEATHSIG`, but for boring reasons I chose not to do it this way).
 
-In our case, if the master receives `SIGKIL`, the subprocesses are essentially unaware. The only thing they will notice is that they have a new parent PID. 
+In our case, if the master receives `SIGKIL`, the subprocesses are essentially unaware. The only thing they will notice is that they have a new parent PID.
 
 So! We need a little more work to just check the parent PID on each loop in the subprocess to make sure it's not changed:
 
@@ -240,17 +240,17 @@ I made a [gist of the final program](https://gist.github.com/growse/f37ca9da772d
 
 ## Appendix
 
-The gist works great on Python 2.7.14 on my laptop (Arch Linux), but failed on Python 2.7.11 on RHEL6. The issue was that `my_queue` never received the message, it seemed to be the same deadlock as before. 
+The gist works great on Python 2.7.14 on my laptop (Arch Linux), but failed on Python 2.7.11 on RHEL6. The issue was that `my_queue` never received the message, it seemed to be the same deadlock as before.
 
 A simple change from `my_queue.get()` to this sorted it:
 
-```python 
+```python
 result = None
 while not result:
     try:
         result = my_queue.get(timeout=1):
     except Queue.Empty:
-        pass    
-```        
-    
+        pass
+```
+
 I have no idea why this works.

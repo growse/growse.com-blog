@@ -10,4 +10,3 @@ being quite noisy about it at 7:00 this morning, and they're going to carry on
 being noisy until about 4 this afternoon. The amount of work I will therefore
 get done today is minute - nearly zero in fact.I've got this love affair with
 the full stop.See.
-

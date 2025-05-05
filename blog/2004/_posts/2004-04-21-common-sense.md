@@ -50,4 +50,3 @@ See? It works.
 Anyway, the main point of this is that I don't like stupid people. Some would
 argue that it's harsh to call people who have had their common sense stolen
 "stupid", but I don't think name-calling is at the top of their worry list.
-

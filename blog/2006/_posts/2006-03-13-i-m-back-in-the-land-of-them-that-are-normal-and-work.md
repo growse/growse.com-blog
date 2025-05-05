@@ -30,4 +30,3 @@ check in. So that was the interesting bit of the way back.
 
 So now I've arrived back, and I have 85 unread emails to read and deal with.
 Joy!
-

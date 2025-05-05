@@ -25,4 +25,3 @@ graph is meant to show. I'll think of something.
    [2]: http://www.amcharts.com/
 
    [3]: /2009/01/19/spamwatch.html
-

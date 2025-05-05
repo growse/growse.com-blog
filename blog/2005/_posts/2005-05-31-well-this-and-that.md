@@ -12,4 +12,3 @@ well.
 Everything's nearly done. In my wisdom, I've dropped the perl section, as it
 wasn't adding much value to anyone's life. I'll start doing more useful stuff
 soon.
-

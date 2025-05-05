@@ -123,10 +123,10 @@ For the partitioning scenario where the two namenodes can no longer communicate,
        at [......]
     WARN org.apache.hadoop.hdfs.qjournal.client.QuorumJournalManager: Aborting QuorumOutputStream starting at txid 83496
     INFO org.apache.hadoop.util.ExitUtil: Exiting with status 1
-    INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG: 
+    INFO org.apache.hadoop.hdfs.server.namenode.NameNode: SHUTDOWN_MSG:
     /************************************************************
     SHUTDOWN_MSG: Shutting down NameNode at n1/10.0.3.101
- 
+
 
 It dies. It's gone. It's decided that as an active namenode that can't see a majority of the journalnodes, it has no business being alive.
 

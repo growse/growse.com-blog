@@ -15,7 +15,7 @@ A while back, I decided to look at Kubernetes, partly because it was generating 
 
 Docker was the initial winner of the container runtime race, and Swarm was their solution to bandying together many computers (all running docker) and sharing a workload across them. Couple it together with [Docker Compose](https://docs.docker.com/compose/) and in theory you have a simple way of declaring what you want, and having the system magically make it so.
 
-In practice, it didn't work very well. 
+In practice, it didn't work very well.
 
 The fragility was hilarious. Containers would just stop for no published reason, and then attempts to get them going again would result in a raft of `context deadline exceeded` errors (what kind of shitty error nonsense is that?). The proxy solution for forwarding traffic to the correct container instance worked great, unless you sent traffic to the node's IPv6 address in which case the packets would just disappear. There wasn't a particularly good story on persistent volumes, I ended up just mounting everything as NFS on every host and hoping that nothing got corrupted. Deleting everything and re-creating it all from scratch was a common occurrence.
 
@@ -41,7 +41,7 @@ There's a couple of downsides to this approach. First, your service IP needs to 
 
 MetalLB provides an alternative, which is to use [BGP](https://metallb.universe.tf/configuration/#bgp-configuration) to announce IPs. BGP is the common protocol widely used for routers to announce available routes to other routers, and thus coordinate available routes for IP traffic. A typical BGP announcement is (simplistically) of the form "Hi, Subnet `x` can be routed via IP `y` with a metric of `z`", so in the context of load-balancing, MetaLB just announces that a subnet of a single IPv4 address (a `/32`) is to be routed via the node IPv4 address that is hosting the correct pod.
 
-This is somewhat more complex to set up, as now the service IP addresses should be in a different subnet from the nodes and clients, requiring clients to go to their local router in order to route traffic. In my case, I used `192.168.254.0/24` as the subnet from which I'd choose service IP addresses. Giving MetalLB the configuration below:  
+This is somewhat more complex to set up, as now the service IP addresses should be in a different subnet from the nodes and clients, requiring clients to go to their local router in order to route traffic. In my case, I used `192.168.254.0/24` as the subnet from which I'd choose service IP addresses. Giving MetalLB the configuration below:
 ```yaml
 address-pools:
 - addresses:
@@ -54,13 +54,13 @@ peers:
   peer-asn: 64512
 ```
  This config file declares that MetalLB will manage service IPs in the `192.168.254.0/24` subnet, and then announce BGP routes for those IPs to my local router `192.168.2.1`. BGP also requires that routes are announced with an Autonomous System Number (ASN), so I used 64512, the first reserved for private use.
- 
+
  The additional complexity here comes because we need something on the router side to be able to accept these announcements and create routes from them. A client on `192.168.2.50` will want to send traffic to a service on `192.168.254.1`, see that it's not local and therefore send it to the router (`192.168.2.1`). The router needs to know how to turn BGP announcements into routing table entries. My router runs debian, so there's a number of software options available. I was most interested in [GoBGP](https://osrg.github.io/gobgp/) as it claimed to be a modern re-write of a BGP daemon (BGP is *old* so a lot of software that manages it is also *old*). `gobgpd` is available both in Debian stable and unstable, so I threw caution to the wind and installed `1.33` from the unstable repo.
- 
+
  While GoBGP will happily receive and send whatever BGP messages you like, it doesn't necessarily know what to do with them itself. In my case, I wanted BGP messages received just installed on the local routing table. For this, I needed a routing manager, so installed [FRR](http://docs.frrouting.org/en/latest/overview.html), a linux-based routing packages that includes [Zebra](http://docs.frrouting.org/en/latest/zebra.html), a local routing manager. After much time and many errors, I learned that the GoBGP maintainers only supported Zebra compatibility up to v3 (v6 of FRR is available), so I ended up install `v3.0.4`. I should mention that FRR comes with its own BGP daemon `bgpd`, so this may work better. Zebra itself needs no real configuration in this case, other than to just enable it by setting `zebra=yes` in `/etc/frr/daemons.conf`.
- 
+
  So, all that remains is to configure GoBGP. It just needs to know its local details, the permitted peers (in my case my two K8s nodes) and how to talk to zebra:
-``` 
+```
 [global.config]
   as = 64512
   router-id = "192.168.2.1"
@@ -91,7 +91,7 @@ Peer            AS     Up/Down State       |#Received  Accepted
 192.168.2.13 64512 1d 15:34:04 Establ      |        0         0
 192.168.2.20 64512 1d 15:34:05 Establ      |        0         0
 ```
- 
+
 So let's create a simple service on k8s (to run [Pi-hole](https://pi-hole.net/)):
 ```yaml
 ---
@@ -114,7 +114,7 @@ spec:
     protocol: TCP
     port: 53
     targetPort: 53
-``` 
+```
 I've asked for `192.168.254.6`, and also asked for a "Local" external traffic policy, so the route should only be published for the local node on which the pi-hole pod is running. The default setting would publish a route for every node in the cluster and rely on `kube-proxy` to get the traffic to the right pod.
 
 Checking the GoBGP RIB table:
@@ -127,7 +127,7 @@ $ gobgp global rib
 Success! MetalLB has sent an announcement that `192.168.254.6/32` should be routed via `192.168.2.13`. `*` means the route is valid and `>` means it's the best route. Checking the routing table on the router:
 ```shell
 $ ip route list root 192.168.254.6
-192.168.254.6 via 192.168.2.13 dev eth0.2 proto zebra metric 20 
+192.168.254.6 via 192.168.2.13 dev eth0.2 proto zebra metric 20
 ```
 And if I traceroute from my local client to `192.168.254.6`:
 ```shell
@@ -138,7 +138,7 @@ traceroute to 192.168.254.6 (192.168.254.6), 30 hops max, 60 byte packets
  3  * * *
 ```
 The traffic has gone to the router, which has then forwarded it onto `192.168.2.13`. Finally, lets see if I can send TCP traffic to that IP and get an answer. This is pihole, so I should be able to `dig`:
-```shell    
+```shell
 $ dig @192.168.254.6
 
 ; <<>> DiG 9.14.0 <<>> @192.168.254.6

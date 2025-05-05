@@ -19,4 +19,3 @@ I have no recollection of organising, and have no idea what I'm going to be
 playing. Just like most concerts I do. Ah well.
 
 Sleep is calling.
-

@@ -47,4 +47,3 @@ strings I think.
    [1]: http://en.wikipedia.org/wiki/Extensible_Authentication_Protocol
 
    [2]: http://freeradius.org/
-

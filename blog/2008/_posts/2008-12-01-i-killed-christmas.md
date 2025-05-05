@@ -17,4 +17,3 @@ of words and counting down the time until the holidays start. After that,
 someone else will have to look at the paper and write the words.
 
    [1]: http://code.google.com/p/minify/
-

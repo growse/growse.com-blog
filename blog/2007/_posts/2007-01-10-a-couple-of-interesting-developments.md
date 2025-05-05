@@ -19,4 +19,3 @@ thought that I might as well have a .uk level domain, so I got it.
 I will now go and continue the great tidyfest.
 
    [1]: http://www.growse.me.uk/
-

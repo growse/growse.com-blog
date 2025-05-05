@@ -33,4 +33,3 @@ they'll loosen over time. I've not tried the bluetooth or the webcam yet, so
 there's plenty to tweak with yet. All in all, a good purchase.
 
    [1]: http://www.ubuntu-eee.com/
-

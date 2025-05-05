@@ -12,4 +12,3 @@ either, apart from to say that it's a better country than France. Just.
 
 I now need to debate with myself the quickest way from here back home to
 Stratford, and then the quickest way after that to Manchester. Oh well.
-

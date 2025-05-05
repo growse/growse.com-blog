@@ -13,4 +13,3 @@ minor damage to interior walls and almost no injury.
 I envisage a bright and sparkly future punctuated with regular purchases of
 increasingly powerful shiny things interspersed with periods of installing
 unnecessary storage equipment. Maybe one day I'll own a buzz saw.
-

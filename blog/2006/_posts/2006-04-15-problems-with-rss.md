@@ -109,4 +109,3 @@ Anyway, that's what I think. Next, AJAX!
    [6]: http://www.microsoft.com/
 
    [7]: http://blogs.msdn.com/rssteam/archive/2006/03/28/563116.aspx
-

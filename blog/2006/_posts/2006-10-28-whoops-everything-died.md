@@ -13,4 +13,3 @@ one. I did however lose the last two blog posts. Boo. Can't be arsed to repeat
 them.
 
 With that all said and done, I might go out into the rain.
-

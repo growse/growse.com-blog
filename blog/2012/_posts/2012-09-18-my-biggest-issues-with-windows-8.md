@@ -24,11 +24,11 @@ Grr.
 
 This is mainly moaning about the use of 'hot corners'. While everyone knows that if you fling your cursor to the bottom left of the screen, you should get some sort of 'Start' experience. That's a given since Windows 95. However, if you fling the cursor to the top right, you should get the 'close' button of a maximized window. Easy.
 
-But if you've got two monitors, side-by-side, getting to the close button of a maximized window on the left is a bit fiddly. So you make use of the fact that you can double click on the window icon on the left hand side and that will also close the window. I believe you've been able to do that since Windows 3.1. 
+But if you've got two monitors, side-by-side, getting to the close button of a maximized window on the left is a bit fiddly. So you make use of the fact that you can double click on the window icon on the left hand side and that will also close the window. I believe you've been able to do that since Windows 3.1.
 
-This works just find in Windows 8. 
+This works just find in Windows 8.
 
-Unless.... you have metro app open. In which case a 'helpful' popup appears once the mouse hits the top left corner. If you're not paying attention and click, you're now into some random metro app. 
+Unless.... you have metro app open. In which case a 'helpful' popup appears once the mouse hits the top left corner. If you're not paying attention and click, you're now into some random metro app.
 
 Why?
 

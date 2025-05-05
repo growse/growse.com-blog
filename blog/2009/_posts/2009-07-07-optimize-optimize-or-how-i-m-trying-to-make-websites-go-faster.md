@@ -58,4 +58,3 @@ this to break again :)
    [3]: http://code.google.com/speed/page-speed/
 
    [4]: https://addons.mozilla.org/en-US/firefox/addon/1843
-

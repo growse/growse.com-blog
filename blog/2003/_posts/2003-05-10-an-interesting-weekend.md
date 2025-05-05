@@ -15,4 +15,3 @@ And then tonight, I have to work all through the night doing a get-in at the
 ADC (local amateur theatre) follows by one of the most important college
 occasions in chapel and then I go to another party on a boat. I'm blatantly
 not going to get much sleep.
-

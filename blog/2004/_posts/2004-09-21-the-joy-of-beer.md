@@ -22,4 +22,3 @@ place I can't get interviews for half the jobs I want to do, and I'm
 bills time of the month is going to be fun.
 
 Right, I must go shout and swear at someone important in college.
-

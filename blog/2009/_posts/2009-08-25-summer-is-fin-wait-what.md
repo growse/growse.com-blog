@@ -15,4 +15,3 @@ which that brings. The only thing that's looking up is that maybe I'll get to
 spend more time with the Mexican Staring Cat that has started to visit (name:
 Catface). I figure that if it's cold outside, it'll want to be inside more
 often. That'll be nice.
-

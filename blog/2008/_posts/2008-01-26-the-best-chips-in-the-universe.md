@@ -7,4 +7,3 @@ the cafe at Highgate Wood, and they're awesome.
 
 I feel that this is important information that should be broadcast to the
 masses.
-

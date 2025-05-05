@@ -13,4 +13,3 @@ meantime, I have 4 weeks to look forward to beachyness and have to instead
 figure out a word that almost means "integrity", but not quite.
 
 Hopefully I'll be better in a month. If I'm not, I want my money back.
-

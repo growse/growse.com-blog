@@ -51,4 +51,3 @@ now, and mostly that's Microsoft's doing.
    [3]: http://www.codeproject.com/KB/GDI-plus/perpxalpha_sharp.aspx
 
    [4]: http://msdn.microsoft.com/en-us/library/ms754130.aspx?ppud=4
-

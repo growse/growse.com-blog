@@ -22,4 +22,3 @@ means that the [Videos][1] section of the site will be expanding at some
 point...
 
    [1]: /videos/
-

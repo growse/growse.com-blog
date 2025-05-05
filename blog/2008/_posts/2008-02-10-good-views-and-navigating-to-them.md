@@ -16,4 +16,3 @@ don't seem to have ported this over to the blackberry yet. The only two decent
 alternatives are
 
    [1]: http://www.tomtom.com/
-

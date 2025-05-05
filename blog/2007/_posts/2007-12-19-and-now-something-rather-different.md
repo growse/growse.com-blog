@@ -9,4 +9,3 @@ I proudly present:
 (Yes, it's a hamster. LIVE!)
 
    [1]: http://watson.growse.com/
-

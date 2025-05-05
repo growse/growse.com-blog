@@ -30,4 +30,3 @@ total of 232km. Also, it turns out we raised £595.01, which means it was all
 worthwhile :)
 
    [1]: http://www.justgiving.com/andrewrowson
-

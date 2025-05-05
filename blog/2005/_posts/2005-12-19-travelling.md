@@ -9,4 +9,3 @@ about........... now. Wireless stuff is wonderful :-)
 Thankfully, there wasn't such a heaving rush to race to the train as there
 usually is in Euston. So I've managed to bag a nice table seat with everything
 I need. Lunch is next.
-

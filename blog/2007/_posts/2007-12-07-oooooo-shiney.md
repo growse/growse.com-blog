@@ -24,4 +24,3 @@ basically the same as linux, but purposefully more difficult. Still, it has
 for that one to be ported to a sensible OS.
 
    [1]: http://www.sun.com/2004-0914/feature/
-

@@ -11,4 +11,3 @@ excited, but mainly because I don't have to do any more shoe shopping for
 another 3 years at least.
 
 Oh well, never mind.
-

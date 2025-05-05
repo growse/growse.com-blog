@@ -9,4 +9,3 @@ Pianos; Drumming Music; Variations for Winds, Strings and Keyboards; etc.) Go
 me.
 
 Only 5 hours to kill until sunrise.
-

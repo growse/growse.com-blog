@@ -20,4 +20,3 @@ Highly recommended.
    [2]: https://github.com/growse/Feedling
 
    [3]: http://github.com
-

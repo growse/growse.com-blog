@@ -11,4 +11,3 @@ on any of these things.
 I did just spend a rather nice time in the north bit of Scotland, where I
 visited a pleasing number of distilleries, breweries and waterfalls. I think I
 might just go back.
-

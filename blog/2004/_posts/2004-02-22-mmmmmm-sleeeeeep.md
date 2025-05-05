@@ -8,4 +8,3 @@ tuesday. This is just unreasonable given I'm a student, but it's the price I
 pay for working on a huge production. Get-in was today, which only took 15
 hours or so. Tomorrow is another 15 hours of the tech, followed by the dress
 and opening night the following day. Yay!
-

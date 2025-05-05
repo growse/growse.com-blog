@@ -18,4 +18,3 @@ than it should.
 And W00t! to 30,000 hits. :) My congratulations to host81-133-154-39.in-
 addr.btopenworld.com who was the 30,000th visitor to the site at 17:36:46
 27/4/2004. You get a free trout (the fish, not the music).
-

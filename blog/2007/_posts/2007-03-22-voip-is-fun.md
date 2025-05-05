@@ -8,4 +8,3 @@ about it, [here][1]. Not for anyone else's benefit, mainly because I'll need
 to remember how to do it when I go and accidentally delete everything.
 
    [1]: /2007/03/19/setting-up-home-voip-with-asterisk.html
-

@@ -8,4 +8,3 @@ working. Same job. Same old.
 
 Housemate-shaped-thing has gone off to Reading for the week so it's just me.
 Hurrah for nothing, boo for boredom. Oh well. Food calls.
-

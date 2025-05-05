@@ -56,4 +56,3 @@ So, the moral of the story is: Don't listen to people. Mostly.
    [4]: http://www.mysqlperformanceblog.com/
 
    [5]: http://www.postgresql.org/
-

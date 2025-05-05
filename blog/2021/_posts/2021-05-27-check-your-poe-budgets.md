@@ -17,7 +17,7 @@ Over the last few years, in the Current House, the number of connected devices o
 
 A few weeks ago I did a silly thing. I cut the phone line to the house. There was a good, yet faulty reason for this at the time, but it left me without a decent internet connection. Thankfully, the 4G backup thingie that I'd set up a while ago seemed to work ok, but because it went to a different ISP, the VoIP connection stopped working.
 
-Having previously fitted a fancy doorbell that can (and will!) initiate a SIP call to my mobile, not having an external VoIP service meant that I could no longer tell when someone was pressing the doorbell. Dependencies! 
+Having previously fitted a fancy doorbell that can (and will!) initiate a SIP call to my mobile, not having an external VoIP service meant that I could no longer tell when someone was pressing the doorbell. Dependencies!
 
 Digging out a spare IP phone lying around and wiring it into the switch near the front door, I told the doorbell to just phone that instead. Problem solved, albeit temporarily.
 
@@ -25,7 +25,7 @@ Except.... some time later I noticed that the WiFi AP also on that switch had st
 
 It later occurred to me that a reason why computery things sometimes behave badly is if they're not getting enough power, or the power supply isn't how they like it. It could well be that an unclean or inadequate power supply could cause a device to reboot itself. But this AP is PoE! And there's infinite amounts of power available over PoE! Just keep plugging all the things in and be happy.
 
-No. The switch the AP was plugged into is a [Unifi USW Flex](http://web.archive.org/web/20210412193455/https://store.ui.com/collections/unifi-network-switching/products/usw-flex) which can "provide up to 15W PoE output". Apparently if I'd powered the switch itself off an 802.3bt PoE source, that goes up to 46W, but I've just daisy chained it off a [Unifi US-8-150](https://web.archive.org/web/20210527084430/https://www.ui.com/unifi-switching/unifi-switch-8-150w/) which only provides 802.3at at best. Let's take a look to see what the power usage is on the Flex: 
+No. The switch the AP was plugged into is a [Unifi USW Flex](http://web.archive.org/web/20210412193455/https://store.ui.com/collections/unifi-network-switching/products/usw-flex) which can "provide up to 15W PoE output". Apparently if I'd powered the switch itself off an 802.3bt PoE source, that goes up to 46W, but I've just daisy chained it off a [Unifi US-8-150](https://web.archive.org/web/20210527084430/https://www.ui.com/unifi-switching/unifi-switch-8-150w/) which only provides 802.3at at best. Let's take a look to see what the power usage is on the Flex:
 
 {% include image.html alt="Unifi switchports power usage" src="/assets/img/2021-05-27-check-your-poe-budgets/switchports.png" %}
 
