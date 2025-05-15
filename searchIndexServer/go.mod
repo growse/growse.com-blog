@@ -6,7 +6,7 @@ toolchain go1.24.3
 
 require (
 	github.com/antchfx/htmlquery v1.3.4
-	github.com/blevesearch/bleve/v2 v2.5.0
+	github.com/blevesearch/bleve/v2 v2.5.1
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.10.0
 	github.com/grokify/html-strip-tags-go v0.1.0
@@ -176,27 +176,27 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/speakeasy v0.1.0 // indirect
 	github.com/bits-and-blooms/bitset v1.22.0 // indirect
-	github.com/blevesearch/bleve_index_api v1.2.7 // indirect
-	github.com/blevesearch/geo v0.1.20 // indirect
+	github.com/blevesearch/bleve_index_api v1.2.8 // indirect
+	github.com/blevesearch/geo v0.2.3 // indirect
 	github.com/blevesearch/go-faiss v1.0.25 // indirect
 	github.com/blevesearch/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/blevesearch/go-porterstemmer v1.0.3 // indirect
 	github.com/blevesearch/goleveldb v1.0.1 // indirect
 	github.com/blevesearch/gtreap v0.1.1 // indirect
 	github.com/blevesearch/mmap-go v1.0.4 // indirect
-	github.com/blevesearch/scorch_segment_api/v2 v2.3.9 // indirect
+	github.com/blevesearch/scorch_segment_api/v2 v2.3.10 // indirect
 	github.com/blevesearch/segment v0.9.1 // indirect
 	github.com/blevesearch/snowball v0.6.1 // indirect
 	github.com/blevesearch/snowballstem v0.9.0 // indirect
 	github.com/blevesearch/stempel v0.2.0 // indirect
 	github.com/blevesearch/upsidedown_store_api v1.0.2 // indirect
 	github.com/blevesearch/vellum v1.1.0 // indirect
-	github.com/blevesearch/zapx/v11 v11.4.1 // indirect
-	github.com/blevesearch/zapx/v12 v12.4.1 // indirect
-	github.com/blevesearch/zapx/v13 v13.4.1 // indirect
-	github.com/blevesearch/zapx/v14 v14.4.1 // indirect
-	github.com/blevesearch/zapx/v15 v15.4.1 // indirect
-	github.com/blevesearch/zapx/v16 v16.2.2 // indirect
+	github.com/blevesearch/zapx/v11 v11.4.2 // indirect
+	github.com/blevesearch/zapx/v12 v12.4.2 // indirect
+	github.com/blevesearch/zapx/v13 v13.4.2 // indirect
+	github.com/blevesearch/zapx/v14 v14.4.2 // indirect
+	github.com/blevesearch/zapx/v15 v15.4.2 // indirect
+	github.com/blevesearch/zapx/v16 v16.2.3 // indirect
 	github.com/boombuler/barcode v1.0.1 // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
@@ -264,7 +264,7 @@ require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.0.1 // indirect
 	github.com/google/flatbuffers v23.5.26+incompatible // indirect
-	github.com/google/go-cmp v0.6.0 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-pkcs11 v0.3.0 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/martian v2.1.0+incompatible // indirect
