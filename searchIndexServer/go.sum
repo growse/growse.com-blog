@@ -1526,6 +1526,8 @@ github.com/blevesearch/bleve/v2 v2.4.4 h1:RwwLGjUm54SwyyykbrZs4vc1qjzYic4ZnAnY9T
 github.com/blevesearch/bleve/v2 v2.4.4/go.mod h1:fa2Eo6DP7JR+dMFpQe+WiZXINKSunh7WBtlDGbolKXk=
 github.com/blevesearch/bleve/v2 v2.5.0 h1:HzYqBy/5/M9Ul9ESEmXzN/3Jl7YpmWBdHM/+zzv/3k4=
 github.com/blevesearch/bleve/v2 v2.5.0/go.mod h1:PcJzTPnEynO15dCf9isxOga7YFRa/cMSsbnRwnszXUk=
+github.com/blevesearch/bleve/v2 v2.5.1 h1:cc/O++W2Hcjp1SU5ETHeE+QYWv2oV88ldYEPowdmg8M=
+github.com/blevesearch/bleve/v2 v2.5.1/go.mod h1:9g/wnbWKm9AgXrU8Ecqi+IDdqjUHWymwkQRDg+5tafU=
 github.com/blevesearch/bleve_index_api v1.0.5 h1:Lc986kpC4Z0/n1g3gg8ul7H+lxgOQPcXb9SxvQGu+tw=
 github.com/blevesearch/bleve_index_api v1.0.5/go.mod h1:YXMDwaXFFXwncRS8UobWs7nvo0DmusriM1nztTlj1ms=
 github.com/blevesearch/bleve_index_api v1.0.6 h1:gyUUxdsrvmW3jVhhYdCVL6h9dCjNT/geNU7PxGn37p8=
@@ -1540,12 +1542,16 @@ github.com/blevesearch/bleve_index_api v1.1.12 h1:P4bw9/G/5rulOF7SJ9l4FsDoo7UFJ+
 github.com/blevesearch/bleve_index_api v1.1.12/go.mod h1:PbcwjIcRmjhGbkS/lJCpfgVSMROV6TRubGGAODaK1W8=
 github.com/blevesearch/bleve_index_api v1.2.7 h1:c8r9vmbaYQroAMSGag7zq5gEVPiuXrUQDqfnj7uYZSY=
 github.com/blevesearch/bleve_index_api v1.2.7/go.mod h1:rKQDl4u51uwafZxFrPD1R7xFOwKnzZW7s/LSeK4lgo0=
+github.com/blevesearch/bleve_index_api v1.2.8 h1:Y98Pu5/MdlkRyLM0qDHostYo7i+Vv1cDNhqTeR4Sy6Y=
+github.com/blevesearch/bleve_index_api v1.2.8/go.mod h1:rKQDl4u51uwafZxFrPD1R7xFOwKnzZW7s/LSeK4lgo0=
 github.com/blevesearch/geo v0.1.17 h1:AguzI6/5mHXapzB0gE9IKWo+wWPHZmXZoscHcjFgAFA=
 github.com/blevesearch/geo v0.1.17/go.mod h1:uRMGWG0HJYfWfFJpK3zTdnnr1K+ksZTuWKhXeSokfnM=
 github.com/blevesearch/geo v0.1.18 h1:Np8jycHTZ5scFe7VEPLrDoHnnb9C4j636ue/CGrhtDw=
 github.com/blevesearch/geo v0.1.18/go.mod h1:uRMGWG0HJYfWfFJpK3zTdnnr1K+ksZTuWKhXeSokfnM=
 github.com/blevesearch/geo v0.1.20 h1:paaSpu2Ewh/tn5DKn/FB5SzvH0EWupxHEIwbCk/QPqM=
 github.com/blevesearch/geo v0.1.20/go.mod h1:DVG2QjwHNMFmjo+ZgzrIq2sfCh6rIHzy9d9d0B59I6w=
+github.com/blevesearch/geo v0.2.3 h1:K9/vbGI9ehlXdxjxDRJtoAMt7zGAsMIzc6n8zWcwnhg=
+github.com/blevesearch/geo v0.2.3/go.mod h1:K56Q33AzXt2YExVHGObtmRSFYZKYGv0JEN5mdacJJR8=
 github.com/blevesearch/go-faiss v1.0.13 h1:zfFs7ZYD0NqXVSY37j0JZjZT1BhE9AE4peJfcx/NB4A=
 github.com/blevesearch/go-faiss v1.0.13/go.mod h1:jrxHrbl42X/RnDPI+wBoZU8joxxuRwedrxqswQ3xfU8=
 github.com/blevesearch/go-faiss v1.0.19 h1:UKoP8hS7DVsVSRRloNJb4qPfe2UQ99pP4D3oXd23g2A=
@@ -1583,6 +1589,8 @@ github.com/blevesearch/scorch_segment_api/v2 v2.2.16 h1:uGvKVvG7zvSxCwcm4/ehBa9c
 github.com/blevesearch/scorch_segment_api/v2 v2.2.16/go.mod h1:VF5oHVbIFTu+znY1v30GjSpT5+9YFs9dV2hjvuh34F0=
 github.com/blevesearch/scorch_segment_api/v2 v2.3.9 h1:X6nJXnNHl7nasXW+U6y2Ns2Aw8F9STszkYkyBfQ+p0o=
 github.com/blevesearch/scorch_segment_api/v2 v2.3.9/go.mod h1:IrzspZlVjhf4X29oJiEhBxEteTqOY9RlYlk1lCmYHr4=
+github.com/blevesearch/scorch_segment_api/v2 v2.3.10 h1:Yqk0XD1mE0fDZAJXTjawJ8If/85JxnLd8v5vG/jWE/s=
+github.com/blevesearch/scorch_segment_api/v2 v2.3.10/go.mod h1:Z3e6ChN3qyN35yaQpl00MfI5s8AxUJbpTR/DL8QOQ+8=
 github.com/blevesearch/segment v0.9.1 h1:+dThDy+Lvgj5JMxhmOVlgFfkUtZV2kw49xax4+jTfSU=
 github.com/blevesearch/segment v0.9.1/go.mod h1:zN21iLm7+GnBHWTao9I+Au/7MBiL8pPFtJBJTsk6kQw=
 github.com/blevesearch/snowball v0.6.1/go.mod h1:ZF0IBg5vgpeoUhnMza2v0A/z8m1cWPlwhke08LpNusg=
@@ -1605,6 +1613,8 @@ github.com/blevesearch/zapx/v11 v11.3.10 h1:hvjgj9tZ9DeIqBCxKhi70TtSZYMdcFn7gDb7
 github.com/blevesearch/zapx/v11 v11.3.10/go.mod h1:0+gW+FaE48fNxoVtMY5ugtNHHof/PxCqh7CnhYdnMzQ=
 github.com/blevesearch/zapx/v11 v11.4.1 h1:qFCPlFbsEdwbbckJkysptSQOsHn4s6ZOHL5GMAIAVHA=
 github.com/blevesearch/zapx/v11 v11.4.1/go.mod h1:qNOGxIqdPC1MXauJCD9HBG487PxviTUUbmChFOAosGs=
+github.com/blevesearch/zapx/v11 v11.4.2 h1:l46SV+b0gFN+Rw3wUI1YdMWdSAVhskYuvxlcgpQFljs=
+github.com/blevesearch/zapx/v11 v11.4.2/go.mod h1:4gdeyy9oGa/lLa6D34R9daXNUvfMPZqUYjPwiLmekwc=
 github.com/blevesearch/zapx/v12 v12.3.7 h1:DfQ6rsmZfEK4PzzJJRXjiM6AObG02+HWvprlXQ1Y7eI=
 github.com/blevesearch/zapx/v12 v12.3.7/go.mod h1:SgEtYIBGvM0mgIBn2/tQE/5SdrPXaJUaT/kVqpAPxm0=
 github.com/blevesearch/zapx/v12 v12.3.9 h1:MXGLlZ03oxXH3DMJTZaBaRj2xb6t4wQVZeZK/wu1M6w=
@@ -1613,6 +1623,8 @@ github.com/blevesearch/zapx/v12 v12.3.10 h1:yHfj3vXLSYmmsBleJFROXuO08mS3L1qDCdDK
 github.com/blevesearch/zapx/v12 v12.3.10/go.mod h1:0yeZg6JhaGxITlsS5co73aqPtM04+ycnI6D1v0mhbCs=
 github.com/blevesearch/zapx/v12 v12.4.1 h1:K77bhypII60a4v8mwvav7r4IxWA8qxhNjgF9xGdb9eQ=
 github.com/blevesearch/zapx/v12 v12.4.1/go.mod h1:QRPrlPOzAxBNMI0MkgdD+xsTqx65zbuPr3Ko4Re49II=
+github.com/blevesearch/zapx/v12 v12.4.2 h1:fzRbhllQmEMUuAQ7zBuMvKRlcPA5ESTgWlDEoB9uQNE=
+github.com/blevesearch/zapx/v12 v12.4.2/go.mod h1:TdFmr7afSz1hFh/SIBCCZvcLfzYvievIH6aEISCte58=
 github.com/blevesearch/zapx/v13 v13.3.7 h1:igIQg5eKmjw168I7av0Vtwedf7kHnQro/M+ubM4d2l8=
 github.com/blevesearch/zapx/v13 v13.3.7/go.mod h1:yyrB4kJ0OT75UPZwT/zS+Ru0/jYKorCOOSY5dBzAy+s=
 github.com/blevesearch/zapx/v13 v13.3.9 h1:+VAz9V0VmllHXlZV4DCvfYj0nqaZHgF3MeEHwOyRBwQ=
@@ -1621,6 +1633,8 @@ github.com/blevesearch/zapx/v13 v13.3.10 h1:0KY9tuxg06rXxOZHg3DwPJBjniSlqEgVpxIq
 github.com/blevesearch/zapx/v13 v13.3.10/go.mod h1:w2wjSDQ/WBVeEIvP0fvMJZAzDwqwIEzVPnCPrz93yAk=
 github.com/blevesearch/zapx/v13 v13.4.1 h1:EnkEMZFUK0lsW/jOJJF2xOcp+W8TjEsyeN5BeAZEYYE=
 github.com/blevesearch/zapx/v13 v13.4.1/go.mod h1:e6duBMlCvgbH9rkzNMnUa9hRI9F7ri2BRcHfphcmGn8=
+github.com/blevesearch/zapx/v13 v13.4.2 h1:46PIZCO/ZuKZYgxI8Y7lOJqX3Irkc3N8W82QTK3MVks=
+github.com/blevesearch/zapx/v13 v13.4.2/go.mod h1:knK8z2NdQHlb5ot/uj8wuvOq5PhDGjNYQQy0QDnopZk=
 github.com/blevesearch/zapx/v14 v14.3.7 h1:gfe+fbWslDWP/evHLtp/GOvmNM3sw1BbqD7LhycBX20=
 github.com/blevesearch/zapx/v14 v14.3.7/go.mod h1:9J/RbOkqZ1KSjmkOes03AkETX7hrXT0sFMpWH4ewC4w=
 github.com/blevesearch/zapx/v14 v14.3.9 h1:wuqxATgsTCNHM9xsOFOeFp8H2heZ/gMX/tsl9lRK8U4=
@@ -1629,6 +1643,8 @@ github.com/blevesearch/zapx/v14 v14.3.10 h1:SG6xlsL+W6YjhX5N3aEiL/2tcWh3DO75Bnz7
 github.com/blevesearch/zapx/v14 v14.3.10/go.mod h1:qqyuR0u230jN1yMmE4FIAuCxmahRQEOehF78m6oTgns=
 github.com/blevesearch/zapx/v14 v14.4.1 h1:G47kGCshknBZzZAtjcnIAMn3oNx8XBLxp8DMq18ogyE=
 github.com/blevesearch/zapx/v14 v14.4.1/go.mod h1:O7sDxiaL2r2PnCXbhh1Bvm7b4sP+jp4unE9DDPWGoms=
+github.com/blevesearch/zapx/v14 v14.4.2 h1:2SGHakVKd+TrtEqpfeq8X+So5PShQ5nW6GNxT7fWYz0=
+github.com/blevesearch/zapx/v14 v14.4.2/go.mod h1:rz0XNb/OZSMjNorufDGSpFpjoFKhXmppH9Hi7a877D8=
 github.com/blevesearch/zapx/v15 v15.3.10 h1:bQ9ZxJCj6rKp873EuVJu2JPxQ+EWQZI1cjJGeroovaQ=
 github.com/blevesearch/zapx/v15 v15.3.10/go.mod h1:m7Y6m8soYUvS7MjN9eKlz1xrLCcmqfFadmu7GhWIrLY=
 github.com/blevesearch/zapx/v15 v15.3.12 h1:w/kU9aHyfMDEdwHGZzCiakC3HZ9z5gYlXaALDC4Dct8=
@@ -1639,6 +1655,8 @@ github.com/blevesearch/zapx/v15 v15.3.16 h1:Ct3rv7FUJPfPk99TI/OofdC+Kpb4IdyfdMH4
 github.com/blevesearch/zapx/v15 v15.3.16/go.mod h1:Turk/TNRKj9es7ZpKK95PS7f6D44Y7fAFy8F4LXQtGg=
 github.com/blevesearch/zapx/v15 v15.4.1 h1:B5IoTMUCEzFdc9FSQbhVOxAY+BO17c05866fNruiI7g=
 github.com/blevesearch/zapx/v15 v15.4.1/go.mod h1:b/MreHjYeQoLjyY2+UaM0hGZZUajEbE0xhnr1A2/Q6Y=
+github.com/blevesearch/zapx/v15 v15.4.2 h1:sWxpDE0QQOTjyxYbAVjt3+0ieu8NCE0fDRaFxEsp31k=
+github.com/blevesearch/zapx/v15 v15.4.2/go.mod h1:1pssev/59FsuWcgSnTa0OeEpOzmhtmr/0/11H0Z8+Nw=
 github.com/blevesearch/zapx/v16 v16.0.12 h1:Uccxvjmn+hQ6ywQP+wIiTpdq9LnAviGoryJOmGwAo/I=
 github.com/blevesearch/zapx/v16 v16.0.12/go.mod h1:MYnOshRfSm4C4drxx1LGRI+MVFByykJ2anDY1fxdk9Q=
 github.com/blevesearch/zapx/v16 v16.1.4 h1:TBQfG77g2UUXwfjOVcEtB9pXkg6JBmGXkeZKI67+TiA=
@@ -1651,6 +1669,8 @@ github.com/blevesearch/zapx/v16 v16.1.9-0.20241217210638-a0519e7caf3b h1:ju9Az5Y
 github.com/blevesearch/zapx/v16 v16.1.9-0.20241217210638-a0519e7caf3b/go.mod h1:BlrYNpOu4BvVRslmIG+rLtKhmjIaRhIbG8sb9scGTwI=
 github.com/blevesearch/zapx/v16 v16.2.2 h1:MifKJVRTEhMTgSlle2bDRTb39BGc9jXFRLPZc6r0Rzk=
 github.com/blevesearch/zapx/v16 v16.2.2/go.mod h1:B9Pk4G1CqtErgQV9DyCSA9Lb7WZe4olYfGw7fVDZ4sk=
+github.com/blevesearch/zapx/v16 v16.2.3 h1:7Y0r+a3diEvlazsncexq1qoFOcBd64xwMS7aDm4lo1s=
+github.com/blevesearch/zapx/v16 v16.2.3/go.mod h1:wVJ+GtURAaRG9KQAMNYyklq0egV+XJlGcXNCE0OFjjA=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/boombuler/barcode v1.0.1/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd h1:ePesaBzdTmoMQjwqRCLP2jY+jjWMBpwws/LEQdt1fMM=
@@ -1893,6 +1913,7 @@ github.com/google/go-cmp v0.5.8/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeN
 github.com/google/go-cmp v0.5.9 h1:O2Tfq5qg4qc4AmwVlvv0oLiVAGB7enBSJ2x2DqQFi38=
 github.com/google/go-cmp v0.5.9/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
+github.com/google/go-cmp v0.7.0/go.mod h1:pXiqmnSA92OHEEa9HXL2W4E7lf9JzCmGVUdgjX3N/iU=
 github.com/google/go-pkcs11 v0.2.0/go.mod h1:6eQoGcuNJpa7jnd5pMGdkSaQpNDYvPlXWMcjXXThLlY=
 github.com/google/go-pkcs11 v0.2.1-0.20230907215043-c6f79328ddf9/go.mod h1:6eQoGcuNJpa7jnd5pMGdkSaQpNDYvPlXWMcjXXThLlY=
 github.com/google/go-pkcs11 v0.3.0/go.mod h1:6eQoGcuNJpa7jnd5pMGdkSaQpNDYvPlXWMcjXXThLlY=
