@@ -1530,6 +1530,8 @@ github.com/blevesearch/bleve/v2 v2.5.1 h1:cc/O++W2Hcjp1SU5ETHeE+QYWv2oV88ldYEPow
 github.com/blevesearch/bleve/v2 v2.5.1/go.mod h1:9g/wnbWKm9AgXrU8Ecqi+IDdqjUHWymwkQRDg+5tafU=
 github.com/blevesearch/bleve/v2 v2.5.2 h1:Ab0r0MODV2C5A6BEL87GqLBySqp/s9xFgceCju6BQk8=
 github.com/blevesearch/bleve/v2 v2.5.2/go.mod h1:5Dj6dUQxZM6aqYT3eutTD/GpWKGFSsV8f7LDidFbwXo=
+github.com/blevesearch/bleve/v2 v2.5.3 h1:9l1xtKaETv64SZc1jc4Sy0N804laSa/LeMbYddq1YEM=
+github.com/blevesearch/bleve/v2 v2.5.3/go.mod h1:Z/e8aWjiq8HeX+nW8qROSxiE0830yQA071dwR3yoMzw=
 github.com/blevesearch/bleve_index_api v1.0.5 h1:Lc986kpC4Z0/n1g3gg8ul7H+lxgOQPcXb9SxvQGu+tw=
 github.com/blevesearch/bleve_index_api v1.0.5/go.mod h1:YXMDwaXFFXwncRS8UobWs7nvo0DmusriM1nztTlj1ms=
 github.com/blevesearch/bleve_index_api v1.0.6 h1:gyUUxdsrvmW3jVhhYdCVL6h9dCjNT/geNU7PxGn37p8=
@@ -1554,6 +1556,8 @@ github.com/blevesearch/geo v0.1.20 h1:paaSpu2Ewh/tn5DKn/FB5SzvH0EWupxHEIwbCk/QPq
 github.com/blevesearch/geo v0.1.20/go.mod h1:DVG2QjwHNMFmjo+ZgzrIq2sfCh6rIHzy9d9d0B59I6w=
 github.com/blevesearch/geo v0.2.3 h1:K9/vbGI9ehlXdxjxDRJtoAMt7zGAsMIzc6n8zWcwnhg=
 github.com/blevesearch/geo v0.2.3/go.mod h1:K56Q33AzXt2YExVHGObtmRSFYZKYGv0JEN5mdacJJR8=
+github.com/blevesearch/geo v0.2.4 h1:ECIGQhw+QALCZaDcogRTNSJYQXRtC8/m8IKiA706cqk=
+github.com/blevesearch/geo v0.2.4/go.mod h1:K56Q33AzXt2YExVHGObtmRSFYZKYGv0JEN5mdacJJR8=
 github.com/blevesearch/go-faiss v1.0.13 h1:zfFs7ZYD0NqXVSY37j0JZjZT1BhE9AE4peJfcx/NB4A=
 github.com/blevesearch/go-faiss v1.0.13/go.mod h1:jrxHrbl42X/RnDPI+wBoZU8joxxuRwedrxqswQ3xfU8=
 github.com/blevesearch/go-faiss v1.0.19 h1:UKoP8hS7DVsVSRRloNJb4qPfe2UQ99pP4D3oXd23g2A=

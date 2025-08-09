@@ -6,7 +6,7 @@ toolchain go1.24.6
 
 require (
 	github.com/antchfx/htmlquery v1.3.4
-	github.com/blevesearch/bleve/v2 v2.5.2
+	github.com/blevesearch/bleve/v2 v2.5.3
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.10.1
 	github.com/grokify/html-strip-tags-go v0.1.0
@@ -177,7 +177,7 @@ require (
 	github.com/bgentry/speakeasy v0.1.0 // indirect
 	github.com/bits-and-blooms/bitset v1.22.0 // indirect
 	github.com/blevesearch/bleve_index_api v1.2.8 // indirect
-	github.com/blevesearch/geo v0.2.3 // indirect
+	github.com/blevesearch/geo v0.2.4 // indirect
 	github.com/blevesearch/go-faiss v1.0.25 // indirect
 	github.com/blevesearch/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/blevesearch/go-porterstemmer v1.0.3 // indirect
