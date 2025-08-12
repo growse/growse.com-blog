@@ -2,7 +2,7 @@ module github.com/growse/growse.com-blog
 
 go 1.23
 
-toolchain go1.24.6
+toolchain go1.25.0
 
 require (
 	github.com/antchfx/htmlquery v1.3.4
