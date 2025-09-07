@@ -21,7 +21,7 @@ become clear quite how insane software engineering looks to outsiders.
 
 > Alice: If you want to join two bits a wood together, a hammer and nail is really the best and most flexible option.
 >
-> Bob: Oh but I disagree! I find a screwdrive and a screw is more ergonomic for me. And you can do so much more with it!
+> Bob: Oh but I disagree! I find a screwdriver and a screw is more ergonomic for me. And you can do so much more with it!
 >
 > Alice: Nah, people who use screwdrivers just haven't read the hammer manual properly and don't understand how it's so
 > much better.
