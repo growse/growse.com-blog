@@ -17,7 +17,7 @@
     "@types/overlayscrollbars": "^1",
     "@types/webpack": "^5",
     "clean-webpack-plugin": "^4",
-    "copy-webpack-plugin": "^12",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7",
     "eslint": "^9",
     "file-loader": "^6",
