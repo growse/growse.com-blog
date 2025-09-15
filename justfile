@@ -17,7 +17,7 @@ build-blog-assets:
 	cd blog/_web && npm ci && npm run build
 
 build-blog:
-	cd blog && bundle exec jekyll b
+	cd blog && bundle install && bundle exec jekyll b
 
 build-index-generator:
 	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/generate_index
