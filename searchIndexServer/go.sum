@@ -2,8 +2,12 @@ github.com/RoaringBitmap/roaring/v2 v2.4.5 h1:uGrrMreGjvAtTBobc0g5IrW1D5ldxDQYe2
 github.com/RoaringBitmap/roaring/v2 v2.4.5/go.mod h1:FiJcsfkGje/nZBZgCu0ZxCPOKD/hVXDS2dXi7/eUFE0=
 github.com/antchfx/htmlquery v1.3.4 h1:Isd0srPkni2iNTWCwVj/72t7uCphFeor5Q8nCzj1jdQ=
 github.com/antchfx/htmlquery v1.3.4/go.mod h1:K9os0BwIEmLAvTqaNSua8tXLWRWZpocZIH73OzWQbwM=
+github.com/antchfx/htmlquery v1.3.5 h1:aYthDDClnG2a2xePf6tys/UyyM/kRcsFRm+ifhFKoU0=
+github.com/antchfx/htmlquery v1.3.5/go.mod h1:5oyIPIa3ovYGtLqMPNjBF2Uf25NPCKsMjCnQ8lvjaoA=
 github.com/antchfx/xpath v1.3.3 h1:tmuPQa1Uye0Ym1Zn65vxPgfltWb/Lxu2jeqIGteJSRs=
 github.com/antchfx/xpath v1.3.3/go.mod h1:i54GszH55fYfBmoZXapTHN8T8tkcHfRgLyVwwqzXNcs=
+github.com/antchfx/xpath v1.3.5 h1:PqbXLC3TkfeZyakF5eeh3NTWEbYl4VHNVeufANzDbKQ=
+github.com/antchfx/xpath v1.3.5/go.mod h1:i54GszH55fYfBmoZXapTHN8T8tkcHfRgLyVwwqzXNcs=
 github.com/bits-and-blooms/bitset v1.12.0/go.mod h1:7hO7Gc7Pp1vODcmWvKMRA9BNmbv6a/7QIWpPxHddWR8=
 github.com/bits-and-blooms/bitset v1.22.0 h1:Tquv9S8+SGaS3EhyA+up3FXzmkhxPGjQQCkcs2uw7w4=
 github.com/bits-and-blooms/bitset v1.22.0/go.mod h1:7hO7Gc7Pp1vODcmWvKMRA9BNmbv6a/7QIWpPxHddWR8=
