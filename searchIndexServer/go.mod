@@ -6,7 +6,7 @@ toolchain go1.25.5
 
 require (
 	github.com/antchfx/htmlquery v1.3.5
-	github.com/blevesearch/bleve/v2 v2.5.5
+	github.com/blevesearch/bleve/v2 v2.5.6
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.11.0
 	github.com/grokify/html-strip-tags-go v0.1.0
