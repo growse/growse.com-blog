@@ -19,6 +19,8 @@ github.com/blevesearch/bleve/v2 v2.5.5 h1:lzC89QUCco+y1qBnJxGqm4AbtsdsnlUvq0kXok
 github.com/blevesearch/bleve/v2 v2.5.5/go.mod h1:t5WoESS5TDteTdnjhhvpA1BpLYErOBX2IQViTMLK7wo=
 github.com/blevesearch/bleve/v2 v2.5.6 h1:YdixQmOUuZHojQRe8Te7BY2cRirbzpbcpybAFs0m2DI=
 github.com/blevesearch/bleve/v2 v2.5.6/go.mod h1:t5WoESS5TDteTdnjhhvpA1BpLYErOBX2IQViTMLK7wo=
+github.com/blevesearch/bleve/v2 v2.5.7 h1:2d9YrL5zrX5EBBW++GOaEKjE+NPWeZGaX77IM26m1Z8=
+github.com/blevesearch/bleve/v2 v2.5.7/go.mod h1:yj0NlS7ocGC4VOSAedqDDMktdh2935v2CSWOCDMHdSA=
 github.com/blevesearch/bleve_index_api v1.2.8 h1:Y98Pu5/MdlkRyLM0qDHostYo7i+Vv1cDNhqTeR4Sy6Y=
 github.com/blevesearch/bleve_index_api v1.2.8/go.mod h1:rKQDl4u51uwafZxFrPD1R7xFOwKnzZW7s/LSeK4lgo0=
 github.com/blevesearch/bleve_index_api v1.2.10 h1:FMFmZCmTX6PdoLLvwUnKF2RsmILFFwO3h0WPevXY9fE=
@@ -67,6 +69,8 @@ github.com/blevesearch/zapx/v16 v16.2.6 h1:OHuUl2GhM+FpBq9RwNsJ4k/QodqbMMHoQEgn/
 github.com/blevesearch/zapx/v16 v16.2.6/go.mod h1:cuAPB+YoIyRngNhno1S1GPr9SfMk+x/SgAHBLXSIq3k=
 github.com/blevesearch/zapx/v16 v16.2.7 h1:xcgFRa7f/tQXOwApVq7JWgPYSlzyUMmkuYa54tMDuR0=
 github.com/blevesearch/zapx/v16 v16.2.7/go.mod h1:murSoCJPCk25MqURrcJaBQ1RekuqSCSfMjXH4rHyA14=
+github.com/blevesearch/zapx/v16 v16.2.8 h1:SlnzF0YGtSlrsOE3oE7EgEX6BIepGpeqxs1IjMbHLQI=
+github.com/blevesearch/zapx/v16 v16.2.8/go.mod h1:murSoCJPCk25MqURrcJaBQ1RekuqSCSfMjXH4rHyA14=
 github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd h1:ePesaBzdTmoMQjwqRCLP2jY+jjWMBpwws/LEQdt1fMM=
 github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd/go.mod h1:TNehV1AhBwtT7Bd+rh8G6MoGDbBLNs/sKdk3nvr4Yzg=
 github.com/bytedance/sonic v1.11.6 h1:oUp34TzMlL+OY1OUWxHqsdkgC/Zfc85zGqw9siXjrc0=

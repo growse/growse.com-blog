@@ -6,7 +6,7 @@ toolchain go1.25.5
 
 require (
 	github.com/antchfx/htmlquery v1.3.5
-	github.com/blevesearch/bleve/v2 v2.5.6
+	github.com/blevesearch/bleve/v2 v2.5.7
 	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/gin-gonic/gin v1.11.0
 	github.com/grokify/html-strip-tags-go v0.1.0
@@ -35,7 +35,7 @@ require (
 	github.com/blevesearch/zapx/v13 v13.4.2 // indirect
 	github.com/blevesearch/zapx/v14 v14.4.2 // indirect
 	github.com/blevesearch/zapx/v15 v15.4.2 // indirect
-	github.com/blevesearch/zapx/v16 v16.2.7 // indirect
+	github.com/blevesearch/zapx/v16 v16.2.8 // indirect
 	github.com/bytedance/sonic v1.14.0 // indirect
 	github.com/bytedance/sonic/loader v0.3.0 // indirect
 	github.com/cloudwego/base64x v0.1.6 // indirect
