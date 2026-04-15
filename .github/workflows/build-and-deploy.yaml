@@ -98,7 +98,7 @@ jobs:
         with:
           name: searchIndex
           path: searchIndex
-      - uses: superfly/flyctl-actions@fc53c09e1bc3be6f54706524e3b82c4f462f77be # 1.5
+      - uses: superfly/flyctl-actions@ed8efb33836e8b2096c7fd3ba1c8afe303ebbff1 # 1.6
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         with:
