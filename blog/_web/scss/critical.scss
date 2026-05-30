@@ -58,6 +58,12 @@ html {
           width: $lefthandwidth;
           padding: 0;
           height: 100vh;
+          // Native scrollbar styling; this used to be OverlayScrollbars, which
+          // cost 22kB gzipped to skin one scrollbar.
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          scrollbar-width: thin;
+          scrollbar-color: #555 #111;
           ul {
             list-style-type: none;
             margin: 0;

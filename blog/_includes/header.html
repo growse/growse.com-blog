@@ -11,18 +11,29 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
-    <link rel="prefetch" href="https://location.growse.com/location/" />
-    <link rel="prefetch" href="/posts.json" />
-    <link rel="preload" as="script" href="https://location.growse.com/location/" />
-    <link rel="preload" as="script" href="/posts.json" />
-    {% assign css_files = site.static_files | where: "css", true %}
+    {% comment %}
+      Consumed by fetch(), so it needs as="fetch" - an as="script" preload has
+      a different request destination and is never matched, causing the
+      resource to be downloaded a second time.
+    {% endcomment %}
+    <link rel="preload" as="fetch" crossorigin href="https://location.growse.com/location/" />
+    {% comment %}
+      Every @font-face lives in main.css, which is linked at the end of the
+      body, so the body font is three round trips deep: html -> main.css ->
+      woff2. Preloading the one face every page uses starts it in parallel
+      with the stylesheet instead. The other faces stay lazy - Inconsolata in
+      particular is only wanted on posts with code.
+    {% endcomment %}
+    {% assign body_font = site.static_files | where: "extname", ".woff2" | where_exp: "f", "f.name contains 'andada'" | first %}
+    {% if body_font %}
+    <link rel="preload" as="font" type="font/woff2" href="{{ body_font.path }}" crossorigin />
+    {% endif %}
+    {% assign css_files = site.static_files | where: "extname", ".css" | where_exp: "f", "f.path contains '/assets/css/'" %}
     {% for css in css_files %}
-    <link rel="prefetch" href="{{css.path}}" />
     <link rel="preload" as="style" href="{{css.path}}" />
     {% endfor %}
-    {% assign js_files = site.static_files | where: "js", true %}
+    {% assign js_files = site.static_files | where: "extname", ".js" | where_exp: "f", "f.path contains '/assets/'" %}
     {% for js in js_files %}
-    <link rel="prefetch" href="{{js.path}}" />
     <link rel="preload" as="script" href="{{js.path}}" />
     {% endfor %}
     <meta name="msapplication-TileColor" content="#ff9000" />
@@ -93,8 +104,32 @@
         <p>The <a href="/archive.html">archive</a>.</p>
     </header>
     {% if include.show-nav %}
-    <nav id="postlist" class="hidden">
+    {% comment %}
+      A window of posts either side of the current one, rendered at build time.
+      Inlining all 522 entries would add ~22kB gzipped to every page, so the
+      neighbours are rendered here and postnav.ts fetches the rest on demand
+      if the reader scrolls to either end. Without JavaScript this window is
+      what you get, which is why it is rendered rather than fetched.
+    {% endcomment %}
+    {% assign nav_window = 25 %}
+    {% assign nav_total = site.posts | size %}
+    {% assign nav_current = 0 %}
+    {% for post in site.posts %}
+      {% if post.url == page.url %}{% assign nav_current = forloop.index0 %}{% break %}{% endif %}
+    {% endfor %}
+    {% assign nav_half = nav_window | divided_by: 2 %}
+    {% assign nav_start = nav_current | minus: nav_half %}
+    {% assign nav_max_start = nav_total | minus: nav_window %}
+    {% if nav_max_start < 0 %}{% assign nav_max_start = 0 %}{% endif %}
+    {% if nav_start > nav_max_start %}{% assign nav_start = nav_max_start %}{% endif %}
+    {% if nav_start < 0 %}{% assign nav_start = 0 %}{% endif %}
+    <nav id="postlist">
         <ul id="articlenav">
+        {% for post in site.posts limit: nav_window offset: nav_start %}
+            <li data-datestamp="{{ post.date | date_to_xmlschema }}">
+                <a href="{{ post.url }}" title="{{ post.title | xml_escape }}"{% if post.url == page.url %} class="here"{% endif %}><span>{{ post.title }}</span></a>
+            </li>
+        {% endfor %}
         </ul>
     </nav>
     {% endif %}

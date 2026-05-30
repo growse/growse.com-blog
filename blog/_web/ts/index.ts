@@ -1,6 +1,6 @@
 import LazyLoad from "vanilla-lazyload";
 import { Locator } from "./location";
-import { Posts } from "./posts";
+import { PostNav } from "./postnav";
 import { Search } from "./search";
 
 new LazyLoad(
@@ -11,8 +11,8 @@ new LazyLoad(
   document.querySelectorAll(".lazyload"),
 );
 new Locator().getLocation();
-new Posts().displayPostList();
 new Search();
+new PostNav().enhance();
 
 import "../scss/main.scss";
 import "../scss/critical.scss";

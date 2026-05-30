@@ -1,17 +1,19 @@
 set dotenv-load := true
 
+container_engine := env("CONTAINER_ENGINE", "podman")
+image := env("IMAGE", "growse.com-blog:latest")
+port := env("PORT", "8080")
+
 default:
 	just --list
 
-serve:
+serve: build
 	cd blog && bundle exec jekyll s
 
 build:
 	just build-blog-assets
 	just build-blog
-	just build-index-generator
-	just build-search-server
-	just make-search-index
+	just build-search-index
 
 build-blog-assets:
 	cd blog/_web && npm ci && npm run build
@@ -19,19 +21,17 @@ build-blog-assets:
 build-blog:
 	cd blog && bundle install && bundle exec jekyll b
 
-build-index-generator:
-	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/generate_index
+build-search-index:
+	cd blog/_web && npm run index
 
-build-search-server:
-	cd searchIndexServer && CGO_ENABLED=0 go build ./cmd/search_server
+build-container:
+	{{container_engine}} build -t {{image}} .
 
-make-search-index:
-	SEARCH_INDEXROOT=blog/_site ./searchIndexServer/generate_index
+run-container: build-container
+	@echo "Serving on http://localhost:{{port}}/ - Ctrl-C to stop"
+	{{container_engine}} run --rm -it -p {{port}}:80 {{image}}
 
 clean:
 	rm -rf blog/_site
 	rm -rf blog/assets
-	rm -f searchIndexServer/generate_index
-	rm -f searchIndexServer/search_server
-	rm -rf searchIndex
 	rm -rf blog/_web/node_modules

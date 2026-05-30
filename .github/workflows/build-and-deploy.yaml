@@ -19,90 +19,52 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version: "24"
+          node-version: "26"
           cache: "npm"
           cache-dependency-path: "blog/_web/package-lock.json"
+      - uses: extractions/setup-just@v3
       - name: Build
-        run: make blog/_site
+        run: just build
       - name: Upload build artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: site
           path: blog/_site
 
-  build-search-tools:
-    runs-on: ubuntu-latest
-    name: Build search tools
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
-        name: Go modules cache restore
-        id: golang-cache
-        with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
-      - name: Build
-        run: make searchIndexServer/search_server searchIndexServer/generate_index
-      - name: Upload build artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
-        with:
-          name: searchIndexServer
-          path: |
-            searchIndexServer/generate_index
-            searchIndexServer/search_server
-
-  create-search-index:
-    runs-on: ubuntu-latest
-    name: Create search index
-    needs:
-      - build-search-tools
-      - build-site
-    steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
-      - name: Create Index
-        run: chmod +x searchIndexServer/generate_index && ./searchIndexServer/generate_index
-        env:
-          SEARCH_INDEXROOT: site
-      - name: Upload build artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
-        with:
-          name: searchIndex
-          path: searchIndex
-  deploy:
-    name: deploy
+  publish-container:
+    name: Publish container
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     needs:
-      - build-search-tools
       - build-site
-      - create-search-index
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - name: Download site build artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+      - uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4.2.0
+      - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
-          name: site
-          path: blog/_site
-      - name: Download searchTools build artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Image metadata
+        id: meta
+        uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
         with:
-          name: searchIndexServer
-          path: searchIndexServer
-      - name: Download searchIndex build artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha,format=long
+      - name: Build and push
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
         with:
-          name: searchIndex
-          path: searchIndex
-      - uses: superfly/flyctl-actions@ed8efb33836e8b2096c7fd3ba1c8afe303ebbff1 # 1.6
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-        with:
-          args: "deploy"
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       - name: Ping site maps
         run: |
           curl http://www.bing.com/ping?siteMap=https%3A%2F%2Fwww.growse.com%2Fsitemap.xml
