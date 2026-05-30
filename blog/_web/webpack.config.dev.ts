@@ -1,8 +1,8 @@
-import webpack = require("webpack");
-import merge from "webpack-merge";
-import common from "./webpack.config.common";
+import type { Configuration } from "webpack";
+import { merge } from "webpack-merge";
+import common from "./webpack.config.common.ts";
 
-const config: webpack.Configuration = merge(common, {
+const config: Configuration = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
 });

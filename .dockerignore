@@ -1,0 +1,13 @@
+# Build output. These are regenerated inside the image; copying the host's
+# copies in leaves stale hashed bundles alongside the fresh ones, and the
+# layouts emit a script tag for every one it finds.
+blog/_site
+blog/assets
+blog/_web/node_modules
+blog/.jekyll-cache
+blog/.jekyll-metadata
+blog/vendor
+
+.git
+.github
+.idea

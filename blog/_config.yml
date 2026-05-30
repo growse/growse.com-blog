@@ -14,14 +14,6 @@ defaults:
       path: "assets/fonts"
     values:
       font: true
-  - scope:
-      path: "assets/*.js"
-    values:
-      js: true
-  - scope:
-      path: "assets/css/*.css"
-    values:
-      css: true
 monthly_archive:
   path: "/archive"
 

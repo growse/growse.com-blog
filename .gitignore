@@ -16,6 +16,3 @@ blog/_web/.yarn/*
 
 blog/assets
 blog/vendor
-searchIndexServer/generate_index
-searchIndexServer/search_server
-searchIndex

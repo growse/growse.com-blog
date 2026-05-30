@@ -8,11 +8,11 @@
 <script>
     const post_url = '{{page.url}}';
 </script>
-{% assign css_files = site.static_files | where: "css", true %}
+{% assign css_files = site.static_files | where: "extname", ".css" | where_exp: "f", "f.path contains '/assets/css/'" %}
 {% for css in css_files %}
 <link rel="stylesheet" href="{{css.path}}" />
 {% endfor %}
-{% assign js_files = site.static_files | where: "js", true %}
+{% assign js_files = site.static_files | where: "extname", ".js" | where_exp: "f", "f.path contains '/assets/'" %}
 {% for js in js_files %}
 <script src="{{js.path}}" async></script>
 {% endfor %}

@@ -1,13 +1,14 @@
-import webpack = require("webpack");
+import type { Configuration } from "webpack";
 import * as path from "path";
+import { fileURLToPath } from "url";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import ImageminWebpWebpackPlugin from "imagemin-webp-webpack-plugin";
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
-
-const config: webpack.Configuration = {
+const config: Configuration = {
   entry: "./ts/index.ts",
   output: {
     filename: "[name].[fullhash].js",
@@ -47,7 +48,8 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        loader: "esbuild-loader",
+        options: { loader: "ts", target: "es2020" },
         exclude: /node_modules/,
       },
       {
