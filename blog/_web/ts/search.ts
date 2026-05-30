@@ -1,23 +1,22 @@
-interface SearchHitFields {
-  readonly published: string;
-  readonly title: string;
+interface PagefindResultData {
+  url: string;
+  excerpt: string;
+  content: string;
+  meta: {
+    title: string;
+    date?: string;
+    image?: string;
+  };
 }
 
-interface SearchHitFragment {
-  readonly content?: string[];
+interface PagefindSearchResult {
+  id: string;
+  data: () => Promise<PagefindResultData>;
 }
 
-interface SearchHit {
-  readonly id: string;
-  readonly score: number;
-  readonly fragments: SearchHitFragment;
-  readonly fields: SearchHitFields;
-}
-
-interface SearchResults {
-  readonly totalHits: number;
-  readonly timeTaken: number;
-  readonly hits: SearchHit[];
+interface PagefindAPI {
+  init?: () => Promise<void>;
+  search: (term: string) => Promise<{ results: PagefindSearchResult[] }>;
 }
 
 export class Search {
@@ -26,7 +25,6 @@ export class Search {
   private readonly pageQueryStringName = "page";
   private readonly pageElementId = "pager";
   private readonly resultsPerPage = 10;
-  private searchURL = "https://www.growse.com/search/";
 
   constructor() {
     const searchDiv = document.querySelector("#search");
@@ -40,55 +38,61 @@ export class Search {
       const searchParams = new URLSearchParams(document.location.search);
       const searchTerm = searchParams.get(this.searchParamQueryStringName);
       const page = searchParams.get(this.pageQueryStringName);
-      if (document.location.hostname == "localhost") {
-        this.searchURL = "http://localhost:3030/search/";
-      }
       if (searchTerm != null) {
-        this.search(searchTerm!!, page != null ? parseInt(page!!) : 1);
+        this.search(searchTerm, page != null ? parseInt(page) : 1);
       } else {
         window.location.replace("/404");
       }
     }
   }
 
-  private search(searchTerm: string, page: number) {
-    document.querySelector("#searchterm")!!.textContent = searchTerm;
-    const template = document.querySelector(
-      "#searchResultTemplate",
-    )!! as HTMLTemplateElement;
-    const params = new FormData();
-    params.set(this.searchParamQueryStringName, searchTerm);
-    params.set(this.pageQueryStringName, page.toString());
-    fetch(this.searchURL, { method: "POST", body: params })
-      .then((response) => response.json())
-      .then((response) => {
-        const searchResults = response as SearchResults;
-        document.querySelector("#spinner")?.classList.add("hidden");
-        document.querySelector("p#summary")?.classList.add("visible");
-        document.querySelector("span#totalhits")!!.textContent =
-          searchResults.totalHits.toLocaleString();
-        searchResults.hits.forEach((hit) => {
-          const populatedSearchResult = this.putDataIntoTheSearchResultTemplate(
-            template.content,
-            hit,
-          );
-          document
-            .querySelector("#searchResultList")
-            ?.appendChild(populatedSearchResult);
-        });
-        this.buildPager(this.pageElementId, searchResults, page < 1 ? 1 : page);
-      });
+  private async search(searchTerm: string, page: number) {
+    document.querySelector("#searchterm")!.textContent = searchTerm;
+    try {
+      // Path stored in variable so TypeScript skips module resolution (file is generated at build time)
+      const pagefindPath = "/pagefind/pagefind.js";
+      const pagefind = (await import(
+        /* webpackIgnore: true */ pagefindPath
+      )) as unknown as PagefindAPI;
+      const searchResponse = await pagefind.search(searchTerm);
+      const totalHits = searchResponse.results.length;
+      const clampedPage = Math.max(
+        1,
+        Math.min(page, Math.ceil(totalHits / this.resultsPerPage) || 1),
+      );
+      const start = (clampedPage - 1) * this.resultsPerPage;
+      const pageResults = searchResponse.results.slice(
+        start,
+        start + this.resultsPerPage,
+      );
+
+      const resultData = await Promise.all(pageResults.map((r: PagefindSearchResult) => r.data()));
+
+      document.querySelector("#spinner")?.classList.add("hidden");
+      document.querySelector("p#summary")?.classList.add("visible");
+      document.querySelector("span#totalhits")!.textContent =
+        totalHits.toLocaleString();
+
+      const template = document.querySelector(
+        "#searchResultTemplate",
+      )! as HTMLTemplateElement;
+      const list = document.querySelector("#searchResultList")!;
+      for (const data of resultData) {
+        list.appendChild(this.renderResult(template.content, data));
+      }
+      this.buildPager(this.pageElementId, totalHits, clampedPage);
+    } catch {
+      document.querySelector("#spinner")?.classList.add("hidden");
+      document.querySelector("p#summary")?.classList.add("visible");
+      document.querySelector("span#totalhits")!.textContent = "0";
+    }
   }
 
-  private buildPager(
-    pagerDivId: string,
-    searchResults: SearchResults,
-    page: number,
-  ) {
-    if (searchResults.totalHits == 0) {
+  private buildPager(pagerDivId: string, totalHits: number, page: number) {
+    if (totalHits == 0) {
       return;
     }
-    const pages = Math.ceil(searchResults.totalHits / this.resultsPerPage);
+    const pages = Math.ceil(totalHits / this.resultsPerPage);
     if (pages == 1) {
       return;
     }
@@ -120,9 +124,9 @@ export class Search {
     title: string,
     classList?: string[],
   ): HTMLElement {
-    let pageLi = document.createElement("li");
-    let pageLink = document.createElement("a");
-    let url = new URL(document.URL);
+    const pageLi = document.createElement("li");
+    const pageLink = document.createElement("a");
+    const url = new URL(document.URL);
     url.searchParams.set(this.pageQueryStringName, page.toString());
     pageLink.setAttribute("href", url.toString());
     pageLink.setAttribute("title", title);
@@ -132,21 +136,21 @@ export class Search {
     return pageLi;
   }
 
-  private putDataIntoTheSearchResultTemplate(
+  private renderResult(
     template: DocumentFragment,
-    hit: SearchHit,
-  ) {
-    const publishedDate = new Date(hit.fields.published);
-    template.querySelector(".title")!!.textContent = hit.fields.title;
-    template.querySelector(".title")!!.setAttribute("href", hit.id);
-    template.querySelector("time")!!.textContent = publishedDate.toDateString();
-    template
-      .querySelector("time")!!
-      .setAttribute("datetime", publishedDate.toISOString());
-    if (hit.fragments.content != null) {
-      template.querySelector(".fragment")!!.innerHTML =
-        hit.fragments.content.join("...");
+    data: PagefindResultData,
+  ): Node {
+    template.querySelector(".title")!.textContent = data.meta.title;
+    template.querySelector(".title")!.setAttribute("href", data.url);
+    if (data.meta.date) {
+      const publishedDate = new Date(data.meta.date);
+      template.querySelector("time")!.textContent =
+        publishedDate.toDateString();
+      template
+        .querySelector("time")!
+        .setAttribute("datetime", publishedDate.toISOString());
     }
+    template.querySelector(".fragment")!.innerHTML = data.excerpt;
     return document.importNode(template, true);
   }
 }

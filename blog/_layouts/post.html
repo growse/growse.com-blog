@@ -3,15 +3,15 @@ layout: compress
 ---
 {% include header.html show-nav=true  %}
 <div id="content">
-    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" data-pagefind-body>
         <header>
-            <time class="fancy" itemprop="datePublished"
+            <time class="fancy" itemprop="datePublished" data-pagefind-ignore
                   datetime="{{page.date | date: "%Y-%m-%d"}}">
                 <p>{{page.date|date: "%b"}} <span
                         class="day">{{page.date|date: "%d"}}</span><span
                         class="year">{{page.date|date: "%Y"}}</span></p></time>
             <h1 itemprop="name headline">{{ page.title }}</h1>
-            <time class="plain" itemprop="datePublished"
+            <time class="plain" itemprop="datePublished" data-pagefind-meta="date[datetime]"
                   datetime="{{page.date | date: "%Y-%m-%d"}}">
                 {{page.date|date_to_long_string}}
             </time>
