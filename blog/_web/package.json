@@ -6,7 +6,7 @@
   "author": "Andrew Rowson <github@growse.com>",
   "license": "MIT",
   "private": true,
-  "sideEffects": false,
+  "sideEffects": ["**/*.scss", "**/*.css"],
   "scripts": {
     "build": "webpack --config webpack.config.prod.ts",
     "builddev": "webpack --config webpack.config.dev.ts",
