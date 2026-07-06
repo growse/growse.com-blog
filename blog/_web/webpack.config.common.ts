@@ -52,7 +52,16 @@ const config: webpack.Configuration = {
       },
       {
         test: /critical\.scss$/i,
-        use: ["sass-loader"],
+        use: [
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                loadPaths: ["node_modules"],
+              },
+            },
+          },
+        ],
         type: "asset/resource",
         generator: {
           filename: "[name].css",
@@ -73,6 +82,9 @@ const config: webpack.Configuration = {
             loader: "sass-loader",
             options: {
               sourceMap: true,
+              sassOptions: {
+                loadPaths: ["node_modules"],
+              },
             },
           },
         ],
