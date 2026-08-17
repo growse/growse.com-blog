@@ -9,7 +9,7 @@ WORKDIR /app
 RUN --mount=type=cache,target=/root/.npm \
     npm ci && npm run build
 
-FROM ruby:4.0.2 as builder
+FROM ruby:4.0.6 as builder
 
 COPY blog /app
 COPY --from=assets-builder /assets /app/assets
