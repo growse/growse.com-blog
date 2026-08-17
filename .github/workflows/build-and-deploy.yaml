@@ -22,7 +22,7 @@ jobs:
           node-version: "26"
           cache: "npm"
           cache-dependency-path: "blog/_web/package-lock.json"
-      - uses: extractions/setup-just@v3
+      - uses: extractions/setup-just@f8a3cce218d9f83db3a2ecd90e41ac3de6cdfd9b # v3
       - name: Build
         run: just build
       - name: Upload build artifact
