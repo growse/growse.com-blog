@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:26.7.0 as assets-builder
+FROM node:26.8.1 as assets-builder
 
 COPY blog/_web /app
 
@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/usr/local/bundle/cache \
 
 RUN bundle exec jekyll b
 
-FROM node:26.7.0 as search-index-builder
+FROM node:26.8.1 as search-index-builder
 
 COPY --from=assets-builder /app/node_modules /app/node_modules
 COPY --from=builder /app/_site /site
