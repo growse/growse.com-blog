@@ -89,12 +89,17 @@
 <body>
 <div id="container" itemtype="http://schema.org/Blog" itemscope>
     <header>
-        <h1 id="titletext"><a href="/" title="Home">growse.com</a></h1>
-        <h2 id="about">I write things here.</h2>
+        {% comment %}
+          Not headings: this sidebar repeats on every page, and each page's
+          own <h1> is its title.
+        {% endcomment %}
+        <p id="titletext"><a href="/" title="Home">growse.com</a></p>
+        <p id="about">I write things here.</p>
         <div id="search" class="">
-            <form action="/search.html" method="get">
+            <form action="/search.html" method="get" role="search">
                 <fieldset>
-                    <input placeholder="Search for things" id="searchbox" type="text" class="searchtext"/>
+                    <label for="searchbox" class="visually-hidden">Search posts</label>
+                    <input placeholder="Search for things" id="searchbox" name="term" type="text" class="searchtext"/>
                 </fieldset>
             </form>
         </div>

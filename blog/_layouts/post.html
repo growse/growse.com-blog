@@ -2,7 +2,7 @@
 layout: compress
 ---
 {% include header.html show-nav=true  %}
-<div id="content">
+<main id="content">
     <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" data-pagefind-body>
         <header>
             <time class="fancy" itemprop="datePublished" data-pagefind-ignore
@@ -25,5 +25,5 @@ layout: compress
             {% if page.next %}<p>Next: <a href="{{page.next.url}}">{{page.next.title}}</a></p>{% endif %}
         </nav>
     </article>
-</div>
+</main>
 {% include footer.html %}

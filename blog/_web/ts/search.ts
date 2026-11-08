@@ -30,9 +30,6 @@ export class Search {
     const searchDiv = document.querySelector("#search");
     if (searchDiv != null) {
       searchDiv.classList.add("visible");
-      searchDiv
-        .querySelector("input#searchbox")
-        ?.setAttribute("name", this.searchParamQueryStringName);
     }
     if (this.activePaths.includes(document.location.pathname)) {
       const searchParams = new URLSearchParams(document.location.search);
