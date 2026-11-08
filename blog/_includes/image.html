@@ -1,12 +1,8 @@
-<picture>
-    {% assign extension = include['src'] | slice: -4,4 %}
-    <source type="image/webp" data-srcset="{{ include.src }}.webp" />
-    {% case extension %}
-    {% when ".png" %}
-    <source type="image/png" data-srcset="{{ include.src }}" />
-    {% when '.jpg' %}
-    <source type="image/jpeg" data-srcset="{{ include.src }}" />
-    {% endcase %}
-    <img src="/assets/img/png-transparent.png" alt="{{ include.alt }}" class="lazyload" data-src="{{ include.src }}" {% imagesize {{include.src}}:props %}/>
-</picture>
-<noscript><img src="{{include.src}}" alt="{{ include.alt }}" {% imagesize {{include.src}}:props %}/></noscript>
+{% comment %}
+  Native lazy loading; no JavaScript needed. nginx serves the .webp sibling
+  to browsers that accept it (see nginx.conf), so no <picture> is needed.
+  Some posts put src on its own line, so strip it or imagesize can't find
+  the file and the width/height (which stop layout shift) are lost.
+{% endcomment %}
+{% assign src = include.src | strip %}
+<img src="{{ src }}" alt="{{ include.alt }}" loading="lazy" decoding="async" {% imagesize {{src}}:props %}/>

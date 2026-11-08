@@ -40,9 +40,6 @@
     "webpack-cli": "^7.0.0",
     "webpack-merge": "^6.0.0"
   },
-  "dependencies": {
-    "vanilla-lazyload": "^19"
-  },
   "allowScripts": {
     "cwebp-bin@6.1.2": true,
     "gif2webp-bin@3.0.3": true,

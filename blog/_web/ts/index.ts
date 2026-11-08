@@ -1,15 +1,7 @@
-import LazyLoad from "vanilla-lazyload";
 import { Locator } from "./location";
 import { PostNav } from "./postnav";
 import { Search } from "./search";
 
-new LazyLoad(
-  {
-    elements_selector: ".lazyload",
-    use_native: true,
-  },
-  document.querySelectorAll(".lazyload"),
-);
 new Locator().getLocation();
 new Search();
 new PostNav().enhance();
