@@ -1,5 +1,18 @@
 @import "includes/vars";
 
+// Cross-fade between pages on same-origin navigations. This has to be in
+// the inlined critical CSS: main.css loads at the end of the body, so on the
+// incoming page it would not be parsed in time and the transition is skipped.
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
 html {
   font-size: 100%;
 
