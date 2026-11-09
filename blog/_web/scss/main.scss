@@ -20,6 +20,12 @@ html {
             font-family: $formfont;
             border-width: 0 1px 1px 1px;
             outline: none;
+
+            // Keyboard users still need to see where focus is.
+            &:focus-visible {
+              outline: 2px solid $primary-highlight-color;
+              outline-offset: 2px;
+            }
           }
         }
       }

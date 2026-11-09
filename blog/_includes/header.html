@@ -66,7 +66,12 @@
     <meta name="twitter:site" content="@growse" />
     <meta name="twitter:creator" content="@growse" />
     <meta property="twitter:domain" content="www.growse.com" />
-    <meta property="og:type" content="website">
+    {% if page.layout == "post" %}
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+    {% else %}
+    <meta property="og:type" content="website" />
+    {% endif %}
     {% if include.root %}
     <meta name="twitter:url" content="{{ site.url }}" />
     <meta property="og:url" content="{{ site.url }}" />
@@ -87,6 +92,7 @@
     <meta name="pinterest" content="nopin" />
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 <div id="container" itemtype="http://schema.org/Blog" itemscope>
     <header>
         {% comment %}

@@ -26,6 +26,24 @@
   border: 0;
 }
 
+// Off-screen until focused, so keyboard users can jump past the sidebar and
+// post list straight to the article.
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+
+  &:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background: $background-color;
+    color: $primary-highlight-color;
+    outline: 2px solid $primary-highlight-color;
+  }
+}
+
 html {
   font-size: 100%;
 
