@@ -100,6 +100,17 @@
           own <h1> is its title.
         {% endcomment %}
         <p id="titletext"><a href="/" title="Home">growse.com</a></p>
+        {% comment %}
+          Only shown on narrow screens, where the search box is collapsed
+          behind it. Starts hidden: search needs JS, so searchtoggle.ts
+          reveals it.
+        {% endcomment %}
+        <button id="search-toggle" type="button" aria-controls="search" aria-expanded="false" aria-label="Search" title="Search (/)" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M15 15l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+        </button>
         <p id="about">I write things here.</p>
         <div id="search" class="">
             <form action="/search.html" method="get" role="search">
@@ -135,7 +146,7 @@
         </div>
         <div id="location">
         </div>
-        <p>The <a href="/archive.html">archive</a>.</p>
+        <p id="archive-link"><span class="wide-only">The </span><a href="/archive.html">archive</a><span class="wide-only">.</span></p>
     </header>
     {% if include.show-nav %}
     {% comment %}

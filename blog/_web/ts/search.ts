@@ -36,6 +36,10 @@ export class Search {
       const searchTerm = searchParams.get(this.searchParamQueryStringName);
       const page = searchParams.get(this.pageQueryStringName);
       if (searchTerm != null) {
+        const input = document.querySelector<HTMLInputElement>("#searchbox");
+        if (input != null) {
+          input.value = searchTerm;
+        }
         this.search(searchTerm, page != null ? parseInt(page) : 1);
       } else {
         window.location.replace("/404");
@@ -63,7 +67,9 @@ export class Search {
         start + this.resultsPerPage,
       );
 
-      const resultData = await Promise.all(pageResults.map((r: PagefindSearchResult) => r.data()));
+      const resultData = await Promise.all(
+        pageResults.map((r: PagefindSearchResult) => r.data()),
+      );
 
       document.querySelector("#spinner")?.classList.add("hidden");
       document.querySelector("p#summary")?.classList.add("visible");

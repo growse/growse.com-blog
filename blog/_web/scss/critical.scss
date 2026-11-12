@@ -139,8 +139,132 @@ html {
       }
 
       > header {
+        // On phones the sidebar becomes a single-row top bar. The search box
+        // is collapsed behind a button and opens as a full-width row beneath
+        // (searchtoggle.ts adds .search-open to the header).
         @media screen and (max-width: 767px) {
-          display: none;
+          display: grid;
+          grid-template-columns: 1fr auto auto auto;
+          grid-template-areas: "title toggle archive social";
+          align-items: center;
+          column-gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          background: $background-hl-color;
+          border-bottom: 1px solid #444;
+
+          p#titletext {
+            grid-area: title;
+            margin: 0;
+            // Shrinks a little on the narrowest phones so the row fits.
+            font-size: clamp(1.1rem, 6vw, 1.5rem);
+            line-height: 1.2;
+            white-space: nowrap;
+
+            a {
+              font-family: $pagetitlefont;
+              font-weight: 400;
+              color: $primary-highlight-color;
+            }
+          }
+
+          p#about,
+          #location,
+          .wide-only {
+            display: none;
+          }
+
+          #search-toggle {
+            grid-area: toggle;
+            display: block;
+            padding: 0.3rem;
+            border: 0;
+            background: none;
+            color: #ffffffaa;
+            cursor: pointer;
+
+            &[hidden] {
+              display: none;
+            }
+
+            &:focus-visible {
+              outline: 2px solid $primary-highlight-color;
+            }
+
+            svg {
+              display: block;
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          &.search-open #search-toggle {
+            color: $primary-highlight-color;
+          }
+
+          #archive-link {
+            grid-area: archive;
+            margin: 0;
+            font-family: $sansfont;
+            font-size: 0.9rem;
+          }
+
+          #social-container {
+            grid-area: social;
+            display: flex;
+
+            > a {
+              // Comfortable touch target around a small icon.
+              padding: 0.3rem;
+
+              svg.social-logo {
+                display: block;
+                width: 20px;
+                height: 20px;
+
+                path {
+                  fill: #ffffffaa;
+                }
+              }
+            }
+          }
+
+          div#search {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            display: none;
+            margin: 0.5rem 0 0.25rem;
+
+            fieldset {
+              border: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            input {
+              box-sizing: border-box;
+              width: 100%;
+              padding: 0.5rem;
+              // 16px stops iOS Safari zooming in on focus.
+              font-size: 1rem;
+              background: $background-color;
+              outline: none;
+
+              &:focus-visible {
+                outline: 2px solid $primary-highlight-color;
+                outline-offset: 2px;
+              }
+            }
+          }
+
+          &.search-open div#search.visible {
+            display: block;
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          #search-toggle {
+            display: none;
+          }
         }
 
         @media screen and (min-width: 768px) {
