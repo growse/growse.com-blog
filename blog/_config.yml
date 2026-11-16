@@ -33,3 +33,8 @@ exclude:
   - _web
 
 permalink: /:year/:month/:day/:title:output_ext
+
+# Narrower copies of each image (foo-480w.jpg etc) are generated at these
+# widths by _web/scripts/images.mjs, and image.html lists them in srcset.
+# Only widths smaller than the original are produced.
+responsive_image_widths: [480, 800, 1200]

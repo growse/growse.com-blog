@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import ImageminWebpWebpackPlugin from "imagemin-webp-webpack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -28,20 +27,6 @@ const config: Configuration = {
           },
         },
       ],
-    }),
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 75,
-          },
-        },
-      ],
-      overrideExtension: false,
-      detailedLogs: false,
-      silent: false,
-      strict: true,
     }),
   ],
   module: {

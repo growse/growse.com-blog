@@ -3,6 +3,9 @@
 FROM node:26.13.1 as assets-builder
 
 COPY blog/_web /app
+# scripts/images.mjs reads responsive_image_widths from here, at the same
+# relative path (../_config.yml) as in the repo.
+COPY blog/_config.yml /_config.yml
 
 WORKDIR /app
 

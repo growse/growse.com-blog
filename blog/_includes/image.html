@@ -1,8 +1,27 @@
 {% comment %}
-  Native lazy loading; no JavaScript needed. nginx serves the .webp sibling
-  to browsers that accept it (see nginx.conf), so no <picture> is needed.
+  Native lazy loading; no JavaScript needed.
+
+  Formats: nginx serves the .avif or .webp sibling of any PNG/JPEG to
+  browsers that accept it (see nginx.conf), so the URLs here stay plain.
+
+  Sizes: _web/scripts/images.mjs writes foo-480w.jpg etc. at every
+  responsive_image_widths entry narrower than the original; the same rule
+  picks them here. sizes="auto" lets browsers that support it use the laid
+  out width (it needs loading="lazy"); the list after it is the content
+  column width at each breakpoint, for everything else.
+
   Some posts put src on its own line, so strip it or imagesize can't find
   the file and the width/height (which stop layout shift) are lost.
 {% endcomment %}
-{% assign src = include.src | strip %}
-<img src="{{ src }}" alt="{{ include.alt }}" loading="lazy" decoding="async" {% imagesize {{src}}:props %}/>
+{%- assign src = include.src | strip -%}
+{%- capture natural_width %}{% imagesize {{src}}:width %}{% endcapture -%}
+{%- assign natural_width = natural_width | strip | plus: 0 -%}
+{%- assign ext = src | split: "." | last -%}
+{%- assign base_length = src | size | minus: ext.size | minus: 1 -%}
+{%- assign base = src | slice: 0, base_length -%}
+{%- capture srcset -%}
+  {%- for w in site.responsive_image_widths -%}
+    {%- if w < natural_width -%}{{ base }}-{{ w }}w.{{ ext }} {{ w }}w, {% endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+<img src="{{ src }}" alt="{{ include.alt }}" loading="lazy" decoding="async" {% imagesize {{src}}:props %}{% if srcset != "" %} srcset="{{ srcset }}{{ src }} {{ natural_width }}w" sizes="auto, (max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 264px), calc(100vw - 464px)"{% endif %}/>

@@ -461,8 +461,10 @@ html {
             }
 
             img {
-              // Images get squished without this
-              width: auto;
+              // Width comes from the width attribute (the image's natural
+              // width), capped by max-width below; height follows. Not
+              // width: auto, which with srcset would size the image to the
+              // srcset candidate's slot and upscale small images.
               height: auto;
             }
 

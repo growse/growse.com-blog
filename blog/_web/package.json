@@ -11,8 +11,8 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "tsc --noEmit && webpack --config webpack.config.prod.ts",
-    "builddev": "tsc --noEmit && webpack --config webpack.config.dev.ts",
+    "build": "tsc --noEmit && webpack --config webpack.config.prod.ts && node scripts/images.mjs",
+    "builddev": "tsc --noEmit && webpack --config webpack.config.dev.ts && node scripts/images.mjs",
     "typecheck": "tsc --noEmit",
     "watch": "webpack --watch --config webpack.config.dev.ts",
     "index": "pagefind --site ../_site"
@@ -26,13 +26,13 @@
     "esbuild-loader": "^4.5.0",
     "eslint": "^10.0.0",
     "file-loader": "^6",
-    "imagemin-webp-webpack-plugin": "^3.3.6",
     "mini-css-extract-plugin": "^2",
     "pagefind": "^1.5.2",
     "prettier": "^3",
     "resolve-url-loader": "^5",
     "sass": "^1",
     "sass-loader": "^17.0.0",
+    "sharp": "^0.35.5",
     "style-loader": "^4",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2",
@@ -41,8 +41,6 @@
     "webpack-merge": "^6.0.0"
   },
   "allowScripts": {
-    "cwebp-bin@6.1.2": true,
-    "gif2webp-bin@3.0.3": true,
     "esbuild@0.28.2": true
   }
 }
