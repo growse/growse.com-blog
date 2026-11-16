@@ -359,60 +359,60 @@ html {
                 @include top-title-narrow;
               }
 
-              time.fancy {
-                display: none;
-              }
-              time.plain {
-                display: block;
+              // The date comes first in the source (it floats beside the
+              // title on wide screens); here it goes under the title as
+              // "02 May 2026".
+              display: flex;
+              flex-direction: column;
+
+              time.posted {
+                order: 1;
+                display: flex;
+                gap: 0.25em;
                 font-size: 0.7rem;
+
+                .day {
+                  order: -1;
+                }
               }
             }
             @media screen and (min-width: 768px) {
               h1 {
                 @include top-title-wide;
               }
-              time.plain {
-                display: none;
-              }
-              time.fancy {
+              time.posted {
                 display: block;
-                margin: 0 0 1rem 1rem;
+                // Height is the content's (~68px); this margin keeps the
+                // float's footprint at the 4rem + 1rem it has always had.
+                margin: 0 0 0.75rem 1rem;
                 float: right;
                 width: 5rem;
-                height: 4rem;
+                background: $background-hl-color;
+                font-size: 1rem;
+                font-weight: normal;
+                font-family: $datefont;
+                text-align: center;
+                color: $font-color;
+                text-transform: uppercase;
+                line-height: 1.5;
+                border-radius: 5px;
 
-                p {
-                  background: $background-hl-color;
-                  font-size: 1rem;
-                  font-weight: normal;
-                  font-family: $datefont;
-                  text-align: center;
-                  color: $font-color;
-                  text-transform: uppercase;
-                  line-height: 1.5;
-                  margin: 0;
-                  padding: 0;
-                  border-radius: 5px;
+                span {
+                  display: block;
+                }
 
-                  span {
-                    color: $font-color;
-                    background: #444;
-                    font-size: 1.2rem;
-                    line-height: 1.2;
-                    font-weight: bold;
-                    display: block;
-                    padding: 0 0 0 0;
-                  }
+                .day {
+                  background: #444;
+                  font-size: 1.2rem;
+                  line-height: 1.2;
+                  font-weight: bold;
+                }
 
-                  span.year {
-                    border-radius: 0 0 5px 5px;
-                    font-size: 0.85rem;
-                    line-height: 15px;
-                    background: $background-hl-color;
-                    color: $font-color;
-                    padding: 3px 0;
-                    font-weight: normal;
-                  }
+                .year {
+                  border-radius: 0 0 5px 5px;
+                  font-size: 0.85rem;
+                  line-height: 15px;
+                  padding: 3px 0;
                 }
               }
             }
