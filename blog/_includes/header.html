@@ -12,12 +12,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
     {% comment %}
-      Consumed by fetch(), so it needs as="fetch" - an as="script" preload has
-      a different request destination and is never matched, causing the
-      resource to be downloaded a second time.
-    {% endcomment %}
-    <link rel="preload" as="fetch" crossorigin href="https://location.growse.com/location/" />
-    {% comment %}
       Every @font-face lives in main.css, which is linked at the end of the
       body, so the body font is three round trips deep: html -> main.css ->
       woff2. Preloading the one face every page uses starts it in parallel

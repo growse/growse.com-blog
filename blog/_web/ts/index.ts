@@ -3,7 +3,7 @@ import { PostNav } from "./postnav";
 import { Search } from "./search";
 import { SearchToggle } from "./searchtoggle";
 
-new Locator().getLocation();
+new Locator().getLocationWhenIdle();
 new Search();
 new SearchToggle().enhance();
 new PostNav().enhance();

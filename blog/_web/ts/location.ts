@@ -8,7 +8,42 @@ interface Location {
 export class Locator {
   private locationEndpoint = "https://location.growse.com/location/";
 
-  public getLocation() {
+  /**
+   * The location blurb is decoration, and lives on another origin, so it
+   * waits until the page has loaded and the browser is idle rather than
+   * competing with the article for the connection. It isn't fetched at all
+   * where it isn't shown (the phone top bar has no room for it), or while
+   * the page is only being prerendered on speculation.
+   */
+  public getLocationWhenIdle() {
+    const target = document.getElementById("location");
+    if (target == null || target.offsetParent == null) {
+      return;
+    }
+    const whenIdle = () => {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => this.getLocation(), { timeout: 5000 });
+      } else {
+        setTimeout(() => this.getLocation(), 0);
+      }
+    };
+    const afterLoad = () => {
+      if (document.readyState === "complete") {
+        whenIdle();
+      } else {
+        window.addEventListener("load", whenIdle, { once: true });
+      }
+    };
+    if (document.prerendering) {
+      document.addEventListener("prerenderingchange", afterLoad, {
+        once: true,
+      });
+    } else {
+      afterLoad();
+    }
+  }
+
+  private getLocation() {
     fetch(this.locationEndpoint)
       .then((response) => {
         if (response.status != 200) {
