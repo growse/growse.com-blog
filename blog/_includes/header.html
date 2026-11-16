@@ -122,6 +122,11 @@
     {% else %}
     <meta property="twitter:url" content="https://www.growse.com{{ page.url }}" />
     <meta property="og:url" content="https://www.growse.com{{ page.url }}" />
+    {% comment %}
+      "/" 302s to the newest post, so without this Google treats that post
+      as a duplicate of "/" and indexes "/" in its place.
+    {% endcomment %}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <meta name="twitter:title" content="{{ page.title }}" />
     <meta property="og:title" content="{{ page.title }}" />
     {% endif %}
