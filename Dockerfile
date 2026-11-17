@@ -2,20 +2,23 @@
 
 FROM node:26.13.1 as assets-builder
 
-COPY blog/_web /app
-# scripts/images.mjs reads responsive_image_widths from here, at the same
-# relative path (../_config.yml) as in the repo.
-COPY blog/_config.yml /_config.yml
+WORKDIR /blog/_web
 
-WORKDIR /app
-
+# Dependencies first, so a change to a post doesn't reinstall them.
+COPY blog/_web/package.json blog/_web/package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm \
-    npm ci && npm run build
+    npm ci
+
+# The whole blog, laid out as in the repo: scripts/fonts.mjs scans the posts
+# and pages for the characters in use, and scripts/images.mjs reads
+# ../_config.yml.
+COPY blog /blog
+RUN npm run build
 
 FROM ruby:4.0.7 as builder
 
 COPY blog /app
-COPY --from=assets-builder /assets /app/assets
+COPY --from=assets-builder /blog/assets /app/assets
 
 WORKDIR /app
 
@@ -26,7 +29,7 @@ RUN bundle exec jekyll b
 
 FROM node:26.13.1 as search-index-builder
 
-COPY --from=assets-builder /app/node_modules /app/node_modules
+COPY --from=assets-builder /blog/_web/node_modules /app/node_modules
 COPY --from=builder /app/_site /site
 
 RUN /app/node_modules/.bin/pagefind --site /site

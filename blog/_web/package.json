@@ -11,10 +11,10 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "tsc --noEmit && webpack --config webpack.config.prod.ts && node scripts/images.mjs",
-    "builddev": "tsc --noEmit && webpack --config webpack.config.dev.ts && node scripts/images.mjs",
+    "build": "tsc --noEmit && node scripts/fonts.mjs && webpack --config webpack.config.prod.ts && node scripts/images.mjs",
+    "builddev": "tsc --noEmit && node scripts/fonts.mjs && webpack --config webpack.config.dev.ts && node scripts/images.mjs",
     "typecheck": "tsc --noEmit",
-    "watch": "webpack --watch --config webpack.config.dev.ts",
+    "watch": "node scripts/fonts.mjs && webpack --watch --config webpack.config.dev.ts",
     "index": "pagefind --site ../_site"
   },
   "devDependencies": {
@@ -34,6 +34,7 @@
     "sass-loader": "^17.0.0",
     "sharp": "^0.35.5",
     "style-loader": "^4",
+    "subset-font": "^2.9.0",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2",
     "webpack": "^5.92.0",

@@ -4,6 +4,8 @@
 blog/_site
 blog/assets
 blog/_web/node_modules
+blog/_web/fonts/subset
+blog/_web/scss/includes/_font-range.scss
 blog/.jekyll-cache
 blog/.jekyll-metadata
 blog/vendor
