@@ -41,5 +41,5 @@ LABEL org.opencontainers.image.source https://github.com/growse/growse.com-blog
 COPY --from=search-index-builder /site /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-RUN FRONTPAGE=$(cat /usr/share/nginx/html/frontpage.html) && sed -i 's@%FRONTPAGE%@'"$FRONTPAGE"'@' /etc/nginx/conf.d/default.conf
+RUN FRONTPAGE=$(cat /usr/share/nginx/html/frontpage.html) && sed -i 's@%FRONTPAGE%@'"$FRONTPAGE"'@g' /etc/nginx/conf.d/default.conf
 EXPOSE 80
