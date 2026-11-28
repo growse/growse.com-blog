@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.npm \
 COPY blog /blog
 RUN npm run build
 
-FROM ruby:4.0.7 as builder
+FROM ruby:4.0.10 as builder
 
 COPY blog /app
 COPY --from=assets-builder /blog/assets /app/assets
